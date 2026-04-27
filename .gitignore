@@ -1,0 +1,27 @@
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+/node_modules
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+# node
+node_modules/
+npm-debug.log*
+
+# TanStack Start / Vite
+.output/
+.tanstack/
+.vinxi/
+dist/
+
+# local brainstorming mockups
+.superpowers/
+
+# local runtime logs
+.run/
