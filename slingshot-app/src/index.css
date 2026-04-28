@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  /* Manus-inspired warm neutral palette */
+  --color-bg-main: #f8f8f7;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #fafafa;
+  --color-bg-card: #fafafa;
+  --color-bg-canvas: #f0f0ef;
+  --color-bg-nav: #ebebeb;
+
+  --color-text-primary: #34322d;
+  --color-text-secondary: #5e5e5b;
+  --color-text-tertiary: #858481;
+  --color-text-disabled: #b9b9b7;
+
+  --color-accent: #0081f2;
+  --color-accent-hover: #006dd1;
+  --color-accent-light: #0081f214;
+  --color-accent-border: #0081f247;
+
+  --color-border-main: #0000000f;
+  --color-border-light: #0000000a;
+  --color-border-dark: #0000001f;
+  --color-border-input: #0000004d;
+
+  --color-fill-main: #37352f0f;
+  --color-fill-dark: #37352f14;
+  --color-fill-light: #37352f0a;
+  --color-fill-lighter: #37352f05;
+
+  --color-btn-black: #1a1a19;
+  --color-btn-white: #ffffff;
+  --color-btn-blue: #0081f2;
+
+  --color-fn-error: #f25a5a;
+  --color-fn-success: #25ba3b;
+  --color-fn-warning: #efa201;
+  --color-fn-error-bg: #f25a5a14;
+  --color-fn-success-bg: #25ba3b14;
+  --color-fn-warning-bg: #efa2011f;
+
+  --color-shadow-xs: #0000000f;
+  --color-shadow-s: #00000014;
+  --color-shadow-m: #0000001f;
+
+  --color-tab-fill: rgba(0,0,0,0.04);
+  --color-tab-active: #1a1a19;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* Tailwind Preflight handles resets — do NOT add unlayered * rules here */
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+/* React Flow overrides */
+.react-flow__node {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.react-flow__node.pulse {
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 129, 242, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 129, 242, 0); }
+}
+
+/* Scrollbar styling — Manus-style thin, auto-hiding */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-disabled);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* Selection */
+::selection {
+  background: #b8d3f8;
+}
