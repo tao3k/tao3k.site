@@ -10,7 +10,7 @@ import LandingPage from './components/LandingPage'
 
 function DashboardLayout({ activeTab, children }: { activeTab: 'agent' | 'workflows' | 'kb'; children: React.ReactNode }) {
   return (
-    <div className="flex w-full h-screen bg-[var(--color-bg-main)]">
+    <div className="flex w-full h-screen bg-[var(--color-bg-main)]" style={{ position: 'relative' }}>
       <Navbar activeTab={activeTab} />
       <main className="flex-1 min-w-0 overflow-hidden">
         {children}

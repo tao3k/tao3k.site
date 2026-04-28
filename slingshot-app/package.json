@@ -16,6 +16,7 @@
     "@mariozechner/pi-web-ui": "^0.70.6",
     "@monaco-editor/react": "^4.7.0",
     "@xyflow/react": "^12.10.2",
+    "lit": "^3.3.2",
     "lucide-react": "^1.11.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
