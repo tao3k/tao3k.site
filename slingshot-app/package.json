@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mariozechner/mini-lit": "^0.2.1",
+    "@mariozechner/pi-agent-core": "^0.70.6",
+    "@mariozechner/pi-ai": "^0.70.6",
+    "@mariozechner/pi-web-ui": "^0.70.6",
     "@monaco-editor/react": "^4.7.0",
     "@xyflow/react": "^12.10.2",
     "lucide-react": "^1.11.0",
