@@ -5,9 +5,11 @@
   "description": "Commercial runtime surface for tao3k and xiuxian-artisan-workshop.",
   "keywords": [
     "effect",
+    "module-federation",
     "react-aria",
     "tanstack-start",
-    "xiuxian"
+    "xiuxian",
+    "zhixing-theme"
   ],
   "homepage": "https://github.com/tao3k/tao3k.site#readme",
   "bugs": {
@@ -23,16 +25,28 @@
     "doc": "docs"
   },
   "type": "module",
+  "sideEffects": [
+    "./theme/src/theme.css"
+  ],
+  "exports": {
+    "./zhixing-theme": "./theme/src/index.tsx"
+  },
   "scripts": {
     "dev": "vite dev",
+    "docs:check": "node src/contracts/check-org-docs.mjs",
     "build": "vite build",
-    "format": "oxfmt --write \"src/**/*.{ts,tsx}\" \"vite.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
-    "format:check": "oxfmt --check \"src/**/*.{ts,tsx}\" \"vite.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
-    "lint": "oxlint --react-plugin --jsx-a11y-plugin --import-plugin --tsconfig tsconfig.json src vite.config.ts",
+    "format": "oxfmt --write \"src/**/*.{ts,tsx,mjs}\" \"theme/**/*.{ts,tsx,css,mjs}\" \"vite.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
+    "format:check": "oxfmt --check \"src/**/*.{ts,tsx,mjs}\" \"theme/**/*.{ts,tsx,css,mjs}\" \"vite.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
+    "lint": "oxlint --deny-warnings --react-plugin --jsx-a11y-plugin --import-plugin --tsconfig tsconfig.json src theme vite.config.ts",
     "start": "vite preview",
-    "typecheck": "tsc --noEmit",
+    "theme:build": "npm run theme:contract:sync && vite build --config theme/vite.config.ts && npm run theme:check",
+    "theme:check": "node theme/tests/check-manifest.mjs",
+    "theme:contract:sync": "node theme/src/build/sync-contract.mjs",
+    "theme:dev": "vite --config theme/vite.config.ts",
+    "theme:preview": "vite preview --config theme/vite.config.ts --host 127.0.0.1",
+    "typecheck": "npm run theme:contract:sync && tsc --noEmit",
     "test": "npm run typecheck",
-    "validate": "npm run format:check && npm run lint && npm run typecheck && npm run build"
+    "validate": "npm run theme:contract:sync && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.168.25",
@@ -44,12 +58,85 @@
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
+    "@module-federation/vite": "^1.18.2",
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "lightningcss": "^1.32.0",
+    "oxfmt": "^0.59.0",
+    "oxlint": "^1.74.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.10"
+  },
+  "orgZhixing": {
+    "schemaVersion": 1,
+    "id": "tao3k-site",
+    "displayName": "tao3k.site",
+    "engine": ">=0.1 <0.2",
+    "defaultVariant": "night",
+    "variants": [
+      "night",
+      "paper"
+    ],
+    "capabilities": [
+      "application",
+      "marketing",
+      "technical-documentation"
+    ],
+    "content": {
+      "base": "workspace",
+      "directory": "content",
+      "routeMode": "application"
+    },
+    "publicSlots": [
+      {
+        "id": "site-header",
+        "strategies": [
+          "replace"
+        ],
+        "runtime": "universal",
+        "stability": "stable"
+      },
+      {
+        "id": "site-hero",
+        "strategies": [
+          "replace"
+        ],
+        "runtime": "universal",
+        "stability": "stable"
+      },
+      {
+        "id": "runtime-state",
+        "strategies": [
+          "replace"
+        ],
+        "runtime": "universal",
+        "stability": "stable"
+      }
+    ],
+    "renderers": {
+      "react-spa": {
+        "export": "./zhixing-theme",
+        "serverComponents": false
+      }
+    },
+    "renderModes": [
+      "static"
+    ],
+    "federation": {
+      "protocol": "org-zhixing/theme-module/v1",
+      "remote": "tao3k_site",
+      "expose": "./theme"
+    },
+    "contract": {
+      "package": "@org-zhixing/theme-contract",
+      "revision": "1bd851773a4c5a3fc9d25b3e7cfbd0df9512779f",
+      "source": "https://github.com/tao3k/org-zhixing-themes/tree/1bd851773a4c5a3fc9d25b3e7cfbd0df9512779f/packages/theme-contract",
+      "integrity": {
+        "package.json": "4ff7cb6b176aa299d87f66d043eb4e88a5bb31abd96266beff49f1d13f3c696e",
+        "src/index.ts": "8ce7a574f1b8d59f47af5409df18fea1a461e47b650b473ab4ccd5cafb1c6cc0"
+      }
+    }
   }
 }

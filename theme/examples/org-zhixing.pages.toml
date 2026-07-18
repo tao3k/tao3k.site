@@ -1,0 +1,17 @@
+theme = "tao3k-site"
+theme_variant = "night"
+
+[theme_remotes.tao3k-site]
+remote = "tao3k_site"
+entry = "https://tao3k.github.io/tao3k.site/mf-manifest.json"
+expose = "./theme"
+package = "tao3k.site"
+default_variant = "night"
+variants = ["night", "paper"]
+
+[site]
+title = "tao3k.site"
+locale = "en-US"
+
+[content]
+content_dir = "content"

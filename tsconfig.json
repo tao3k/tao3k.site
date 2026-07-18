@@ -11,12 +11,15 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "paths": {
+      "@org-zhixing/theme-contract": ["./.data/org-zhixing-theme-contract/src/index.ts"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["node", "vite/client"]
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["src", "theme", "vite.config.ts"],
   "references": []
 }

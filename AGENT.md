@@ -49,9 +49,10 @@ npm run validate
 
 ## Documentation Checks
 
-For architecture docs and ADR changes, use the Wendao audit template and markdown linter from the xiuxian artisan workshop runtime:
+All durable project documentation is Org. Markdown files are not accepted under `docs/`,
+`content/`, or `theme/`. Run the repository contract before the Wendao architecture audit:
 
 ```sh
+npm run docs:check
 /Users/guangtao/ghq/github.com/tao3k/xiuxian-artisan-workshop/target/debug/wendao audit --load /Users/guangtao/ghq/github.com/tao3k/xiuxian-artisan-workshop/wendao-episteme docs --output text
-/Users/guangtao/ghq/github.com/tao3k/xiuxian-artisan-workshop/target/debug/wendao lint markdown docs --output text
 ```

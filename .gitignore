@@ -4,6 +4,7 @@ devenv.local.nix
 devenv.local.yaml
 
 /node_modules
+/.data/
 # direnv
 .direnv
 
@@ -20,6 +21,7 @@ npm-debug.log*
 .tanstack/
 .vinxi/
 dist/
+theme/dist/
 
 # local brainstorming mockups
 .superpowers/

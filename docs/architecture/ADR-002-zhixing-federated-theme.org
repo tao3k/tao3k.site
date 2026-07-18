@@ -1,0 +1,58 @@
+#+TITLE: ADR-002: Publish tao3k.site as an Independent Zhixing Theme
+#+DATE: 2026-07-18
+#+AUTHOR: Guangtao Tao
+#+FILETAGS: :adr:architecture:zhixing:theme:module-federation:
+
+* ADR-002: Publish tao3k.site as an independent Zhixing theme
+
+- Status: Accepted
+- Date: 2026-07-18
+- Owners: tao3k.site and Org Zhixing
+
+** Context
+
+Org Zhixing supports isolated compiler snapshots and federated theme transports, but an in-repo
+fixture does not prove that a separately owned repository can implement, build, deploy, and evolve
+a theme without copying a built-in package.
+
+tao3k.site already owns a TanStack Start application and visual system. Replacing that application
+with the Zhixing host would erase the downstream boundary we need to test.
+
+** Decision
+
+The existing application remains intact. A separate provider lives under =theme/= and is built by
+Vite plus Module Federation. It exposes =./theme= from the =tao3k_site= remote and publishes
+=mf-manifest.json= independently of the application artifact.
+
+The boundary is:
+
+- tao3k.site owns components, scoped CSS, variants, package metadata, and remote deployment;
+- Zhixing owns =org-zhixing/theme-module/v1=, Org ingestion, renderer slots, host isolation, and
+  remote loading;
+- React and React DOM are singleton shared dependencies;
+- the provider emits an absolute remote entry URL, so a cross-origin host never resolves assets
+  against its own origin;
+- =package.json#orgZhixing= is the canonical machine-readable theme manifest;
+- the provider never imports or extends a built-in Zhixing theme.
+
+The provider must call =defineFederatedThemeModule= from =@org-zhixing/theme-contract=; structural
+compatibility or a copied protocol literal is not accepted. The package is not yet available from the
+public npm registry, so the build resolves the two-file package from a pinned Zhixing revision and
+verifies both files with SHA-256 before use. The cache is generated under ignored =.data/=; no
+Zhixing contract source is committed to this repository.
+
+** Consequences
+
+The repository now exercises a real Vite provider against the Rsbuild Zhixing consumer. Theme and
+application builds remain independent, so a failed remote cannot corrupt or replace tao3k.site.
+GitHub Pages can serve the provider while the main application keeps its existing deployment path.
+
+A future upstream task should publish =@org-zhixing/theme-contract= as a small registry artifact.
+Once available, this provider can replace the integrity-pinned source resolver with a normal npm
+dependency without changing its import, public remote name, or expose.
+
+** Verification
+
+=npm run validate= proves the existing application and theme provider together. The theme gate
+requires a production Module Federation manifest containing =tao3k_site=, =./theme=, and a remote
+entry. GitHub CI runs the same gate from a clean checkout.

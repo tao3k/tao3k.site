@@ -175,7 +175,7 @@ export function RuntimeSurface({ traces }: RuntimeSurfaceProps) {
               <span>Wendao -&gt; Qianji -&gt; Qianhuan -&gt; Daochang</span>
               <span>knowledge -&gt; workflow -&gt; context -&gt; host</span>
             </div>
-            <div className="graph-stage" aria-label="Runtime lifecycle graph" role="group">
+            <section className="graph-stage" aria-label="Runtime lifecycle graph">
               <div className="edge edge-a" />
               <div className="edge edge-b" />
               <div className="edge edge-c" />
@@ -192,7 +192,7 @@ export function RuntimeSurface({ traces }: RuntimeSurfaceProps) {
                   <span>{node.role}</span>
                 </button>
               ))}
-            </div>
+            </section>
             <div className="terminal-feed">
               {traces.map((line, index) => (
                 <div
