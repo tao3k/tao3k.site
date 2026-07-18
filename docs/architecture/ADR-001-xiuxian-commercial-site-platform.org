@@ -1,38 +1,19 @@
----
-type: knowledge
-title: "ADR-001: Xiuxian Commercial Site Platform"
-description: "Architecture decision record for the tao3k.site commercial website for xiuxian-artisan-workshop."
-author: "Codex"
-status: "Proposed"
-date: "2026-04-27T13:29-07:00"
-category: "architecture"
-kind: "adr"
-tags:
-  - adr
-  - commercial-site
-  - tanstack-start
-  - effect
-  - react-aria
-  - lightning-css
-  - xiuxian-artisan-workshop
-metadata:
-  title: "ADR-001: Xiuxian Commercial Site Platform"
-  retrieval:
-    saliency_base: 7.0
-    decay_rate: 0.03
----
+#+TITLE: ADR-001: Xiuxian Commercial Site Platform
+#+DATE: 2026-04-27
+#+AUTHOR: Codex
+#+FILETAGS: :adr:architecture:commercial-site:tanstack-start:effect:react-aria:xiuxian:
 
-# ADR-001: Xiuxian Commercial Site Platform
+* ADR-001: Xiuxian Commercial Site Platform
 
 :PROPERTIES:
 :ID: adr-001-xiuxian-commercial-site-platform
 :END:
 
-## 1. Context and Problem Statement
+** 1. Context and Problem Statement
 
-`tao3k.site` starts as an empty project. Its first product surface will be a
+=tao3k.site= starts as an empty project. Its first product surface will be a
 commercial website for
-[`tao3k/xiuxian-artisan-workshop`](https://github.com/tao3k/xiuxian-artisan-workshop).
+[[https://github.com/tao3k/xiuxian-artisan-workshop][=tao3k/xiuxian-artisan-workshop=]].
 
 The site must speak to three audiences without collapsing into a generic AI SaaS
 landing page:
@@ -44,7 +25,7 @@ landing page:
 3. developers who need a credible path into the open-source Rust-first
    monorepo, docs, APIs, and package boundaries.
 
-The design must reflect the real `xiuxian-artisan-workshop` identity:
+The design must reflect the real =xiuxian-artisan-workshop= identity:
 
 - Rust-owned contracts, runtime, routing, verification, and persistence;
 - Wendao for knowledge/search/gateway and computable graph surfaces;
@@ -57,58 +38,58 @@ The design must reflect the real `xiuxian-artisan-workshop` identity:
 - high-performance HTTP, gRPC, and Arrow Flight APIs for external service
   integration.
 
-## 2. Decision
+** 2. Decision
 
 Build a multi-page commercial site using the following stack:
 
-- **TanStack Start** for the full-stack React shell, type-safe routing, route
+- *TanStack Start* for the full-stack React shell, type-safe routing, route
   data boundaries, and future server functions.
-- **Effect** as the TypeScript domain layer for typed content registries,
+- *Effect* as the TypeScript domain layer for typed content registries,
   lifecycle models, simulated runtime traces, feature flags, and failure-aware
   data loading.
-- **React Aria** for accessible navigation, tabs, buttons, disclosures, dialogs,
+- *React Aria* for accessible navigation, tabs, buttons, disclosures, dialogs,
   menus, and keyboard interaction contracts.
-- **Lightning CSS** for modern CSS parsing/transforms, design tokens,
+- *Lightning CSS* for modern CSS parsing/transforms, design tokens,
   responsive layout, and motion styling.
 
-The first implementation must be a **runtime-surface commercial site**, not a
-static brochure. It should present `xiuxian-artisan-workshop` as a living
+The first implementation must be a *runtime-surface commercial site*, not a
+static brochure. It should present =xiuxian-artisan-workshop= as a living
 agent-infrastructure lifecycle:
 
-1. **Native agent infrastructure**: Rust runtime, native tool routing, service
+1. *Native agent infrastructure*: Rust runtime, native tool routing, service
    contracts, security, storage, and model/provider seams.
-2. **Knowledge-to-workflow lifecycle**: Wendao grounds and ranks context;
+2. *Knowledge-to-workflow lifecycle*: Wendao grounds and ranks context;
    Qianji turns that context into controlled workflows.
-3. **Verified AI operations**: Qianhuan and Daochang shape context and host
+3. *Verified AI operations*: Qianhuan and Daochang shape context and host
    auditable agent work.
-4. **High-performance compute and transport plane**: Apache Arrow, Arrow
+4. *High-performance compute and transport plane*: Apache Arrow, Arrow
    Flight, and Julia provide a columnar, cross-language computation path for
    engineering intelligence.
 
-## 3. Route Contract
+** 3. Route Contract
 
 The first route set is:
 
 | Route | Purpose |
-| --- | --- |
-| `/` | Commercial homepage with an animated lifecycle/runtime surface. |
-| `/platform` | Platform architecture: Wendao, Qianji, Qianhuan, Daochang, Julia compute, and Apache Arrow/Flight data plane. |
-| `/api` | API and integration surface for Wendao/Qianji HTTP, gRPC, and Arrow Flight services. |
-| `/deployment` | Local-first, private/on-prem, cloud, hybrid, and model deployment solutions. |
-| `/enterprise` | Customer and VC narrative: governance, auditability, deployment trust, and business value. |
-| `/open-source` | Developer entrance: GitHub, Rust-first monorepo, package groups, docs/RFCs, and CLI surfaces. |
-| `/research` | Technical moat: computable graph, typed relations, graph ranking, Arrow/Flight, workflow control, and verified traces. |
+|---+---|
+| =/= | Commercial homepage with an animated lifecycle/runtime surface. |
+| =/platform= | Platform architecture: Wendao, Qianji, Qianhuan, Daochang, Julia compute, and Apache Arrow/Flight data plane. |
+| =/api= | API and integration surface for Wendao/Qianji HTTP, gRPC, and Arrow Flight services. |
+| =/deployment= | Local-first, private/on-prem, cloud, hybrid, and model deployment solutions. |
+| =/enterprise= | Customer and VC narrative: governance, auditability, deployment trust, and business value. |
+| =/open-source= | Developer entrance: GitHub, Rust-first monorepo, package groups, docs/RFCs, and CLI surfaces. |
+| =/research= | Technical moat: computable graph, typed relations, graph ranking, Arrow/Flight, workflow control, and verified traces. |
 
-The misspelled `/depoyment` path should redirect to `/deployment` so early
+The misspelled =/depoyment= path should redirect to =/deployment= so early
 handwritten links do not break.
 
 The primary navigation is:
 
-`Platform / API / Deployment / Enterprise / Open Source / Research / GitHub`
+=Platform / API / Deployment / Enterprise / Open Source / Research / GitHub=
 
-## 4. Page Decisions
+** 4. Page Decisions
 
-### 4.1 Homepage
+*** 4.1 Homepage
 
 The homepage first viewport should show a dynamic runtime surface:
 
@@ -123,25 +104,25 @@ The page must avoid generic AI SaaS gradients and vague automation claims. It
 should feel like a technical workshop surface: dark, precise, traceable, and
 alive.
 
-### 4.2 Platform
+*** 4.2 Platform
 
 The platform page owns the interactive lifecycle explorer:
 
-- **Wendao**: knowledge/search/gateway, computable graph, retrieval plans,
+- *Wendao*: knowledge/search/gateway, computable graph, retrieval plans,
   repo intelligence, Arrow/Flight query surfaces.
-- **Qianji**: workflow/control plane, Flowhub, BPMN control, checkpoints, human
+- *Qianji*: workflow/control plane, Flowhub, BPMN control, checkpoints, human
   task states, runtime advancement.
-- **Qianhuan**: context/persona rendering, template binding, prompt/context
+- *Qianhuan*: context/persona rendering, template binding, prompt/context
   contracts.
-- **Daochang**: native agent loop, host runtime, native tool execution, runtime
+- *Daochang*: native agent loop, host runtime, native tool execution, runtime
   integration.
-- **Julia Compute Bridge**: high-performance analytical kernels, engineering
+- *Julia Compute Bridge*: high-performance analytical kernels, engineering
   computation, model/simulation-adjacent analysis.
-- **Apache Arrow + Arrow Flight**: columnar contracts and service transport
+- *Apache Arrow + Arrow Flight*: columnar contracts and service transport
   connecting Rust runtime, Python adapters, Julia computation, and enterprise
   consumers.
 
-### 4.3 API
+*** 4.3 API
 
 The API page is a first-class product surface, not a documentation afterthought:
 
@@ -156,7 +137,7 @@ The API page is a first-class product surface, not a documentation afterthought:
 - Proof surfaces should include typed contracts, topology diagrams, request and
   response examples, and lifecycle traces.
 
-### 4.4 Deployment
+*** 4.4 Deployment
 
 The deployment page answers how customers can run the system:
 
@@ -172,7 +153,7 @@ The deployment page answers how customers can run the system:
 - operations posture: observability, validation gates, audit traces, workflow
   checkpointing, and deployment-specific runtime settings.
 
-### 4.5 Enterprise
+*** 4.5 Enterprise
 
 The enterprise page should frame the business value:
 
@@ -184,7 +165,7 @@ The enterprise page should frame the business value:
 - support engineering intelligence and computational workflows through Arrow
   transport and Julia computation.
 
-### 4.6 Open Source
+*** 4.6 Open Source
 
 The open-source page should preserve the hacker/developer entrance:
 
@@ -195,7 +176,7 @@ The open-source page should preserve the hacker/developer entrance:
 - CLI/API surfaces;
 - validation culture.
 
-### 4.7 Research
+*** 4.7 Research
 
 The research page should explain the moat:
 
@@ -207,26 +188,26 @@ The research page should explain the moat:
 - why Rust owns contracts/runtime while Julia owns high-performance
   computation.
 
-## 5. Domain Model
+** 5. Domain Model
 
 The site content should be expressed through Effect-managed typed registries,
 not scattered page-local constants.
 
 Core models:
 
-- `LifecycleStage`: native agent infrastructure, knowledge-to-workflow,
+- =LifecycleStage=: native agent infrastructure, knowledge-to-workflow,
   verified operations, compute/transport plane.
-- `PlatformModule`: Wendao, Qianji, Qianhuan, Daochang, Julia Compute Bridge,
+- =PlatformModule=: Wendao, Qianji, Qianhuan, Daochang, Julia Compute Bridge,
   Apache Arrow/Flight Data Plane.
-- `ApiSurface`: Wendao HTTP, Wendao gRPC, Wendao Arrow Flight, Qianji HTTP,
+- =ApiSurface=: Wendao HTTP, Wendao gRPC, Wendao Arrow Flight, Qianji HTTP,
   Qianji gRPC, future service surfaces.
-- `DeploymentMode`: local, private/on-prem, cloud, hybrid, model deployment.
-- `RuntimeTrace`: homepage and platform demo traces. First version is a
+- =DeploymentMode=: local, private/on-prem, cloud, hybrid, model deployment.
+- =RuntimeTrace=: homepage and platform demo traces. First version is a
   deterministic front-end simulation based on static product data, not a claim
   of live production telemetry.
-- `ProofPoint`: concise evidence-oriented claims for customers and VC.
+- =ProofPoint=: concise evidence-oriented claims for customers and VC.
 
-## 6. Accessibility and Interaction Contract
+** 6. Accessibility and Interaction Contract
 
 React Aria is the default for interactive controls. Required behaviors:
 
@@ -238,7 +219,7 @@ React Aria is the default for interactive controls. Required behaviors:
 - semantic headings and landmarks;
 - button/link distinction preserved for command vs navigation actions.
 
-## 7. Visual System
+** 7. Visual System
 
 The site visual language should be:
 
@@ -250,18 +231,18 @@ The site visual language should be:
   behavior;
 - high-density enough to feel technical, but readable for customers and VC.
 
-## 8. Alternatives Considered
+** 8. Alternatives Considered
 
-- **Static investor deck website**: strongest for simple VC readability, but too
-  weak for the `xiuxian-artisan-workshop` runtime identity.
-- **Interactive lab first**: strongest "fancy hacking" signal, but too much
+- *Static investor deck website*: strongest for simple VC readability, but too
+  weak for the =xiuxian-artisan-workshop= runtime identity.
+- *Interactive lab first*: strongest "fancy hacking" signal, but too much
   implementation weight before the commercial and deployment story is clear.
-- **Developer docs-first site**: easiest to derive from the repository, but it
+- *Developer docs-first site*: easiest to derive from the repository, but it
   would under-serve customers and VC and collapse back into a README surface.
 
-## 9. Consequences
+** 9. Consequences
 
-### Positive
+*** Positive
 
 - The website becomes a product surface that demonstrates lifecycle thinking,
   API/deployment readiness, and high-performance compute/data-plane posture.
@@ -270,7 +251,7 @@ The site visual language should be:
 - The route structure separates customer, VC, developer, API, deployment, and
   research narratives without fragmenting the core lifecycle.
 
-### Negative / Trade-offs
+*** Negative / Trade-offs
 
 - The runtime-surface design costs more than a static landing page.
 - The first dynamic traces must be carefully labeled and implemented as
@@ -278,12 +259,12 @@ The site visual language should be:
 - The site requires a typed content model early, which adds initial structure
   before there is much page volume.
 
-## 10. Implementation Plan
+** 10. Implementation Plan
 
 1. Scaffold TanStack Start, TypeScript, React, React Aria, Effect, and Lightning
-   CSS inside `tao3k.site`.
-2. Add route tree for `/`, `/platform`, `/api`, `/deployment`, `/enterprise`,
-   `/open-source`, and `/research`, plus `/depoyment` redirect.
+   CSS inside =tao3k.site=.
+2. Add route tree for =/=, =/platform=, =/api=, =/deployment=, =/enterprise=,
+   =/open-source=, and =/research=, plus =/depoyment= redirect.
 3. Define design tokens, global layout, navigation, footer, and reduced-motion
    behavior.
 4. Implement Effect-backed content registries for lifecycle, platform modules,
@@ -294,26 +275,26 @@ The site visual language should be:
 7. Add accessibility checks, route smoke tests, typecheck, lint, and production
    build verification.
 
-## 11. Verification Plan
+** 11. Verification Plan
 
 Minimum documentation verification:
 
-```bash
+#+begin_src bash
 /Users/guangtao/ghq/github.com/tao3k/xiuxian-artisan-workshop/target/debug/wendao audit \
   --load /Users/guangtao/ghq/github.com/tao3k/xiuxian-artisan-workshop/wendao-episteme \
-  docs/architecture/ADR-001-xiuxian-commercial-site-platform.md \
+  docs/architecture/ADR-001-xiuxian-commercial-site-platform.org \
   --output text
 git diff --check
-```
+#+end_src
 
 Minimum implementation verification after code exists:
 
-```bash
-pnpm typecheck
-pnpm lint
-pnpm test
-pnpm build
-```
+#+begin_src bash
+npm run typecheck
+npm run lint
+npm test
+npm run build
+#+end_src
 
 If the package manager changes during scaffold discovery, the command names may
 change, but equivalent typecheck, lint, test, and build gates remain required.

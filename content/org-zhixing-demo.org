@@ -1,0 +1,22 @@
+#+TITLE: tao3k.site
+#+DATE: 2026-07-18
+#+AUTHOR: Guangtao Tao
+#+FILETAGS: :tao3k:zhixing:agents:infrastructure:
+
+* The living infrastructure layer for governed AI agents
+
+tao3k.site is an independent Zhixing theme provider.  The repository owns its
+visual language and theme implementation while Zhixing owns Org ingestion,
+compiler isolation, runtime slots, and federated theme loading.
+
+** Downstream boundary
+
+- The theme builds and deploys without importing a built-in Zhixing theme.
+- React and React DOM remain Module Federation singletons.
+- =mf-manifest.json= exposes =./theme= through the =tao3k_site= remote.
+- Org remains the content source of truth for a Zhixing host.
+
+** Platform
+
+Wendao, Qianji, Qianhuan, and Daochang connect computable knowledge, governed
+workflow, explicit context, and native agent execution.

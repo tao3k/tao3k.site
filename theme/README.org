@@ -1,0 +1,31 @@
+#+TITLE: tao3k.site Zhixing Theme
+#+DATE: 2026-07-18
+#+AUTHOR: Guangtao Tao
+#+FILETAGS: :zhixing:theme:module-federation:operations:
+
+* tao3k.site Zhixing theme
+
+This directory is an independently built Zhixing theme provider. The tao3k.site repository owns
+the implementation; Zhixing owns the module protocol, Org content runtime, compiler isolation, and
+remote loading contract.
+
+** Local provider
+
+#+begin_src sh
+DEVENV_PROFILE="$(direnv exec . sh -lc 'printf %s "$DEVENV_PROFILE"')"
+export PATH="$DEVENV_PROFILE/bin:$PATH"
+npm run theme:dev
+#+end_src
+
+The provider runs at =http://127.0.0.1:4174/= and exposes
+=http://127.0.0.1:4174/mf-manifest.json=. A Zhixing host can use
+[[./examples/org-zhixing.local.toml][=examples/org-zhixing.local.toml=]].
+
+** Production provider
+
+=npm run theme:build= creates a self-contained remote under =theme/dist/=. GitHub Pages publishes
+that directory with CORS enabled by the static host. The production host declaration is
+[[./examples/org-zhixing.pages.toml][=examples/org-zhixing.pages.toml=]].
+
+The provider name (=tao3k_site=), exposed module (=./theme=), variants, and protocol are checked
+against =package.json#orgZhixing= after every build.
