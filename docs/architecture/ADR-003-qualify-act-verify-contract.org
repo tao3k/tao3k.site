@@ -1,0 +1,101 @@
+#+TITLE: ADR-003: Qualify-Act-Verify Contract
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:architecture:qualification:verification:poo-flow:
+#+STATUS: Accepted
+#+OWNER: tao3k Architecture
+#+AUDIENCE: Platform, proof, workflow, and scientific-compute engineers
+#+CLAIM_MATURITY: policy
+
+* Context and problem statement
+
+Conventional workflow and agent systems commonly advance when a task completes or a tool returns. That control rule is insufficient for consequential AI action because completion does not establish qualification, correctness, authority, or continuing validity.
+
+tao3k requires one explicit handoff across graph reasoning, scientific computation, formal proof, execution, and evidence capture.
+
+* Decision
+
+Qualify, Act, and Verify form a compiled execution contract rather than one generic workflow status.
+
+The Evidence-Action Graph Engine constructs the Action Case and its proof obligations. Julia performs graph and scientific computation. Lean determines formal admissibility and verifies formal postconditions. POO Flow expresses and compiles the phase boundaries. Marlin enforces the compiled gates, executes authorized effects, and records receipts at runtime.
+
+The phases are related but must not be collapsed into one generic workflow status.
+
+* Qualify
+
+Qualify answers: /May this action occur under the current evidence, model, policy, capability, authority, and risk conditions?/
+
+The qualification input includes a versioned Action Case, applicable contracts, policy and permission rules, Julia model results, Lean proof obligations, and any mandatory human authorization.
+
+A successful result produces a scoped admission certificate. The certificate identifies its evidence snapshot, permitted action, constraints, authority, validity period, and invalidation conditions.
+
+* Act
+
+Act answers: /What effects were attempted, in which order, by which authority, and with which observed result?/
+
+Marlin executes only the plan and capabilities admitted by the qualification result and compiled by POO Flow. Each meaningful step emits a receipt containing inputs, outputs, effects, timing, identity, and failure state. A receipt is evidence, not proof that the result was correct.
+
+* Verify
+
+Verify answers: /Did the observed action satisfy its scientific, numerical, contractual, and formal claims?/
+
+Julia validates scientific models, graph computations, optimization results, numerical bounds, simulations, and uncertainty. Lean validates formal postconditions, contracts, state-transition invariants, and checkable certificates. Verification results are appended to the Action Case and Evidence-Action Graph.
+
+* Qualification is not authorization
+
+Lean qualification establishes that declared formal conditions hold. It does not create the authority to affect people, organizations, resources, or infrastructure.
+
+Every consequential execution therefore requires both a qualification result and an applicable Authority Envelope. POO Flow declares the required gates; Marlin checks the envelope at material effect boundaries and suspends execution when authority expires, is revoked, or requires requalification.
+
+The Action Case keeps =Qualified=, =Authorized=, =Observed=, and =Verified= as distinct states. A completed tool call is only an observation with a receipt; it is neither automatic verification nor durable acceptance.
+
+* Responsibility boundaries
+
+| Component | Owns | Must not imply |
+|-
+| Evidence-Action Graph Engine | Dependencies, provenance, affected scope, subgraphs, and proof obligations | That graph connectivity alone establishes truth |
+| Julia | Graph algorithms, scientific compute, optimization, simulation, and numerical validation | That a numerical result is a formal proof |
+| Lean | Qualification rules, proof obligations, invariants, and formal verification | That formal validity grants social or organizational authority |
+| POO Flow | Composition semantics and compiled qualification, authority, human, and verification checkpoints | That declaring a gate means it was enforced at runtime |
+| Marlin | Live Agent state, gate enforcement, effects, recovery, and receipts | That task completion establishes correctness |
+| Human authority | Interests, judgment, approval, and retained responsibility where required | That tool access is equivalent to consent or authority |
+
+* Certificate-producing computation
+
+Large graph and scientific computations should be certificate-producing where practical. Julia computes a result and a compact witness. Lean checks that witness against declared constraints and invariants. POO Flow declares the verification dependency, and Marlin records the verified result and certificate reference before advancing.
+
+This design avoids forcing Lean to reproduce every high-performance computation while retaining an independently checkable trust boundary.
+
+* Invalidation and revocation
+
+Qualification is never timeless. Evidence withdrawal, model revision, contract change, authority revocation, expired validity, or a failed verification result can invalidate an admission certificate.
+
+The graph engine propagates invalidation to dependent Action Cases. Marlin must stop or compensate affected executions according to the compiled POO Flow policy, and the historical authorization record remains append-only.
+
+* Human authority
+
+High-risk actions require named human authority even when all machine-checkable obligations pass. The system records who authorized what, under which evidence, for which duration, and with which retained responsibility.
+
+This rule implements the Human Agency Charter: AI expands human capacity but does not silently erase human interests, judgment, or responsibility.
+
+* Consequences
+
+- Workflow state becomes evidence- and proof-gated rather than completion-gated.
+- Julia and Lean have complementary, explicit responsibilities.
+- Admission and verification are first-class, inspectable artifacts.
+- POO Flow makes the lifecycle trust boundary explicit and compilable; Marlin enforces it at runtime.
+- Invalidated evidence can stop or revoke dependent action instead of remaining a passive annotation.
+- High-risk authority remains explicit and human-accountable.
+
+* Related records
+
+- [[file:ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:ADR-001-evidence-native-ai-lifecycle.org][ADR-001: Evidence-native AI lifecycle]]
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][Evidence-native AI lifecycle]]
+- [[file:../principles/30.01_human_agency_charter.org][Human Agency Charter]]
+- [[file:../solutions/40.01_research_operations_continuum.org][Research-to-operations continuum]]

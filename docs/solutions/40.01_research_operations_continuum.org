@@ -1,0 +1,131 @@
+#+TITLE: Research--Operations Continuum
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:solutions:research:industry:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: industry, research, partners, public
+#+CLAIM_MATURITY: policy
+
+* Thesis
+
+The gap between research and industrial operation is not only a deployment gap.
+It is a break in trust, meaning, reproducibility, authority, and evidence.
+
+Research artifacts carry assumptions, datasets, code, mathematical meaning,
+uncertainty, and provenance. Industrial systems require policy, reliability,
+state, recovery, deployment boundaries, accountability, and operational
+evidence. Conventional handoffs often discard one side while rebuilding the
+other.
+
+* Mission
+
+tao3k closes the trust, reproducibility, and operational gap between research
+and industry.
+
+The objective is not only to shorten deployment time. It is to preserve and
+improve quality across the complete passage.
+
+* Lifecycle
+
+#+begin_example
+Research question
+→ Knowledge and evidence
+→ Scientific model
+→ Reproducible experiment
+→ Contract and assumptions
+→ Validation
+→ Admission
+→ Governed industrial execution
+→ Operational receipt
+→ Outcome analysis
+→ Research refinement
+→ Capability promotion
+#+end_example
+
+Research and operations form a loop. Operational outcomes, failures, and
+observations return as evidence rather than disappearing into logs.
+
+* Value for research institutions
+
+- Preserve experiment, model, source, and dataset provenance.
+- Keep Julia and other domain algorithms behind explicit production contracts
+  instead of rewriting away their scientific meaning.
+- Compare research results with operational evidence.
+- Maintain expert authority over assumptions and promotion decisions.
+- Reproduce the environment, computation, and decision path.
+
+* Value for industrial organizations
+
+- Receive scientific capability with explicit assumptions and valid scope.
+- Admit action through policy, capability, and human authority.
+- Operate through typed sessions, sandbox boundaries, recovery, and replay.
+- Preserve receipts for audit, analysis, and future improvement.
+- Replace models, tools, and interfaces without rebuilding the entire operating
+  foundation.
+
+* Cost and quality outcomes
+
+The continuum is designed to reduce:
+
+- repeated implementation of the same scientific idea;
+- non-reproducible research and engineering rework;
+- manual translation between languages, teams, and systems;
+- repeated validation caused by missing lineage;
+- administrative coordination around implicit states and approvals;
+- quality loss when assumptions disappear during productionization.
+
+The intended gains are measurable improvements in reproducibility,
+traceability, integration time, operational reliability, evidence coverage, and
+decision confidence. Public claims must link to an actual benchmark, scenario,
+or receipt before presenting a numerical result.
+
+* Six-stage bidirectional continuum
+
+Research-to-industry delivery is not a one-way funnel ending at deployment. It is a bidirectional evidence-preserving continuum:
+
+1. Research Claim :: Preserve the claim, provenance, datasets, code, scientific models, assumptions, applicability boundaries, uncertainty, and known failures.
+2. Reproducible Evidence :: Make the result inspectable and rerunnable outside the originating team while stating its current maturity and missing evidence.
+3. Qualified Artifact :: Carry explicit permitted uses, prohibited uses, dependencies, scientific or formal obligations, human-judgment requirements, and invalidation conditions.
+4. Governed Deployment :: Admit the artifact through an Action Case, qualification, and an Authority Envelope rather than allowing software packaging to imply production authority.
+5. Operational Evidence :: Return performance, prediction error, drift, failure modes, human interventions, unintended effects, and the survival or failure of original assumptions.
+6. Research Revision :: Use field evidence to revise models, ontology, contracts, applicability boundaries, and research questions before beginning the next cycle.
+
+The system must carry research into operation without stripping away its evidence, assumptions, uncertainty, and limits, and must carry operational reality back into research as structured evidence. Faster transfer without this continuity is not success; it merely accelerates evidence loss.
+
+* Graph continuity
+
+The research-to-operations continuum is represented as one evolving Evidence-Action Graph rather than a sequence of disconnected documents and deployment tickets.
+
+An Action Case binds research claims, code, Julia models, assumptions, contracts, Lean obligations, human authority, the POO Flow compiled flow, the Marlin runtime plan, execution receipts, and post-execution verification. When an upstream assumption or evidence source changes, graph invalidation exposes the affected proofs, deployments, and operational decisions.
+
+This continuity reduces the administrative and reproducibility gap without pretending that formal proof replaces scientific validation or that automation replaces accountable human judgment.
+
+* Semantic and authority continuity
+
+Research concepts do not enter operations through a global ontology upgrade. Each scientific-to-operational mapping records its meaning, conditions, units, uncertainty, transformation, evidence, and accepting authority.
+
+An Action Case preserves the exact mappings and Evidence Set used during qualification. If one definition, assumption, or policy changes, the graph identifies the affected work without migrating unrelated knowledge or silently reinterpreting historical decisions.
+
+Authority remains continuous as well: research approval, deployment authorization, operational responsibility, and post-deployment acceptance are distinct decisions represented in the graph.
+
+* Message
+
+#+begin_quote
+Research should not lose its meaning in production. Operations should not lose
+their evidence on the way back.
+#+end_quote
+
+* Related records
+
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][10.01 Evidence-native AI Lifecycle]]
+- [[file:../principles/30.01_human_agency_charter.org][30.01 Human Agency Charter]]
+- [[file:../compare/50.01_comparison_framework.org][50.01 Comparison Framework]]

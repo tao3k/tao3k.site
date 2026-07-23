@@ -22,9 +22,14 @@ npm-debug.log*
 .vinxi/
 dist/
 theme/dist/
+.mf/
 
 # local brainstorming mockups
 .superpowers/
 
 # local runtime logs
 .run/
+
+# Gerbil and Bazel authoring outputs.
+/.gerbil/
+/bazel-*

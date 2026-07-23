@@ -1,0 +1,127 @@
+#+TITLE: ADR-004: Action Authority Envelope
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:architecture:authority:risk:human-agency:
+#+STATUS: Accepted
+#+OWNER: tao3k Architecture
+#+AUDIENCE: Platform, policy, workflow, safety, and governance teams
+#+CLAIM_MATURITY: policy
+
+* Context and problem statement
+
+Formal qualification, organizational authorization, scientific validity, and retained human responsibility answer different questions. Collapsing them into one =approved= flag allows a machine proof or completed task to manufacture authority that was never granted.
+
+tao3k requires an explicit, inspectable boundary between what is computationally or formally qualified and what is authorized to affect the world.
+
+* Decision
+The canonical platform term is *Authority Envelope*. Longer variants such as =Action Authority Envelope= are descriptive aliases, not separate records or protocol types.
+
+Every consequential Action Case carries an Authority Envelope. The envelope defines the effects, resources, people, systems, duration, limits, signatories, rollback requirements, and requalification triggers within which the action may execute.
+
+Lean verifies that a proposed plan satisfies the machine-checkable envelope constraints. POO Flow compiles the required authority gates, and Marlin enforces them during execution. The Evidence-Action Graph propagates expiry, revocation, evidence change, and authority change to dependent actions.
+
+Proof can establish validity. It cannot manufacture authority or legitimacy.
+
+* Qualification and authorization are separate
+
+| Judgment | Question | Primary owner |
+|-
+| Computation | What did the model compute, with which assumptions and uncertainty? | Julia |
+| Qualification | Does the action satisfy declared contracts, policy, capability, and invariants? | Lean |
+| Authorization | Who permits which real effects within which scope? | Human or organizational authority and policy |
+| Verification | Did the observed action satisfy scientific, contractual, and formal claims? | Julia, Lean, and human review |
+
+An action can be Qualified but not Authorized. An Authorized action can later be Revoked. A completed action can remain Contested or fail Verification.
+
+* Authority Envelope fields
+
+The envelope records:
+
+- permitted and explicitly prohibited actions and effects;
+- affected resources, people, systems, and jurisdictions;
+- time window and expiry conditions;
+- cost, resource, and risk limits;
+- required signatories and retained responsibility;
+- required observations, receipt emission, and runtime enforcement identity;
+- rollback, compensation, suspension, and emergency-stop requirements;
+- evidence, model, policy, and ontology changes that trigger requalification; and
+- which stages require renewed human judgment.
+
+Tool access, credentials, or technical capability do not constitute an Authority Envelope.
+
+* Action Case states
+
+The primary lifecycle is:
+
+1. Draft;
+2. Modelled;
+3. Qualified;
+4. Authorized;
+5. Executing;
+6. Observed;
+7. Verified; and
+8. Incorporated.
+
+Exception states include Rejected, Invalidated, Revoked, Suspended, and Contested.
+
+=Qualified= means formal conditions passed. =Authorized= means a valid authority granted a specific effect scope. =Observed= means execution produced receipts. =Verified= means declared postconditions passed. =Incorporated= means the result was accepted into durable knowledge or system evolution.
+
+The Admission Result records the qualification boundary leading to Qualified, Rejected, or Invalidated. It preserves unresolved obligations, scope, expiry, and the evidence snapshot used for the decision. It never substitutes for the Authority Envelope required to enter Authorized.
+
+* Multidimensional risk
+
+Risk is a vector and must not be reduced to one compensating score. The Action Case evaluates:
+
+- consequence severity;
+- reversibility;
+- affected rights and interests;
+- blast radius;
+- model uncertainty and data drift;
+- novelty and precedent;
+- time available for human intervention; and
+- compensation and recovery capability.
+
+A reversible action that violates rights is not low-risk merely because it can be rolled back. A high-confidence model does not cancel an unacceptable consequence.
+
+* Authority ladder
+
+| Class | Boundary |
+|-
+| Observe | Retrieve, inspect, explain, and analyze without external effects |
+| Propose | Generate plans, simulations, evidence requirements, and proof obligations |
+| Reversible Act | Execute inside a narrow, pre-authorized scope with effective rollback |
+| Consequential Act | Change real state with a named responsible authority and complete verification plan |
+| High-Risk Act | Affect safety, rights, livelihood, or critical infrastructure with mandatory explicit human authorization |
+
+Automation can advance only within a previously granted envelope. High-risk authority cannot be delegated to an opaque model decision.
+
+* Runtime enforcement
+
+POO Flow declares Authority Envelope checkpoints at each material effect boundary. Marlin checks those gates at runtime, not only at Agent start. Long-running work requalifies at declared checkpoints when evidence, models, policies, semantic definitions, risk, or authority change.
+
+Execution outside the envelope is denied and recorded. Suspension and revocation are first-class transitions, not exceptional log messages.
+
+* Human agency
+
+People are not generic approval buttons. The envelope identifies whose interests are affected, who has standing to decide, what responsibility remains human, and where disagreement must remain visible.
+
+tao3k automates work. It does not automate away authority, judgment, or responsibility.
+
+* Consequences
+
+- Qualification and authorization become separate inspectable artifacts.
+- Formal proof cannot silently grant operational power.
+- Risk retains non-compensating dimensions.
+- POO Flow enforces authority continuously rather than once.
+- Revocation and semantic change propagate through the graph.
+- High-risk human authority is explicit, scoped, and auditable.
+
+* Related records
+
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../principles/30.01_human_agency_charter.org][Human Agency Charter]]

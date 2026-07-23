@@ -1,0 +1,462 @@
+.tao3k-principles-flow {
+  --flow-ink: #e7f3ec;
+  --flow-muted: #89a69d;
+  --flow-line: rgb(102 231 207 / 28%);
+  --flow-cyan: #60e6d0;
+  --flow-violet: #b99aff;
+  --flow-amber: #efc47c;
+  position: relative;
+  border-top: 1px solid rgb(96 230 208 / 16%);
+  border-bottom: 1px solid rgb(96 230 208 / 16%);
+  background:
+    linear-gradient(180deg, rgb(5 26 23 / 96%), rgb(4 17 16 / 99%)),
+    radial-gradient(circle at 18% 20%, rgb(96 230 208 / 12%), transparent 35%);
+  color: var(--flow-ink);
+}
+
+.tao3k-principles-flow__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 0.85fr);
+  gap: clamp(2rem, 8vw, 10rem);
+  align-items: end;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 6rem) clamp(2rem, 4vw, 4rem);
+}
+
+.tao3k-principles-flow__header h2 {
+  max-width: 12ch;
+  margin: 0.35rem 0 0;
+  font-family: var(--tao-display, system-ui), sans-serif;
+  font-size: clamp(3.2rem, 7vw, 7.5rem);
+  font-weight: 520;
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+}
+
+.tao3k-principles-flow__header > p {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--flow-muted);
+  font-size: clamp(1rem, 1.25vw, 1.28rem);
+  line-height: 1.72;
+}
+
+.tao3k-principles-flow__surface {
+  height: clamp(44rem, 76vh, 58rem);
+  min-height: 0;
+  border-top: 1px solid rgb(96 230 208 / 14%);
+  background:
+    linear-gradient(90deg, transparent 49.94%, rgb(96 230 208 / 5%) 50%, transparent 50.06%),
+    linear-gradient(rgb(96 230 208 / 3%) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 96px;
+}
+
+.tao3k-principles-flow__surface .react-flow__pane {
+  cursor: grab;
+}
+
+.tao3k-principles-flow__surface .react-flow__pane:active {
+  cursor: grabbing;
+}
+
+.tao3k-principles-flow__surface .react-flow__background-pattern circle {
+  fill: rgb(128 197 181 / 34%);
+}
+
+.tao3k-principles-flow__surface .react-flow__edge-path {
+  stroke: rgb(104 153 145 / 50%);
+  stroke-width: 1.4;
+  transition:
+    stroke 220ms ease,
+    stroke-width 220ms ease,
+    opacity 220ms ease;
+}
+
+.tao3k-principles-flow__surface .react-flow__edge.is-waiting .react-flow__edge-path {
+  opacity: 0.42;
+}
+
+.tao3k-principles-flow__surface .react-flow__edge.is-active .react-flow__edge-path {
+  stroke: var(--flow-cyan);
+  stroke-width: 2.5;
+  stroke-dasharray: 3 10 16 8;
+  filter: drop-shadow(0 0 7px rgb(96 230 208 / 65%));
+  animation: tao3k-flow-current 1.45s linear infinite;
+}
+
+.tao3k-principles-flow__surface .react-flow__edge.is-complete .react-flow__edge-path {
+  stroke: rgb(96 230 208 / 78%);
+  stroke-width: 1.8;
+}
+
+@keyframes tao3k-flow-current {
+  to {
+    stroke-dashoffset: -37;
+  }
+}
+
+.tao3k-principles-node {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 1.15rem 1.25rem 1rem;
+  border: 1px solid rgb(126 181 169 / 30%);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(145deg, rgb(18 51 47 / 96%), rgb(8 28 27 / 97%)),
+    radial-gradient(circle at 10% 0%, rgb(96 230 208 / 18%), transparent 45%);
+  box-shadow:
+    inset 0 1px 0 rgb(235 255 248 / 8%),
+    inset 0 -1px 0 rgb(0 0 0 / 40%),
+    0 1.1rem 2.7rem rgb(0 7 6 / 30%);
+  color: var(--flow-ink);
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease;
+}
+
+.tao3k-principles-node::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 15%, rgb(255 255 255 / 4%), transparent 62%);
+  content: "";
+}
+
+.tao3k-principles-node[data-kind="composition"] {
+  border-radius: 2.4rem 1.1rem 2.4rem 1.1rem;
+  border-color: rgb(185 154 255 / 48%);
+  background: linear-gradient(145deg, rgb(41 33 62 / 98%), rgb(14 25 31 / 98%));
+}
+
+.tao3k-principles-node[data-kind="case"] {
+  border-left: 3px solid var(--flow-violet);
+  background: linear-gradient(145deg, rgb(37 31 55 / 96%), rgb(11 33 32 / 97%));
+}
+
+.tao3k-principles-node[data-status="waiting"] {
+  filter: saturate(0.55) brightness(0.82);
+}
+
+.tao3k-principles-node[data-status="active"] {
+  border-color: var(--flow-cyan);
+  box-shadow:
+    inset 0 1px 0 rgb(235 255 248 / 12%),
+    0 0 0 1px rgb(96 230 208 / 20%),
+    0 0 2.2rem rgb(96 230 208 / 18%),
+    0 1.2rem 3rem rgb(0 7 6 / 42%);
+}
+
+.tao3k-principles-node[data-status="complete"] {
+  border-color: rgb(96 230 208 / 58%);
+}
+
+.tao3k-principles-node[data-selected="true"] {
+  box-shadow:
+    inset 0 1px 0 rgb(235 255 248 / 15%),
+    0 0 0 2px rgb(239 196 124 / 82%),
+    0 0 2.8rem rgb(239 196 124 / 15%),
+    0 1.2rem 3rem rgb(0 7 6 / 42%);
+}
+
+.tao3k-principles-node header {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.tao3k-principles-node__mark {
+  color: var(--flow-cyan);
+  font-family: ui-monospace, monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow:
+    0 1px 0 rgb(255 255 255 / 28%),
+    0 -1px 0 rgb(0 0 0 / 90%),
+    0 0 0.8rem rgb(96 230 208 / 35%);
+}
+
+.tao3k-principles-node header strong,
+.tao3k-principles-node header small,
+.tao3k-principles-node footer {
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tao3k-principles-node header strong {
+  color: #acd4c8;
+  font-size: 0.68rem;
+}
+
+.tao3k-principles-node header small {
+  color: #718b85;
+  font-size: 0.65rem;
+}
+
+.tao3k-principles-node h3 {
+  margin: 0.75rem 0 0.32rem;
+  font-size: 1.05rem;
+  line-height: 1.08;
+}
+
+.tao3k-principles-node p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #91aba4;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tao3k-principles-node footer {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.8rem;
+  left: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  color: #6f8d85;
+  font-size: 0.58rem;
+}
+
+.tao3k-principles-node footer b {
+  color: var(--flow-cyan);
+  font-weight: 650;
+}
+
+.tao3k-principles-node__handle {
+  width: 0.52rem;
+  height: 0.52rem;
+  border: 1px solid rgb(231 243 236 / 68%);
+  background: #0c2825;
+  opacity: 0.75;
+}
+
+.tao3k-principles-inspector {
+  width: min(25rem, 31vw);
+  margin: 1.15rem;
+  padding: 1.15rem 1.25rem 1.25rem;
+  border: 1px solid rgb(239 196 124 / 32%);
+  border-radius: 1.35rem;
+  background: rgb(7 22 21 / 88%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 6%),
+    0 1.5rem 4rem rgb(0 0 0 / 38%);
+  backdrop-filter: blur(18px) saturate(1.25);
+  color: var(--flow-ink);
+}
+
+.tao3k-principles-inspector header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--flow-amber);
+  font-family: ui-monospace, monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.tao3k-principles-inspector h3 {
+  margin: 0.9rem 0 0.4rem;
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  letter-spacing: -0.035em;
+}
+
+.tao3k-principles-inspector > p,
+.tao3k-principles-inspector dd {
+  color: #9ab3ac;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.tao3k-principles-inspector dl {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+
+.tao3k-principles-inspector dl div {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.8rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgb(126 181 169 / 14%);
+}
+
+.tao3k-principles-inspector dt {
+  color: var(--flow-cyan);
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.tao3k-principles-inspector dd {
+  margin: 0;
+}
+
+.tao3k-principles-inspector footer {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgb(239 196 124 / 24%);
+  color: #dce9e2;
+  font-weight: 650;
+}
+
+.tao3k-principles-runtime {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  margin: 0 0 1.1rem;
+  padding: 0.6rem;
+  border: 1px solid rgb(126 181 169 / 32%);
+  border-radius: 1.35rem;
+  background: rgb(7 22 21 / 90%);
+  box-shadow: 0 1.1rem 3rem rgb(0 0 0 / 42%);
+  backdrop-filter: blur(18px);
+}
+
+.tao3k-principles-runtime > div {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 8.5rem;
+  padding: 0 0.8rem;
+  font-family: ui-monospace, monospace;
+}
+
+.tao3k-principles-runtime span {
+  color: #718b85;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+}
+
+.tao3k-principles-runtime strong {
+  color: var(--flow-cyan);
+  font-size: 0.86rem;
+}
+
+.tao3k-principles-runtime button {
+  min-width: 5.5rem;
+  min-height: 2.8rem;
+  border: 1px solid rgb(126 181 169 / 25%);
+  border-radius: 0.95rem;
+  background: rgb(21 48 45 / 88%);
+  color: #cbe1d9;
+  font:
+    650 0.78rem/1 ui-monospace,
+    monospace;
+  cursor: pointer;
+}
+
+.tao3k-principles-runtime button:first-of-type {
+  border-color: rgb(96 230 208 / 56%);
+  background: linear-gradient(135deg, rgb(31 103 90 / 90%), rgb(35 64 73 / 92%));
+  color: #f0fff9;
+}
+
+.tao3k-principles-runtime button:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.tao3k-principles-flow__loading,
+.tao3k-principles-flow__error {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  height: 100%;
+  color: var(--flow-muted);
+  font-family: ui-monospace, monospace;
+}
+
+.tao3k-principles-flow__loading span {
+  width: 8rem;
+  height: 2px;
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent, var(--flow-cyan), transparent);
+  animation: tao3k-flow-load 1.15s ease-in-out infinite alternate;
+}
+
+.tao3k-principles-flow__error strong {
+  color: #ff9d88;
+}
+
+@keyframes tao3k-flow-load {
+  from {
+    opacity: 0.28;
+    transform: scaleX(0.25);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .tao3k-principles-flow__header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tao3k-principles-flow__surface {
+    height: 48rem;
+  }
+
+  .tao3k-principles-inspector {
+    width: min(22rem, calc(100vw - 2rem));
+    max-height: 17rem;
+    overflow: auto;
+  }
+
+  .tao3k-principles-runtime {
+    width: calc(100vw - 2rem);
+    justify-content: center;
+  }
+
+  .tao3k-principles-runtime > div {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .tao3k-principles-flow__header h2 {
+    font-size: clamp(3rem, 17vw, 5rem);
+  }
+
+  .tao3k-principles-inspector {
+    display: none;
+  }
+
+  .tao3k-principles-runtime {
+    gap: 0.35rem;
+  }
+
+  .tao3k-principles-runtime > div {
+    display: none;
+  }
+
+  .tao3k-principles-runtime button {
+    min-width: 4.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tao3k-principles-flow__surface .react-flow__edge.is-active .react-flow__edge-path,
+  .tao3k-principles-flow__loading span {
+    animation: none;
+  }
+
+  .tao3k-principles-node,
+  .tao3k-principles-flow__surface .react-flow__edge-path {
+    transition: none;
+  }
+}

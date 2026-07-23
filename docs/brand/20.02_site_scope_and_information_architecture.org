@@ -1,0 +1,158 @@
+#+TITLE: tao3k.site Scope and Information Architecture
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:brand:site:information-architecture:navigation:
+#+STATUS: Accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: Brand, product, design, content, and site engineering teams
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+This record defines the maintenance boundary and information architecture of tao3k.site, the umbrella website for the complete tao3k ecosystem.
+
+The site communicates the tao3k vision, long-term direction, values, ecosystem structure, and open-source entry points. It is not a replacement documentation portal for every project.
+
+* Main-site ownership
+
+tao3k.site owns:
+
+- the tao3k brand doctrine, vision, and mission;
+- the company and ecosystem overview, commercialization boundary, and long-term stewardship;
+- the Evidence-to-Action lifecycle narrative;
+- the ecosystem and product-role map;
+- the main-site Roadmap;
+- Human Agency, Technical Equity, and other shared principles;
+- Open Source First, community value, customer rights, portability, and the public-to-commercial value loop;
+- Research-to-Operations positioning;
+- the Comparison narrative and editorial policy;
+- the open-source Products directory and external links;
+- clear exits from macro site claims to the responsible project GitHub repositories and Docs;
+- the independent tao3k.site theme, content, accessibility, Mobile behavior, performance, deployment, and site contracts; and
+- the information architecture and content contracts required to maintain the site.
+
+* Out of scope
+
+tao3k.site does not own:
+
+- detailed APIs, implementation status, tests, benchmarks, or support matrices for another project;
+- another project's internal architecture, release notes, issue plan, or engineering Roadmap;
+- duplicated project documentation that can become stale independently;
+- capability claims that are not supported by the responsible project's documentation; or
+- a central implementation truth matrix for the entire ecosystem.
+
+The main site may describe a project's role in the tao3k ecosystem. The responsible project remains authoritative for implementation facts.
+
+* Documentation authority
+
+Every Products entry links to the responsible GitHub repository and project documentation. If the main site summarizes current capability or maturity, that statement must be sourced from the project-owned documentation rather than maintained as an independent fact.
+
+Platform and architecture records in tao3k.site define brand-level roles, relationships, future direction, and site narrative. They do not supersede project-owned technical documentation.
+
+* Primary navigation
+
+The primary Navigator is:
+
+| Item | Destination | Responsibility |
+|-
+| Logo | =/= | Return to the tao3k home page |
+| Vision | =/vision= | Why tao3k exists and what future it seeks |
+| Platform | =/platform= | The Evidence-to-Action lifecycle and ecosystem foundations |
+| Products | =/products= | Open-source directory with GitHub and Documentation links |
+| Roadmap | =/roadmap= | The long-term tao3k ecosystem direction |
+| Principles | =/principles= | Values, Human Agency, Technical Equity, and responsibility |
+| Compare | =/compare= | Category boundaries and evidence-backed comparison |
+
+GitHub and Documentation may appear as distinct utility actions on the right side of the desktop Navigator and inside the Mobile menu.
+
+* Audience proof lenses
+
+The main site presents one ecosystem and one body of truth. Enterprises, research institutions, communities, and long-term partners enter through different proof obligations, but the site must not create four incompatible product stories or audience-specific capability claims.
+
+- Enterprise lens :: accountable operation, qualification, authority, recovery, integration, and exit;
+- Research lens :: reproducibility, assumption and limit preservation, field evidence, and revision;
+- Community lens :: inspectability, learning, self-hosting, extension, contestability, attribution, and meaningful exit;
+- Long-term partner lens :: durable value through evidence, operational responsibility, standards, expertise, and non-extractive ecosystem growth.
+
+Audience lenses change which proof question is foregrounded, not which underlying facts, maturity labels, or project boundaries apply.
+
+* Canonical navigation architecture
+
+The primary navigation answers stable public questions rather than mirroring repositories, internal teams, or audience segments.
+
+- Home =/= :: Why does tao3k need to exist? The eight-section homepage narrative remains owned by [[file:20.03_homepage_content_contract.org][Homepage Content Contract]].
+- Ecosystem =/ecosystem= :: How does the Evidence--Action Ecosystem work? This is the public label for the lifecycle, four layers, and shared contracts; /Platform/ is not the primary navigation label.
+- Research to Operations =/research-to-operations= :: How does research become governed operation and return as evidence?
+- Open Source =/open-source= :: What can a visitor inspect, use, and contribute to today? This is the public navigation label for the role-grouped project directory; /Products/ remains an internal information-architecture term where needed.
+- Comparison =/comparison= :: How is tao3k different from systems people already know? Framework, maintained products, and Evidence Watch remain distinct evidence surfaces.
+- Roadmap =/roadmap= :: What is available, under construction, under research, and a long-term horizon?
+- Company =/company= :: What kind of institution is tao3k trying to become, how is commercial value sustained, and what responsibilities remain public?
+
+Utility actions are =/docs=, the tao3k GitHub organization, and =/work-with-us=. They must not replace the public position or fragment the main narrative.
+
+=/docs= is a directory of responsible Project Docs, not a public rendering of internal brand and company specifications. =/work-with-us= first distinguishes enterprise integration, research partnership, open-source collaboration, institutional or standards partnership, and long-term strategic or investment relationships before collecting relationship-specific information.
+
+Desktop and mobile presentation may group or collapse these entries, but the labels, route responsibilities, and single-truth boundary remain stable. No audience receives a separate capability truth.
+
+* Route responsibilities
+
+** Home
+
+The home page presents the complete brand narrative: doctrine, problem, lifecycle, ecosystem, Research-to-Operations mission, Roadmap preview, values, and open-development entry points.
+
+** Vision
+
+Vision owns the future world tao3k seeks, the long-term mission, the relationship between intelligence and legitimate action, and the commitment to human value.
+
+** Platform
+
+Platform explains the shared lifecycle and how knowledge, records, graph intelligence, scientific computation, qualification, Agent systems, verification, and evolution connect. It does not reproduce each project's technical manual.
+
+** Products
+
+Products is an external open-source directory. It explains each project's ecosystem role and provides GitHub and Documentation destinations.
+
+** Roadmap
+
+Roadmap describes long-term tao3k development directions, current construction fronts, and research horizons. It does not aggregate repository issues.
+
+** Principles
+
+Principles expresses the non-negotiable values that shape product and technical decisions.
+
+** Compare
+
+Compare explains why tao3k differs from Agent platforms, workflow engines, knowledge graphs, retrieval systems, tracing tools, and conventional Agent cores. Named product comparisons require current evidence.
+
+* Research to Operations
+
+Research-to-Operations is a core mission presented prominently on Home, Vision, and Platform. It may have a dedicated route, but it does not need another permanent top-level Navigator item if that would reduce clarity on smaller screens.
+
+* Products Navigator behavior
+
+Products opens a desktop menu containing a limited, scannable list of open-source projects, their short roles, and direct GitHub and Documentation actions. A =View all products= action enters =/products=.
+
+The menu does not contain detailed feature matrices or long descriptions. Those belong to the project documentation.
+
+* Mobile and accessibility
+
+- The Navigator must not require hover.
+- Products must open by explicit button activation and expose its expanded state.
+- All menu items must be keyboard reachable and screen-reader labelled.
+- Escape closes the current menu before leaving the page context.
+- Focus returns to the control that opened the menu.
+- External GitHub and Documentation links disclose that they leave tao3k.site.
+- The Mobile menu presents the same information architecture without hiding Vision, Roadmap, or Principles behind product content.
+
+* Editorial rule
+
+The main site may state vision and future direction clearly, provided the language distinguishes aspiration from current implementation. Project facts remain linked, scoped, and project-owned.
+
+* Related records
+
+- [[file:20.01_tao3k_brand_foundation.org][tao3k Brand Foundation]]
+- [[file:20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../principles/30.03_tao3k_values.org][tao3k Values and Principles]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]
+- [[file:../compare/50.01_comparison_framework.org][Comparison Framework]]

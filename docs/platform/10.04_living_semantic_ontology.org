@@ -1,0 +1,98 @@
+#+TITLE: Living Semantic Ontology
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:ontology:semantics:graph:
+#+STATUS: Active
+#+OWNER: tao3k Platform
+#+AUDIENCE: Domain experts, ontology, graph, proof, and platform teams
+#+CLAIM_MATURITY: vision
+
+* Purpose
+
+This record defines ontology as a living semantic graph. It establishes how meaning, mappings, and semantic change participate in Action Cases without requiring global ontology versions.
+
+Ontology defines what graph elements mean. Graph algorithms compute what follows from those meanings.
+
+* No global ontology versions
+
+The ontology is not released as a sequence of global =v2= or =v3= packages. A global number would imply that every concept changes together and that users must migrate an entire semantic world when only one definition or mapping changed.
+
+Instead, semantic history is preserved at the exact point where meaning changes. A new definition, relation, or mapping records what it supersedes, why it changed, who accepted it, where it applies, and when it becomes effective.
+
+Unchanged concepts are not copied or migrated. The graph computes only the Claims, proofs, contracts, admission results, and Action Cases that actually depend on the changed semantic record.
+
+* Semantic layers
+
+The living ontology uses four composable layers:
+
+| Layer | Responsibility |
+|-
+| Kernel Ontology | Stable primitives such as Claim, Evidence, Action, Effect, Model, Contract, Authority, Receipt, and Proof |
+| Domain Ontology | Scientific, engineering, agricultural, manufacturing, software, and other domain meanings |
+| Institutional Ontology | Organization-specific roles, assets, policies, responsibilities, and operational meanings |
+| Action Case Vocabulary | Local concepts and mappings required by a bounded Action Case |
+
+These are semantic scopes, not release trains. Each definition carries its own owner, provenance, applicability, and history.
+
+* Relations have executable meaning
+
+Relations are not arbitrary string labels.
+
+- =supports= is not transitive by default.
+- =depends-on= declares the dependency kind used by impact propagation.
+- =authorized-by= does not transitively grant authority without a delegation contract.
+- =derived-from= retains its source and transformation method.
+- =supersedes= preserves the earlier semantic record.
+- =contradicts= records a conflict but does not declare which Claim is false.
+
+Every relation can declare domain and range, cardinality, time semantics, units, symmetry or transitivity, provenance requirements, invalidation behavior, and permitted graph algorithms.
+
+* Exact semantic dependency
+
+An Action Case does not bind a global ontology version. It preserves the exact semantic definitions and mappings on which its qualification depended.
+
+If the meaning of =verified supplier= changes, the new definition becomes effective for its declared scope. The graph finds Action Cases and certificates that depended on the earlier definition. Pending actions requalify; historical actions retain the exact meaning under which they were originally authorized.
+
+No past evidence is silently reinterpreted, and no unaffected concept is migrated.
+
+* Ontology mappings
+
+A mapping between research and operational concepts is a first-class semantic and evidence object. Similar names do not establish equivalence.
+
+For example, mapping an experimental =yield= to an industrial =production throughput= must declare measurement conditions, units, statistical scope, permitted error, transformation method, approving authority, Julia computation, and Lean obligations.
+
+Mappings can express equivalence, refinement, transformation, unit conversion, approximation, incompatibility, or deprecation. Each mapping remains contestable and revocable.
+
+* Component boundaries
+
+- Org and Orgize provide a human-readable surface for definitions, assumptions, mappings, and change reasons.
+- ASP projects code symbols, dependencies, types, and implementation evidence into the semantic graph.
+- Julia compiles semantic projections into graph structures, sparse matrices, optimization problems, and scientific models.
+- Lean checks ontology constraints, mapping properties, graph-rewrite invariants, and proof obligations.
+- The Evidence-Action Graph Engine selects algorithms that are valid for the declared relation semantics.
+- POO Flow compiles admitted graph transformations into an executable Agent graph; Marlin applies them and records their effects at runtime.
+- LLMs and agents may propose definitions or mappings but cannot silently assert them as accepted meaning.
+
+* Human contestability
+
+Ontology is not hidden inside embeddings or proprietary model behavior. Domain experts and affected people must be able to inspect, challenge, refine, and explain the definitions that shape an action.
+
+Semantic authority is scoped. A technical implementation owner cannot silently redefine a social, scientific, legal, or institutional concept outside the authority granted to that owner.
+
+* Platform statement
+
+#+begin_quote
+We do not version the whole ontology. We preserve semantic history at the exact point where meaning changes.
+#+end_quote
+
+Ontology defines meaning. Julia computes over it. Lean protects its invariants. POO Flow compiles admitted graph transformations. Marlin runs them.
+
+* Related records
+
+- [[file:10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../architecture/ADR-001-evidence-native-ai-lifecycle.org][ADR-001: Evidence-native AI lifecycle]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:../solutions/40.01_research_operations_continuum.org][Research-to-operations continuum]]

@@ -1,0 +1,190 @@
+#+TITLE: tao3k Brand Foundation
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:brand:positioning:evidence:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, research, partners
+#+CLAIM_MATURITY: policy
+
+* Brand doctrine
+
+#+begin_quote
+Intelligence must earn the right to act.
+#+end_quote
+
+Models can generate an answer, strategy, workflow, or tool call. Generation
+does not grant execution authority. Meaning, policy, scope, capability, risk,
+and evidence must determine whether an action is admissible.
+
+* Product category
+
+#+begin_quote
+Evidence-native AI lifecycle infrastructure for science and industry.
+#+end_quote
+
+The primary product audience is enterprises, laboratories, research
+institutions, and complex engineering organizations. Students, farmers,
+independent practitioners, and technical workers belong to the company's human
+and social commitments; they must not be used to shrink the commercial category
+into a small-team utility.
+
+* Stable company description
+
+#+begin_quote
+tao3k turns knowledge, code, scientific models and human records into
+admissible action—and turns every action back into searchable, verifiable and
+evolvable evidence.
+#+end_quote
+
+This is the preferred long-form description for the home page, company profile,
+partner material, and architecture introduction.
+
+* Commercial mission
+
+#+begin_quote
+Close the trust, reproducibility, and operational gap between research and
+industry.
+#+end_quote
+
+tao3k reduces the cost of research handoffs, repeated validation, engineering
+integration, administrative coordination, and non-reproducible rework while
+improving traceability, operational quality, and decision confidence.
+
+Reducing friction is not the same as treating headcount reduction as the only
+measure of success.
+
+* Human covenant
+
+#+begin_quote
+Every action should expand human agency.
+#+end_quote
+
+AI may be autonomous in execution without becoming sovereign in purpose.
+People retain the right to define goals, understand consequential actions,
+contest outcomes, revoke authority, and remain accountable for high-impact
+decisions.
+
+* Brand hierarchy
+
+| Layer | Statement |
+|-------+-----------|
+| Doctrine | Intelligence must earn the right to act. |
+| Category | Evidence-native AI lifecycle infrastructure for science and industry. |
+| Description | Turn knowledge, code, scientific models, and human records into admissible action and evidence. |
+| Mission | Close the trust and reproducibility gap between research and operations. |
+| Human covenant | Every action should expand human agency. |
+| Social commitment | Broaden participation without making human removal the measure of progress. |
+
+* Three keys
+
+The three keys are system disciplines rather than product packages.
+
+** Contract
+
+Makes meaning, intent, assumptions, inputs, and boundaries explicit.
+
+** Authority
+
+Determines who may act, under which policy, inside which execution boundary.
+
+** Evidence
+
+Preserves provenance, decisions, execution receipts, outcomes, and promotion
+grounds.
+
+The discipline can be summarized as:
+
+#+begin_quote
+No execution without contract. No authority without policy. No evolution
+without evidence.
+#+end_quote
+
+* Product architecture claim
+
+Most AI systems manage prompts, tasks, workflows, or agent runs. tao3k manages the complete evidence case for an action.
+
+The Action Case is a versioned, bounded subgraph containing what the action depends on, why it may proceed, who has authority, what was executed, and whether the result was verified. The Evidence-Action Graph Engine constructs that case; Julia computes it; Lean qualifies it; POO Flow compiles the Agent flow; Marlin runs it; and the resulting evidence changes the graph.
+
+This claim must not be reduced to =knowledge graph plus workflow=. The differentiator is a continuous, inspectable handoff from evidence to admissible action and back to evidence.
+
+* Evidence and authority doctrine
+
+tao3k automates work. It does not automate away authority, judgment, or responsibility.
+
+Evidence is not a universal confidence score. The platform preserves what is claimed, under which assumptions, supported by which typed evidence, and sufficient for which action.
+
+Meaning is not managed through global ontology release numbers. The system preserves semantic history at the exact definition or mapping that changed and computes only the affected consequences.
+
+These statements express one coherent position: intelligence earns the right to act through evidence, qualification, legitimate authority, bounded execution, and verification.
+
+* Agent Core hierarchy
+
+Marlin is the Agent Runtime. POO Flow is the composition language and compiler. Together they form the tao3k next-generation Agent Core.
+
+This Agent Core is a product layer inside the broader tao3k AI lifecycle. It must not replace the platform narrative with an Agent-only identity because knowledge, evidence, scientific models, ontology, human records, authority, and verification remain independent foundations.
+
+Git, Pull Requests, browsers, deployment systems, and scientific tools are Runtime capabilities. PR agents, coding agents, research agents, and other domain agents are products built from the core rather than definitions of Marlin itself.
+
+* Canonical category and public position
+
+The stable public category is /Evidence--Action Ecosystem/. The stable position is /Intelligence must earn the right to act/. The canonical promise connects knowledge, code, scientific models, and human records to admissible action, then returns every action as searchable, verifiable, and evolvable evidence.
+
+This language differentiates tao3k from generic workflow, knowledge-engine, agent-infrastructure, and AI-operating-system categories. Campaign copy may adapt emphasis, but it must preserve the category, qualification-before-action doctrine, evidence-return commitment, Human Agency, and Open Source First boundary defined by [[file:../company/80.01_company_ecosystem_overview.org][Company and Ecosystem Overview]].
+
+* Main-site maintenance boundary
+
+tao3k.site is the umbrella brand and ecosystem website. It owns the Vision, Platform narrative, Products directory, Roadmap, Principles, Comparison, Research-to-Operations mission, and the site's own design and engineering contracts.
+
+The site does not replace project documentation. It describes the role of each open-source project and links to the project's canonical GitHub and Documentation destinations. APIs, implementation status, benchmarks, and project-specific Roadmaps remain owned by the responsible project.
+
+This boundary allows the main site to express long-term vision honestly without maintaining duplicated technical facts.
+
+* Voice
+
+The tao3k voice is precise, calm, durable, and willing to take a position.
+
+- Lead with the problem and the system boundary, not a technology logo wall.
+- Prefer evidence and explicit maturity over superlatives.
+- Do not describe every capability as autonomous or intelligent.
+- Do not use fear of job loss as a sales mechanism.
+- Do not imply that scientific or human authority is replaced by an opaque
+  model.
+- Do not describe a research direction as a shipped capability.
+- Do not position long-lived infrastructure as a transient AI spectacle.
+
+* Home-page foundation
+
+#+begin_example
+EVIDENCE-NATIVE AI LIFECYCLE
+
+Intelligence must earn
+the right to act.
+
+tao3k turns knowledge, code, scientific models and human records
+into admissible action—and turns every action back into searchable,
+verifiable and evolvable evidence.
+#+end_example
+
+The home page must also expose the lifecycle, the Research--Operations
+continuum, the comparison framework, and a visible Human Agency statement.
+
+* Related records
+
+- [[file:20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../principles/30.03_tao3k_values.org][tao3k Values and Principles]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][10.01 Evidence-native AI Lifecycle]]
+- [[file:../principles/30.01_human_agency_charter.org][30.01 Human Agency Charter]]
+- [[file:../principles/30.02_technical_equity.org][30.02 Technical Equity]]
+- [[file:../compare/50.01_comparison_framework.org][50.01 Comparison Framework]]

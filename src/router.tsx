@@ -4,6 +4,7 @@ import { routeTree } from "./routeTree.gen";
 
 export function getRouter() {
   return createRouter({
+    basepath: __TAO3K_BASE_PATH__,
     routeTree,
     scrollRestoration: true,
   });

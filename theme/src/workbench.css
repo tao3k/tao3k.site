@@ -1,0 +1,138 @@
+.tao3k-zhixing-hero-summary {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  width: min(100%, 72rem);
+}
+
+.tao3k-zhixing-hero-summary > span {
+  max-width: 62ch;
+}
+
+.tao3k-zhixing-hero-summary ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tao3k-zhixing-hero-summary li {
+  display: grid;
+  min-height: 6rem;
+  align-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  border-radius: 1rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, currentColor 8%, transparent), transparent 62%),
+    color-mix(in srgb, Canvas 94%, currentColor 6%);
+  box-shadow: 0 1.25rem 3rem color-mix(in srgb, CanvasText 8%, transparent);
+}
+
+.tao3k-zhixing-hero-summary strong,
+.tao3k-zhixing-hero-summary small {
+  display: block;
+}
+
+.tao3k-zhixing-hero-summary strong {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  letter-spacing: -0.02em;
+}
+
+.tao3k-zhixing-hero-summary small {
+  opacity: 0.64;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tao3k-zhixing-content :is(h2, h3) {
+  text-wrap: balance;
+}
+
+.tao3k-zhixing-content blockquote {
+  margin-inline: 0;
+  padding: 1rem 1.25rem;
+  border-inline-start: 0.25rem solid currentColor;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.tao3k-zhixing-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tao3k-zhixing-content :is(th, td) {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  text-align: start;
+}
+
+.tao3k-zhixing-content th {
+  opacity: 0.66;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tao3k-zhixing-field-note {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.7fr) minmax(18rem, 1.3fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin-top: clamp(3rem, 8vw, 7rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-block: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+}
+
+.tao3k-zhixing-field-note h3,
+.tao3k-zhixing-field-note p {
+  margin: 0;
+}
+
+.tao3k-zhixing-field-note h3 {
+  max-width: 18ch;
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.tao3k-zhixing-field-note > p {
+  max-width: 56ch;
+  align-self: end;
+  opacity: 0.72;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .tao3k-zhixing-hero-summary ul {
+    grid-template-columns: 1fr;
+  }
+
+  .tao3k-zhixing-hero-summary li {
+    min-height: auto;
+  }
+
+  .tao3k-zhixing-field-note {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tao3k-zhixing-hero-summary li {
+    transition:
+      translate 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .tao3k-zhixing-hero-summary li:hover {
+    translate: 0 -0.2rem;
+    border-color: color-mix(in srgb, currentColor 38%, transparent);
+  }
+}

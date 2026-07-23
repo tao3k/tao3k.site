@@ -1,0 +1,152 @@
+#+TITLE: Action Case and Evidence-Action Graph Engine
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:graph:action-case:evidence:
+#+STATUS: Active
+#+OWNER: tao3k Platform
+#+AUDIENCE: Product, architecture, research, and engineering teams
+#+CLAIM_MATURITY: vision
+
+* Purpose
+
+This record defines the Action Case as the primary unit of governed action and the Evidence-Action Graph Engine as the computational kernel that constructs, evaluates, and evolves it.
+
+tao3k does not reduce an action to a prompt, task, workflow instance, or agent transcript. It preserves the complete evidence case that makes the action understandable, admissible, executable, and verifiable.
+
+* Documentation authority
+
+This record defines the Action Case and graph-engine role in the tao3k umbrella narrative and future architecture. The responsible implementation projects remain authoritative for current APIs, supported algorithms, benchmarks, and delivery status.
+
+* Core definition
+
+An Action Case is a versioned, bounded subgraph of the Evidence-Action Graph.
+
+The subgraph captures the smallest sufficient context for a proposed action while retaining provenance, temporal validity, authority, dependencies, proof obligations, execution receipts, and verification results.
+
+An Admission Result is one result inside an Action Case. It records whether declared qualification obligations passed, failed, or remain incomplete; it is not the Action Case itself and does not grant authority. Admission can expire or become invalid when evidence, policy, authority, or model assumptions change.
+
+* Canonical object chain
+The governed-action record follows one explicit boundary sequence:
+1. the Action Case bounds the proposal, evidence, assumptions, affected scope, and obligations;
+2. the Admission Result records purpose-specific qualification;
+3. the Authority Envelope records the real human or organizational grant to produce effects;
+4. Runtime Receipts record what execution actually did;
+5. the Verification Result evaluates declared scientific and formal postconditions; and
+6. an Evidence Passport may qualify resulting or referenced records for later retrieval, evaluation, learning, or correction.
+
+Evidence can support qualification, but it cannot authorize itself. Qualification does not grant authority, authority does not prove correctness, execution success does not imply verification, and verification does not automatically grant reuse or training eligibility.
+
+* Action Case structure
+
+Every Action Case is expected to represent:
+
+1. the action intent and affected scope;
+2. referenced knowledge, code, scientific models, and human records;
+3. model assumptions and uncertainty;
+4. contracts, policies, capabilities, and permissions;
+5. Lean proof obligations and qualification results;
+6. required human authority for consequential decisions;
+7. the POO Flow compiled flow and Marlin runtime plan;
+8. step-level runtime receipts;
+9. Julia and Lean verification results; and
+10. the evidence and system changes produced by the action; and
+11. references to Evidence Passports for reusable inputs or outputs when purpose-specific reuse qualification exists.
+
+* Evidence-Action Graph
+
+The Evidence-Action Graph is a typed, temporal, and provenance-preserving graph. It is broader than a knowledge graph because it represents not only what is known, but also what may act, why it may act, what it affects, what occurred, and whether the result remains valid.
+
+** Vertex kinds
+
+Canonical vertex families include claims, evidence, records, code symbols, scientific models, contracts, policies, people and authorities, Action Cases, workflow steps, runtime receipts, and proofs.
+
+** Edge semantics
+
+Canonical relations include =supports=, =contradicts=, =depends-on=, =derived-from=, =authorized-by=, =constrained-by=, =executes=, =produces=, =verifies=, =invalidates=, =supersedes=, and =affects=.
+
+** Required invariants
+
+- Every material claim and qualification result retains provenance.
+- Temporal validity is explicit; stale evidence cannot silently authorize a new action.
+- Authority is represented as data and cannot be inferred from tool access alone.
+- A consequential state transition requires an applicable admission result.
+- Execution receipts append evidence; they never rewrite the history that authorized the action.
+- Invalidation propagates to dependent claims, proofs, certificates, plans, and actions.
+
+* Graph algorithm families
+
+The engine is expected to support six primary algorithm families:
+
+1. evidence paths and minimal sufficient subgraphs;
+2. dependency closure and impact propagation;
+3. contradiction, invalidation, and evidence withdrawal;
+4. proof-obligation and missing-condition discovery;
+5. workflow DAG analysis, critical paths, scheduling, and resource optimization; and
+6. temporal versions, causal relations, and incremental recomputation.
+
+Graph algorithms must expose why a result was selected. Ranking without provenance, planning without affected-scope analysis, or optimization without declared constraints is not sufficient for an Action Case.
+
+* Computational boundaries
+
+** Evidence-Action Graph Engine
+
+The graph engine owns typed relationships, subgraph construction, dependency and impact analysis, proof-obligation discovery, and the transition between global evidence and a bounded Action Case.
+
+** Julia
+
+Julia executes high-performance graph algorithms, optimization, simulation, scientific computation, numerical validation, and uncertainty-aware model evaluation.
+
+** Lean
+
+Lean qualifies actions by checking contracts, policies, preconditions, permissions, and safety invariants. After execution, Lean verifies formal postconditions and graph-transition invariants.
+
+** POO Flow
+
+POO Flow defines agent composition, flow semantics, dependencies, checkpoints, and the Qualify-Act-Verify requirements. It compiles these declarations into an executable agent graph; it does not provide the live Agent Runtime.
+
+** Marlin
+
+Marlin runs the compiled agent graph. It maintains Agent state, invokes models and capabilities, enforces qualification and Authority Envelope gates, executes effects, reconciles uncertain outcomes, and emits runtime receipts.
+
+* Certificate-producing algorithms
+
+Lean should not be required to repeat every large graph or numerical computation. Julia computes the result and emits a compact witness or verification certificate. Lean checks the certificate, declared constraints, and critical invariants. POO Flow declares the dependency and Marlin accepts the result only after the compiled gate passes.
+
+Examples include a witnessed dependency path, a constraint-satisfying schedule, a bounded numerical result, or an impact set with a checkable derivation.
+
+This boundary combines Julia's computational performance with Lean's formal trust without pretending that numerical uncertainty is identical to logical proof.
+
+* Human authority is part of the graph
+
+People are not fallback mechanisms outside the architecture. The graph represents affected parties, delegated authority, required reviewers, retained responsibility, and explicit human decisions.
+
+For high-risk actions, a valid machine proof cannot substitute for required human authority. Lean can prove that the authority requirement was satisfied; it cannot assume the person's interests, judgment, or responsibility.
+
+* Authority, evidence, and meaning
+
+An Action Case separates qualification from authorization. Lean can establish that declared conditions hold, but the action may execute only inside an explicit Authority Envelope granted by a valid human or organizational authority.
+
+The evidence subgraph is typed. Claims, observations, computations, proofs, attestations, authority grants, receipts, and verification results retain different semantics and cannot be collapsed into one trust score.
+
+The graph is interpreted through a living semantic ontology. An Action Case preserves the exact definitions and mappings on which its qualification depended; it does not bind a global ontology version. Meaning changes append precise semantic history and invalidate only the affected subgraph.
+
+Canonical definitions are maintained in [[file:10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]], [[file:10.04_living_semantic_ontology.org][Living Semantic Ontology]], and [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Authority Envelope]].
+
+* Lifecycle statement
+
+The graph engine determines what an action depends on; Julia computes it, Lean qualifies it, POO Flow compiles the Agent flow, Marlin runs it, and the resulting evidence changes the graph.
+
+* Related records
+
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:10.01_evidence_native_ai_lifecycle.org][Evidence-native AI lifecycle]]
+- [[file:../architecture/ADR-001-evidence-native-ai-lifecycle.org][ADR-001: Evidence-native AI lifecycle]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:../principles/30.01_human_agency_charter.org][Human Agency Charter]]
+- [[file:../compare/50.01_comparison_framework.org][Comparison framework]]

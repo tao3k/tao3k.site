@@ -1,0 +1,115 @@
+#+TITLE: tao3k Values and Principles
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:principles:values:human-agency:technical-equity:
+#+STATUS: Accepted
+#+OWNER: tao3k
+#+AUDIENCE: Everyone who designs, builds, operates, evaluates, or uses tao3k
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+This record defines the shared values of tao3k and the required content foundation of the main-site Principles page.
+
+Values are not supplementary marketing language. They constrain how the ecosystem describes intelligence, evidence, authority, automation, research, and human responsibility.
+
+* Vision, mission, and values
+
+Vision describes the future tao3k seeks. Mission describes what tao3k builds to reach that future. Values define how tao3k acts while building it.
+
+The vision is a world in which intelligence contributes to consequential action without hiding evidence, uncertainty, authority, or responsibility.
+
+The mission is to build the evidence-native lifecycle that carries knowledge and scientific work into admissible industrial action and returns every result to durable human and machine knowledge.
+
+* Intelligence must earn the right to act
+
+Reasoning ability, model capability, credentials, or tool access do not automatically grant the right to create consequences.
+
+Action requires applicable evidence, qualification, legitimate authority, bounded execution, and verification.
+
+* Evidence before confidence
+
+Model confidence cannot substitute for provenance, assumptions, reproducibility, proof, uncertainty, or observation.
+
+#+begin_quote
+Confidence is not evidence.
+#+end_quote
+
+* Learning data must remain evidence-grade
+
+tao3k must replenish the evidence base from which future intelligence learns. Every qualified action should be able to return as traceable, contract-checked, reproducible, rights-aware, and measurable learning data.
+
+Volume is not quality, model output is not automatically evidence, and one opaque confidence score cannot replace provenance or verification. Failed outcomes, uncertainty, contradictory observations, and human interventions remain part of the record.
+
+People who produce knowledge must not disappear from its lineage. Attribution, consent, applicable rights, responsibility, and the distribution of value remain visible throughout reuse.
+
+The canonical doctrine is defined in [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]].
+
+* Human Agency
+
+tao3k does not treat replacing people as the sole measure of AI value. It automates toil while strengthening human judgment, creativity, learning, and capacity to act.
+
+People must be able to understand, question, contest, authorize, and stop consequential systems. High-risk action retains explicit human authority. People are not reduced to ceremonial approval buttons.
+
+#+begin_quote
+AI should expand human capacity, not erase human standing.
+#+end_quote
+
+* Technical Equity
+
+Advanced AI capability must not belong only to large institutions and a narrow technical elite.
+
+Students, researchers, engineers, technical workers, farmers, small teams, and domain practitioners should be able to use high-quality tools without surrendering their understanding of how conclusions were reached.
+
+Technical equity does not lower quality standards. It extends access to rigorous methods, evidence, and computational power.
+
+* Scientific honesty
+
+Formal proof must not conceal false real-world assumptions. Numerical results state their uncertainty and scope. Experiments do not become universal truths through repetition in marketing. Failure, dispute, and non-reproducibility remain visible.
+
+#+begin_quote
+Rigor includes knowing what has not been proven.
+#+end_quote
+
+* Open and contestable meaning
+
+Claims, evidence, ontology, rules, and semantic mappings must remain inspectable and challengeable. Meaning cannot be hidden entirely inside embeddings, proprietary model behavior, or inaccessible institutional processes.
+
+Affected people and domain experts must be able to contest the definitions that shape consequential action.
+
+* Responsibility remains visible
+
+The lifecycle preserves who proposed an action, who was affected, who granted authority, who accepted remaining risk, which machine performed work, and which responsibility remained human.
+
+#+begin_quote
+tao3k automates work. It does not automate away authority, judgment or responsibility.
+#+end_quote
+
+* Open Source First and commercial responsibility
+
+tao3k is Open Source First. Core capability, interoperability, and exit rights belong to the commons; commercial value comes from trusted distribution, managed operation, enterprise integration, assurance, and long-term responsibility. The commons carries capability, while commercial products carry operational responsibility.
+
+Customers pay for accountability, reliability, and operation rather than obscurity. The company returns part of the value created by commercial operation to the maintainers, infrastructure, documentation, education, research, and communities that make the ecosystem possible. The canonical company and ecosystem boundary is defined in [[file:../company/80.01_company_ecosystem_overview.org][Company and Ecosystem Overview]].
+
+* Long-term public value
+
+tao3k is not organized around a short-lived AI trend. It builds durable infrastructure, verifiable records, open ecosystems, research-to-industry continuity, and technical capability that people and institutions can retain over time.
+
+Long-term value requires patient architecture, honest maturity, maintainable systems, and resistance to claims designed only for immediate attention or extraction.
+
+* Principles page contract
+
+The main-site Principles page presents all values as substantive prose. It must not reduce them to decorative icons or generic slogans.
+
+Each value links to the platform or policy record that demonstrates how the principle changes system design. The page also makes clear that tao3k serves industrial and academic organizations while maintaining a commitment to people who may otherwise be marginalized by rapid technological change.
+
+* Related records
+
+- [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:30.01_human_agency_charter.org][Human Agency Charter]]
+- [[file:30.02_technical_equity.org][Technical Equity]]
+- [[file:../brand/20.01_tao3k_brand_foundation.org][tao3k Brand Foundation]]
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]

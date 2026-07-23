@@ -1,0 +1,448 @@
+#+TITLE: Public Values and Alignment Surface
+#+DATE: 2026-07-20
+#+AUTHOR: TAO Three K
+#+AUDIENCE: People, communities, collaborators, and institutions
+#+CLAIM_MATURITY: policy
+#+OWNER: tao3k
+#+STATUS: Active
+#+FILETAGS: :tao3k:principles:alignment:brand:site:
+#+TODO: DRAFT(d) REVIEW(r) | ACCEPTED(a) SUPERSEDED(s)
+
+* ACCEPTED Purpose
+:PROPERTIES:
+:CUSTOM_ID: public-values-alignment-purpose
+:END:
+
+The public Principles route is tao3k's company-values surface. It helps people,
+communities, collaborators, and institutions understand what tao3k believes
+about human capability, knowledge, AI, and responsible action.
+
+The route is not a product-benefit list, an audience-qualification screen, or a technical
+governance manual. It expresses the beliefs that shape what tao3k builds, how it
+works, and the future it intends to strengthen.
+
+* ACCEPTED Shared horizon
+:PROPERTIES:
+:CUSTOM_ID: public-values-shared-horizon
+:END:
+
+tao3k is building foundational technology, an open community ecosystem, and
+trusted institutional infrastructure. The project is designed to compound human
+capability over a long horizon rather than follow a short-lived AI,
+entertainment, or market cycle.
+
+People are the primary source of durable value. Technology should help their
+knowledge travel farther, their judgment become more informed, and their ability
+to create responsible action grow over time.
+
+* ACCEPTED People are the compounding asset
+:PROPERTIES:
+:CUSTOM_ID: public-values-people-compounding-asset
+:END:
+
+Models, interfaces, and markets will change. The durable asset is people: their
+domain knowledge, judgment, craft, relationships, and capacity to learn. tao3k
+builds systems that strengthen those capabilities rather than treat people as
+replaceable inputs.
+
+The public route MUST make three commitments legible:
+
+- AI should extend human capability rather than make human contribution
+  invisible;
+- communities and practitioners should remain recognized producers of knowledge
+  and value;
+- each cycle of work should leave people and institutions with more durable
+  capability than they had before.
+
+* ACCEPTED Enterprise partners
+:PROPERTIES:
+:CUSTOM_ID: public-values-enterprise-partners
+:END:
+
+Institutional collaboration matters when it strengthens the durable capability
+of the people who research, build, operate, maintain, and govern consequential
+systems. Real operating contexts should connect domain knowledge to responsible
+action without making practitioners invisible or dependent on opaque control.
+
+The public route MUST make three commitments legible:
+
+- collaboration should leave people and institutions with more knowledge,
+  judgment, and operating capability than they had before;
+- the knowledge-action interface should keep evidence, responsibility, and human
+  authority visible from research through operation;
+- outcomes, failures, and lessons should return as reusable evidence for the
+  wider ecosystem, subject to privacy, consent, and applicable rights.
+
+* ACCEPTED Knowledge equality and the capability gap
+:PROPERTIES:
+:CUSTOM_ID: public-values-knowledge-equality-capability-gap
+:END:
+
+AI can make information abundant without making people equally capable of using
+it. Knowledge equality therefore requires more than access to answers. People
+need a realistic path to understand evidence, challenge meaning, contribute
+knowledge, and turn what they know into action.
+
+As information asymmetry contracts, the decisive inequality shifts toward
+capability: who can frame useful questions, judge evidence, work effectively
+with AI, organize action, and learn from outcomes. tao3k builds to narrow that
+gap while preserving expertise, responsibility, and human authority.
+
+* ACCEPTED The knowledge-action interface
+:PROPERTIES:
+:CUSTOM_ID: public-values-knowledge-action-interface
+:END:
+
+The next human--AI interface is not merely a better conversation with a model.
+It must help people move from access to understanding, from understanding to
+composition, and from composition to qualified action while keeping evidence,
+context, authorship, and responsibility attached.
+
+tao3k expresses this interface as one composable capability cycle. The Scheme
+composition owns the executable topology. The Org sections below own its public
+meaning and join the Bundle v1 nodes by their semantic symbol, never by a
+TypeScript-generated plan or a positional guess.
+
+** ACCEPTED Human capability composition
+:PROPERTIES:
+:FLOW_NODE: human-capability
+:FLOW_ORDER: 1
+:FLOW_KIND: composition
+:FLOW_TITLE: Human capability
+:FLOW_SUMMARY: The complete human--AI capability system keeps purpose, evidence, authority, action, and learning in one inspectable composition.
+:FLOW_RESULT: Capability compounds without erasing its human owner.
+:FLOW_BOUNDARY: Long-horizon stewardship
+:FLOW_HUMAN: Purpose, judgment, responsibility, and the right to contest.
+:FLOW_AI: Retrieval, synthesis, simulation, and bounded execution.
+:FLOW_TONE: core
+:FLOW_PRESSURE: STEWARDSHIP
+:END:
+
+The composition is the public overview of the cycle, not an extra runtime or a
+second workflow definition.
+
+*** ACCEPTED Human capability cycle
+:PROPERTIES:
+:FLOW_NODE: human-capability-cycle
+:FLOW_ORDER: 2
+:FLOW_KIND: case
+:FLOW_TITLE: Human capability cycle
+:FLOW_SUMMARY: Knowledge becomes qualified action, and every outcome returns to strengthen the next cycle.
+:FLOW_RESULT: The lifecycle closes through returned evidence.
+:FLOW_BOUNDARY: Action to receipt
+:FLOW_HUMAN: Own the purpose of the cycle and judge whether it remains legitimate.
+:FLOW_AI: Carry bounded work across the composed cases.
+:FLOW_TONE: cycle
+:FLOW_PRESSURE: EVIDENCE
+:END:
+
+**** ACCEPTED Knowledge interface
+:PROPERTIES:
+:FLOW_NODE: knowledge
+:FLOW_ORDER: 3
+:FLOW_KIND: case
+:FLOW_TITLE: Knowledge interface
+:FLOW_SUMMARY: Access, understanding, and composition turn abundant information into usable human context.
+:FLOW_RESULT: Information becomes agency rather than passive consumption.
+:FLOW_BOUNDARY: Evidence substrate
+:FLOW_HUMAN: Frame the question, supply context, and challenge meaning.
+:FLOW_AI: Discover, retrieve, connect, and expose relevant material.
+:FLOW_TONE: knowledge
+:FLOW_PRESSURE: PARTICIPATION
+:END:
+
+***** ACCEPTED Access
+:PROPERTIES:
+:FLOW_NODE: access
+:FLOW_ORDER: 4
+:FLOW_KIND: profile
+:FLOW_TITLE: Reach consequential knowledge
+:FLOW_SUMMARY: Open paths to records, code, models, and hard-won human experience without requiring privileged institutional access.
+:FLOW_RESULT: Information becomes reachable.
+:FLOW_BOUNDARY: Evidence substrate
+:FLOW_HUMAN: Choose what matters and whose knowledge must remain visible.
+:FLOW_AI: Discover, retrieve, and attribute relevant sources.
+:FLOW_TONE: access
+:FLOW_PRESSURE: OPENNESS
+:END:
+
+***** ACCEPTED Understand
+:PROPERTIES:
+:FLOW_NODE: understand
+:FLOW_ORDER: 5
+:FLOW_KIND: profile
+:FLOW_TITLE: See meaning and limits
+:FLOW_SUMMARY: Keep sources, context, uncertainty, disagreement, and semantic definitions visible enough to inspect and challenge.
+:FLOW_RESULT: Context remains attached.
+:FLOW_BOUNDARY: Evidence substrate
+:FLOW_HUMAN: Interpret significance, uncertainty, and lived context.
+:FLOW_AI: Contextualize evidence and expose competing explanations.
+:FLOW_TONE: understand
+:FLOW_PRESSURE: EVIDENCE
+:END:
+
+***** ACCEPTED Compose
+:PROPERTIES:
+:FLOW_NODE: compose
+:FLOW_ORDER: 6
+:FLOW_KIND: profile
+:FLOW_TITLE: Build new working context
+:FLOW_SUMMARY: Connect knowledge, software, scientific models, and human judgment so isolated fragments become usable capability.
+:FLOW_RESULT: Knowledge becomes capability.
+:FLOW_BOUNDARY: Evidence substrate
+:FLOW_HUMAN: Frame the synthesis and preserve the purpose behind it.
+:FLOW_AI: Connect records, code, models, and candidate structures.
+:FLOW_TONE: compose
+:FLOW_PRESSURE: PARTICIPATION
+:END:
+
+**** ACCEPTED Governed action
+:PROPERTIES:
+:FLOW_NODE: governed-action
+:FLOW_ORDER: 7
+:FLOW_KIND: case
+:FLOW_TITLE: Governed action
+:FLOW_SUMMARY: Qualification separates what a system can do from what accountable people and institutions permit it to do.
+:FLOW_RESULT: Capability earns bounded authority.
+:FLOW_BOUNDARY: Qualification boundary
+:FLOW_HUMAN: Retain accountable authority at consequential transitions.
+:FLOW_AI: Execute only the admitted and inspectable operation.
+:FLOW_TONE: authority
+:FLOW_PRESSURE: AUTHORITY
+:END:
+
+***** ACCEPTED Qualify
+:PROPERTIES:
+:FLOW_NODE: qualify
+:FLOW_ORDER: 8
+:FLOW_KIND: profile
+:FLOW_TITLE: Determine what may proceed
+:FLOW_SUMMARY: Separate possible output from the action that evidence, policy, proof, and responsible authority actually permit.
+:FLOW_RESULT: Capability earns authority.
+:FLOW_BOUNDARY: Qualification boundary
+:FLOW_HUMAN: Judge adequacy, responsibility, and acceptable risk.
+:FLOW_AI: Verify constraints, evidence, and formal obligations.
+:FLOW_TONE: qualify
+:FLOW_PRESSURE: EVIDENCE
+:END:
+
+***** ACCEPTED Act
+:PROPERTIES:
+:FLOW_NODE: act
+:FLOW_ORDER: 9
+:FLOW_KIND: profile
+:FLOW_TITLE: Move without surrendering agency
+:FLOW_SUMMARY: Let people apply judgment, accept responsibility, contest decisions, and retain the right to pause or stop consequential action.
+:FLOW_RESULT: Human authority remains visible.
+:FLOW_BOUNDARY: Human authority
+:FLOW_HUMAN: Decide, execute, pause, appeal, or stop.
+:FLOW_AI: Perform the bounded action and preserve an operational receipt.
+:FLOW_TONE: act
+:FLOW_PRESSURE: AUTHORITY
+:END:
+
+**** ACCEPTED Evidence return
+:PROPERTIES:
+:FLOW_NODE: evidence-return
+:FLOW_ORDER: 10
+:FLOW_KIND: case
+:FLOW_TITLE: Evidence return
+:FLOW_SUMMARY: Outcomes, failures, corrections, and local experience return as shared material for inspection and reuse.
+:FLOW_RESULT: Operation becomes new qualified knowledge.
+:FLOW_BOUNDARY: Action to receipt
+:FLOW_HUMAN: Interpret the outcome and decide what should change next.
+:FLOW_AI: Record, index, and reconnect receipts to their sources.
+:FLOW_TONE: return
+:FLOW_PRESSURE: STEWARDSHIP
+:END:
+
+***** ACCEPTED Learn
+:PROPERTIES:
+:FLOW_NODE: learn
+:FLOW_ORDER: 11
+:FLOW_KIND: profile
+:FLOW_TITLE: Return outcomes as shared evidence
+:FLOW_SUMMARY: Turn results, failures, corrections, and local experience into inspectable evidence that strengthens the next person and institution.
+:FLOW_RESULT: Capability compounds.
+:FLOW_BOUNDARY: Action to receipt
+:FLOW_HUMAN: Correct meaning, share experience, and choose the next question.
+:FLOW_AI: Record, retrieve, and reuse qualified outcomes.
+:FLOW_TONE: learn
+:FLOW_PRESSURE: STEWARDSHIP
+:END:
+
+The public route SHOULD make this cycle interactive without turning it into a
+product diagram. The interaction reveals how human capability compounds; it
+MUST retain stable geometry, keyboard access, and a complete reduced-motion
+presentation.
+
+* ACCEPTED Compounding model
+:PROPERTIES:
+:CUSTOM_ID: public-values-compounding-model
+:END:
+
+The route presents the shared horizon as one compounding sequence:
+
+1. people contribute purpose, judgment, craft, and domain knowledge;
+2. open knowledge and AI reduce barriers to information and technical tools;
+3. the knowledge-action interface turns understanding into qualified action;
+4. outcomes return as evidence that people and communities can inspect and
+   reuse;
+5. each cycle increases durable human and institutional capability.
+
+* ACCEPTED Not our horizon
+:PROPERTIES:
+:CUSTOM_ID: public-values-not-our-horizon
+:END:
+
+tao3k does not trade human capability for a faster technology story. It does not
+seek:
+
+- automation that treats people as obsolete inefficiencies;
+- abundant answers without a path to understanding, judgment, or action;
+- opaque systems that erase knowledge producers or silently transfer authority;
+- growth that extracts from communities without strengthening their capability;
+- technical speed that weakens evidence, responsibility, or the right to
+  contest.
+
+* ACCEPTED Visual doctrine: cyber-industrial evidence lab
+:PROPERTIES:
+:CUSTOM_ID: public-values-cyber-industrial-visual-doctrine
+:END:
+
+The public Principles route presents tao3k as a cyber-industrial evidence
+lab: a place where future infrastructure is built, inspected, maintained, and
+made answerable to people. It MUST NOT imitate generic corporate consulting,
+decorative terminal nostalgia, or dystopian cyberpunk spectacle.
+
+The visual system combines three layers:
+
+- *future infrastructure* provides architectural depth, ecological continuity,
+  and a visible long horizon;
+- *computational substrate* exposes evidence graphs, qualification boundaries,
+  provenance, and inspectable system state;
+- *operational runtime* shows people as researchers, builders, maintainers, and
+  legitimate authority holders rather than as disposable inputs.
+
+The route calls this operating surface the *Trust Kernel*. Its primary statement
+is: "Intelligence must earn the right to act." Trust is represented as an
+architecture with observable invariants, not as a brand promise.
+
+The night presentation uses graphite, petrol teal, electric cyan, oxidized
+coral, restrained amber, and bone white. Image and motion may establish scale
+and depth, but they MUST preserve copy legibility, reduced-motion behavior, and
+fast first rendering. Generated visual assets MUST be original to tao3k,
+contain no embedded text or logos, and remain subordinate to Org-authored
+meaning.
+
+The pressure-test interaction is presented as a live Org contract. It MUST
+preserve stable geometry while a user explores choices and MUST reveal the
+applicable decision boundary without hover jitter or decorative motion.
+
+The hero MAY use a bounded WebGL fragment shader when it materially improves the
+scene. Motion MUST remain attached to material already depicted in the source
+image. The initial sample detects the existing bridge and planter foliage by
+image region and color, then applies independent low-amplitude, multi-phase
+displacement fields only to those pixels. The planter uses two elliptical
+signed-distance masks, stricter green-material classification, explicit human
+exclusion by geometry, and a nonlinear root anchor. Low-frequency value noise
+controls branch bending while a second high-frequency field controls leaf-tip
+flutter; vertical displacement remains near zero. One restrained guidance
+signal runs along the distant rail. It MUST NOT add a vehicle, chamber
+animation, free-floating object, or unrelated technological overlay.
+
+Global brightness pulsing, decorative network lines, floating spheres, and
+technology overlays that do not arise from a depicted object are prohibited.
+Touch input, background tabs, and reduced-motion preferences MUST receive a
+static or reduced presentation. A WebGL layer MAY run entirely in the client
+when it is isolated in an asynchronous chunk, limited in device-pixel ratio,
+paused outside the viewport, and backed by an immediate static image. Autoplay
+video and continuous layout animation are outside this route's performance
+budget.
+
+** ACCEPTED Trust Kernel structural cutaway
+:PROPERTIES:
+:CUSTOM_ID: public-values-trust-kernel-structural-cutaway
+:END:
+
+After the primary values narrative, the route MUST offer the statement "Trust is
+an architecture, not a promise" as secondary proof. The structural cutaway
+shows how the company values become operating constraints rather than replacing
+them with a technical opening. The operating position and cutaway share one
+full-width surface, with stable geometry at every interaction state.
+
+The cutaway contains four semantic layers:
+
+1. *Evidence substrate* preserves provenance, context, assumptions, limits,
+   supporting evidence, and unresolved dissent.
+2. *Qualification boundary* separates capability from permission through
+   applicable evidence, policy, and proof.
+3. *Human authority* preserves attributable power to inspect, contest, pause,
+   appeal, and revoke consequential action.
+4. *Action to receipt* returns outcomes, decisions, and failures to searchable
+   and contestable evidence.
+
+The active layer MAY change through explicit pointer or keyboard selection, but
+the detail viewport MUST retain fixed dimensions. Human authority uses
+restrained amber; evidence flow uses cyan. These colors encode system semantics
+and MUST NOT become general decoration. Layer selection MUST NOT trigger layout
+movement, hover expansion, automatic authority activation, or blinking state.
+
+The return path MAY animate as a single bounded signal from operational outcome
+to evidence. Reduced-motion presentation MUST show a complete static cutaway.
+The compact "TRUST IS NOT A SKIN" mark is a material stamp, not an independent
+content column.
+
+* ACCEPTED Presentation contract
+:PROPERTIES:
+:CUSTOM_ID: public-values-alignment-presentation-contract
+:END:
+
+The route MUST provide, in narrative-first and proof-second order:
+
+- a clear statement that people are the primary compounding asset;
+- a definition of knowledge equality that includes access, understanding,
+  contest, contribution, and application;
+- an explanation of the capability gap that emerges as information asymmetry
+  contracts;
+- a positive account of the human--AI knowledge-action interface;
+- a compounding sequence from people and knowledge through action and returned
+  evidence;
+- a clear statement of the future tao3k refuses to build;
+- the Trust Kernel structural cutaway as secondary proof of the operating
+  commitments.
+
+The public principle ledger MUST make these seven boundaries explicit:
+
+1. people, their knowledge, and their capacity to learn are the primary
+   compounding asset;
+2. knowledge equality requires the ability to understand, contest, contribute,
+   and apply knowledge, not only receive answers;
+3. reduced information asymmetry must not become a new capability monopoly;
+4. the knowledge-action interface preserves human purpose, judgment,
+   responsibility, and the right to stop;
+5. evidence precedes model confidence and consequential action;
+6. outcomes return as inspectable evidence that strengthens future capability;
+7. open foundations require durable community and institutional stewardship.
+
+The route MUST NOT reduce the Principles page to audience qualification, a
+technical governance checklist, automation spectacle, or unsupported brand
+slogans.
+
+#+BEGIN_SRC org-contract :type agent-interactive
+id: principle-pressure
+method: choice
+stage: presentation
+group: PRINCIPLE
+create: deferred
+target: tao3k.principles
+info: Choose the pressure that should test this principle.
+categories: 1=EVIDENCE,2=AUTHORITY,3=PARTICIPATION,4=OPENNESS,5=STEWARDSHIP,?=detail
+details:
+|n|id|contract|full|use-if|
+|1|EVIDENCE|tao3k.evidence|Evidence before confidence|confidence is advancing faster than provenance, verification, or reproducibility|
+|2|AUTHORITY|tao3k.human-agency|Human authority at consequential boundaries|automation is approaching a decision where people retain benefit, responsibility, or the right to stop|
+|3|PARTICIPATION|tao3k.technical-equity|Technical equity through transition|rapid technical change could marginalize students, practitioners, or communities instead of increasing their agency|
+|4|OPENNESS|tao3k.open-source-first|Open foundations and real exit rights|dependency could become opaque control, lock-in, or extraction from the wider community|
+|5|STEWARDSHIP|tao3k.long-horizon|Long-horizon stewardship|short-term growth could weaken foundational technology, trusted operation, or ecosystem reinvestment|
+#+END_SRC

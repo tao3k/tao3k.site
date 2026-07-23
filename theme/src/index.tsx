@@ -1,7 +1,24 @@
-import { defineFederatedThemeModule, themeModuleProtocol } from "@org-zhixing/theme-contract";
+import {
+  defineFederatedContentRoutes,
+  defineFederatedThemeModule,
+  themeModuleProtocol,
+} from "@org-zhixing/theme-contract";
 import type { ReactNode } from "react";
 
+import {
+  Tao3kApplicationDocument,
+  Tao3kApplicationHome,
+  type ApplicationPageData,
+} from "./site-pages";
+import { Tao3kSiteHeader as Tao3kThemeHeader, Tao3kSiteHome as Tao3kThemeHero } from "./site-home";
+import { resolveSiteRoute } from "./site-routes";
+
 import "./theme.css";
+import "./workbench.css";
+import "./site-home.css";
+import "./site-pages.css";
+
+export { Tao3kThemeHeader, Tao3kThemeHero };
 
 type ShellLike = {
   readonly site?: { readonly title?: string };
@@ -10,14 +27,22 @@ type ShellLike = {
 
 type ThemeLayoutContext = {
   readonly document?: unknown;
-  readonly route: { readonly view?: string };
+  readonly renderedHtml?: string;
+  readonly route: { readonly path?: string; readonly view?: string };
+  readonly site?: {
+    readonly theme?: {
+      readonly config?: {
+        readonly page_archetypes?: Readonly<Record<string, string>>;
+      };
+    };
+  };
 };
 
 type ThemeLayoutApi = {
   readonly renderView: (options: { readonly document: unknown; readonly view: string }) => string;
 };
 
-export function Tao3kThemeHeader({ shell }: { readonly shell: ShellLike }): ReactNode {
+export function LegacyTao3kThemeHeader({ shell }: { readonly shell: ShellLike }): ReactNode {
   return (
     <header className="tao3k-zhixing-header">
       <a className="tao3k-zhixing-brand" href="/">
@@ -33,18 +58,35 @@ export function Tao3kThemeHeader({ shell }: { readonly shell: ShellLike }): Reac
         <a href="/">Overview</a>
         <a href="/platform">Platform</a>
         <a href="/research">Research</a>
+        <a href="/org-zhixing-demo">Field Notes</a>
         <a href="https://github.com/tao3k">GitHub</a>
       </nav>
     </header>
   );
 }
 
-export function Tao3kThemeHero({ title }: { readonly title: string }): ReactNode {
+export function LegacyTao3kThemeHero({ title }: { readonly title: string }): ReactNode {
   return (
     <section className="tao3k-zhixing-hero">
       <p>TAO3K / ZHIXING</p>
       <h1>{title}</h1>
-      <span>Independent theme · federated delivery · Org source of truth</span>
+      <div className="tao3k-zhixing-hero-summary">
+        <span>Independent theme · federated delivery · Org source of truth</span>
+        <ul aria-label="Theme capabilities">
+          <li>
+            <strong>Contract-bound</strong>
+            <small>Protocol v1</small>
+          </li>
+          <li>
+            <strong>Remote-first</strong>
+            <small>Module Federation</small>
+          </li>
+          <li>
+            <strong>Org-native</strong>
+            <small>Content as knowledge</small>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 }
@@ -89,6 +131,38 @@ const variants = [
   },
 ] as const;
 
+const pageArchetypes = new Set([
+  "system-map",
+  "product-atlas",
+  "evidence-matrix",
+  "principles-charter",
+  "roadmap-horizons",
+  "research-continuum",
+  "editorial",
+]);
+
+const resolvePageArchetype = (context: ThemeLayoutContext): string => {
+  const routeKey = context.route.path?.replace(/^\/+|\/+$/gu, "") ?? "";
+  const requested = context.site?.theme?.config?.page_archetypes?.[routeKey];
+  return requested && pageArchetypes.has(requested) ? requested : "editorial";
+};
+
+const renderTao3kPage = (context: ThemeLayoutContext, _api: ThemeLayoutApi): string => {
+  const content = context.renderedHtml ?? "";
+  return `<div class="tao3k-page tao3k-page--${resolvePageArchetype(context)}">${content}</div>`;
+};
+
+const tao3kContentRoutes = defineFederatedContentRoutes<unknown, ApplicationPageData, ReactNode>({
+  exclusiveContentRoutes: true,
+  loadDocument: async (shell, documentId) => ({
+    shell,
+    route: resolveSiteRoute(documentId),
+    requestedId: documentId,
+  }),
+  renderDocument: (data) => <Tao3kApplicationDocument {...data} />,
+  renderHome: (shell) => <Tao3kApplicationHome shell={shell} />,
+});
+
 export const tao3kZhixingTheme = {
   name: "tao3k-site",
   version: "1.0.0",
@@ -102,7 +176,7 @@ export const tao3kZhixingTheme = {
     defaultVariant: "night",
     variants: variants.map(({ id }) => id),
     capabilities: ["application", "marketing", "technical-documentation"],
-    content: { base: "workspace", directory: "content", routeMode: "application" },
+    content: { base: "workspace", directory: "docs", routeMode: "application" },
     publicSlots: [
       {
         id: "site-header",
@@ -130,6 +204,7 @@ export const tao3kZhixingTheme = {
   rendererBindings: {
     "react-spa": {
       kind: "org-zhixing/react-spa/v1",
+      contentRoutes: tao3kContentRoutes,
       slots: {
         "site-header": { strategy: "replace", component: Tao3kThemeHeader },
         "site-hero": { strategy: "replace", component: Tao3kThemeHero },
@@ -138,8 +213,11 @@ export const tao3kZhixingTheme = {
     },
   },
   layouts: {
-    default: (context: ThemeLayoutContext, api: ThemeLayoutApi) =>
-      api.renderView({ document: context.document ?? null, view: context.route.view ?? "blog" }),
+    index: () => "",
+    page: renderTao3kPage,
+    post: renderTao3kPage,
+    section: renderTao3kPage,
+    default: renderTao3kPage,
   },
 } as const;
 

@@ -1,0 +1,41 @@
+theme = "tao3k-site"
+theme_variant = "night"
+content_dirs = ["docs"]
+
+[theme_config]
+navigation = [
+  { label = "Platform", href = "/platform" },
+  { label = "Products", href = "/products" },
+  { label = "Solutions", href = "/solutions" },
+  { label = "Comparison", href = "/comparison" },
+  { label = "Principles", href = "/principles" },
+  { label = "Roadmap", href = "/roadmap" },
+]
+
+[theme_config.page_archetypes]
+"platform-10-01-evidence-native-ai-lifecycle" = "system-map"
+"platform-10-02-action-case-and-evidence-action-graph" = "system-map"
+"products-70-01-products-navigation-contract" = "product-atlas"
+"compare-50-01-comparison-framework" = "evidence-matrix"
+"compare-50-02-community-product-reference-set" = "evidence-matrix"
+"principles-30-01-human-agency-charter" = "principles-charter"
+"principles-30-02-technical-equity" = "principles-charter"
+"principles-30-03-tao3k-values" = "principles-charter"
+"roadmap-60-01-tao3k-ecosystem-roadmap" = "roadmap-horizons"
+"solutions-40-01-research-operations-continuum" = "research-continuum"
+
+[site]
+title = "tao3k"
+description = "An evidence-action ecosystem where intelligence must earn the right to act."
+base_url = "https://tao3k.github.io/tao3k.site/"
+
+[content]
+content_dir = "docs"
+
+[theme_remotes.tao3k-site]
+remote = "tao3k_site"
+entry = "https://tao3k.github.io/tao3k.site/theme/mf-manifest.json"
+expose = "./theme"
+package = "tao3k.site"
+default_variant = "night"
+variants = ["night", "paper"]

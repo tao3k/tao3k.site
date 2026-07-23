@@ -1,0 +1,97 @@
+#+TITLE: tao3k.site Documentation Index
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:documentation:index:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: public, maintainers, agents
+#+CLAIM_MATURITY: policy
+
+#+TODO: DRAFT(d) REVIEW(r) ACTIVE(a) | ACCEPTED(A) SUPERSEDED(s) ARCHIVED(x)
+
+* Purpose
+
+This index is the stable coordinate map for the tao3k.site product, brand,
+principles, solution, comparison, architecture, and operations documents.
+
+* Coordinates
+
+| Coordinate | Record | Status |
+|------------+--------+--------|
+| 00.01 | [[file:00.01_jdex.org][Documentation Index]] | Active |
+| 10.01 | [[file:../platform/10.01_evidence_native_ai_lifecycle.org][Evidence-native AI Lifecycle]] | Accepted |
+| 20.01 | [[file:../brand/20.01_tao3k_brand_foundation.org][tao3k Brand Foundation]] | Accepted |
+| 30.01 | [[file:../principles/30.01_human_agency_charter.org][Human Agency Charter]] | Accepted |
+| 30.02 | [[file:../principles/30.02_technical_equity.org][Technical Equity and Human-paced Transition]] | Accepted |
+| 40.01 | [[file:../solutions/40.01_research_operations_continuum.org][Research--Operations Continuum]] | Accepted |
+| 50.01 | [[file:../compare/50.01_comparison_framework.org][Comparison Framework]] | Accepted |
+| 90.01 | [[file:../contracts/90.01_document_contract.org][Documentation Contract]] | Active |
+
+* Platform and control-plane records
+
+| Coordinate | Record | Status |
+|-
+| 10.02 | [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]] | Active |
+| ADR-003 | [[file:../architecture/ADR-003-qualify-act-verify-contract.org][Qualify-Act-Verify Contract]] | Accepted |
+
+* Evidence, authority, and semantic records
+
+| Coordinate | Record | Status |
+|-
+| 10.03 | [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]] | Active |
+| 10.04 | [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]] | Active |
+| ADR-004 | [[file:../architecture/ADR-004-action-authority-envelope.org][Action Authority Envelope]] | Accepted |
+
+* Agent Core records
+
+| Coordinate | Record | Status |
+|-
+| 10.05 | [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]] | Active |
+| ADR-005 | [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][Separate Flow Compiler and Agent Runtime]] | Accepted |
+
+* Main-site records
+
+| Coordinate | Record | Status |
+|-
+| 20.02 | [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]] | Accepted |
+| 20.03 | [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]] | Accepted |
+| 30.03 | [[file:../principles/30.03_tao3k_values.org][tao3k Values and Principles]] | Accepted |
+| 60.01 | [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]] | Active |
+| 70.01 | [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]] | Accepted |
+
+** ACTIVE [[file:../brand/20.04_evidence_grade_learning_data.org][20.04 Evidence-grade Learning Data]]
+
+
+** ACTIVE [[file:../compare/50.02_community_product_reference_set.org][50.02 Community Product Reference Set]]
+
+
+
+
+** ACTIVE [[file:../compare/50.03_industry_evidence_watch.org][50.03 Industry Evidence Watch]]
+
+
+
+
+** ACTIVE [[file:../company/80.01_company_ecosystem_overview.org][80.01 Company and Ecosystem Overview]]
+
+
+[[file:../company/80.01_company_ecosystem_overview.org][Company and Ecosystem Overview]]
+
+
+
+** ACCEPTED [[file:../architecture/ADR-006-rsbuild-rspack-tanstack-router-platform.org][ADR-006 Rsbuild, Rspack, TanStack Router, and React Platform]]
+
+
+* Existing engineering records
+
+- [[file:../architecture/ADR-001-evidence-native-ai-lifecycle.org][ADR-001: Evidence-native AI lifecycle]]
+- [[file:../architecture/ADR-002-zhixing-federated-theme.org][ADR-002: Publish tao3k.site as an independent Zhixing theme]]
+- [[file:../operations/local-theme-workbench.org][Local Theme Workbench]]
+- [[file:../../theme/README.org][tao3k.site Zhixing theme]]
+
+* Documentation policy
+
+Every tracked Org document is governed by [[file:../contracts/90.01_document_contract.org][90.01 Documentation Contract]].
+Claims must distinguish shipped capability, active development, research, vision,
+and policy. A document must not turn a social principle into a market segment,
+or present an architectural intention as shipped evidence.

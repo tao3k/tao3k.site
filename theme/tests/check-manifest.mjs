@@ -18,6 +18,28 @@ if (theme?.federation?.protocol !== "org-zhixing/theme-module/v1") {
 if (theme?.contract?.package !== "@org-zhixing/theme-contract") {
   fail("the provider is not bound to the Zhixing contract package");
 }
+
+const expectedContractSource = (contract) =>
+  `https://github.com/tao3k/org-zhixing-themes/tree/${contract.revision}/packages/theme-contract`;
+const assertContractSourceMatchesRevision = (contract) => {
+  const expectedSource = expectedContractSource(contract);
+  if (contract.source !== expectedSource) {
+    fail(
+      `contract source must match revision: expected=${expectedSource} actual=${String(contract.source)}`,
+    );
+  }
+};
+
+assertContractSourceMatchesRevision(theme.contract);
+try {
+  assertContractSourceMatchesRevision({
+    ...theme.contract,
+    source: "https://github.com/tao3k/org-zhixing-themes/tree/mismatch/packages/theme-contract",
+  });
+  fail("contract source mismatch fixture was accepted");
+} catch (error) {
+  if (!String(error?.message).includes("contract source must match revision")) throw error;
+}
 if (theme?.federation?.remote !== federationManifest.name) {
   fail(
     `remote name mismatch: package=${theme?.federation?.remote} manifest=${federationManifest.name}`,

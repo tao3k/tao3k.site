@@ -1,0 +1,120 @@
+#+TITLE: Products Navigation Contract
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:products:navigation:open-source:site:
+#+STATUS: Accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: Product, content, design, and site engineering teams
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+This record defines how tao3k.site presents open-source projects in the Navigator and Products page.
+
+Products provides discovery and external navigation. It does not duplicate project documentation.
+
+* Registry contract
+
+Every Products entry contains:
+
+| Field | Requirement |
+|-
+| =slug= | Stable main-site navigation key |
+| =name= | Public project name |
+| =shortRole= | One sentence describing its tao3k ecosystem role |
+| =lifecycleArea= | The Evidence-to-Action area it supports |
+| =githubUrl= | Canonical GitHub repository URL |
+| =docsUrl= | Canonical project documentation URL |
+| =websiteUrl= | Optional project website URL |
+
+The registry does not contain detailed feature flags, benchmark results, API support tables, or an independent project Roadmap.
+
+* Initial project families
+
+The Products surface is expected to include confirmed open-source projects from these families:
+
+- Org, Orgize, and Org Zhixing for knowledge and human records;
+- Agent Semantic Protocols for semantic code and knowledge discovery;
+- graph, ontology, Julia, and Lean projects for scientific intelligence, qualification, and verification;
+- POO Flow for Agent composition and compilation; and
+- Marlin for the Agent Runtime.
+
+Exact project names and URLs enter the registry only after the canonical GitHub and Documentation destinations are confirmed.
+
+* Open Source and Docs route contract
+
+The public navigation label is /Open Source/, while this record may retain /Products/ as an internal content-domain name. The =/open-source= page groups projects by Evidence Foundation, Qualification Plane, Action Core, and Evidence Return Loop. It is not a store, pricing catalogue, or feature-claim surface.
+
+The =/docs= utility route is a project-documentation directory. Each entry exposes project role, maturity, GitHub, Project Docs, license where known, contribution entry, and last-reviewed date. It must not copy implementation documentation into tao3k.site or treat internal brand and governance Org records as end-user product documentation.
+
+* Navigator menu
+
+The desktop Products menu displays a concise project list grouped by lifecycle area. Each entry exposes its name and short role. GitHub and Documentation are direct, clearly labelled external actions.
+
+The menu ends with =View all products=, which enters =/products=.
+
+The Navigator does not embed project changelogs, implementation status, or detailed feature comparisons.
+
+* Ecosystem role projection
+
+The Products surface may group independent projects by their responsibility in the Evidence--Action Ecosystem:
+
+- Evidence Foundation :: Org records, knowledge and code search, provenance, semantic ontology, scientific models, and graph relations;
+- Qualification Plane :: Contracts, graph-driven reasoning, Julia scientific computation, Lean proof, and other qualification mechanisms;
+- Action Core :: POO Flow for workflow language, composition, and compilation; Marlin for Agent Core runtime, context management, execution, and continuity;
+- Evidence Return Loop :: Runtime receipts, verification results, searchable records, and rights-governed learning-data projections.
+
+These roles explain ecosystem composition without claiming a monolith or flattening project boundaries. POO Flow is not the Agent Runtime, and Marlin is not a PR replacement; PR, coding, and other agents are capabilities that a Marlin runtime may host. Any stronger implementation claim must be sourced from the responsible project's Docs.
+
+Every listed project must expose a concise role, an honest maturity label, a GitHub destination, and a Project Docs destination. Repository existence, navigation presence, or planned federation must not be presented as proof of shipped capability.
+
+* Products page
+
+The Products page provides:
+
+- a short ecosystem introduction;
+- lifecycle-area grouping;
+- one card per open-source project;
+- the project role inside tao3k;
+- GitHub, Documentation, and optional Website actions; and
+- links back to Platform and Roadmap for the wider narrative.
+
+Project cards must not imply that the main site owns the external documentation.
+
+* Evidence-grade learning-data surfaces
+
+The Products page may identify which lifecycle surface a project supports, such as capture, qualification, action receipts, verification, graph return, search, evaluation, or governed reuse. It must link each capability claim to the responsible project documentation.
+
+The registry must not label every project as a training-data product. Evidence-grade learning data is a cross-ecosystem doctrine; concrete formats, validators, runtimes, and maturity remain project-owned facts.
+
+See [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]].
+
+* Link authority and health
+
+GitHub and Documentation destinations are explicit configuration, not derived from project names. Build or CI validation should reject malformed URLs and duplicate slugs. External availability may be monitored separately without making a transient network failure block local authoring.
+
+If a project moves, the registry changes once and both Navigator and Products page consume the same source.
+
+* Maturity language
+
+The Products surface may omit implementation maturity entirely. If maturity is displayed, it must use a main-site editorial vocabulary and link to project-owned evidence.
+
+The site never infers =shipped= merely because a repository exists.
+
+* Mobile and accessibility
+
+- Products opens by explicit activation rather than hover.
+- The menu exposes expanded and collapsed state.
+- Project, GitHub, and Documentation actions have distinct accessible names.
+- External links disclose their destination behavior.
+- Touch targets remain usable on narrow screens.
+- The complete list remains available on =/products= even when the Navigator shows a shortened set.
+
+* Related records
+
+- [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][Evidence-native AI lifecycle]]

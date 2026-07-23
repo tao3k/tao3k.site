@@ -1,0 +1,22 @@
+module(
+    name = "tao3k_site",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "gerbil_bazel", version = "0.1.0")
+bazel_dep(name = "poo_flow", version = "0.1.0")
+
+git_override(
+    module_name = "gerbil_bazel",
+    commit = "faa83024b7fa6f681bf3bd0da57376e05fb9a2f7",
+    remote = "https://github.com/tao3k/gerbil-bazel.git",
+)
+
+git_override(
+    module_name = "poo_flow",
+    commit = "6688a02c6b077638b9dc52cf3abd5d9ea6cfb5ba",
+    remote = "https://github.com/tao3k/poo-flow.git",
+)
+
+gerbil = use_extension("@gerbil_bazel//gerbil:extensions.bzl", "gerbil")
+use_repo(gerbil, "local_gerbil")

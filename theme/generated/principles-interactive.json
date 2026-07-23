@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "topology": {
+    "id": "human-capability",
+    "nodes": [
+      {
+        "id": "human-capability",
+        "order": 1,
+        "kind": "composition",
+        "title": "Human capability",
+        "summary": "The complete human--AI capability system keeps purpose, evidence, authority, action, and learning in one inspectable composition.",
+        "result": "Capability compounds without erasing its human owner.",
+        "boundary": "Long-horizon stewardship",
+        "human": "Purpose, judgment, responsibility, and the right to contest.",
+        "ai": "Retrieval, synthesis, simulation, and bounded execution.",
+        "tone": "core",
+        "pressure": "STEWARDSHIP"
+      },
+      {
+        "id": "human-capability-cycle",
+        "order": 2,
+        "kind": "case",
+        "title": "Human capability cycle",
+        "summary": "Knowledge becomes qualified action, and every outcome returns to strengthen the next cycle.",
+        "result": "The lifecycle closes through returned evidence.",
+        "boundary": "Action to receipt",
+        "human": "Own the purpose of the cycle and judge whether it remains legitimate.",
+        "ai": "Carry bounded work across the composed cases.",
+        "tone": "cycle",
+        "pressure": "EVIDENCE"
+      },
+      {
+        "id": "knowledge",
+        "order": 3,
+        "kind": "case",
+        "title": "Knowledge interface",
+        "summary": "Access, understanding, and composition turn abundant information into usable human context.",
+        "result": "Information becomes agency rather than passive consumption.",
+        "boundary": "Evidence substrate",
+        "human": "Frame the question, supply context, and challenge meaning.",
+        "ai": "Discover, retrieve, connect, and expose relevant material.",
+        "tone": "knowledge",
+        "pressure": "PARTICIPATION"
+      },
+      {
+        "id": "access",
+        "order": 4,
+        "kind": "profile",
+        "title": "Reach consequential knowledge",
+        "summary": "Open paths to records, code, models, and hard-won human experience without requiring privileged institutional access.",
+        "result": "Information becomes reachable.",
+        "boundary": "Evidence substrate",
+        "human": "Choose what matters and whose knowledge must remain visible.",
+        "ai": "Discover, retrieve, and attribute relevant sources.",
+        "tone": "access",
+        "pressure": "OPENNESS"
+      },
+      {
+        "id": "understand",
+        "order": 5,
+        "kind": "profile",
+        "title": "See meaning and limits",
+        "summary": "Keep sources, context, uncertainty, disagreement, and semantic definitions visible enough to inspect and challenge.",
+        "result": "Context remains attached.",
+        "boundary": "Evidence substrate",
+        "human": "Interpret significance, uncertainty, and lived context.",
+        "ai": "Contextualize evidence and expose competing explanations.",
+        "tone": "understand",
+        "pressure": "EVIDENCE"
+      },
+      {
+        "id": "compose",
+        "order": 6,
+        "kind": "profile",
+        "title": "Build new working context",
+        "summary": "Connect knowledge, software, scientific models, and human judgment so isolated fragments become usable capability.",
+        "result": "Knowledge becomes capability.",
+        "boundary": "Evidence substrate",
+        "human": "Frame the synthesis and preserve the purpose behind it.",
+        "ai": "Connect records, code, models, and candidate structures.",
+        "tone": "compose",
+        "pressure": "PARTICIPATION"
+      },
+      {
+        "id": "governed-action",
+        "order": 7,
+        "kind": "case",
+        "title": "Governed action",
+        "summary": "Qualification separates what a system can do from what accountable people and institutions permit it to do.",
+        "result": "Capability earns bounded authority.",
+        "boundary": "Qualification boundary",
+        "human": "Retain accountable authority at consequential transitions.",
+        "ai": "Execute only the admitted and inspectable operation.",
+        "tone": "authority",
+        "pressure": "AUTHORITY"
+      },
+      {
+        "id": "qualify",
+        "order": 8,
+        "kind": "profile",
+        "title": "Determine what may proceed",
+        "summary": "Separate possible output from the action that evidence, policy, proof, and responsible authority actually permit.",
+        "result": "Capability earns authority.",
+        "boundary": "Qualification boundary",
+        "human": "Judge adequacy, responsibility, and acceptable risk.",
+        "ai": "Verify constraints, evidence, and formal obligations.",
+        "tone": "qualify",
+        "pressure": "EVIDENCE"
+      },
+      {
+        "id": "act",
+        "order": 9,
+        "kind": "profile",
+        "title": "Move without surrendering agency",
+        "summary": "Let people apply judgment, accept responsibility, contest decisions, and retain the right to pause or stop consequential action.",
+        "result": "Human authority remains visible.",
+        "boundary": "Human authority",
+        "human": "Decide, execute, pause, appeal, or stop.",
+        "ai": "Perform the bounded action and preserve an operational receipt.",
+        "tone": "act",
+        "pressure": "AUTHORITY"
+      },
+      {
+        "id": "evidence-return",
+        "order": 10,
+        "kind": "case",
+        "title": "Evidence return",
+        "summary": "Outcomes, failures, corrections, and local experience return as shared material for inspection and reuse.",
+        "result": "Operation becomes new qualified knowledge.",
+        "boundary": "Action to receipt",
+        "human": "Interpret the outcome and decide what should change next.",
+        "ai": "Record, index, and reconnect receipts to their sources.",
+        "tone": "return",
+        "pressure": "STEWARDSHIP"
+      },
+      {
+        "id": "learn",
+        "order": 11,
+        "kind": "profile",
+        "title": "Return outcomes as shared evidence",
+        "summary": "Turn results, failures, corrections, and local experience into inspectable evidence that strengthens the next person and institution.",
+        "result": "Capability compounds.",
+        "boundary": "Action to receipt",
+        "human": "Correct meaning, share experience, and choose the next question.",
+        "ai": "Record, retrieve, and reuse qualified outcomes.",
+        "tone": "learn",
+        "pressure": "STEWARDSHIP"
+      }
+    ]
+  },
+  "pressure": {
+    "source": {
+      "start": {
+        "line": 432,
+        "column": 1
+      },
+      "end": {
+        "line": 449,
+        "column": 1
+      },
+      "rangeStart": 18137,
+      "rangeEnd": 19327
+    },
+    "id": "principle-pressure",
+    "method": "choice",
+    "stage": "presentation",
+    "group": "PRINCIPLE",
+    "target": "tao3k.principles",
+    "create": "deferred",
+    "info": "Choose the pressure that should test this principle.",
+    "categories": [
+      {
+        "key": "1",
+        "value": "EVIDENCE",
+        "detail": false
+      },
+      {
+        "key": "2",
+        "value": "AUTHORITY",
+        "detail": false
+      },
+      {
+        "key": "3",
+        "value": "PARTICIPATION",
+        "detail": false
+      },
+      {
+        "key": "4",
+        "value": "OPENNESS",
+        "detail": false
+      },
+      {
+        "key": "5",
+        "value": "STEWARDSHIP",
+        "detail": false
+      },
+      {
+        "key": "?",
+        "value": "detail",
+        "detail": true
+      }
+    ],
+    "entries": [
+      {
+        "number": "1",
+        "id": "EVIDENCE",
+        "contract": "tao3k.evidence",
+        "full": "Evidence before confidence",
+        "useIf": "confidence is advancing faster than provenance, verification, or reproducibility"
+      },
+      {
+        "number": "2",
+        "id": "AUTHORITY",
+        "contract": "tao3k.human-agency",
+        "full": "Human authority at consequential boundaries",
+        "useIf": "automation is approaching a decision where people retain benefit, responsibility, or the right to stop"
+      },
+      {
+        "number": "3",
+        "id": "PARTICIPATION",
+        "contract": "tao3k.technical-equity",
+        "full": "Technical equity through transition",
+        "useIf": "rapid technical change could marginalize students, practitioners, or communities instead of increasing their agency"
+      },
+      {
+        "number": "4",
+        "id": "OPENNESS",
+        "contract": "tao3k.open-source-first",
+        "full": "Open foundations and real exit rights",
+        "useIf": "dependency could become opaque control, lock-in, or extraction from the wider community"
+      },
+      {
+        "number": "5",
+        "id": "STEWARDSHIP",
+        "contract": "tao3k.long-horizon",
+        "full": "Long-horizon stewardship",
+        "useIf": "short-term growth could weaken foundational technology, trusted operation, or ecosystem reinvestment"
+      }
+    ]
+  }
+}

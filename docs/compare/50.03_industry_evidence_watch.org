@@ -1,0 +1,108 @@
+#+TITLE: Industry Evidence Watch
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+LANGUAGE: en
+#+OPTIONS: toc:2 num:nil
+#+FILETAGS: :tao3k:compare:industry:incidents:evidence-watch:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: Public, industry, research, partners, and contributors
+#+CLAIM_MATURITY: research
+
+* Purpose and authority
+
+This record maintains dated external evidence for industry pain discussed by tao3k.site. It does not convert news coverage into product verdicts. Stable comparison axes remain in [[file:50.01_comparison_framework.org][Comparison Framework]], and the maintained product set remains in [[file:50.02_community_product_reference_set.org][Community Product Reference Set]].
+
+* Evidence-state vocabulary
+
+- Vendor-confirmed incident :: The responsible vendor has published the incident or postmortem.
+- Researcher disclosure :: A security or research team has published methods and coordinated disclosure information.
+- Peer-reviewed or institutional research :: A research institution or reviewed publication owns the result.
+- Primary industry survey :: The publisher owns the surveyed population and discloses the relevant method.
+- Court allegation :: A filed claim or argument that has not become a judicial finding.
+- News-reported user signal :: News coverage of user reports that has not established a product-wide defect.
+- Resolved :: The responsible source states that remediation is complete.
+- Unresolved :: Evidence remains incomplete, contested, or awaiting an authoritative response.
+
+* June 2026 evidence
+
+** 2026-06-02: service reliability and external dependency
+
+- Source :: [[https://status.openai.com/incidents/01KT5XJ5ATD6RMYP908WS69FVD/write-up][OpenAI incident write-up]].
+- Source type :: Vendor-confirmed incident.
+- Status :: Resolved.
+- Observed fact :: OpenAI reported elevated errors and latency affecting Codex, ChatGPT, and the Responses API during the incident window.
+- Industry pain :: Long-running Agent work inherits model-provider, network, and platform availability failure modes.
+- tao3k relevance :: Runtime Receipts must distinguish provider, transport, tool, policy, and business failure; Action Cases require explicit timeout, retry, alternative-path, and stopping rules. Open interfaces and exit rights have operational value.
+
+** 2026-06-12: observability adoption exceeds evaluation maturity
+
+- Source :: [[https://www.langchain.com/state-of-agent-engineering][LangChain State of Agent Engineering]].
+- Source type :: Primary industry survey of more than 1,300 professionals.
+- Status :: Current survey evidence; not an independent census of the entire industry.
+- Observed fact :: The survey reports growing production use and broader observability adoption while evaluation practice remains less mature.
+- Industry pain :: Tracing execution does not establish that an action remained valid, safe, useful, or within its original assumptions.
+- tao3k relevance :: Runtime Receipts answer what happened; Verification Results answer whether the outcome satisfied the Action Case and what evidence must change.
+
+** 2026-06-25: safety evaluation and transparency gaps across widely used Agents
+
+- Source :: [[https://aiagentindex.mit.edu/data/2025-AI-Agent-Index.pdf][MIT AI Agent Index, presented at FAccT 2026]].
+- Source type :: Peer-reviewed or institutional research.
+- Status :: Published evidence describing 30 highly agentic and widely used products.
+- Observed fact :: The study reports sparse Agent-specific safety evaluation, limited documented tool-permission constraints, limited prompt-injection defenses and sandboxing, and substantial gaps in third-party testing and safety disclosure.
+- Industry pain :: Capability benchmarks advance faster than Agent-level authority, containment, evaluation, and transparency evidence.
+- tao3k relevance :: Comparison must include Agent-specific evaluation, scoped and revocable authority, containment, third-party evidence, incident disclosure, and action-level auditability rather than model benchmarks alone.
+
+* July 2026 evidence
+
+** 2026-07-01: research-integrity contamination can compound through citation networks
+
+- Source :: [[https://www.nature.com/articles/d41586-026-01908-8][Nature: paper-mill cancer studies and citation networks]].
+- Source type :: Independent science news reporting on current research.
+- Status :: Reported research evidence; individual paper status remains governed by the responsible publishers and investigations.
+- Observed fact :: The report describes evidence that suspected paper-mill studies may receive disproportionate citation and contaminate connected literature.
+- Industry pain :: Citation count and textual plausibility do not establish evidence quality; low-quality records can reinforce one another through network effects.
+- tao3k relevance :: Typed claims must preserve provenance, verification, opposing evidence, version and withdrawal state before research is qualified for operational use.
+
+** 2026-07-07: one edit permission reached a shared Agent execution substrate
+
+- Source :: [[https://www.varonis.com/blog/rogue-agent-dialogflow-attack][Varonis Rogue Agent disclosure]].
+- Source type :: Researcher disclosure coordinated with the vendor.
+- Status :: Resolved according to the disclosure; Google completed remediation in June 2026.
+- Observed fact :: Varonis reported that one Dialogflow CX Agent edit permission could inject persistent code, access conversation data, and affect a shared execution environment before remediation.
+- Industry pain :: Content-edit permission can become infrastructure authority when identity, isolation, code execution, and shared runtime boundaries are not aligned.
+- tao3k relevance :: Edit access is not an Authority Envelope. Shared runtime changes require explicit scope, isolation, qualification, receipts, and revocation that the executor cannot enlarge.
+
+** 2026-07-09: training-data provenance and disclosure remain contested
+
+- Source :: [[https://apnews.com/article/7ce19c7a25aad60d4c94556d36e96cc9][Associated Press coverage of the publisher and OpenAI dispute]].
+- Source type :: Court allegation reported by independent news media.
+- Status :: Unresolved; allegations are not judicial findings.
+- Observed fact :: The dispute concerns access to and representations about training datasets and logs in ongoing copyright litigation.
+- Industry pain :: Data origin, permitted use, retention, disclosure, and downstream learning rights remain material legal and institutional questions.
+- tao3k relevance :: Operational access, storage, service delivery, evaluation, and training permission are separate authorities. Evidence-grade records preserve provenance, rights, purpose, consent or license, and withdrawal rules.
+
+** 2026-07-14: destructive coding-Agent behavior reported by users
+
+- Source :: [[https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/][TechCrunch coverage of user reports]].
+- Source type :: News-reported user signal.
+- Status :: Unresolved as a product-wide claim; do not present the reports as a vendor-confirmed systemic defect.
+- Observed fact :: The report collects public user claims that an advanced coding Agent deleted files or data while attempting project work.
+- Industry pain :: High-capability execution can turn misunderstanding, missing context, or recovery behavior into irreversible damage when action scope and stopping rules are weak.
+- tao3k relevance :: Irreversible operations require explicit qualification and authority; Runtime Receipts, environment isolation, pre-action checks, rollback strategy, and human contestability are lifecycle requirements rather than optional interface prompts.
+
+* Main-site use contract
+
+The main site may project a small number of current evidence cards, each with its date, evidence state, source, observed fact, and architectural relevance. It must not use an incident to imply that an entire product category is unsafe, claim that tao3k currently prevents a failure without shipped evidence, or retain a resolved and outdated event as if it were current news.
+
+Every projected pain point must answer:
+
+1. What is directly supported by the source?
+2. What remains allegation, inference, or uncertainty?
+3. Which general lifecycle boundary does the event expose?
+4. Which tao3k doctrine or intended control is relevant?
+5. What evidence proves the tao3k capability is available today?
+
+* Maintenance contract
+
+Review fast-moving records monthly. Preserve old records as dated history, mark corrections and vendor responses, and add a new entry rather than silently rewriting the meaning of an earlier event. A record without a current source and evidence state must not appear in the live Comparison surface.

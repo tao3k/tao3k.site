@@ -1,22 +1,48 @@
-#+TITLE: tao3k.site
+#+TITLE: Intelligence must earn the right to act
 #+DATE: 2026-07-18
-#+AUTHOR: Guangtao Tao
-#+FILETAGS: :tao3k:zhixing:agents:infrastructure:
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:content:evidence:lifecycle:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, research
+#+CLAIM_MATURITY: active-development
+#+CONTRACT_ORG: [[file:../docs/contracts/90.01_document_contract.org][tao3k.document]]
 
-* The living infrastructure layer for governed AI agents
+* Evidence-native AI lifecycle infrastructure
 
-tao3k.site is an independent Zhixing theme provider.  The repository owns its
-visual language and theme implementation while Zhixing owns Org ingestion,
-compiler isolation, runtime slots, and federated theme loading.
+tao3k turns knowledge, code, scientific models and human records into
+admissible action—and turns every action back into searchable, verifiable and
+evolvable evidence.
 
-** Downstream boundary
+* From intelligence to trusted action
 
-- The theme builds and deploys without importing a built-in Zhixing theme.
-- React and React DOM remain Module Federation singletons.
-- =mf-manifest.json= exposes =./theme= through the =tao3k_site= remote.
-- Org remains the content source of truth for a Zhixing host.
+The lifecycle connects structured records, knowledge search, semantic code
+understanding, scientific compute, policy admission, typed execution, receipts,
+and evidence-governed promotion.
 
-** Platform
+#+begin_example
+Record → Understand → Validate → Contract → Admit
+       → Execute → Receipt → Evaluate → Promote
+#+end_example
 
-Wendao, Qianji, Qianhuan, and Daochang connect computable knowledge, governed
-workflow, explicit context, and native agent execution.
+* Research and operations form one continuum
+
+Research must not lose its assumptions, provenance, or scientific meaning when
+it reaches industrial operation. Operations must return outcomes, failures, and
+observations as evidence that research can inspect and improve.
+
+* Built for human agency
+
+AI can move at machine speed. People deserve to grow at human speed. tao3k
+automates friction, danger, and repetition while preserving human purpose,
+responsibility, the right to understand, and the right to contest high-impact
+decisions.
+
+
+* What this preview must prove
+
+- The downstream theme remains independently owned and independently built.
+- Org content remains the source of long-form knowledge and evidence.
+- Theme delivery does not bypass the pinned Zhixing contract.
+- Product claims remain distinguishable from policy, research, and vision.
+- Mobile and desktop surfaces preserve readable structure and human authority.

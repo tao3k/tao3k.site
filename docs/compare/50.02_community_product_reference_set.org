@@ -1,0 +1,97 @@
+#+TITLE: Community Product Reference Set
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+LANGUAGE: en
+#+OPTIONS: toc:2 num:nil
+#+FILETAGS: :tao3k:compare:products:community:market:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: Public, industry, research, partners, and contributors
+#+CLAIM_MATURITY: active-development
+
+* Purpose and authority
+
+This record defines the maintained product reference set used by tao3k.site Comparison surfaces. It is a dated market snapshot, not a permanent ranking, endorsement, or claim that tao3k replaces every referenced system.
+
+The stable comparison method remains [[file:50.01_comparison_framework.org][Comparison Framework]]. Time-sensitive incidents and industry pain evidence remain in [[file:50.03_industry_evidence_watch.org][Industry Evidence Watch]]. Product implementation truth remains with each product's official documentation.
+
+* Snapshot contract
+
+- As of :: 2026-07-18
+- Review cadence :: Monthly for fast-moving Agent and coding categories; quarterly for established workflow, knowledge, and scientific categories.
+- Selection basis :: Community visibility, active use or discussion, current maintenance, category influence, official documentation, and relevance to an Evidence--Action lifecycle boundary.
+- Exclusion rule :: A product is not included merely because it is new, funded, controversial, or convenient to defeat in a feature matrix.
+
+Every dynamic metric must carry an observation date. GitHub stars indicate community attention, not quality, safety, production readiness, or architectural superiority.
+
+* Coding Agent reference set
+
+- OpenAI Codex :: End-to-end and multi-agent software engineering, editor and terminal use, and background work. Source: [[https://openai.com/codex/][OpenAI Codex]].
+- Claude Code :: Agentic codebase reading, file editing, command execution, development-tool integration, MCP, teams, and scheduled work. Source: [[https://code.claude.com/docs/en/overview][Claude Code documentation]].
+- GitHub Copilot Cloud Agent :: GitHub-native cloud Agent execution, access management, sandboxing, automation, and third-party Agent integration. Source: [[https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent][GitHub Copilot Cloud Agent documentation]].
+- Cursor :: Widely recognized proprietary Agent development environment. Source: [[https://cursor.com/en-US][Cursor]].
+- OpenHands :: Open community reference for AI-driven software development. The repository showed approximately 75,000 GitHub stars in the 2026-07-18 observation window. Source: [[https://github.com/OpenHands/OpenHands][OpenHands repository]].
+
+Comparison questions include qualification before irreversible operations, authority scope, environment isolation, runtime receipts, verification, rollback, failure attribution, data boundaries, and whether another governed runtime may host or coordinate the Agent.
+
+tao3k must not claim superior code generation without reproducible evidence. Marlin is positioned as an Agent Core and runtime capable of governing or integrating coding and other Agents, not as a model replacement or a PR-only product.
+
+* Agent framework reference set
+
+- LangChain and LangGraph :: Stateful Agent composition, durable execution, memory, human intervention, tracing, and production deployment. LangChain and LangGraph showed approximately 138,000 and 37,400 GitHub stars respectively in the observation window. Sources: [[https://github.com/langchain-ai/langchain][LangChain repository]] and [[https://github.com/langchain-ai/langgraph][LangGraph repository]].
+- CrewAI :: Role-oriented multi-Agent orchestration through Crews and Flows; approximately 53,600 GitHub stars in the observation window. Source: [[https://github.com/crewAIInc/crewAI][CrewAI repository]].
+- AutoGen and Microsoft Agent Framework :: Influential conversational and multi-Agent framework lineage. Current claims must follow Microsoft's official project documentation rather than historical AutoGen assumptions.
+- Google Agent Development Kit :: Google ecosystem reference for building and orchestrating Agents.
+- OpenAI Agents SDK :: OpenAI ecosystem reference for tool-using Agent construction.
+
+The comparison must acknowledge durable execution, memory, human-in-the-loop, tracing, guardrails, and deployment features where products already provide them. tao3k's distinctive question is whether evidence qualification, explicit authority, runtime action, post-action verification, and evidence return form one governed circuit.
+
+* Workflow and automation reference set
+
+- n8n :: Visual and code-capable workflow automation with AI, MCP, self-hosting, and a broad integration surface; approximately 197,000 GitHub stars in the observation window. Source: [[https://github.com/n8n-io/n8n][n8n repository]].
+- Temporal :: Durable application and workflow execution reference.
+- Camunda :: BPMN and enterprise process-orchestration reference.
+- Apache Airflow :: Data and scheduled workflow reference.
+
+The comparison asks what evidence qualifies a workflow before it starts, how responsibility and revocable authority travel with it, and whether execution returns verification evidence. Node count, connector count, and visual-builder convenience are relevant product facts but are not lifecycle closure.
+
+* Knowledge and retrieval reference set
+
+- LangChain :: Widely used integration and Agent engineering platform.
+- LlamaIndex :: Data and retrieval framework reference.
+- NotebookLM :: Familiar document-grounded research and synthesis product.
+- Glean :: Enterprise search and Agent reference.
+- Microsoft GraphRAG :: Graph-oriented retrieval reference.
+
+The comparison asks whether a system preserves typed claims, supporting and opposing evidence, missing evidence, versions, applicability limits, qualification state, and action outcomes rather than only returning text or citations.
+
+* Scientific and reproducibility reference set
+
+- Jupyter :: Interactive scientific-computing and notebook reference.
+- MLflow :: Experiment, model, and machine-learning lifecycle reference.
+- DVC :: Data, pipeline, and experiment-versioning reference.
+- Kubeflow :: Machine-learning workflow and platform reference.
+- Weights & Biases :: Experiment tracking and model-development reference.
+
+tao3k does not present these systems as failed research tools. It compares where reproducible scientific artifacts end, how they become qualified operational artifacts, and how governed field evidence returns to research.
+
+* Comparison record contract
+
+Each named-product comparison must record:
+
+- product and category;
+- as-of date and reviewed version or documentation surface;
+- official product claim;
+- independent evidence when making a comparative or risk claim;
+- community signal and its limitations;
+- current lifecycle boundary;
+- evidence, qualification, authority, runtime, verification, and return capabilities;
+- relevant tao3k doctrine and integration relationship;
+- tao3k maturity caveat;
+- last reviewed date and responsible owner.
+
+* Fairness and maintenance
+
+Comparison is not a winner table. It must identify what the referenced product does well, avoid arguing from absent documentation that a capability cannot exist, distinguish product-wide behavior from a single incident, and state when tao3k is intended to integrate with rather than replace the product.
+
+Named claims expire when their source, version, or observation window is stale. A stale record remains historical evidence but must not appear as a current comparison result.
