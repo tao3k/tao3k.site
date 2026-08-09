@@ -1,0 +1,144 @@
+#+TITLE: Public Roadmap Presentation Contract
+#+DATE: 2026-07-21
+#+AUTHOR: TAO Three K
+#+AUDIENCE: Customers, investors, partners, and ecosystem contributors
+#+CLAIM_MATURITY: policy
+#+OWNER: TAO Three K
+#+STATUS: Active
+#+FILETAGS: :tao3k:roadmap:evidence:site:alignment:
+#+TODO: DRAFT(d) REVIEW(r) | ACCEPTED(a) SUPERSEDED(s)
+
+* ACCEPTED Purpose
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-purpose
+:END:
+
+The public Roadmap route explains how TAO Three K's long-horizon position becomes
+evidence-backed capability. It is a dependency and maturity map, not a promise
+calendar, release marketing surface, or financial forecast.
+
+The route helps enterprise customers understand adoption boundaries and helps
+long-horizon investors understand how foundational work compounds into durable
+ecosystem value.
+
+* ACCEPTED Evidence states
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-evidence-states
+:END:
+
+Every visible roadmap front with an authority-backed assignment MUST use one of
+the four states defined by the ecosystem roadmap:
+
+1. *Available Foundation* means a reusable capability exists with current
+   evidence.
+2. *Active Construction* means implementation and integration work is underway.
+3. *Research Frontier* means the direction is supported by active investigation
+   but is not an adoption promise.
+4. *Long-term Horizon* means the outcome depends on earlier evidence and MUST NOT
+   be presented as scheduled delivery.
+
+State transitions are earned through evidence. They are not advanced by dates,
+version labels, or marketing language.
+
+When the authority record does not yet assign a front-level state, the public
+route MUST display =STATE PENDING=. This is a disclosure of missing evidence, not
+a fifth maturity state. The route MUST NOT infer a state from project activity,
+directional prose, repository existence, or a related component's maturity.
+
+* ACCEPTED Durable fronts
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-durable-fronts
+:END:
+
+The public route MUST preserve the following seven distinct fronts:
+
+1. Evidence Foundations;
+2. Graph and Scientific Intelligence;
+3. Qualification and Verification;
+4. Next-Generation Agent Core;
+5. Research-to-Operations Continuity;
+6. Technical Equity and Open Infrastructure;
+7. Evidence-Action Ecosystem.
+
+The fronts MUST be presented in dependency order without implying that all work
+is sequential. Parallel work is permitted where its prerequisites are satisfied.
+
+* ACCEPTED Visible evidence contract
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-visible-evidence-contract
+:END:
+
+Each roadmap front MUST expose enough public metadata to distinguish current
+evidence from aspiration when the authority provides it:
+
+- responsible project or owner;
+- current evidence;
+- known gap;
+- promotion or exit criterion;
+- project documentation destination;
+- last-reviewed date.
+
+The public summary MAY compress this metadata visually, but it MUST retain the
+distinction between evidence, gap, and exit criterion.
+
+Unassigned owners, states, and destinations MUST be shown as pending rather than
+derived from project names. A related system is not automatically the responsible
+owner, and a repository inferred from a name is not a canonical Project Docs
+destination.
+
+* ACCEPTED Enterprise lens
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-enterprise-lens
+:END:
+
+The enterprise reading answers:
+
+- what can be adopted or evaluated now;
+- what remains bounded, experimental, or research-only;
+- what authority, rights, evidence, and operational conditions are required for
+  promotion;
+- how capability moves from research evidence into governed operation.
+
+The route MUST NOT imply production readiness from research activity alone.
+
+* ACCEPTED Long-horizon lens
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-long-horizon-lens
+:END:
+
+The investor and ecosystem reading explains the compounding sequence:
+
+1. evidence foundations make knowledge durable;
+2. graph and scientific intelligence make relationships computable;
+3. qualification and verification make action admissible;
+4. POO Flow composition and Marlin runtime make governed agent operation
+   executable;
+5. research-to-operations continuity closes the feedback loop;
+6. technical equity and open infrastructure broaden participation and adoption;
+7. the complete Evidence-Action ecosystem returns action as searchable,
+   contestable, and improvable evidence.
+
+* ACCEPTED Prohibited claims
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-prohibited-claims
+:END:
+
+The route MUST NOT invent delivery dates, financial forecasts, global version
+labels, production availability, or maturity transitions not supported by the
+authority document and current project evidence.
+
+* ACCEPTED Presentation contract
+:PROPERTIES:
+:CUSTOM_ID: public-roadmap-presentation-contract
+:END:
+
+The route MUST provide:
+
+- a visible legend for the four maturity states;
+- a dependency-oriented map of the seven durable fronts;
+- distinct enterprise-readiness and long-horizon-value readings;
+- explicit evidence, gap, and exit semantics;
+- a final ecosystem outcome that remains conditional on prior fronts.
+
+The route MUST retain a distinct visual identity and MUST NOT reuse the
+Principles, Products, or generic card-grid composition.

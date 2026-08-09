@@ -1,0 +1,153 @@
+#+TITLE: Human Agency Charter
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:principles:human-agency:authority:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, research, affected-people
+#+CLAIM_MATURITY: policy
+
+* Preamble
+
+Technical trust is incomplete without human trust. A system may be reproducible
+and technically correct while still denying affected people the ability to
+understand, contest, or influence consequential action.
+
+tao3k therefore treats human agency as a first-class system property rather
+than a fallback after automation fails.
+
+* Core commitments
+
+** Human purpose remains sovereign
+
+AI may operate autonomously inside an authorized boundary. It does not decide
+which social goals are worthy, whose interests matter, or which consequences
+people must accept.
+
+** Intelligence must earn authority
+
+The ability to generate an action does not grant the right to execute it.
+Admission must consider contract, capability, policy, scope, evidence, and
+risk.
+
+** High-impact decisions remain accountable
+
+An organization must identify a human or accountable institution for decisions
+that affect safety, health, employment, income, legal rights, education,
+resource allocation, industrial operation, communities, or the environment.
+AI must not become an accountability sink.
+
+** People retain the right to understand
+
+Affected people should be able to inspect relevant sources, assumptions,
+uncertainty, authority grants, and execution evidence at a level appropriate to
+the consequence of the decision.
+
+** People retain the right to contest
+
+High-impact action must support meaningful pause, denial, review, appeal,
+authority revocation, and reconsideration when new evidence appears.
+
+** Domain knowledge deserves representation
+
+Knowledge does not become irrelevant because it has not yet been encoded in
+software. Researchers, operators, farmers, technicians, students, and local
+communities must have a path for their knowledge to become inspectable evidence
+without surrendering ownership or context.
+
+** Transition happens at a human pace
+
+Technology can advance at machine speed. People deserve time, tools, safe
+environments, and reversible stages in which to learn, adapt, and redefine
+their contribution.
+
+** Benefits should broaden participation
+
+Progress should increase the number of people able to understand, build,
+question, and benefit from advanced systems. Removing people is not a valid
+North Star for AI progress.
+
+* Product obligations
+
+| Commitment | Required product behavior |
+|------------+---------------------------|
+| Human purpose | Goals, policy, and authority have explicit owners |
+| Earned authority | Admission, capability checks, sandbox, and proof obligations |
+| Understanding | Sources, assumptions, reasons, uncertainty, and receipts are inspectable |
+| Contestability | Pause, deny, review, appeal, and revoke paths are explicit |
+| Human-paced transition | Observe, suggest, confirm, and execute modes can be staged |
+| Domain knowledge | Org records, ontology mappings, and human evidence preserve provenance |
+| Portability | Evidence and contracts are exportable; models and runtimes remain replaceable |
+| Accountability | High-impact actions identify the responsible human authority |
+
+* Measures
+
+Human agency is not measured by the number of approval clicks. Product and
+deployment reviews should ask:
+
+- Did people gain understanding rather than only receive an answer?
+- Can an affected person identify and challenge a consequential decision?
+- Did expert knowledge become a reusable asset with preserved provenance?
+- Can authority be revoked without destroying the evidence trail?
+- Did automation remove friction, danger, or repetition rather than merely
+  transfer risk to less powerful people?
+- Can people reproduce the result and continue without one opaque provider?
+
+* Public statement
+
+#+begin_quote
+We automate friction, danger, and repetition—not human purpose, dignity, or
+belonging.
+#+end_quote
+
+* Human capability and AI capability
+
+AI is valuable when it extends retrieval, computation, simulation, long-duration operation, cross-task memory, relationship discovery, repeatable execution, and evidence preservation. Human beings retain responsibility for deciding what is worth pursuing, judging how interests are affected, interpreting social context, creating new value directions, authorizing consequential action, and carrying institutional, ethical, and public responsibility.
+
+AI may extend human capability and execute qualified intent. It must not silently inherit human authority or erase human responsibility. The purpose of automation is not to make human removal the sole measure of value; it is to remove avoidable repetition and institutional friction while increasing the space for judgment, creation, explanation, coordination, and responsibility.
+
+* Meaningful agency beyond approval
+
+Human-in-the-loop is insufficient when a person can only approve a conclusion they cannot inspect or change. Meaningful Human Agency requires the practical ability to:
+
+- understand why an action was proposed;
+- inspect supporting, opposing, and missing evidence;
+- change goals, conditions, and constraints;
+- contest a qualification result;
+- restrict or revoke authority;
+- pause, stop, or roll back execution;
+- appeal a result and require new verification;
+- identify who remains accountable.
+
+* Risk-based Authority Gradient
+
+- Low-risk and reversible action may run inside a prior, explicit Authority Envelope.
+- Material uncertainty, boundary proximity, anomaly, or conflict must trigger review or escalation.
+- High-risk, irreversible, rights-affecting, or materially consequential action requires explicit authorization by an accountable person or institution.
+- Action outside the envelope must stop; the runtime may not enlarge its own authority.
+
+Authority gradients enable proportionate automation without converting efficiency into an excuse for invisible responsibility.
+
+* Authority is not a machine output
+
+Formal qualification and organizational authorization are separate. Lean may establish that declared conditions hold, but it cannot create consent, legitimate authority, human judgment, or retained responsibility.
+
+Consequential Action Cases require an Authority Envelope that identifies affected interests, permitted effects, responsible decision-makers, duration, rollback, revocation, and requalification conditions. High-risk action always retains explicit human authority.
+
+People are not generic approval buttons. The system must preserve who has standing to decide, who is affected, what information was available, and where disagreement remains unresolved.
+
+tao3k automates work. It does not automate away authority, judgment, or responsibility.
+
+* Related records
+
+- [[file:30.03_tao3k_values.org][tao3k Values and Principles]]
+- [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+
+- [[file:../brand/20.01_tao3k_brand_foundation.org][20.01 Brand Foundation]]
+- [[file:30.02_technical_equity.org][30.02 Technical Equity]]
+- [[file:../solutions/40.01_research_operations_continuum.org][40.01 Research--Operations Continuum]]

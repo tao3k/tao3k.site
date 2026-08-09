@@ -1,0 +1,31 @@
+.tao3k-home-hero {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.tao3k-home-hero > *,
+.tao3k-home-hero__copy,
+.tao3k-stage {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .tao3k-home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .tao3k-home-hero > * {
+    width: 100%;
+  }
+
+  .tao3k-home-hero h1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 13vw, 4rem);
+  }
+
+  .tao3k-stage {
+    width: 100%;
+  }
+}

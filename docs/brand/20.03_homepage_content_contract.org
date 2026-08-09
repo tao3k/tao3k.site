@@ -1,0 +1,160 @@
+#+TITLE: tao3k Homepage Content Contract
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:brand:homepage:content:site:
+#+STATUS: Accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: Brand, content, design, and site engineering teams
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+This record defines the required narrative order and editorial boundary of the tao3k home page.
+
+The home page introduces the complete tao3k ecosystem. It is not a product feature grid, developer reference, or technical status dashboard.
+
+* Hero
+
+The governing doctrine is:
+
+#+begin_quote
+Intelligence must earn the right to act.
+#+end_quote
+
+The approved public heading is:
+
+#+begin_quote
+Turn intelligence into reproducible work.
+#+end_quote
+
+The stable description is:
+
+#+begin_quote
+tao3k turns knowledge, code, scientific models and human records into admissible action—and turns every action back into searchable, verifiable and evolvable evidence.
+#+end_quote
+
+The human explanation is:
+
+#+begin_quote
+Real work needs more than a plausible answer. It needs a record of what was known, why an action was allowed, who remains responsible, and how the result can be checked, repeated, and improved.
+#+end_quote
+
+The primary calls to action are =Explore the vision= and =View the roadmap=. Open-source and documentation actions remain visible without displacing the doctrine.
+
+* Required narrative order
+
+** 1. Hero: the core position
+
+Render the hero from the canonical message hierarchy rather than composing new campaign copy:
+
+- Category :: Evidence--Action Ecosystem
+- Heading :: Turn intelligence into reproducible work.
+- Promise :: tao3k turns knowledge, code, scientific models, and human records into admissible action---and turns every action back into searchable, verifiable, and evolvable evidence.
+- Commitment :: Built for scientific standards, accountable operation, research-to-industry continuity, open technical agency, and long-term stewardship.
+- Primary actions :: Explore the Evidence--Action Ecosystem; See How Intelligence Earns the Right to Act.
+- Secondary actions :: View the Roadmap; Explore Open Source Projects.
+- Commercial action :: Work with tao3k.
+
+Do not use /Get Started/ or /Book a Demo/ as the dominant hero action, and do not classify tao3k as a generic AI, workflow, knowledge, agent, or operating-system product.
+
+Lead with =Turn intelligence into reproducible work.= and the stable company description. =Intelligence must earn the right to act.= remains the governing doctrine that gives the heading its practical meaning. Keep product names and training-data claims out of the opening claim. The primary actions are =Explore the vision= and =View the roadmap=.
+
+** 2. The root problem
+
+Describe three institutional breaks rather than a catalogue of software-category problems.
+
+- Knowledge--Decision Break :: Retrieval and generation do not establish whether an action is admissible.
+- Research--Operations Break :: Research transferred as isolated papers, models, or code loses evidence, assumptions, applicability boundaries, and reproducibility.
+- Action--Evidence Break :: Operational systems record that an action happened but rarely preserve why it was allowed, whether its assumptions survived reality, or what should be learned from the result.
+
+Human Agency is the cross-cutting condition for repairing all three breaks: people must retain the practical ability to understand, contest, redirect, stop, and accept responsibility for consequential action.
+
+The page must explain that tao3k spans several technical domains because all three breaks must be closed, not because the company is assembling an undifferentiated all-in-one platform.
+
+Explain that the missing layer is not another model or workflow tool. The unresolved discontinuities are evidence without trustworthy provenance, intelligence without action qualification, research that cannot cross into industry without semantic loss, execution without durable receipts, and automation that erases human interests or responsibility.
+
+#+begin_example
+Record → Understand → Model → Qualify → Authorize → Act → Verify → Evolve
+#+end_example
+
+
+** 3. The core operating model
+
+Present the Admissibility Circuit as the way trust moves through the ecosystem: Evidence -> Frame an Action Case -> Qualify -> Authorize -> Act -> Verify -> Return Evidence. A workflow tells a system what to do; the circuit establishes why it may act, under whose authority, and what evidence it must return. The detailed object semantics remain owned by the lifecycle specification.
+
+Present [[file:../platform/10.01_evidence_native_ai_lifecycle.org][The Admissibility Circuit]] before introducing project names. Show that intelligence is provisional, evidence grants qualification, execution emits evidence, and evidence changes the next decision. Overlay the Intelligence, Action, and Evolution lifecycles as three views of one circuit.
+
+State the standard explicitly: Science is the method, evidence and qualification are the admission mechanisms, and traceability, verification, and reproducibility are the lifecycle guarantees. These are not compliance decoration. They are how organisations can inspect, repeat, challenge, and improve consequential work.
+
+
+#+begin_quote
+#+end_quote
+
+
+** 4. One lifecycle, multiple engines
+
+Present tao3k as one Evidence--Action Ecosystem rather than a collection of AI products. At main-site altitude, show a continuous path through Evidence Foundation, Qualification Plane, Action Core, and Evidence Return Loop: knowledge and records become qualified action, while action returns searchable, verifiable, and evolvable evidence. The ecosystem uses multiple specialized engines joined by shared evidence, qualification, and authority contracts; it is neither a loose project list nor a forced monolith. Keep individual projects role-level here and direct implementation claims to their own Docs.
+
+Reveal products as responsible engines inside the lifecycle rather than as an unrelated card catalogue. Knowledge and records, semantic understanding, graph and scientific intelligence, qualification and verification, flow compilation, Agent runtime, and evidence return each link to their responsible Products or Platform owner.
+
+
+
+** 5. From research to industry
+
+Show a bidirectional Research--Operations Continuum rather than a one-way technology-transfer funnel: Research Claim -> Reproducible Evidence -> Qualified Artifact -> Governed Deployment -> Operational Evidence -> Research Revision -> Research Claim. Deployment is not the endpoint; operational reality must return as structured evidence without stripping away the research claim's provenance, assumptions, uncertainty, and applicability limits.
+
+Explain how tao3k preserves evidence, assumptions, semantics, authority, qualification, and verification from scientific work through bounded industrial action and back into durable knowledge. The claim includes quality, reproducibility, handoff, and administrative cost rather than speed alone.
+
+** 6. Human Agency
+
+State that AI should expand the range of meaningful human action rather than narrow the range of people allowed to participate. Human Agency is not a final approval click: it is the practical ability to understand, contest, redirect, stop, and accept responsibility for consequential action. Present a risk-based Authority Gradient in which reversible low-risk work may run inside prior authority, uncertainty triggers review, and high-risk or irreversible action requires explicit accountable authority.
+
+State that AI should expand human agency rather than erase human worth. Human interests, judgment, contestability, refusal, and responsibility remain first-class parts of consequential action. Technical Equity is a value and access commitment, not a narrow customer segment.
+
+** 7. Evidence-grade learning data
+
+Present learning data as a governed lifecycle output, not collected data exhaust. A learning record must preserve provenance, context, semantics, reproducibility, qualification, authority, outcome, verification, uncertainty, rights, and version history. The section must invite organizations and communities to become producers of trustworthy evidence rather than passive consumers of generated intelligence, while stating that private evidence never acquires training permission by default and that current, active, research, and horizon capabilities remain visibly distinct.
+
+Explain that tao3k aims to produce high-quality evidence for future learning rather than only consume public knowledge. Link to [[file:20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]] and state that training eligibility is purpose-specific, inspectable, rights-aware, and never automatic.
+
+** 8. Comparison and Roadmap
+
+Comparison must use a dated reference set of widely recognized community and commercial products rather than an abstract or conveniently weak competitor list. Pair stable lifecycle dimensions with current product evidence from [[file:../compare/50.02_community_product_reference_set.org][Community Product Reference Set]] and current industry pain from [[file:../compare/50.03_industry_evidence_watch.org][Industry Evidence Watch]]. Every news-derived statement must expose its date and evidence state, distinguishing vendor-confirmed incidents, researcher disclosures, institutional research, court allegations, and news-reported user signals.
+
+Close by directing users to Comparison, Roadmap, and the [[file:../company/80.01_company_ecosystem_overview.org][Company and Ecosystem Overview]]. Comparison evaluates evidence provenance, action qualification, reproducibility, human authority, lifecycle closure, and research-to-industry delivery rather than feature counts. Roadmap distinguishes available foundations, active construction, research frontiers, and long-term horizons. The company overview presents Open Source First, commercial responsibility, customer exit rights, community reinvestment, and long-term stewardship at main-site altitude. GitHub, Documentation, Products, and community entry points remain visible invitations to inspect and participate.
+
+
+
+* Claims and maturity
+
+- Visionary language is allowed in Vision and Roadmap sections.
+- Current capability claims require a project-owned evidence link.
+- The home page does not display unsupported percentages, customer counts, benchmark claims, or universal superiority claims.
+- Product cards describe ecosystem role, not exhaustive implementation status.
+- Comparison claims link to the Comparison framework and supporting sources.
+
+* Visual hierarchy
+
+- The doctrine is the largest semantic statement on the page.
+- Product names do not appear above the lifecycle explanation.
+- Values receive a full section rather than a small footer link.
+- Roadmap is visible from the initial page journey.
+- The design communicates long-term infrastructure rather than short-lived AI spectacle.
+
+* Mobile content contract
+
+- The doctrine and stable description remain intact on narrow screens.
+- Lifecycle stages may wrap or become a vertical sequence without losing order.
+- Product cards become a single-column or horizontal-snap list with visible external-link actions.
+- Values remain readable prose rather than icon-only labels.
+- No essential section depends on hover, wide diagrams, or desktop-only animation.
+
+* Related records
+
+- [[file:20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:20.01_tao3k_brand_foundation.org][tao3k Brand Foundation]]
+- [[file:20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../principles/30.03_tao3k_values.org][tao3k Values and Principles]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]

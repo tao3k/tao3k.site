@@ -1,0 +1,155 @@
+#+TITLE: Technical Equity and Human-paced Transition
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:principles:technical-equity:participation:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, education, agriculture, technical-workforce
+#+CLAIM_MATURITY: policy
+
+* Position
+
+People are tao3k's primary compounding asset. Human judgment, domain knowledge,
+craft, relationships, and the capacity to learn create durable value that
+technology should extend rather than erase.
+
+Technical equity means knowledge equality: people should have a realistic path
+to access, understand, contest, produce, and apply consequential knowledge. It
+does not flatten expertise or promise equal outcomes. It prevents advanced
+capability from becoming the exclusive property of a few institutions.
+
+Technical equity is a company principle and social commitment. It is not the
+commercial category of the tao3k platform and must not be used to position the
+product as a small-team or student utility.
+
+* Human-paced transition
+
+#+begin_quote
+AI can move at machine speed. People deserve to grow at human speed.
+#+end_quote
+
+The cost of rapid technical transition must not be pushed entirely onto people
+with the least institutional power. A responsible transition provides time,
+explanation, simulation, staged autonomy, reversible choices, and a path to new
+forms of contribution.
+
+* Students
+
+Students need more than generated answers. They need an environment in which
+they can move through a capability ladder:
+
+#+begin_example
+Ask → Understand → Reproduce → Modify → Validate → Build → Contribute
+#+end_example
+
+AI should lower the barrier to complex knowledge, code, and scientific tools
+without hiding how conclusions were formed.
+
+* Farmers and field practitioners
+
+Farmers and field practitioners hold local, environmental, temporal, and tacit
+knowledge that a general model cannot assume. AI should connect scientific
+research, observations, operational data, and market information while keeping
+the practitioner's experience visible, contestable, and valuable.
+
+The goal is not to let an opaque recommendation erase local judgment. The goal
+is to make scientific and field evidence useful together.
+
+* Technical workers and operators
+
+Technicians and operators understand equipment, failure, maintenance, safety,
+and real operating constraints. AI should help them diagnose systems, anticipate
+risk, access knowledge, and turn field experience into reusable organizational
+evidence.
+
+Automation should create a path from repetitive execution toward diagnosis,
+supervision, craft, and system improvement.
+
+* Participation during rapid technical transition
+
+Students, farmers, technical workers, independent builders, and people with
+limited institutional resources are not a narrow tao3k market segment. They are
+a test of whether the ecosystem's values survive unequal access to compute,
+education, institutional support, and organizational power.
+
+As AI reduces information asymmetry, access to information alone becomes less
+differentiating. A new capability gap appears between people who can frame useful
+questions, judge evidence, collaborate with AI, organize responsible action, and
+learn from outcomes, and people who receive abundant answers without gaining
+those capabilities.
+
+tao3k does not promise to preserve every existing job form or deny that
+automation changes work. It does reject workforce removal as the only measure of
+AI value, people as obsolete inefficiencies, and technical speed as a
+justification for denying participation. The ecosystem should provide
+inspectable conclusions, open formats, data portability, local and self-hosted
+foundations, learnable documentation, attribution, and realistic paths for
+people to acquire new capability at a humanly sustainable pace.
+
+Technical equity means expanding who can learn, inspect, contest, build,
+migrate, and create value with advanced systems. It does not mean hiding
+complexity, lowering evidence standards, or turning a public-value commitment
+into a marketing category.
+
+* Design implications
+
+- Preserve sources, assumptions, and uncertainty instead of returning a bare
+  recommendation.
+- Support observe, suggest, confirm, and execute modes rather than forcing an
+  immediate jump to full autonomy.
+- Provide sandbox and simulation paths for learning and transition.
+- Preserve domain language and local knowledge through structured records and
+  ontology mappings.
+- Keep consequential actions contestable and reversible where the domain
+  permits.
+- Avoid model and platform lock-in that removes a person's accumulated work.
+- Measure whether users gain lasting capability, not only task throughput.
+
+* Evidence-grade learning data
+
+Technical equity includes the right to become a recognized producer of knowledge, not merely a consumer of AI output. People and communities who contribute records, corrections, observations, domain practice, or operational outcomes must be able to retain attribution, applicable rights, context, and a visible relationship to the value created from their work.
+
+Quality requirements must remain understandable and attainable. tao3k should help contributors produce contract-checked, provenance-bearing, reproducible evidence without requiring access to a hyperscale laboratory. This does not waive privacy, consent, safety, or domain qualification requirements.
+
+The canonical lifecycle and quality dimensions are defined in [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]].
+
+* Boundary with commercial positioning
+
+The commercial platform remains designed for scientific and industrial
+institutions. The same foundations can lower barriers for students, farmers,
+independent practitioners, and technical workers, but those communities belong
+to the public-value commitment rather than the product-category headline.
+
+* Knowledge-action interface
+
+The human--AI interface is a knowledge-action interface. It connects human
+purpose and domain knowledge with machine search, synthesis, simulation, and
+execution so that people can turn accessible information into inspectable
+judgment and responsible action.
+
+This interface requires more than conversational access to a model. People must
+be able to inspect the Claims, evidence, assumptions, semantic definitions, and
+authority boundaries that shape consequential decisions. Domain experts,
+students, workers, farmers, researchers, and affected communities must be able
+to challenge a definition or mapping without first becoming model engineers.
+
+Human purpose, judgment, responsibility, and the right to stop remain sovereign.
+Machine capability can broaden reach and reduce friction, but it cannot silently
+replace human standing. Qualified actions must expose their permitted scope,
+responsible people, affected interests, revocation conditions, and returned
+outcomes.
+
+* Related records
+
+- [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:30.03_tao3k_values.org][tao3k Values and Principles]]
+- [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+
+- [[file:30.01_human_agency_charter.org][30.01 Human Agency Charter]]
+- [[file:../brand/20.01_tao3k_brand_foundation.org][20.01 Brand Foundation]]

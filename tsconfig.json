@@ -18,8 +18,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["node", "vite/client"]
+    "types": ["node"]
   },
-  "include": ["src", "theme", "vite.config.ts"],
+  "include": ["src", "theme", "rsbuild.config.ts"],
   "references": []
 }

@@ -1,0 +1,214 @@
+#+TITLE: tao3k.site Documentation Contract
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k.site maintainers
+#+FILETAGS: :tao3k:contracts:documentation:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: public
+#+CLAIM_MATURITY: policy
+
+* Documentation document
+:PROPERTIES:
+:CONTRACT_ID: tao3k.document
+:CONTRACT_KIND: org-elements
+:CONTRACT_SCOPE: document
+:END:
+Every tao3k.site content, documentation, architecture, operations, and theme Org
+record must be self-identifying, reviewable, and explicit about the maturity of
+its claims.
+
+** A document has a title
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.title
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name TITLE))
+#+end_src
+#+begin_src jinja2 :name message
+The document must declare a non-empty #+TITLE keyword.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+TITLE: <descriptive title> at the top of the Org file.
+#+end_src
+
+** A document has a date
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.date
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name DATE))
+#+end_src
+#+begin_src jinja2 :name message
+The document must declare its review date with #+DATE.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+DATE: YYYY-MM-DD at the top of the Org file.
+#+end_src
+
+** A document has an author
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.author
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name AUTHOR))
+#+end_src
+#+begin_src jinja2 :name message
+The document must identify its responsible author with #+AUTHOR.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+AUTHOR: <responsible author> at the top of the Org file.
+#+end_src
+
+** A document has file tags
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.filetags
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name FILETAGS))
+#+end_src
+#+begin_src jinja2 :name message
+The document must declare Org file tags with #+FILETAGS.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+FILETAGS: :tao3k:<domain>: at the top of the Org file.
+#+end_src
+
+** A document has a lifecycle status
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.status
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name STATUS))
+#+end_src
+#+begin_src jinja2 :name message
+The document must declare its lifecycle with #+STATUS.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+STATUS: <lifecycle state> at the top of the Org file.
+#+end_src
+
+** A document has an owner
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.owner
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name OWNER))
+#+end_src
+#+begin_src jinja2 :name message
+The document must identify its accountable owner with #+OWNER.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+OWNER: <accountable owner> at the top of the Org file.
+#+end_src
+
+** A document has an audience
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.audience
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name AUDIENCE))
+#+end_src
+#+begin_src jinja2 :name message
+The document must state its intended audience with #+AUDIENCE.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+AUDIENCE: <intended audience> at the top of the Org file.
+#+end_src
+
+** A document declares claim maturity
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.claim-maturity
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type keyword :name CLAIM_MATURITY))
+#+end_src
+#+begin_src jinja2 :name message
+The document must distinguish shipped evidence, active development, research,
+vision, and policy with #+CLAIM_MATURITY.
+#+end_src
+#+begin_src jinja2 :name fix
+Add #+CLAIM_MATURITY: <shipped|active-development|research|vision|policy> at the
+top of the Org file.
+#+end_src
+
+** A document has readable text
+:PROPERTIES:
+:ASSERT_ID: tao3k.site.document.readable-text
+:ASSERT_SEVERITY: error
+:END:
+#+begin_src org-elements-selector
+(:org-element (:type paragraph))
+#+end_src
+#+begin_src jinja2 :name message
+The document must contain readable explanatory prose.
+#+end_src
+#+begin_src jinja2 :name fix
+Add a paragraph that explains the document's decision, evidence, or procedure.
+#+end_src
+
+* JDex coordinate policy
+JDex is a machine-queryable Org navigation index, not a second metadata
+authority. A coordinate record uses an Org TODO keyword as its lifecycle state
+and links directly from the heading to the responsible Org file.
+
+#+begin_src org
+** ACTIVE [[file:../compare/50.02_community_product_reference_set.org][50.02 Community Product Reference Set]]
+#+end_src
+
+The JDex state machine must be declared with =#+TODO=. Plain description rows
+such as =- Status :: Active=, coordinate property drawers, duplicated standalone
+links, and copied target metadata are prohibited.
+
+The linked target file is the sole metadata authority. Its header owns
+=#+TITLE=, =#+DATE=, =#+AUTHOR=, =#+FILETAGS=, =#+STATUS=, =#+OWNER=,
+=#+AUDIENCE=, and =#+CLAIM_MATURITY=. Repository validation resolves the
+=file:= link and requires the JDex TODO state to match the target =#+STATUS=:
+=DRAFT -> draft=, =REVIEW -> review=, =ACTIVE -> active=,
+=ACCEPTED -> accepted=, =SUPERSEDED -> superseded=, and
+=ARCHIVED -> archived=.
+
+* Repository-level requirements
+The repository gate additionally requires:
+- no Markdown documentation;
+- no non-portable =id:= links in repository documentation;
+- every relative =file:= link resolves from its owning document;
+- every file under =content/= declares a root =CONTRACT_ORG= property;
+- local and Pages configurations register this same contract source;
+- no duplicate required keyword;
+- a valid claim-maturity value.
+
+The accepted maturity values are =shipped=, =active-development=, =research=,
+=vision=, and =policy=. A repository or design record must not be presented as
+shipped evidence merely because it exists.
+
+* Contract-source diagnostics
+| Code          | Meaning                                                     |
+|---------------+-------------------------------------------------------------|
+| CONTRACT-E001 | No valid contract definition was parsed.                    |
+| CONTRACT-E002 | A contract ID is duplicated in one source.                   |
+| CONTRACT-E003 | A contract contains no valid assertions.                     |
+| CONTRACT-E004 | A contract section has no non-empty CONTRACT_ID.             |
+| CONTRACT-E005 | CONTRACT_KIND is unsupported.                                |
+| CONTRACT-E006 | CONTRACT_SCOPE is unsupported.                               |
+| CONTRACT-E007 | An assertion section has no non-empty ASSERT_ID.             |
+| CONTRACT-E008 | ASSERT_SEVERITY is unsupported.                              |
+| CONTRACT-E009 | An assertion has no valid query or selector.                 |
+
+* Deployment use
+The local and GitHub Pages theme configurations list this file under
+=[contracts].sources=. Orgize WASM validates the contract source before target
+documents are evaluated. A malformed contract is a deployment error, not an
+empty successful registry.
+
+* Ownership boundary
+Orgize owns contract parsing, source validation, evaluation, diagnostics, and
+the WASM transport. Org Zhixing owns configuration and deployment admission.
+tao3k.site owns this repository-specific policy and its public claims.

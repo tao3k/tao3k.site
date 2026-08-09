@@ -1,0 +1,422 @@
+.tao-home {
+  overflow: hidden;
+}
+
+.tao-home-hero,
+.tao-section,
+.tao-final-cta,
+.tao-solution-page {
+  width: min(1480px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.tao-home-hero {
+  display: grid;
+  min-height: calc(100svh - 90px);
+  grid-template-columns: minmax(0, 0.86fr) minmax(620px, 1.14fr);
+  gap: clamp(42px, 6vw, 96px);
+  align-items: center;
+  padding: clamp(82px, 10vw, 148px) 0 clamp(82px, 9vw, 128px);
+}
+
+.tao-home-copy {
+  max-width: 650px;
+}
+
+.tao-kicker {
+  margin: 0 0 18px;
+  color: var(--tao-jade);
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.72rem;
+  font-weight: 720;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.tao-home-copy h1,
+.tao-section-heading h2,
+.tao-authority-statement h2,
+.tao-final-cta h2,
+.tao-solution-hero h1,
+.tao-solution-page h2 {
+  text-wrap: balance;
+}
+
+.tao-home-copy h1 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--tao-ink);
+  font-size: clamp(4rem, 7.2vw, 7.8rem);
+  font-weight: 640;
+  letter-spacing: -0.07em;
+  line-height: 0.88;
+}
+
+.tao-home-copy h1 span {
+  display: block;
+  margin-top: 0.14em;
+  color: rgba(21, 32, 25, 0.48);
+}
+
+.tao-home-summary {
+  max-width: 610px;
+  margin: 32px 0 0;
+  color: var(--tao-ink-soft);
+  font-size: clamp(1.08rem, 1.35vw, 1.32rem);
+  line-height: 1.68;
+}
+
+.tao-home-actions,
+.tao-final-cta > div,
+.tao-solution-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.tao-action {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(21, 32, 25, 0.14);
+  border-radius: 15px;
+  padding: 13px 18px;
+  font-size: 0.9rem;
+  font-weight: 730;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.tao-action:hover {
+  transform: translateY(-2px);
+}
+
+.tao-action-primary {
+  border-color: rgba(9, 55, 32, 0.24);
+  background: var(--tao-jade);
+  color: #f7fbf8;
+  box-shadow: 0 14px 34px rgba(23, 107, 69, 0.2);
+}
+
+.tao-action-secondary {
+  background: rgba(255, 255, 255, 0.54);
+  color: var(--tao-ink);
+  box-shadow: 0 10px 30px rgba(24, 37, 28, 0.06);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+}
+
+.tao-home-definition {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 54px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(21, 32, 25, 0.15);
+}
+
+.tao-home-definition div {
+  display: grid;
+  gap: 8px;
+}
+
+.tao-home-definition dt,
+.tao-evidence-status span,
+.tao-operator-body dt,
+.tao-solution-page dt {
+  color: rgba(21, 32, 25, 0.5);
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tao-home-definition dd {
+  margin: 0;
+  color: var(--tao-ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.tao-evidence-instrument {
+  --glass-x: 72%;
+  --glass-y: 18%;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(231, 244, 235, 0.14);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at var(--glass-x) var(--glass-y), rgba(90, 219, 191, 0.2), transparent 21rem),
+    radial-gradient(circle at 8% 96%, rgba(54, 125, 138, 0.18), transparent 22rem),
+    linear-gradient(145deg, #111e18 0%, #09110d 52%, #0c1612 100%);
+  color: var(--tao-runtime-text);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 42px 100px rgba(20, 37, 27, 0.25),
+    0 10px 24px rgba(20, 37, 27, 0.16);
+}
+
+.tao-evidence-instrument::before,
+.tao-evidence-instrument::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.tao-evidence-instrument::before {
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, black, transparent 78%);
+  opacity: 0.72;
+}
+
+.tao-evidence-instrument::after {
+  top: -18%;
+  left: calc(var(--glass-x) - 30%);
+  width: 58%;
+  height: 38%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.11);
+  filter: blur(48px);
+  opacity: 0.38;
+  transition: left 120ms linear;
+}
+
+.tao-evidence-instrument > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tao-instrument-header,
+.tao-instrument-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 20px;
+  color: var(--tao-runtime-muted);
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.68rem;
+}
+
+.tao-instrument-header {
+  border-bottom: 1px solid var(--tao-runtime-line);
+}
+
+.tao-instrument-header > div {
+  display: grid;
+  gap: 4px;
+}
+
+.tao-instrument-header strong {
+  color: var(--tao-runtime-text);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 620;
+}
+
+.tao-live-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(180, 234, 202, 0.84);
+}
+
+.tao-live-state::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #6bd49c;
+  box-shadow: 0 0 18px rgba(107, 212, 156, 0.72);
+  content: "";
+}
+
+.tao-evidence-rail {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+  margin: 0;
+  padding: 14px;
+  list-style: none;
+}
+
+.tao-evidence-rail li {
+  min-width: 0;
+}
+
+.tao-glass-control {
+  position: relative;
+  isolation: isolate;
+  appearance: none;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.045)),
+    rgba(232, 245, 236, 0.05);
+  color: rgba(237, 245, 239, 0.76);
+  cursor: pointer;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 10px 24px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.tao-glass-control::before {
+  position: absolute;
+  z-index: -1;
+  top: -70%;
+  left: 10%;
+  width: 82%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  filter: blur(14px);
+  content: "";
+  opacity: 0.42;
+}
+
+.tao-glass-control:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+  transform: translateY(-2px);
+}
+
+.tao-glass-control[data-active="true"] {
+  border-color: rgba(111, 217, 170, 0.56);
+  background:
+    linear-gradient(145deg, rgba(95, 203, 153, 0.34), rgba(23, 107, 69, 0.18)),
+    rgba(232, 245, 236, 0.1);
+  color: #f2fbf5;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22) inset,
+    0 0 0 1px rgba(79, 167, 122, 0.12),
+    0 12px 30px rgba(22, 111, 68, 0.2);
+}
+
+.tao-stage-control {
+  display: grid;
+  width: 100%;
+  min-height: 76px;
+  align-content: space-between;
+  gap: 12px;
+  padding: 11px;
+  text-align: left;
+}
+
+.tao-stage-control span {
+  color: rgba(237, 245, 239, 0.44);
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.62rem;
+}
+
+.tao-stage-control strong {
+  overflow: hidden;
+  font-size: 0.74rem;
+  font-weight: 640;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+}
+
+.tao-evidence-detail {
+  display: grid;
+  min-height: 360px;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 0.28fr);
+  grid-template-rows: 1fr auto;
+  gap: 28px;
+  margin: 0 14px;
+  border: 1px solid var(--tao-runtime-line);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 52%),
+    rgba(4, 10, 7, 0.64);
+  padding: clamp(28px, 4vw, 48px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18) inset;
+}
+
+.tao-evidence-detail-copy {
+  align-self: center;
+}
+
+.tao-evidence-detail .tao-kicker {
+  color: #75cfa0;
+}
+
+.tao-evidence-detail h2 {
+  max-width: 620px;
+  margin: 0;
+  color: var(--tao-runtime-text);
+  font-size: clamp(2.15rem, 4.2vw, 4.8rem);
+  font-weight: 560;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.tao-evidence-detail-copy > p:last-child {
+  max-width: 590px;
+  margin: 24px 0 0;
+  color: var(--tao-runtime-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.tao-evidence-status {
+  display: grid;
+  align-self: start;
+  gap: 8px;
+  border-left: 1px solid var(--tao-runtime-line);
+  padding-left: 22px;
+}
+
+.tao-evidence-status span {
+  color: rgba(237, 245, 239, 0.42);
+}
+
+.tao-evidence-status strong {
+  color: #8fddb2;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.8rem;
+  font-weight: 620;
+  text-transform: uppercase;
+}
+
+.tao-evidence-facts {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-self: end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tao-evidence-facts li {
+  border: 1px solid var(--tao-runtime-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(237, 245, 239, 0.62);
+  padding: 8px 11px;
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+  font-size: 0.65rem;
+}
+
+.tao-instrument-footer {
+  border-top: 1px solid var(--tao-runtime-line);
+}

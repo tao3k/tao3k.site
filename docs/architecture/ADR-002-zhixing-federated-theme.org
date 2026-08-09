@@ -1,7 +1,7 @@
 #+TITLE: ADR-002: Publish tao3k.site as an Independent Zhixing Theme
 #+DATE: 2026-07-18
 #+AUTHOR: Guangtao Tao
-#+FILETAGS: :adr:architecture:zhixing:theme:module-federation:
+#+FILETAGS: :tao3k:adr:architecture:zhixing:theme:module-federation:
 
 * ADR-002: Publish tao3k.site as an independent Zhixing theme
 
@@ -56,3 +56,7 @@ dependency without changing its import, public remote name, or expose.
 =npm run validate= proves the existing application and theme provider together. The theme gate
 requires a production Module Federation manifest containing =tao3k_site=, =./theme=, and a remote
 entry. GitHub CI runs the same gate from a clean checkout.
+#+STATUS: superseded
+#+OWNER: tao3k.site and Org Zhixing
+#+AUDIENCE: maintainers, downstream theme authors
+#+CLAIM_MATURITY: active-development

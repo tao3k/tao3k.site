@@ -15,3 +15,6 @@ locale = "en-US"
 
 [content]
 content_dir = "content"
+
+[contracts]
+sources = ["docs/contracts/90.01_document_contract.org"]

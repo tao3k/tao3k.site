@@ -1,0 +1,110 @@
+#+TITLE: ADR-001: Position tao3k as an evidence-native AI lifecycle ecosystem
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:architecture:brand:lifecycle:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, maintainers, partners
+#+CLAIM_MATURITY: policy
+
+* Context and problem statement
+
+tao3k cannot be described accurately as an agent framework, workflow engine,
+knowledge platform, coding agent, or scientific-compute product. Each label
+captures one capability while hiding the system boundary that makes the
+capabilities useful together.
+
+Earlier product narratives organized the company around legacy components and a
+linear knowledge-to-action chain. Those designs are replaced rather than carried
+forward. They are not part of the current product or brand architecture.
+
+* Decision
+
+tao3k is positioned as an *evidence-native AI lifecycle ecosystem* for science
+and industry.
+
+The brand doctrine is:
+
+#+begin_quote
+Intelligence must earn the right to act.
+#+end_quote
+
+The stable company description is:
+
+#+begin_quote
+tao3k turns knowledge, code, scientific models and human records into
+admissible action—and turns every action back into searchable, verifiable and
+evolvable evidence.
+#+end_quote
+
+* System model
+
+The ecosystem joins three continuous lifecycles:
+
+1. Intelligence: record, structure, search, analyze, and validate.
+2. Action: contract, admit, execute, and produce a receipt.
+3. Evolution: evaluate, promote, and return trusted capability to the knowledge
+   and operating system.
+
+Contract, authority, and evidence govern every handoff. They are principles,
+not three product packages.
+
+These lifecycles are three projections over one *Admissibility Circuit*: intelligence is provisional; evidence grants qualification; execution must emit evidence; and evidence changes the next decision. The generic lifecycle and circuit are canonically defined in [[file:../platform/10.01_evidence_native_ai_lifecycle.org][Evidence-native AI Lifecycle]].
+
+* Evidence production lifecycle
+This learning-data production loop is a domain specialization of the generic Intelligence, Action, and Evolution lifecycles. It reuses the Admissibility Circuit and does not create a parallel platform lifecycle.
+
+The Evidence-to-Action loop must also be a learning-data production loop. Capture preserves provenance and rights; qualification establishes purpose-specific admissibility; action emits contextual runtime receipts; verification preserves outcomes, counter-evidence, and failures; return publishes the versioned result to the evidence graph; reuse measures downstream value.
+
+The resulting record is not trusted because the platform produced it. It is inspectable because the lifecycle preserves the evidence needed to evaluate provenance, authority, contract validity, reproducibility, freshness, uncertainty, rights, human accountability, contradictions, and downstream utility.
+
+The main-site doctrine and Evidence Passport are defined in [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]. Product-level formats and implementations remain owned by their project documentation.
+
+* Architectural handoff
+
+The lifecycle uses an explicit handoff rather than treating reasoning, proof, execution, and verification as one opaque agent run.
+
+1. The Evidence-Action Graph Engine extracts a versioned Action Case from knowledge, code, models, records, contracts, and authority.
+2. Julia computes graph, scientific, optimization, simulation, and numerical results together with checkable witnesses where practical.
+3. Lean evaluates qualification obligations and produces a scoped admission result.
+4. POO Flow compiles the admitted Agent flow; Marlin runs it and emits step-level receipts.
+5. Julia and Lean verify scientific and formal postconditions.
+6. Results, proofs, receipts, invalidations, and human decisions append to the graph as new evidence.
+
+This makes qualification a pre-action decision and verification a post-action decision. Lean participates in both phases with different proof obligations; Julia supplies scientific and computational evidence; POO Flow enforces their boundary.
+
+* Market boundary
+
+The commercial product is designed for scientific and industrial systems. Its
+primary customers are enterprises, laboratories, research institutions, and
+complex engineering organizations. Technical equity and human agency are brand
+commitments, not a small-team market positioning.
+
+* Consequences
+
+- Company copy must lead with the complete lifecycle and the evidence boundary.
+- Research-to-Operations is a mission-defining continuum, not the total product
+  category.
+- Comparison material must use dated, evidence-backed claims.
+- Human authority must be expressed as a first-class runtime capability.
+- Legacy product chains must not reappear in navigation or architecture maps.
+- Long-term claims must link to repositories, contracts, scenarios, benchmarks,
+  or runtime receipts.
+
+* Related records
+
+- [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][10.01 Evidence-native AI Lifecycle]]
+- [[file:../brand/20.01_tao3k_brand_foundation.org][20.01 tao3k Brand Foundation]]
+- [[file:../principles/30.01_human_agency_charter.org][30.01 Human Agency Charter]]
+- [[file:../solutions/40.01_research_operations_continuum.org][40.01 Research--Operations Continuum]]
+- [[file:../compare/50.01_comparison_framework.org][50.01 Comparison Framework]]

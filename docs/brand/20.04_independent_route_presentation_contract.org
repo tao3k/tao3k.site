@@ -1,0 +1,150 @@
+#+TITLE: Independent Route Presentation Contract
+#+DATE: 2026-07-20
+#+AUTHOR: TAO Three K
+#+AUDIENCE: Investors, users, companies, and ecosystem contributors
+#+CLAIM_MATURITY: policy
+#+OWNER: TAO Three K
+#+STATUS: Active
+#+FILETAGS: :tao3k:brand:site:information-architecture:presentation:
+#+TODO: DRAFT(d) REVIEW(r) | ACCEPTED(a) SUPERSEDED(s)
+
+* ACCEPTED Decision
+:PROPERTIES:
+:CUSTOM_ID: independent-route-presentation-contract
+:END:
+
+The TAO Three K main site separates brand presentation from route-owned
+explanation.  A shared header and company footer establish identity; they do
+not authorize shared page bodies.
+
+The homepage is the initial presentation surface.  It states the position,
+shows the evidence-to-action idea, communicates the long-term commitment, and
+provides deliberate exits.  It must not concatenate abbreviated copies of the
+Platform, Products, Solutions, Comparison, Principles, or Roadmap pages.
+
+* ACCEPTED Shared Shell Boundary
+:PROPERTIES:
+:CUSTOM_ID: shared-shell-boundary
+:END:
+
+The shared shell owns only:
+
+- brand identity and primary navigation;
+- global accessibility and responsive behavior;
+- company-level footer information;
+- links to contact, field notes, source repositories, and public routes.
+
+Color mode belongs to the primary header.  It is represented by one direct
+sun-to-moon control that drives the runtime theme variant.  Public pages must
+not expose a separate Appearance, Night, or Paper toolbar.
+
+The shared shell does not own route heroes, route diagrams, section order, or
+route-specific content components.
+
+Interactive material uses restrained radius, translucency, depth, and motion
+to communicate affordance.  Structural boundaries such as comparison matrices
+and dependency rails may remain rectilinear where straight geometry improves
+reading.  Repeating square cards without semantic reason is not an accepted
+site-wide layout language.
+
+* ACCEPTED Homepage Presentation
+:PROPERTIES:
+:CUSTOM_ID: homepage-presentation
+:END:
+
+The homepage is a showcase rather than an index document.  Its unique
+narrative is:
+
+1. intelligence must earn the right to act;
+2. knowledge, code, scientific models, and human records enter a qualification
+   core;
+3. admissible action returns searchable, verifiable, and evolvable evidence;
+4. human agency, open-source inspectability, and quality-data production are
+   long-horizon commitments;
+5. one primary exit leads into the evidence-to-operations system.
+
+The presentation is edge-to-edge.  The host may provide runtime isolation,
+but it must not frame the public site inside development gutters or expose
+source-count and federation-protocol diagnostics to public readers.
+
+The homepage may use a compact, interactive React Flow evidence circuit and a
+terminal-style receipt stream.  This is a brand-level demonstration of
+qualified motion: it visualizes authority moving from record to receipt.  It
+does not duplicate the Platform page's lifecycle explanation or the Products
+page's ecosystem inventory.
+
+Product inventories, comparison tables, detailed lifecycle stages, value
+charters, and roadmap horizons remain on their owning routes.
+
+* ACCEPTED Route-Owned Presentation Models
+:PROPERTIES:
+:CUSTOM_ID: route-owned-presentation-models
+:END:
+
+Each primary route uses a content-specific visual grammar.
+
+** Platform
+
+Uses an evidence lifecycle circuit.  It explains shared substrate,
+qualification authority, transition ownership, and receipt return.
+
+** Products
+
+Uses an ecosystem constellation.  It exposes independent product ownership,
+repository boundaries, and the shared evidence contract without presenting a
+monolithic feature catalogue.
+
+** Solutions
+
+Uses a bidirectional research-to-operations bridge.  It explains how claims,
+models, qualification, operation, and receipts survive institutional handoffs.
+
+** Comparison
+
+Uses an architectural comparison matrix.  It evaluates provenance, authority,
+handoff survival, human responsibility, and learning return rather than weak
+feature parity.
+
+** Principles
+
+Uses a manifesto and numbered charter.  Human agency, contestability,
+technical equity, open-source discipline, and high-risk authority remain the
+primary reading experience.
+
+** Roadmap
+
+Uses a dependency-ordered ladder.  Evidence states and exit signals take
+precedence over arbitrary release dates or issue aggregation.
+
+* ACCEPTED Company Footer
+:PROPERTIES:
+:CUSTOM_ID: company-footer
+:END:
+
+Every public route ends with a full company-level footer.  It includes the
+TAO Three K invariant, route navigation, principles and roadmap, a clear
+contact surface, field notes or blog access, GitHub, source code, and the wider
+open-source project directory.
+
+The footer is a relationship and orientation surface.  It must not become a
+second homepage or duplicate route-owned explanations.
+
+* ACCEPTED Acceptance Scenarios
+:PROPERTIES:
+:CUSTOM_ID: independent-route-acceptance-scenarios
+:END:
+
+- A homepage capture contains no copied product grid, comparison matrix, or
+  roadmap timeline.
+- Each primary route remains understandable when opened directly.
+- Two different primary routes do not share the same hero and body template.
+- Navigation preserves the current route without a full document reload.
+- The company footer is reachable from the homepage and every primary route.
+- Public captures contain no Org source counter, federation protocol label, or
+  other development-only runtime status.
+- The header presents a single accessible color-mode control; activating it
+  changes the host =data-theme-variant= state without a duplicate toolbar.
+- Homepage motion remains operable through pause and replay controls and
+  honors reduced-motion preferences.
+- Mobile layouts preserve the reading order and do not create horizontal page
+  overflow.

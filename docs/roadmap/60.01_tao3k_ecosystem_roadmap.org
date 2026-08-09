@@ -1,0 +1,142 @@
+#+TITLE: tao3k Ecosystem Roadmap
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:roadmap:ecosystem:vision:site:
+#+STATUS: Active
+#+OWNER: tao3k
+#+AUDIENCE: Users, contributors, researchers, partners, and long-term stakeholders
+#+CLAIM_MATURITY: vision
+
+* Purpose
+
+This record defines the tao3k.site Roadmap narrative. It describes the future direction of the complete ecosystem without duplicating project issue trackers or internal engineering plans.
+
+The Roadmap communicates durable fronts of work rather than global product versions.
+
+* Roadmap states
+
+| State | Meaning |
+|-
+| Foundation available | A usable basis exists and the responsible project documentation describes it |
+| Under active construction | The ecosystem is currently building and integrating this direction |
+| Research frontier | The direction has active investigation but unresolved technical or scientific questions |
+| Long-term horizon | The outcome guides architecture and investment without implying near-term delivery |
+
+The site must not infer a state from aspiration alone. When a state refers to current implementation, it links to the responsible project documentation.
+
+* Evidence-backed maturity map
+
+The roadmap is a maturity map, not a release-marketing calendar. Every domain item must be assigned to exactly one of four horizons according to current evidence.
+
+** Available Foundations
+
+Capabilities with inspectable code or artifacts, executable tests or scenarios, responsible Project Docs, current evidence, and explicit known limitations. Availability must not be inferred from repository existence or architectural intent.
+
+** Active Construction
+
+Capabilities with an accountable owner, current implementation and validation path, open gaps, and objective exit criteria. /Active/ means work and evidence exist; it does not mean delivery is imminent or the capability may be marketed as available.
+
+** Research Frontiers
+
+Questions requiring experiment, scientific validation, benchmark work, formalization, or architectural research. Each frontier must state its hypothesis, present evidence, uncertainty, and what result would support, revise, or reject the direction. Roadmap placement does not imply inevitable success.
+
+** Long-term Horizons
+
+Durable ecosystem outcomes such as a closed Evidence--Action lifecycle, research-to-operations continuity, governed next-generation Agent Core, rights-aware learning-data infrastructure, technical equity, and open public foundations. Horizons express direction and responsibility, not invented delivery dates.
+
+Global =v2=, =v3=, and similar version narratives are prohibited unless a responsible project defines a concrete release with its own evidence and compatibility contract.
+
+* Roadmap item evidence contract
+
+Every roadmap item must expose:
+
+- Status :: One of Available Foundation, Active Construction, Research Frontier, or Long-term Horizon.
+- Responsible project :: The project or institution authorized to own the claim.
+- Current evidence :: Code, artifact, test, scenario, benchmark, publication, formal result, deployment receipt, or other inspectable evidence.
+- Known gap :: What prevents the next maturity state or limits present use.
+- Exit criteria :: Observable conditions required to change maturity state.
+- Project Docs :: The authoritative implementation and capability record.
+- Last reviewed date :: The date on which evidence and status were re-evaluated.
+
+A roadmap item changes state only when its exit criteria are satisfied by current evidence. Time elapsed, investment, attention, or repeated aspiration is not maturity evidence.
+
+* Evidence Foundations
+
+The ecosystem develops durable Org-first records, provenance, contracts, semantic knowledge and code discovery, and searchable human and machine evidence.
+
+This direction establishes the substrate on which later qualification, action, and evolution depend.
+
+* Evidence-grade learning-data foundation
+
+** Foundation available
+
+- Org-first records, contracts, provenance, and evidence-to-action architecture establish the production boundary.
+
+** Under active construction
+
+- Evidence Passports that expose purpose-specific provenance, authority, contract validity, reproducibility, freshness, uncertainty, rights, human accountability, contradictions, and downstream utility.
+- Lifecycle receipts that connect capture, qualification, action, verification, return, and reuse.
+- Export and evaluation surfaces for retrieval, benchmarks, scientific reproduction, agent grounding, and model learning without erasing lineage.
+
+** Research frontier
+
+- Measuring downstream learning value without reducing quality to popularity or one opaque score.
+- Preserving negative results and contradictions while controlling privacy, consent, licensing, and unsafe reuse.
+- Returning attribution and value to human knowledge producers across institutional boundaries.
+
+** Long-term horizon
+
+- An open, contestable evidence economy in which AI use replenishes the quality of the knowledge base it consumes.
+
+The canonical doctrine is [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]].
+
+* Graph and Scientific Intelligence
+
+The ecosystem develops the Evidence-Action Graph, typed Claims and Evidence, living semantic ontology, Julia graph algorithms, scientific models, optimization, simulation, and uncertainty-aware computation.
+
+The goal is not a larger collection of embeddings. It is inspectable, computational meaning that can support consequential reasoning.
+
+* Qualification and Verification
+
+The ecosystem develops Lean obligations, scientific and formal verification, Evidence Contracts, Authority Envelopes, typed receipts, and explicit separation between qualification, authorization, observation, and verification.
+
+This direction makes =Intelligence must earn the right to act= an engineering property rather than a slogan.
+
+* Next-Generation Agent Core
+
+The ecosystem develops POO Flow as the composition language and compiler and Marlin as the Agent Runtime.
+
+The long-term direction includes reusable Agent organization, multi-agent systems, context and memory, capability ecosystems, recoverable execution, compiled human and authority checkpoints, and evidence-producing runtime behavior.
+
+* Research-to-Operations Ecosystem
+
+The ecosystem develops a continuous path from research Claims, scientific models, code, and ontology mappings through governed industrial deployment and post-operation verification.
+
+The objective is to reduce reproducibility, administrative, handoff, semantic, and quality costs without hiding uncertainty or human responsibility.
+
+* Technical Equity and Open Infrastructure
+
+The ecosystem develops open tools, inspectable semantics, accessible documentation, educational paths, and infrastructure that students, practitioners, small teams, academic institutions, and industrial organizations can use without surrendering understanding or agency.
+
+* Roadmap presentation
+
+The Roadmap page uses one section for each direction. Every section contains:
+
+- the long-term outcome;
+- why it matters;
+- current ecosystem state using the approved vocabulary;
+- related open-source projects;
+- links to project-owned Roadmaps or documentation; and
+- unresolved research questions where appropriate.
+
+The page does not publish invented delivery dates, artificial release trains, or a single percentage-complete score for the ecosystem.
+
+* Related records
+
+- [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:../brand/20.01_tao3k_brand_foundation.org][tao3k Brand Foundation]]
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../principles/30.03_tao3k_values.org][tao3k Values and Principles]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]

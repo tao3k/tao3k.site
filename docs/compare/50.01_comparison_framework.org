@@ -1,0 +1,216 @@
+#+TITLE: Comparison Framework
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:comparison:evidence:market:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, research, partners
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+Comparison is a first-class product page because tao3k spans categories that
+visitors otherwise recognize separately. The page must teach the category by
+showing which meaning, authority, and evidence survive each system handoff.
+
+* Page thesis
+
+#+begin_quote
+Compare systems by what survives the handoff.
+#+end_quote
+
+Most AI systems optimize retrieval, reasoning, orchestration, coding,
+experimentation, or deployment. tao3k connects the complete lifecycle while
+preserving contracts, authority, and evidence across each boundary.
+
+* Category comparison
+
+The first comparison layer uses system categories rather than named companies:
+
+- agent and coding tools;
+- workflow engines;
+- RAG and knowledge platforms;
+- MLOps and scientific platforms;
+- the tao3k evidence-native lifecycle.
+
+The comparison dimensions are:
+
+| Dimension | Question |
+|-----------+----------|
+| Structured human record | Does human knowledge remain inspectable system state? |
+| Source authority | Are provenance, licensing, and authority explicit? |
+| Code semantics | Does a parser own semantic facts, or does the model infer them? |
+| Scientific ownership | Can domain algorithms retain their native language and assumptions? |
+| Admission | Is policy evaluated before consequential execution? |
+| Runtime authority | Are session, sandbox, process, and recovery boundaries typed? |
+| Human authority | Can people understand, contest, revoke, and remain accountable? |
+| Execution evidence | Does the system emit structured receipts and support replay? |
+| Feedback continuity | Do operational outcomes return to knowledge and research? |
+| Promotion | Is a new capability admitted through evidence rather than raw behavior? |
+
+* Honest comparison states
+
+The page must not use a table in which tao3k receives every check mark and every
+other system receives a cross. Each cell uses one of these states:
+
+| State | Meaning |
+|-------+---------|
+| native | The system owns the capability and its contract |
+| integrated | A maintained integration supplies the capability |
+| external | Another system must own the capability |
+| partial | The capability exists with a documented boundary |
+| not responsible | The capability is intentionally outside the system boundary |
+
+* Maintained comparison records
+
+This framework owns stable dimensions and fairness rules. Current community product selection, observation dates, official product claims, and popularity signals are owned by [[file:50.02_community_product_reference_set.org][Community Product Reference Set]]. Dated incidents, research findings, surveys, court allegations, and news-reported signals are owned by [[file:50.03_industry_evidence_watch.org][Industry Evidence Watch]].
+
+The public Comparison surface must join these records without collapsing them. A product's official capability statement, a community metric, an independent security disclosure, a resolved vendor incident, a court allegation, and a user-reported signal are different evidence states.
+
+* Product selection rules
+
+Named comparisons must include products that the relevant community actually recognizes and uses. Selection considers community visibility, category influence, active maintenance, official documentation, and relevance to the Evidence--Action boundary. It must not select obscure or abandoned products merely because they are easier to defeat.
+
+Comparison may use dated GitHub attention, adoption studies, official customer evidence, release activity, or other inspectable signals. Popularity is a reason to include a product, not proof that it is safe, suitable, or architecturally complete.
+
+* Named comparisons
+
+Named product comparisons may exist as separate records, but each claim must:
+
+- cite the product's official documentation;
+- record the verification date;
+- distinguish native capability from third-party integration;
+- state tao3k's own maturity honestly;
+- explain replacement, coexistence, and integration paths;
+- acknowledge areas where another product is stronger;
+- avoid claims based on a demo, old release, or inferred absence.
+
+* Lifecycle discontinuities
+
+A comparison should show where a category usually stops rather than only count
+features.
+
+#+begin_example
+Knowledge platform: Record → Structure → Search → external authority
+Agent tool:         Reason → Tool call → Execute → limited provenance/replay
+Workflow engine:    Compose → Schedule → Recover → external semantic truth
+Scientific stack:   Experiment → Compare → Register → external operations
+tao3k:              Record → Understand → Validate → Contract → Admit
+                    → Execute → Receipt → Evaluate → Promote → Record
+#+end_example
+
+* Structural comparison
+
+The comparison page must distinguish the primary object each category manages.
+
+| Category | Primary object | Typical completion signal | Missing continuity |
+|-
+| Chat assistant | Conversation or answer | Response returned | Durable evidence, authority, execution, and verification |
+| Agent platform | Task or tool run | Tool or task completed | Formal qualification and lifecycle evidence |
+| Workflow engine | Process instance | Node or process completed | Scientific validation, proof obligations, and evidence invalidation |
+| Knowledge graph | Entity-relation graph | Query or traversal returned | Authorized action, effects, receipts, and postcondition verification |
+| Model or theorem prover | Computation or proof | Result or theorem accepted | Operational execution and long-lived evidence feedback |
+| tao3k | Versioned Action Case | Qualified action verified and returned to evidence | The lifecycle itself is the managed product boundary |
+
+The concise comparison statement is:
+
+#+begin_quote
+Most AI systems manage prompts, tasks or workflows. tao3k manages the complete evidence case for an action.
+#+end_quote
+
+* Evidence, meaning, and authority boundary
+
+Comparison must test whether a system preserves distinctions rather than merely whether it stores related data.
+
+| Boundary | tao3k requirement |
+|-
+| Evidence | Typed Claim and Evidence semantics instead of one confidence or trust score |
+| Meaning | Inspectable semantic definitions and local change history instead of opaque embeddings or global ontology releases |
+| Qualification | Lean proof obligations under explicit premises |
+| Authorization | A scoped Authority Envelope rather than inferred permission from tool access |
+| Execution | POO Flow compiled checkpoints with Marlin runtime enforcement and effect receipts |
+| Verification | Julia, Lean, and human review according to the Claim kind |
+
+Systems that retain logs but collapse these boundaries do not provide the same evidence-to-action lifecycle.
+
+* Agent Core comparison scopes
+
+Marlin Runtime and the combined POO Flow plus Marlin Agent Core require different comparisons.
+
+The Marlin Runtime comparison set includes PR-agent runtimes, Codex-style Agent runtimes, Claude Code-style Agent runtimes, and other coding or general Agent cores. Evaluation covers context compression, model and tool loops, capability systems, state durability, recovery, multi-agent messaging, isolation, reconciliation, and receipt quality.
+
+The combined Agent Core comparison covers the additional POO Flow composition and compiler layer: explicit Agent organization, reusable flow semantics, compiler/runtime separation, Evidence Contracts, Authority Envelope checkpoints, verification declarations, BPMN projection, and runtime portability.
+
+Named comparisons must be evidence-backed and distinguish shipped, active-development, and intended capabilities. Product category membership is not proof of feature parity.
+
+* Issue-first comparison sequence
+
+The public Comparison page begins from observed failure rather than a vendor
+feature grid.  Its narrative sequence is:
+
+1. a dated public issue, incident, or primary enterprise discussion;
+2. the directly supported observation and evidence state;
+3. the operational or commercial consequence;
+4. the missing system invariant;
+5. the tao3k owner or owners responsible for that invariant; and
+6. the current maturity and evidence gap of the tao3k response.
+
+GitHub issues are user-reported evidence unless a maintainer or vendor publishes
+an authoritative resolution.  Multiple related issues can reveal a recurring
+architectural demand, but they do not prove a product-wide defect.
+
+Comparison distinguishes a larger context window from durable continuation.
+Context compression asks what representation fits inside the next model turn.
+Runtime continuity asks which goal, evidence, authority, checkpoint, completed
+work, failure, budget, and outstanding obligation remain valid after the turn.
+
+The concise issue-first comparison statement is:
+
+#+begin_quote
+A larger context window postpones compression.  A durable evidence case changes
+what can be lost.
+#+end_quote
+
+The live page MUST identify tao3k integration maturity.  An accepted
+architecture or independent engine is not presented as a shipped cross-engine
+solution.
+
+* Human role
+
+Every comparison must ask: /What role remains for people?/
+
+Possible answers include displaced cost, fallback operator, approval button,
+task participant, authority holder, knowledge contributor, and system
+co-creator. The comparison must reflect actual product behavior rather than a
+company's slogan.
+
+* Evidence contract
+
+Each named claim records:
+
+- claim text;
+- subject and version;
+- official evidence URL;
+- verification date;
+- tao3k capability and maturity;
+- reviewer;
+- unresolved ambiguity.
+
+Unsupported claims remain draft and must not enter the public comparison page.
+
+* Related records
+
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+
+- [[file:../brand/20.01_tao3k_brand_foundation.org][20.01 Brand Foundation]]
+- [[file:../principles/30.01_human_agency_charter.org][30.01 Human Agency Charter]]
+- [[file:../solutions/40.01_research_operations_continuum.org][40.01 Research--Operations Continuum]]

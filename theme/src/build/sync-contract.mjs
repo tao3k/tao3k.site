@@ -10,6 +10,13 @@ if (contract?.package !== "@org-zhixing/theme-contract") {
   throw new Error("THEME-DOWNSTREAM-E002 package.json does not pin the Zhixing contract package");
 }
 
+const expectedSource = `https://github.com/tao3k/org-zhixing-themes/tree/${contract.revision}/packages/theme-contract`;
+if (contract.source !== expectedSource) {
+  throw new Error(
+    `THEME-DOWNSTREAM-E002 Zhixing contract source/revision mismatch: expected=${expectedSource} actual=${String(contract.source)}`,
+  );
+}
+
 const files = Object.entries(contract.integrity ?? {});
 if (files.length === 0) {
   throw new Error("THEME-DOWNSTREAM-E002 Zhixing contract integrity map is empty");

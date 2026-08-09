@@ -32,42 +32,61 @@
     "./zhixing-theme": "./theme/src/index.tsx"
   },
   "scripts": {
-    "dev": "vite dev",
+    "dev": "rsbuild dev",
     "docs:check": "node src/contracts/check-org-docs.mjs",
-    "build": "vite build",
-    "format": "oxfmt --write \"src/**/*.{ts,tsx,mjs}\" \"theme/**/*.{ts,tsx,css,mjs}\" \"vite.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
-    "format:check": "oxfmt --check \"src/**/*.{ts,tsx,mjs}\" \"theme/**/*.{ts,tsx,css,mjs}\" \"vite.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
-    "lint": "oxlint --deny-warnings --react-plugin --jsx-a11y-plugin --import-plugin --tsconfig tsconfig.json src theme vite.config.ts",
-    "start": "vite preview",
-    "theme:build": "npm run theme:contract:sync && vite build --config theme/vite.config.ts && npm run theme:check",
-    "theme:check": "node theme/tests/check-manifest.mjs",
-    "theme:contract:sync": "node theme/src/build/sync-contract.mjs",
-    "theme:dev": "vite --config theme/vite.config.ts",
-    "theme:preview": "vite preview --config theme/vite.config.ts --host 127.0.0.1",
-    "typecheck": "npm run theme:contract:sync && tsc --noEmit",
+    "build": "rsbuild build && node src/build/prepare-static-pages.mjs",
+    "format": "oxfmt --write \"src/**/*.{ts,tsx,mjs}\" \"theme/**/*.{ts,tsx,css,mjs}\" \"rsbuild.config.ts\" \"theme/rsbuild.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
+    "format:check": "oxfmt --check \"src/**/*.{ts,tsx,mjs}\" \"theme/**/*.{ts,tsx,css,mjs}\" \"rsbuild.config.ts\" \"theme/rsbuild.config.ts\" \"package.json\" \"tsconfig.json\" \".oxfmtrc.json\" \"!src/routeTree.gen.ts\"",
+    "lint": "oxlint --deny-warnings --react-plugin --jsx-a11y-plugin --import-plugin --tsconfig tsconfig.json src theme rsbuild.config.ts theme/rsbuild.config.ts",
+    "start": "rsbuild preview",
+    "theme:prepare": "npm run theme:contract:sync",
+    "theme:build": "npm run theme:prepare && rsbuild build --config theme/rsbuild.config.ts && npm run theme:check",
+    "theme:check": "node theme/tests/check-manifest.mjs && node theme/tests/check-local-config.mjs && npm run theme:routes:check",
+    "theme:routes:check": "node --experimental-strip-types theme/tests/check-application-routes.mjs",
+    "pages:routes": "node --experimental-strip-types theme/src/build/prepare-application-pages.mjs",
+    "principles:bundle:generate": "node theme/src/build/prepare-principles-bundle.mjs",
+    "principles:bundle:check": "node theme/src/build/prepare-principles-bundle.mjs --check",
+    "principles:authoring:check": "npm run principles:bundle:check && npm run principles:check",
+    "principles:generate": "node theme/src/build/prepare-principles-interactive.mjs",
+    "principles:check": "node theme/src/build/prepare-principles-interactive.mjs --check",
+    "theme:contract:sync": "node theme/src/build/sync-contract.mjs && npm run principles:generate",
+    "theme:dev": "npm run theme:prepare && rsbuild dev --config theme/rsbuild.config.ts",
+    "theme:preview": "rsbuild preview --config theme/rsbuild.config.ts --host 127.0.0.1",
+    "typecheck": "npm run theme:prepare && tsc --noEmit",
     "test": "npm run typecheck",
-    "validate": "npm run theme:contract:sync && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
+    "validate": "npm run theme:contract:sync && npm run principles:check && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.168.25",
-    "@tanstack/react-start": "^1.167.50",
-    "effect": "^3.21.2",
-    "nitro": "^3.0.260415-beta",
-    "react": "^19.2.5",
-    "react-aria-components": "^1.17.0",
-    "react-dom": "^19.2.5"
+    "@dagrejs/dagre": "^3.0.0",
+    "@poo-flow/runtime-wasm": "github:tao3k/poo-flow#56fbba7b7442d823d3276a8e9c574f42dab46e80",
+    "@shikijs/core": "^3.23.0",
+    "@shikijs/engine-javascript": "^3.23.0",
+    "@shikijs/langs": "^3.23.0",
+    "@shikijs/themes": "^3.23.0",
+    "@tanstack/react-router": "^1.170.18",
+    "@xyflow/react": "^12.11.2",
+    "effect": "^3.22.0",
+    "orgize": "github:tao3k/orgize-wasm#6ff282dedae6efab54653592ebf3404393f93f4f",
+    "react": "^19.2.6",
+    "react-aria-components": "^1.19.0",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
-    "@module-federation/vite": "^1.18.2",
-    "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
+    "@module-federation/rsbuild-plugin": "^2.8.0",
+    "@rsbuild/core": "2.1.7",
+    "@rsbuild/plugin-react": "^2.1.0",
+    "@tanstack/router-plugin": "1.168.23",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "lightningcss": "^1.32.0",
-    "oxfmt": "^0.59.0",
-    "oxlint": "^1.74.0",
-    "typescript": "^6.0.3",
-    "vite": "^8.0.10"
+    "lightningcss": "1.33.0",
+    "oxfmt": "0.60.0",
+    "oxlint": "1.75.0",
+    "smol-toml": "^1.7.0",
+    "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "adm-zip": "0.6.0"
   },
   "orgZhixing": {
     "schemaVersion": 1,
@@ -86,7 +105,7 @@
     ],
     "content": {
       "base": "workspace",
-      "directory": "content",
+      "directory": "docs",
       "routeMode": "application"
     },
     "publicSlots": [
@@ -131,11 +150,11 @@
     },
     "contract": {
       "package": "@org-zhixing/theme-contract",
-      "revision": "1bd851773a4c5a3fc9d25b3e7cfbd0df9512779f",
-      "source": "https://github.com/tao3k/org-zhixing-themes/tree/1bd851773a4c5a3fc9d25b3e7cfbd0df9512779f/packages/theme-contract",
+      "revision": "5ca54c9fd501c8fbac14932dc11df52fd00e6943",
+      "source": "https://github.com/tao3k/org-zhixing-themes/tree/5ca54c9fd501c8fbac14932dc11df52fd00e6943/packages/theme-contract",
       "integrity": {
-        "package.json": "4ff7cb6b176aa299d87f66d043eb4e88a5bb31abd96266beff49f1d13f3c696e",
-        "src/index.ts": "8ce7a574f1b8d59f47af5409df18fea1a461e47b650b473ab4ccd5cafb1c6cc0"
+        "package.json": "25a7b40347751a261fb2fc0c5d047226733d0bcdac060575ff34706f415071e5",
+        "src/index.ts": "e7397f3e632a690734bdfbf1728889a99498d11ee5c5539d419a30d07880af5c"
       }
     }
   }

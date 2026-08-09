@@ -1,0 +1,125 @@
+#+TITLE: Typed Claims and Evidence Semantics
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:claims:evidence:semantics:
+#+STATUS: Active
+#+OWNER: tao3k Platform
+#+AUDIENCE: Product, research, proof, data, and platform teams
+#+CLAIM_MATURITY: vision
+
+* Purpose
+
+This record defines the typed Claim, Evidence Item, and Evidence Set semantics used by the Evidence-Action Graph and every Action Case.
+
+Evidence-native operation requires more than retaining logs, links, embeddings, or confidence scores. The system must preserve what is claimed, under which assumptions, supported or contradicted by which evidence, and sufficient for which action.
+
+* Core objects
+
+** Claim
+
+A Claim is a scoped proposition made by a person, system, model, policy, computation, or proof process. It records its kind, assumptions, applicable scope, temporal validity, producing method, current epistemic state, and relationships to supporting or contradicting evidence.
+
+** Evidence Item
+
+An Evidence Item is a typed, attributable, and revocable basis that supports, contradicts, limits, authorizes, observes, or verifies a Claim. It never becomes universally trustworthy merely because it was ingested or assigned a high score.
+
+** Evidence Set
+
+An Evidence Set is the versioned evidence subgraph bound to an Action Case at a particular qualification boundary. It contains the exact Claims, Evidence Items, assumptions, definitions, mappings, and validity conditions on which the qualification depended.
+
+* Claim kinds and epistemic states
+
+Different Claim kinds require different state machines. A single =verified=true= field is prohibited because it collapses incompatible meanings.
+
+| Claim kind | Example | Appropriate states |
+|-
+| Formal Claim | A state transition preserves an invariant | Open, Proven, Disproven |
+| Computational Claim | Declared inputs produce a numerical result | Pending, Reproduced, Failed, Outdated |
+| Empirical Claim | A phenomenon was observed under stated conditions | Proposed, Supported, Contested, Refuted |
+| Model Claim | A model is valid within a declared domain | Proposed, Calibrated, Out-of-scope, Invalidated |
+| Policy Claim | A rule applies to a class of action | Draft, Effective, Expired, Revoked |
+| Authority Claim | A person or organization grants an action scope | Requested, Granted, Expired, Revoked |
+
+Claim state describes the current conclusion of the applicable evaluation process. It does not erase prior states or the evidence that produced them.
+
+* Evidence kinds and limits
+
+| Evidence kind | Establishes | Does not establish by itself |
+|-
+| Source Record | What a source expressed | That the source is factually correct |
+| Observation | What was observed under declared conditions | A universal law |
+| Reproducible Computation | That inputs and a method produced a result | That the model assumptions are correct |
+| Lean Proof | That a proposition follows inside a formal system | That real-world premises are true |
+| Human Attestation | That a person made a judgment or statement | That the statement is objectively correct |
+| Authority Grant | That a permitted actor authorized a scope | That the action is scientifically or formally correct |
+| Runtime Receipt | That an execution event occurred | That its result satisfied requirements |
+| Verification Result | That declared checks or postconditions passed | Correctness outside the declared verification scope |
+
+* No universal trust score
+
+Evidence is not ordered by one scalar =trust_score=. Formal proof, empirical observation, reproducible computation, authority, and runtime receipts belong to different dimensions and cannot compensate for one another.
+
+A formal proof cannot override a contradictory real-world observation by rank alone. An authority grant cannot make a false Claim true. A runtime receipt cannot establish correctness. A high-confidence model result cannot silently expand beyond its calibration domain.
+
+The graph therefore maintains a typed evidence relation rather than a universal leaderboard of truth.
+
+* Evidence Item requirements
+
+Every material Evidence Item records:
+
+- provenance and an integrity digest;
+- producer, method, and relevant tool identity;
+- observation, computation, or decision time;
+- applicable scope and temporal validity;
+- the Claim relationship it participates in;
+- assumptions, uncertainty, or formal premises;
+- reproducibility information where applicable;
+- supersession, withdrawal, expiry, and revocation conditions; and
+- the Action Cases, proofs, and decisions that depend on it.
+
+* Evidence Contract
+
+An Evidence Contract declares what evidence is sufficient for a particular Claim transition or action qualification. It may require independent observations, a reproducible Julia computation, Lean proof obligations, a current policy, a valid Authority Envelope, or a named human decision.
+
+The contract must specify type, freshness, independence, scope, uncertainty, proof, and authority requirements. It cannot express sufficiency as a confidence threshold alone.
+
+* Append-only semantic history
+
+The system never rewrites a historical Claim merely because its current epistemic state changed. New evidence appends a new event and the graph derives the current view.
+
+For example, a new observation can contradict a model assumption; the model Claim becomes contested; Lean identifies proofs that depended on the assumption; the graph invalidates dependent admission certificates; and POO Flow pauses Action Cases that require requalification.
+
+The prior evidence and authorization remain visible because they explain why an earlier action was admitted at that time.
+
+* Invalidation and recomputation
+
+Invalidation is scoped rather than destructive.
+
+1. The graph identifies the changed Evidence Item, Claim, assumption, or semantic definition.
+2. Dependency algorithms compute the affected subgraph.
+3. Lean determines which formal results no longer have valid premises.
+4. Julia determines which computations or models require recalculation.
+5. POO Flow identifies the compiled requalification boundary, and Marlin suspends only the affected runtime steps.
+6. Human reviewers resolve remaining disputes, interests, or authority questions.
+
+One invalid premise does not automatically make every connected Claim false. The system preserves the reason and extent of each derived state change.
+
+* Admissibility is not absolute truth
+
+An Action Case does not require every Claim to become universally true. It requires the Evidence Set to be sufficient under explicit assumptions, uncertainty, authority, risk, and scope for the proposed action.
+
+The platform statement is:
+
+#+begin_quote
+tao3k does not collapse knowledge into a single truth score. It preserves what is claimed, under which assumptions, supported by which evidence, and sufficient for which action.
+#+end_quote
+
+* Related records
+
+- [[file:10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../principles/30.01_human_agency_charter.org][Human Agency Charter]]

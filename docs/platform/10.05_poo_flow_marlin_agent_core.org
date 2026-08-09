@@ -1,0 +1,132 @@
+#+TITLE: POO Flow and Marlin Next-Generation Agent Core
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:agent-core:poo-flow:marlin:runtime:
+#+STATUS: Active
+#+OWNER: tao3k Platform
+#+AUDIENCE: Agent, workflow, runtime, product, and platform teams
+#+CLAIM_MATURITY: vision
+
+* Purpose
+
+This record defines the composition of POO Flow and Marlin as the tao3k next-generation Agent Core. It separates flow semantics and compilation from runtime execution.
+
+POO Flow defines and compiles the agent system. Marlin runs it.
+
+* Documentation authority
+
+This record defines how POO Flow and Marlin appear in the tao3k ecosystem and main-site narrative. It does not replace the POO Flow or Marlin project documentation for current compiler, Runtime, capability, benchmark, or delivery facts.
+
+* Product category
+
+Marlin is an Agent Runtime comparable at the category level to the runtimes underlying coding agents, PR agents, Codex-style agents, Claude Code-style agents, and other general or domain-specific agent products.
+
+POO Flow is not another runtime. It is the compositional language and compiler that defines agent organization, workflow semantics, checkpoints, and executable structure.
+
+Together they form a higher-level Agent Core while remaining one component inside the broader tao3k AI lifecycle.
+
+* POO Flow responsibilities
+
+POO Flow owns:
+
+- the Scheme-based composition language;
+- step, branch, loop, dependency, and compensation semantics;
+- single-agent and multi-agent organization;
+- data, effect, evidence, and verification declarations;
+- qualification, authorization, human, and verification checkpoint placement;
+- static dependency, resource, and risk analysis;
+- BPMN and other human-readable process projections; and
+- compilation into an executable agent graph or intermediate representation.
+
+POO Flow does not invoke models, maintain a running context, execute tools, own process state, retry effects, or emit runtime receipts.
+
+* Marlin responsibilities
+
+Marlin owns the Agent Runtime:
+
+- model invocation and model adapters;
+- context construction, compression, and working memory;
+- Agent identity and lifecycle state;
+- capability discovery and tool execution;
+- multi-agent messaging and coordination at runtime;
+- concurrency, cancellation, timeout, and resource isolation;
+- checkpoint, resume, recovery, and reconciliation;
+- retry and idempotency behavior;
+- sandbox and effect isolation;
+- runtime enforcement of compiled qualification and Authority Envelope gates; and
+- events, observations, effect receipts, and execution diagnostics.
+
+Marlin does not manufacture evidence sufficiency, formal qualification, authority, ontology meaning, or historical truth. It executes a compiled plan inside the applicable Action Case and returns observations to the evidence lifecycle.
+
+* Compiled agent graph
+
+The boundary between POO Flow and Marlin is an executable agent graph or intermediate representation.
+
+It carries:
+
+- agent roles and communication topology;
+- step and dependency graph;
+- declared data and capability inputs;
+- effect classes and idempotency requirements;
+- qualification and authorization gates;
+- human checkpoints;
+- verification and compensation paths;
+- checkpoint and resume boundaries; and
+- references to the Action Case, Evidence Contracts, Semantic Projections, and Authority Envelope.
+
+POO Flow produces this structure. Marlin interprets and runs it. Runtime observations never silently mutate the compiled graph; proposed adaptations return through an explicit recompile and requalification path.
+
+* Runtime lifecycle
+
+Marlin receives an admitted compiled graph and performs the actual runtime loop:
+
+1. restore the Action Case and runtime checkpoint;
+2. construct the model context and working memory;
+3. confirm the compiled gate and current Authority Envelope;
+4. invoke models, agents, and capabilities;
+5. observe effects and reconcile uncertain outcomes;
+6. emit typed receipts and diagnostics;
+7. invoke declared verification checkpoints; and
+8. pause, resume, compensate, or request recompilation according to the result.
+
+POO Flow defines these transitions. Marlin owns their live execution and state.
+
+* Capabilities and products
+
+Git and Pull Request operations are Marlin capabilities, not the definition of Marlin.
+
+A PR Agent is one product built from the Agent Core. Its POO Flow definition may describe inspect, reason, change, validate, review, and publish stages. Marlin executes ASP searches, model calls, patch operations, tests, Git operations, PR APIs, and CI observation.
+
+The same core can support coding agents, research agents, browser agents, deployment agents, policy agents, and domain-specific systems without redefining Marlin as any one of those products.
+
+* Comparison scopes
+
+Marlin Runtime comparisons evaluate context compression, model and tool loops, capability systems, state durability, checkpoint and recovery, multi-agent messaging, isolation, reconciliation, and receipt quality.
+
+The combined POO Flow and Marlin Agent Core comparison evaluates compositional language, compiler/runtime separation, explicit agent organization, reusable flow semantics, evidence and authority checkpoints, runtime portability, and integration with the wider tao3k lifecycle.
+
+The relevant comparison set includes PR-agent runtimes, Codex-style Agent runtimes, Claude Code-style Agent runtimes, and other coding or general Agent cores. The comparison must use evidence-backed feature states rather than assumed parity.
+
+* Relationship to the tao3k lifecycle
+
+The Evidence-Action Graph and Action Case provide semantic and historical continuity. POO Flow compiles the intended agent system. Lean supplies qualification obligations. Julia supplies graph and scientific computation. Marlin executes the compiled system. Julia, Lean, and human review verify the observations, and the resulting evidence returns to the graph.
+
+Agents may perform the work. They do not own the authority, evidence, or history of the work.
+
+* Platform statement
+
+#+begin_quote
+Most Agent runtimes embed orchestration inside the runtime loop. tao3k separates compositional semantics from execution: POO Flow compiles the Agent system, and Marlin runs it.
+#+end_quote
+
+* Related records
+
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]
+- [[file:10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:../compare/50.01_comparison_framework.org][Comparison framework]]

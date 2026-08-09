@@ -1,3 +1,5 @@
+/.gerbil
+bazel-*
 # Devenv
 .devenv*
 devenv.local.nix
@@ -22,9 +24,15 @@ npm-debug.log*
 .vinxi/
 dist/
 theme/dist/
+.mf/
+theme/generated/*.bin
 
 # local brainstorming mockups
 .superpowers/
 
 # local runtime logs
 .run/
+
+# Gerbil and Bazel authoring outputs.
+/.gerbil/
+/bazel-*

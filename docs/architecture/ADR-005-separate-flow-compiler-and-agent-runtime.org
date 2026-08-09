@@ -1,0 +1,72 @@
+#+TITLE: ADR-005: Separate Flow Compiler and Agent Runtime
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:architecture:agent-core:compiler:runtime:marlin:
+#+STATUS: Accepted
+#+OWNER: tao3k Architecture
+#+AUDIENCE: Agent, workflow, runtime, compiler, and platform engineers
+#+CLAIM_MATURITY: policy
+
+* Context and problem statement
+
+Embedding workflow composition, runtime state, model loops, tool execution, and effect handling inside one Agent loop makes the system difficult to analyze, verify, reuse, recover, or port.
+
+Earlier tao3k documentation incorrectly assigned runtime execution and enforcement to POO Flow. POO Flow does not provide the Agent Runtime. Marlin does.
+
+* Decision
+
+POO Flow and Marlin are separate architectural components with one explicit compiled boundary.
+
+POO Flow is the composition language and compiler. Marlin is the Agent Runtime. Their combination forms the tao3k next-generation Agent Core.
+
+* POO Flow boundary
+
+POO Flow defines agent organization, control structure, data and effect contracts, checkpoint placement, compensation structure, and the qualification, authorization, human, and verification requirements attached to a flow.
+
+It performs static analysis and compiles the definition into an executable agent graph or intermediate representation. It can generate BPMN or other process projections without starting a Runtime.
+
+POO Flow does not invoke models, call tools, maintain live Agent state, execute effects, reconcile uncertain outcomes, or emit runtime receipts.
+
+* Marlin boundary
+
+Marlin interprets the compiled agent graph and owns all live execution behavior. It invokes models and capabilities, constructs and compresses context, maintains runtime state, coordinates agents, enforces compiled gates, handles concurrency and cancellation, persists checkpoints, recovers execution, reconciles effects, and emits receipts.
+
+Marlin can run multiple domain-specific Agent products and capability sets. Pull Request functionality is one capability, not the product definition of Marlin.
+
+* Compiled contract
+
+The compiled POO Flow artifact is immutable for a particular admitted execution. It identifies the structure and requirements Marlin must enforce while linking to the Action Case and semantic records that justify them.
+
+If runtime observation requires a structural adaptation, Marlin proposes a change. POO Flow recompiles the flow, the affected conditions are requalified, and Marlin resumes only from an admitted checkpoint.
+
+Runtime self-modification that bypasses compilation and qualification is prohibited.
+
+* Qualify, authorize, run, and verify
+
+POO Flow expresses where qualification, authorization, human judgment, and verification are required. Lean, policies, and human authority determine whether those conditions pass. Marlin enforces the resulting gates during execution.
+
+Marlin emits observations and receipts. It does not declare those observations scientifically or formally verified. Julia, Lean, contracts, and human review produce the verification results consumed by later runtime gates.
+
+* Runtime portability
+
+The separation allows POO Flow definitions to be analyzed and projected without Marlin, and allows Marlin to evolve its model, tool, isolation, memory, and scheduling implementation without changing flow meaning.
+
+The compiled boundary must remain explicit enough for another conforming runtime to execute a POO Flow plan while preserving the same observable contract. Marlin remains the primary tao3k Runtime implementation.
+
+* Consequences
+
+- POO Flow no longer carries incorrect Runtime responsibility.
+- Marlin becomes the canonical owner of live Agent execution.
+- Flow definitions remain analyzable without starting models or tools.
+- Runtime recovery and state evolution can improve independently of the composition language.
+- Dynamic adaptation becomes an explicit recompile and requalification event.
+- Runtime capabilities such as Git and PR remain replaceable adapters.
+- The complete Agent Core is the composition of POO Flow and Marlin, not either component alone.
+
+* Related records
+
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:../compare/50.01_comparison_framework.org][Comparison framework]]

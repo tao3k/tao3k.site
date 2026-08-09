@@ -1,0 +1,135 @@
+#+TITLE: Company and Ecosystem Overview
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+LANGUAGE: en
+#+OPTIONS: toc:2 num:nil
+#+FILETAGS: :tao3k:company:ecosystem:open-source:commercialization:community:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: Investors, customers, institutions, community members, and contributors
+#+CLAIM_MATURITY: policy
+
+* Purpose and authority
+This record owns the company-level explanation of tao3k for investors, users, enterprises, communities, and projects across the ecosystem. It defines the relationship between public infrastructure, commercial responsibility, community value, and long-term stewardship.
+
+tao3k.site is an overview. It explains the company, ecosystem, values, commercial direction, community commitments, and long-term roadmap without replacing the technical documentation owned by each project.
+
+* Company doctrine
+tao3k is Open Source First. Core capability, interoperability, and exit rights belong to the commons. Commercial value comes from trusted distribution, managed operation, enterprise integration, assurance, and long-term responsibility. The company returns part of that value to the communities that make the ecosystem possible.
+
+The operating principle is:
+
+The commons carries capability. Commercial products carry operational responsibility.
+
+Customers pay for accountability, reliability, integration, and operation, not for obscurity.
+
+* The Evidence--Action Ecosystem
+
+tao3k is not a collection of AI products. It is an Evidence--Action Ecosystem that closes knowledge, qualification, action, and evidence into one continuous and governable value chain.
+
+- Evidence Foundation :: Turns knowledge, code, scientific models, and human records into traceable, searchable, and composable evidence.
+- Qualification Plane :: Uses contracts, semantic ontology, graph-driven algorithms, scientific computation, and formal verification to determine whether an action has earned the right to proceed.
+- Action Core :: Connects compiled workflow intent with governed agent runtime, execution, and continuing operation.
+- Evidence Return Loop :: Turns every action into runtime receipts, verification results, and evolvable records that support audit, future decisions, and higher-quality learning data.
+
+These layers describe ecosystem responsibilities rather than product packaging. The Products route remains a directory of projects and responsible external destinations; implementation mechanisms and capability truth remain in each project's own Docs.
+
+* One ecosystem, four proof obligations
+
+tao3k presents one Evidence--Action Ecosystem rather than separate brands for separate audiences. The underlying lifecycle remains the same, while each audience enters through a different proof obligation.
+
+- Enterprises and institutions :: Can consequential operation be entrusted to the system with visible qualification, authority, accountability, recovery, and exit rights?
+- Academia and research institutions :: Can a claim remain reproducible, preserve its assumptions and limits, survive transfer into operation, and receive structured field evidence in return?
+- Communities, builders, and individuals :: Can people inspect, learn, self-host, extend, contest, and leave without surrendering human agency or becoming captive to a black box?
+- Investors and long-term partners :: Can value compound through evidence, integration, operational quality, standards, expertise, and responsibility rather than extraction or lock-in?
+
+The shared invariant is: intelligence must earn the right to act, and every consequential action must return evidence. Audience-specific presentation must not create separate product truths or fragmented brand promises.
+
+* Canonical public position
+
+- Category :: Evidence--Action Ecosystem
+- Core position :: Intelligence must earn the right to act.
+- Core promise :: tao3k turns knowledge, code, scientific models, and human records into admissible action---and turns every action back into searchable, verifiable, and evolvable evidence.
+- Institutional commitment :: Built for accountable operation, research-to-industry continuity, open technical agency, and long-term stewardship.
+
+The category, position, promise, and commitment form one message hierarchy. They must not be replaced by generic category labels such as /AI-powered workflow platform/, /knowledge engine for everyone/, /next-generation agent infrastructure/, or /all-in-one AI operating system/.
+
+Primary calls to action are /Explore the Evidence--Action Ecosystem/ and /See How Intelligence Earns the Right to Act/. /View the Roadmap/ and /Explore Open Source Projects/ are secondary inspection paths. /Work with tao3k/ is the commercial relationship path and must not displace the public position in the hero.
+
+* Open Source First
+Open Source First is simultaneously a brand doctrine, an engineering and distribution policy, and a community compact. It is not a synonym for source visibility and not a promise that every hosted operation must be free of charge.
+
+The public commons includes the core engines and protocols needed to understand, operate, extend, and leave the ecosystem: open formats, interoperability contracts, local and self-managed foundations, data portability, project documentation, and the tests needed to evaluate compatibility and claims.
+
+Open foundations must remain useful without requiring a commercial relationship. Commercial services may improve reliability, scale, integration, assurance, and operational convenience, but they must not turn open records or customer-owned evidence into hostages.
+
+* Commercial responsibility
+tao3k commercializes responsibility around the commons rather than artificial limitations inside it.
+
+The company may create revenue through:
+- trusted distributions, lifecycle maintenance, security, compatibility, and support;
+- managed and hosted operation, reliability, observability, recovery, and organizational governance;
+- enterprise integration, private or hybrid deployment, assurance, and accountable support;
+- research-to-industry partnerships, validation, training, and certification; and
+- ecosystem services that help maintainers and domain authors distribute sustainable work.
+
+Specific offerings, prices, deployment models, and implementation commitments belong to current company or project-owned product documentation. This record defines the durable boundary, not a commercial catalogue.
+
+* Customer and data rights
+Commercial operation must preserve customer ownership, inspectability, portability, and meaningful exit.
+
+tao3k does not treat private customer evidence as a hidden source of public or commercial training data. Reuse requires explicit purpose, rights, provenance, and consent. Customers retain access to their records and must have documented paths to export evidence, configuration, and interoperable state.
+
+Stopping a commercial subscription must not erase the right to use open software, retain customer-owned records, understand prior decisions, or migrate to another operator.
+
+* Community compact
+Communities are not free labor or a sales funnel. Contributors, maintainers, researchers, educators, users, and domain practitioners create public value that the company depends on.
+
+The company therefore commits to:
+- upstream-first contribution where the change belongs to a public project;
+- visible project governance and contribution paths;
+- respect for independent technical judgment and community disagreement;
+- attribution, authorship, and rights-aware reuse;
+- no surprise conversion of accumulated community work into a closed dependency; and
+- visible reinvestment in maintainers, infrastructure, documentation, education, research, and community participation.
+
+Commercial priorities may fund work, but payment does not manufacture technical truth or permanent control over a public project.
+
+* Sustainable value loop
+The intended value loop is:
+1. communities and projects strengthen the public commons;
+2. the commons enables inspection, adoption, research, and independent use;
+3. tao3k integrates, stabilizes, operates, and supports dependable commercial products;
+4. commercial revenue funds long-term engineering and organizational responsibility; and
+5. part of that value returns to the projects and communities that sustain the ecosystem.
+
+The strength of tao3k is not that competitors cannot inspect its foundations. Its durable advantage comes from integration across the lifecycle, operational quality, accumulated expertise, assurance, partnerships, trusted standards, and the ability to remain accountable for complex systems over time.
+
+* Long-term stewardship
+tao3k is intended as durable infrastructure rather than a short-lived response to an AI trend. Stewardship requires transparent maturity, patient research, stable project boundaries, maintainable systems, public compatibility surfaces, and honest separation between current capability and long-term direction.
+
+Foundational projects may evolve toward broader or more neutral governance when that structure better protects their public role. The company must not confuse stewardship with permanent exclusive control.
+
+* Documentation authority
+The main site owns the macro explanation of the company and ecosystem. It may present one thesis, one high-level visual, a small set of properties, a representative scenario, and links to responsible projects.
+
+Project documentation owns APIs, schemas, state machines, configuration, code, deployment, tests, benchmarks, compatibility, runtime behavior, and implementation maturity. Main-site copy links to those sources instead of reproducing their operational detail.
+
+Products and Comparison remain role-level navigation and evidence-backed category surfaces. They do not absorb the commercial catalogue or project implementation manuals.
+
+* Company and relationship routes
+
+The =/company= route owns the macro explanation of Open Source First, commercial responsibility, customer and data rights, community compact, sustainable value loop, Human Agency, technical equity, and long-term stewardship. It replaces an empty corporate /About Us/ pattern without absorbing project implementation facts.
+
+=/work-with-us= is a relationship entry rather than the hero's dominant sales action. It distinguishes enterprise integration, research partnership, open-source collaboration, institutional or standards partnership, and long-term strategic or investment relationships. Visitors choose a relationship context before being asked for relationship-specific information.
+
+* Main-site presentation contract
+The public Company and Ecosystem surface should explain:
+- why tao3k exists and how it creates long-term value;
+- how Open Source First and commercial responsibility reinforce one another;
+- what enterprises pay for without weakening the public commons;
+- how customer data, portability, and exit rights are protected;
+- how commercial value returns to maintainers and communities; and
+- how the company distinguishes present capability from future direction.
+
+The presentation remains strategic. Detailed licenses, service tiers, deployment procedures, contribution processes, and project governance rules link to their current authoritative sources.

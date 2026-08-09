@@ -1,7 +1,7 @@
 #+TITLE: tao3k.site Zhixing Theme
 #+DATE: 2026-07-18
 #+AUTHOR: Guangtao Tao
-#+FILETAGS: :zhixing:theme:module-federation:operations:
+#+FILETAGS: :tao3k:zhixing:theme:module-federation:operations:
 
 * tao3k.site Zhixing theme
 
@@ -29,3 +29,7 @@ that directory with CORS enabled by the static host. The production host declara
 
 The provider name (=tao3k_site=), exposed module (=./theme=), variants, and protocol are checked
 against =package.json#orgZhixing= after every build.
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: maintainers, downstream theme users
+#+CLAIM_MATURITY: active-development

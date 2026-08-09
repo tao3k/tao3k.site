@@ -1,0 +1,78 @@
+#+TITLE: ADR-006: Rsbuild, Rspack, TanStack Router, and React Platform
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+LANGUAGE: en
+#+OPTIONS: toc:2 num:nil
+#+FILETAGS: :tao3k:architecture:rsbuild:rspack:router:module-federation:
+#+STATUS: Accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: tao3k.site maintainers, theme authors, and downstream Org Zhixing integrators
+#+CLAIM_MATURITY: shipped
+
+* Context
+
+The tao3k.site migration branch had drifted from the approved client platform into a TanStack Start and Vite application. Vite also built the independent Org Zhixing theme remote. This coupled the main-site runtime decision to the theme packaging decision and reintroduced Nitro and framework-generated server entrypoints that the static site did not require.
+
+The desired platform is a client-first React application with TanStack Router, built on the Rspack ecosystem. The independent theme remains a separately buildable and deployable Module Federation remote.
+
+* Decision
+
+** Main site
+
+- React is the UI runtime.
+- TanStack Router owns the typed route tree, navigation, loaders, search parameters, preloading, and route boundaries.
+- Rsbuild is the application build and development interface.
+- Rspack is the underlying compiler.
+- The official =@tanstack/router-plugin/rspack= integration generates and code-splits the file route tree.
+- The main site is a client application, not a TanStack Start or Nitro server application.
+- Static production output is written to =.output/public=.
+- The build emits =404.html= as the GitHub Pages SPA fallback.
+- =TAO3K_SITE_BASE_PATH= is the explicit deployment override. In GitHub Actions, the repository name supplies the default subpath when the override is absent.
+
+** Independent theme
+
+- Rsbuild builds the theme preview and federated remote.
+- =@module-federation/rsbuild-plugin= exposes =./theme= from =theme/src/index.tsx=.
+- The remote name remains =tao3k_site=.
+- =react= and =react-dom= remain shared singletons.
+- The required artifacts remain =mf-manifest.json= and =remoteEntry.js=.
+- =ORG_ZHIXING_THEME_ORIGIN= defines the absolute remote asset origin.
+- =ORG_ZHIXING_THEME_ALLOWED_ORIGINS= defines an explicit comma-separated CORS allowlist. A wildcard is not an accepted default.
+- Local preview defaults remain =127.0.0.1:4174=.
+
+* Isolation boundary
+
+The main application and theme remote use separate Rsbuild configurations and separate entries. They share React components and contracts through explicit imports, not through an implicit application runtime. A downstream theme repository may reproduce the theme contract without adopting the tao3k.site application.
+
+* Dependency policy
+
+- TanStack Start, Nitro, Vite, =@vitejs/plugin-react=, and =@module-federation/vite= are not platform dependencies.
+- Rsbuild, the React plugin, the TanStack Router Rspack plugin, and the Module Federation Rsbuild plugin are pinned through =package.json= and =package-lock.json=.
+- Security audit fixes must not use =--force= or =legacy-peer-deps=.
+- The transitive =adm-zip= dependency is overridden to its fixed =0.6.0= release until the Module Federation dependency floor includes that release directly.
+
+* Consequences
+
+- The site has one client runtime instead of a client/server framework it does not need.
+- GitHub Pages deployment becomes a native static artifact rather than a server-framework by-product.
+- Route generation, code splitting, React Fast Refresh, and Module Federation stay inside the Rspack ecosystem.
+- Theme authors retain an independent remote contract suitable for separate repositories.
+- Server rendering is not part of this decision. A future SSR requirement must demonstrate a user-facing need and receive a separate architecture decision.
+
+* Supersession
+
+This record supersedes the build-tool and TanStack Start portions of [[file:ADR-002-zhixing-federated-theme.org][ADR-002]]. ADR-002's independent-theme boundary, remote identity, exposed module, and Org Zhixing package-manifest decisions remain in force.
+
+* Verification
+
+- =npm run typecheck= validates the client, route tree, main Rsbuild config, and theme Rsbuild config.
+- =npm run build= produces =.output/public/index.html= and =.output/public/404.html=.
+- =npm run theme:build= produces and validates the Module Federation manifest and remote entry.
+- =npm audit= must report zero known vulnerabilities.
+- =just check= is the complete warning-free acceptance command.
+
+* Related records
+
+- [[file:ADR-002-zhixing-federated-theme.org][ADR-002: Publish tao3k.site as an independent Zhixing theme]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]
+- [[file:../operations/local-theme-workbench.org][Local Theme Workbench]]

@@ -13,11 +13,13 @@
   # https://devenv.sh/packages/
   packages = [
     pkgs.git
-    pkgs.nodejs
-    pkgs.corepack
+    pkgs.nodejs_24
     pkgs.sqlite
     pkgs.node-gyp
     pkgs.deno
+    pkgs.bazelisk
+    pkgs.bazel-buildtools
+    pkgs.actionlint
   ];
 
   # https://devenv.sh/languages/
@@ -50,7 +52,10 @@
   git-hooks.hooks = {
     shellcheck.enable = true;
     oxlint.enable = true;
-    oxfmt.enable = true;
+    oxfmt = {
+      enable = true;
+      args = [ "--no-error-on-unmatched-pattern" ];
+    };
     nixfmt.enable = true;
   };
   # See full reference at https://devenv.sh/reference/options/

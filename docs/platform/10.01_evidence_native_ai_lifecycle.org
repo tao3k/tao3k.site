@@ -1,0 +1,194 @@
+#+TITLE: Evidence-native AI Lifecycle
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:evidence:lifecycle:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, research, maintainers
+#+CLAIM_MATURITY: policy
+
+* Category
+
+tao3k is an evidence-native AI lifecycle ecosystem for scientific and
+industrial systems.
+
+This category is broader than an agent framework, workflow engine, knowledge
+platform, coding agent, or scientific-compute service. Each of those systems
+optimizes a stage. tao3k connects the stages while preserving meaning,
+authority, and evidence across their boundaries.
+
+* Stable description
+
+#+begin_quote
+tao3k turns knowledge, code, scientific models and human records into
+admissible action—and turns every action back into searchable, verifiable and
+evolvable evidence.
+#+end_quote
+
+* Specialized-engine composition
+
+The lifecycle is implemented by multiple specialized engines joined through shared evidence, qualification, authority, runtime-receipt, and verification contracts.
+
+- Evidence Foundation :: Structures Org records, knowledge, code, scientific models, provenance, claims, and semantic relations.
+- Qualification Plane :: Combines content contracts, graph-driven reasoning, Julia scientific computation, and Lean formal verification according to the risk and proof obligations of an Action Case.
+- Action Core :: Connects compiled workflow intent with governed agent execution. POO Flow owns workflow expression, composition, and compilation; Marlin owns Agent Core runtime, context management, execution, and continuity.
+- Evidence Return Loop :: Converts runtime and verification results into searchable organizational memory, reproducible research records, future action evidence, and rights-governed learning records.
+
+This composition is neither a forced monolith nor a claim that repository existence proves shipped integration. Each project retains independent release and implementation authority in its own Docs.
+
+* Three continuous lifecycles
+This document is the canonical semantic owner of the generic Evidence-native AI Lifecycle. Evidence-grade learning data is a domain specialization of this lifecycle, defined in [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]. It reuses the same Intelligence, Action, and Evolution lifecycles; it does not introduce a second or parallel platform lifecycle.
+
+** Intelligence lifecycle
+
+The intelligence lifecycle asks what the system knows, how it knows it, and
+which owner has authority over that meaning.
+
+#+begin_example
+Record → Structure → Search → Analyze → Validate
+#+end_example
+
+- Orgize and Org preserve structured records, decisions, tasks, experiments,
+  and evidence.
+- Wendao provides knowledge, link, hierarchy, and retrieval capabilities.
+- Wendao Nexus preserves source identity, provenance, licensing, and trust.
+- Wendao Episteme defines ontology and epistemic authority contracts.
+- ASP provides parser-owned semantic evidence for code and language systems.
+- Julia analyzers, graph algorithms, and scientific packages preserve domain
+  algorithm ownership behind explicit transport contracts.
+- ScienceResearch separates research experiments from production promotion.
+
+** Action lifecycle
+
+The action lifecycle asks whether intelligence is allowed to affect the world.
+
+#+begin_example
+Contract → Admit → Execute → Receipt
+#+end_example
+
+- POO Flow composes strategy and policy, resolves precedence, checks admission,
+  and projects accepted work toward a runtime.
+- Marlin owns typed sessions, execution envelopes, sandbox visibility, process
+  authority, recovery, receipts, and replay.
+- Human authority remains explicit at consequential boundaries.
+
+The ability to produce a tool call is not the same as the authority to execute
+it.
+
+** Evolution lifecycle
+
+The evolution lifecycle asks how an outcome becomes a trusted future
+capability.
+
+#+begin_example
+Receipt → Evaluate → Promote → New trusted capability → Record
+#+end_example
+
+Promotion may require scenario evidence, benchmark comparison, source lineage,
+human approval, policy refinement, or scientific validation. Raw behavior does
+not become trusted capability merely because it occurred.
+
+* The Admissibility Circuit
+The Admissibility Circuit is the canonical visual and conceptual projection of the three continuous lifecycles. It is governed by four laws:
+1. Intelligence is provisional. A model output or candidate conclusion has no inherent authority to act.
+2. Evidence grants qualification. Provenance, proof, policy, risk, and human authority determine whether a candidate is admissible for a specific purpose.
+3. Execution must emit evidence. Every admitted action must preserve observable, replayable receipts rather than disappear into an opaque agent run.
+4. Evidence changes the next decision. Outcomes return to the evidence system and may strengthen, narrow, supersede, or invalidate future qualification.
+
+Across the ecosystem, the circuit repeats the same mechanism:
+
+#+begin_example
+Contract → Admission → Execution → Receipt → Promotion
+#+end_example
+
+- A contract makes intent, meaning, inputs, and boundaries explicit.
+- Admission decides whether execution is permitted.
+- Execution occurs inside a typed and observable authority boundary.
+- A receipt preserves what happened in a replayable form.
+- Promotion decides whether the result may influence future trusted operation.
+
+Continuity, authority, and evidence are outcomes of this mechanism. They are not
+substitutes for it.
+
+The Intelligence lifecycle forms candidate intelligence from evidence. The Action lifecycle qualifies, authorizes, compiles, and runs admitted work. The Evolution lifecycle returns observations and receipts as inspectable evidence. These are three views of one circuit, not independent product pipelines.
+
+* Product ownership boundaries
+
+| Concern | Primary owner | Boundary |
+|---------+---------------+----------|
+| Org structure and projection | Orgize | Parses and projects; does not silently execute |
+| Semantic code evidence | ASP | Parser/provider owns facts; protocol owns stable evidence routes |
+| Knowledge and source trust | Wendao family | Preserves provenance, ontology, and query contracts |
+| Strategy and admission | POO Flow | Decides whether work may be projected toward execution |
+| Typed execution | Marlin | Owns runtime authority, receipts, recovery, and replay |
+| Scientific validation | Julia and ScienceResearch | Preserves domain algorithms and evidence-based promotion |
+| Product and content surfaces | Org Zhixing and downstream themes | Renders independently owned experiences over stable contracts |
+
+The boundaries prevent one language, model provider, UI, or storage system from
+claiming authority it does not own.
+
+* Computational and proof substrate
+
+The lifecycle is driven by four complementary owners rather than one generic AI engine.
+
+- The Evidence-Action Graph Engine constructs versioned Action Cases, traces dependencies and affected scope, and discovers missing evidence or proof obligations.
+- Julia executes high-performance graph algorithms, scientific models, optimization, simulation, and numerical validation.
+- Lean qualifies proposed actions against contracts, policy, authority, and invariants, then verifies formal postconditions after execution.
+- POO Flow defines and compiles the Qualify-Act-Verify flow, checkpoints, and agent organization. Marlin runs the compiled Agent system, enforces admitted gates, executes effects, and records runtime evidence.
+
+An Action Case is the bounded evidence subgraph for one proposed action. It contains the evidence snapshot, model assumptions, qualification result, authority, execution plan, receipts, and verification record.
+
+This division is a product boundary: graph connectivity is not proof, a numerical result is not formal qualification, task completion is not verification, and tool access is not human authority.
+
+* Circuit stages and canonical objects
+
+The Admissibility Circuit is not a synonym for workflow execution. Workflow describes the steps an executor should perform; the circuit establishes why an action may proceed, whose authority bounds it, and which evidence must return after execution.
+
+- Frame :: Produce an =Action Case= containing the proposed action, supporting and opposing evidence, context, constraints, uncertainty, success conditions, failure conditions, and stopping conditions.
+- Qualify :: Produce an =Admission Result= that is admissible, inadmissible, conditionally admissible, insufficient-evidence, or requires-human-judgment, together with the qualification basis.
+- Authorize :: Produce an =Authority Envelope= that names the authority source, executor, allowed operations and resources, time, cost and risk bounds, review points, and revocation path.
+- Act :: Produce structured =Runtime Receipts= for steps, inputs, outputs, exceptions, human interventions, and authority checks without expanding the envelope at runtime.
+- Verify :: Produce a =Verification Result= that states whether the result satisfied the original case, violated assumptions, introduced side effects, or requires review, rollback, or another run.
+- Return Evidence :: Project verified results, contradictions, uncertainty, and changed claims back into the evidence graph; an =Evidence Passport= may provide a portable governed projection when required.
+
+The canonical boundary order remains =Action Case -> Admission Result -> Authority Envelope -> Runtime Receipts -> Verification Result=. Evidence return closes the circuit around that object chain rather than inserting an additional authority object into it.
+
+* Meaning, evidence, and authority
+The platform boundary order is =Action Case -> Admission Result -> Authority Envelope -> Runtime Receipts -> Verification Result=. Evidence Passport is a purpose-specific reuse surface owned by the learning-data specialization; it is not a runtime permission or an additional authority layer. Detailed Action Case mechanics are defined in [[file:10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph]].
+
+The lifecycle preserves three independent boundaries.
+
+- Typed Claims and Evidence describe what is asserted, on which basis, and with which uncertainty or formal premises.
+- The Living Semantic Ontology defines the exact meaning and mappings used by graph algorithms without requiring global ontology versions.
+- The Authority Envelope separates machine qualification from the real authority to produce effects.
+
+Together they prevent a model score from becoming truth, a proof from becoming authority, a tool call from becoming verification, or a semantic change from silently rewriting history.
+
+* Capability maturity
+
+Public claims must use one of these states:
+
+| State | Meaning |
+|-------+---------|
+| shipped | Implemented, released, and supported by current evidence |
+| active-development | Implemented work is moving behind active validation gates |
+| research | Experimental evidence exists, but production promotion is incomplete |
+| vision | Directional intent without an implementation claim |
+| policy | Accepted product, documentation, or governance rule |
+
+Repository existence alone does not prove that a capability is shipped.
+
+* Related records
+
+- [[file:10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
+- [[file:10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
+- [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+
+- [[file:../architecture/ADR-001-evidence-native-ai-lifecycle.org][ADR-001]]
+- [[file:../brand/20.01_tao3k_brand_foundation.org][20.01 Brand Foundation]]
+- [[file:../solutions/40.01_research_operations_continuum.org][40.01 Research--Operations Continuum]]
+- [[file:../contracts/90.01_document_contract.org][90.01 Documentation Contract]]

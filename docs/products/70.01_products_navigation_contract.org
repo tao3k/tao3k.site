@@ -1,0 +1,210 @@
+#+TITLE: Products Navigation Contract
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:products:navigation:open-source:site:
+#+STATUS: Accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: Product, content, design, and site engineering teams
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+This record defines how tao3k.site presents open-source projects in the Navigator and Products page.
+
+Products provides discovery and external navigation. It does not duplicate project documentation.
+
+* Registry contract
+
+Every Products entry contains:
+
+| Field | Requirement |
+|-
+| =slug= | Stable main-site navigation key |
+| =name= | Public project name |
+| =shortRole= | One sentence describing its tao3k ecosystem role |
+| =lifecycleArea= | The Evidence-to-Action area it supports |
+| =githubUrl= | Canonical GitHub repository URL |
+| =docsUrl= | Canonical project documentation URL |
+| =websiteUrl= | Optional project website URL |
+
+The registry does not contain detailed feature flags, benchmark results, API support tables, or an independent project Roadmap.
+
+* Initial project families
+
+The Products surface is expected to include confirmed open-source projects from these families:
+
+- Org, Orgize, and Org Zhixing for knowledge and human records;
+- Agent Semantic Protocols for semantic code and knowledge discovery;
+- graph, ontology, Julia, and Lean projects for scientific intelligence, qualification, and verification;
+- POO Flow for Agent composition and compilation; and
+- Marlin for the Agent Runtime.
+
+Exact project names and URLs enter the registry only after the canonical GitHub and Documentation destinations are confirmed.
+
+* Open Source and Docs route contract
+
+The public navigation label is /Open Source/, while this record may retain /Products/ as an internal content-domain name. The =/open-source= page groups projects by Evidence Foundation, Qualification Plane, Action Core, and Evidence Return Loop. It is not a store, pricing catalogue, or feature-claim surface.
+
+The =/docs= utility route is a project-documentation directory. Each entry exposes project role, maturity, GitHub, Project Docs, license where known, contribution entry, and last-reviewed date. It must not copy implementation documentation into tao3k.site or treat internal brand and governance Org records as end-user product documentation.
+
+* Navigator menu
+
+The desktop Products menu displays a concise project list grouped by lifecycle area. Each entry exposes its name and short role. GitHub and Documentation are direct, clearly labelled external actions.
+
+The menu ends with =View all products=, which enters =/products=.
+
+The Navigator does not embed project changelogs, implementation status, or detailed feature comparisons.
+
+* Ecosystem role projection
+
+The Products surface may group independent projects by their responsibility in the Evidence--Action Ecosystem:
+
+- Evidence Foundation :: Org records, knowledge and code search, provenance, semantic ontology, scientific models, and graph relations;
+- Qualification Plane :: Contracts, graph-driven reasoning, Julia scientific computation, Lean proof, and other qualification mechanisms;
+- Action Core :: POO Flow for workflow language, composition, and compilation; Marlin for Agent Core runtime, context management, execution, and continuity;
+- Evidence Return Loop :: Runtime receipts, verification results, searchable records, and rights-governed learning-data projections.
+
+These roles explain ecosystem composition without claiming a monolith or flattening project boundaries. POO Flow is not the Agent Runtime, and Marlin is not a PR replacement; PR, coding, and other agents are capabilities that a Marlin runtime may host. Any stronger implementation claim must be sourced from the responsible project's Docs.
+
+Every listed project must expose a concise role, an honest maturity label, a GitHub destination, and a Project Docs destination. Repository existence, navigation presence, or planned federation must not be presented as proof of shipped capability.
+
+* Production responsibility projection
+
+The Products page groups engines by the production responsibility they own.  It
+does not reduce the ecosystem to a flat repository catalogue.
+
+| Production responsibility | tao3k engines | Quality gained |
+|-
+| Evidence and records | Orgize and Wendao | Provenance, ownership, durable context, and source identity |
+| Semantic query | GQL Rust and Agent Semantic Protocols | Precise, composable, source-addressable retrieval over knowledge and code |
+| Deduction and calibration | Ascent, ontology, and graph engines | Explicit relations, constraints, derivations, and uncertainty for reasoning and task calibration |
+| Scientific qualification | Julia, Lean, contracts, POO Flow, and Cedar | Numerical evidence, proof obligations, policy, authority, and action admissibility |
+| Durable operation | Marlin | Checkpoints, recovery, execution continuity, capability state, and runtime receipts |
+| Evidence return | Org Zhixing and evidence-graph projections | Searchable, attributable, verifiable, and reproducible outcomes |
+
+The public page MUST link stronger claims to the responsible project Docs and
+MUST NOT imply that the complete cross-engine circuit is shipped when only an
+isolated engine has evidence.
+
+* Semantic query and calibration
+
+The Products page presents GQL Rust, Agent Semantic Protocols, Ascent, knowledge
+providers, ontology, and graph engines as a connected query-and-evidence
+substrate with independent authorities.  GQL Rust is a tao3k project.  Ascent
+is presented with its upstream repository and its specific relational-deduction
+role; the page MUST NOT imply that it is a tao3k-maintained repository:
+
+- GQL Rust expresses precise, composable, inspectable graph queries;
+- Agent Semantic Protocols retrieves parser-owned code and language evidence;
+- Wendao and other knowledge providers preserve source, meaning, ownership, and
+  provenance;
+- Ascent derives explicit relations from declared facts and rules; and
+- qualification uses the resulting evidence and derivations to calibrate what a
+  model may claim, recommend, or do next.
+
+Search improves recall.  Semantic calibration improves judgement.  Search
+results do not grant action authority.
+
+=Ascent= is the canonical public project name.  =ASCN= is not used as an alias
+unless a separate canonical project record defines it.
+
+* Market-convergence projection
+
+The Products page may present a compact /Why this architecture is converging
+now/ section sourced from [[file:../compare/50.03_industry_evidence_watch.org][Industry Evidence Watch]].  Each item exposes a date,
+source type, observed fact, architectural gap, and tao3k relevance.
+
+The public page does not publish VC rankings, fundraising targets, investor-fit
+scores, or private relationship strategy.  Financing is evidence that a market
+is pricing a problem; it is not evidence that a tao3k capability is technically
+correct or shipped.
+
+* Products page
+
+The Products page provides:
+
+- a short ecosystem introduction;
+- lifecycle-area grouping;
+- one card per tao3k open-source project and one clearly labelled upstream card
+  where an external engine is a material architectural dependency;
+- the project role inside tao3k;
+- GitHub, Documentation, and optional Website actions; and
+- links back to Platform and Roadmap for the wider narrative.
+
+Project cards must not imply that the main site owns the external documentation.
+
+* Reader-object audit
+
+The Products page MUST answer distinct questions for three reader objects without
+turning them into three repeated card grids:
+
+| Reader object | Question the page must answer | Required evidence surface |
+|-
+| Person evaluating tao3k | What becomes more understandable, controllable, and useful to me? | Source, reasoning boundary, limits, human authority, and inspectable outcome |
+| Enterprise customer | How can this enter production without replacing every existing system or creating a new black box? | Production responsibility chain, incremental adoption path, system ownership, and maturity honesty |
+| Long-horizon customer, partner, or capital allocator | Why can this architecture produce durable value beyond one model cycle? | Compounding evidence, reusable qualification, operational learning, open distribution, and sourced market convergence |
+
+The page does not address investors with fundraising language.  It exposes the
+technical, product, adoption, and market properties from which a customer or a
+potential investor can independently assess long-term value.
+
+* Public narrative sequence
+
+The independent Products page follows this sequence:
+
+1. Category and production problem: /Reproducible Intelligence Systems/ turns a
+   question into an action that can be defended.
+2. Reader value: people gain inspectability, organisations gain incremental
+   adoption, and long-horizon builders gain compounding infrastructure.
+3. Production responsibility chain: evidence, query, deduction, qualification,
+   durable operation, and evidence return remain independently owned.
+4. Adoption path: begin at one consequential boundary, connect evidence owners,
+   qualify one transition, and return an inspectable receipt.
+5. Open-source engine registry: repositories remain independent and link to
+   project-owned evidence.
+6. Market convergence: sourced external records explain why evaluation,
+   institutional context, and long-horizon reliability are receiving attention.
+7. Compounding value: encoded knowledge, reusable qualification, operational
+   learning, and open distribution survive model turnover.
+
+The page MUST state that architecture direction, repository availability, and a
+shipped cross-engine integration are different evidence states.
+
+* Evidence-grade learning-data surfaces
+
+The Products page may identify which lifecycle surface a project supports, such as capture, qualification, action receipts, verification, graph return, search, evaluation, or governed reuse. It must link each capability claim to the responsible project documentation.
+
+The registry must not label every project as a training-data product. Evidence-grade learning data is a cross-ecosystem doctrine; concrete formats, validators, runtimes, and maturity remain project-owned facts.
+
+See [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]].
+
+* Link authority and health
+
+GitHub and Documentation destinations are explicit configuration, not derived from project names. Build or CI validation should reject malformed URLs and duplicate slugs. External availability may be monitored separately without making a transient network failure block local authoring.
+
+If a project moves, the registry changes once and both Navigator and Products page consume the same source.
+
+* Maturity language
+
+The Products surface may omit implementation maturity entirely. If maturity is displayed, it must use a main-site editorial vocabulary and link to project-owned evidence.
+
+The site never infers =shipped= merely because a repository exists.
+
+* Mobile and accessibility
+
+- Products opens by explicit activation rather than hover.
+- The menu exposes expanded and collapsed state.
+- Project, GitHub, and Documentation actions have distinct accessible names.
+- External links disclose their destination behavior.
+- Touch targets remain usable on narrow screens.
+- The complete list remains available on =/products= even when the Navigator shows a shortened set.
+
+* Related records
+
+- [[file:../architecture/RFC-001-reproducible-intelligence-systems.org][RFC-001: Reproducible Intelligence Systems]]
+- [[file:../brand/20.04_evidence_grade_learning_data.org][Evidence-grade Learning Data]]
+
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]]
+- [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]]
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][Evidence-native AI lifecycle]]

@@ -1,0 +1,108 @@
+.tao-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--tao-ink, var(--tao3k-text, currentColor));
+  line-height: 1;
+}
+
+.tao-logo-symbol {
+  display: block;
+  width: 52px;
+  height: 40px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  color: var(--tao-ink, var(--tao3k-text, currentColor));
+  filter: none;
+}
+
+.tao-logo-symbol-bg {
+  fill: color-mix(in srgb, Canvas 58%, transparent);
+  stroke: color-mix(in srgb, currentColor 16%, transparent);
+  stroke-width: 1.2;
+}
+
+.tao-logo-symbol-aura {
+  fill: none;
+  opacity: 0.64;
+  stroke: var(--tao-signal, var(--tao3k-accent, currentColor));
+  stroke-dasharray: 7 10;
+  stroke-linecap: round;
+  stroke-width: 2.4;
+  animation: tao-logo-aura-drift 9s linear infinite;
+}
+
+.tao-logo-three-mark,
+.tao-logo-k-mark {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 6.4;
+}
+
+.tao-logo-three-mark {
+  stroke: currentColor;
+}
+
+.tao-logo-k-mark {
+  stroke: var(--tao-jade, var(--tao3k-accent, currentColor));
+}
+
+.tao-logo-lockup {
+  display: grid;
+  gap: 5px;
+}
+
+.tao-logo-wordline {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  width: fit-content;
+  min-width: 0;
+  color: currentColor;
+  font-size: 1.75rem;
+  font-weight: 760;
+  letter-spacing: -0.065em;
+}
+
+.tao-logo-three,
+.tao-logo-k {
+  color: var(--tao-jade, var(--tao3k-accent, currentColor));
+}
+
+.tao-logo-three {
+  margin-left: 0.03em;
+}
+
+.tao-logo-k {
+  margin-left: 0.01em;
+}
+
+.tao-logo-subtitle {
+  color: color-mix(in srgb, currentColor 52%, transparent);
+  font-size: 0.65rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tao-logo-compact .tao-logo-symbol {
+  width: 43px;
+  height: 34px;
+}
+
+.tao-logo-compact .tao-logo-wordline {
+  font-size: 1.2rem;
+}
+
+@keyframes tao-logo-aura-drift {
+  to {
+    stroke-dashoffset: -34;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tao-logo-symbol-aura {
+    animation: none;
+  }
+}

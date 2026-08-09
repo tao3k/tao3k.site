@@ -1,0 +1,76 @@
+#+TITLE: Local Theme Workbench
+#+DATE: 2026-07-18
+#+AUTHOR: tao3k
+#+LANGUAGE: en
+#+OPTIONS: toc:2 num:nil
+#+FILETAGS: :tao3k:operations:rsbuild:theme:module-federation:
+#+STATUS: Active
+#+OWNER: tao3k.site
+#+AUDIENCE: tao3k.site maintainers and Org Zhixing theme integrators
+#+CLAIM_MATURITY: shipped
+
+* Purpose
+
+This runbook defines the local and production acceptance commands for the tao3k.site application and its independently packaged Org Zhixing theme. Every command runs inside the repository's direnv environment.
+
+* Main application
+
+#+begin_src sh
+direnv exec . npm run dev
+#+end_src
+
+Build the static application and GitHub Pages fallback:
+
+#+begin_src sh
+direnv exec . npm run build
+#+end_src
+
+The production artifact is =.output/public=. It must contain both =index.html= and =404.html=. Set =TAO3K_SITE_BASE_PATH= when previewing a non-root deployment path.
+
+* Theme development
+
+#+begin_src sh
+direnv exec . npm run theme:dev
+#+end_src
+
+The default remote is =http://127.0.0.1:4174/remoteEntry.js=. For the standard build-then-preview loop:
+
+#+begin_src sh
+direnv exec . just theme-preview 4174
+#+end_src
+
+* Cross-origin host configuration
+
+=ORG_ZHIXING_THEME_ORIGIN= identifies the theme server. =ORG_ZHIXING_THEME_ALLOWED_ORIGINS= identifies the applications that may consume it.
+
+#+begin_src sh
+direnv exec . env \
+  ORG_ZHIXING_THEME_PORT=4174 \
+  ORG_ZHIXING_THEME_ORIGIN=http://127.0.0.1:4174 \
+  ORG_ZHIXING_THEME_ALLOWED_ORIGINS=http://127.0.0.1:5173,http://localhost:5173 \
+  npm run theme:preview -- --host 127.0.0.1 --port 4174
+#+end_src
+
+Do not replace the allowlist with =*=.
+
+* Production theme build
+
+#+begin_src sh
+direnv exec . npm run theme:build
+#+end_src
+
+The =theme/dist= artifact must include =mf-manifest.json=, =remoteEntry.js=, federated types, preview HTML, and static assets. The manifest retains remote =tao3k_site= and exposure =./theme=.
+
+* Acceptance gate
+
+#+begin_src sh
+direnv exec . just check
+direnv exec . npm audit
+#+end_src
+
+Acceptance requires documentation contracts, formatting, zero-warning lint, TypeScript, the main static build, the theme federation build, the manifest contract, and zero known dependency vulnerabilities.
+
+* Related records
+
+- [[file:../architecture/ADR-006-rsbuild-rspack-tanstack-router-platform.org][ADR-006: Rsbuild, Rspack, TanStack Router, and React Platform]]
+- [[file:../architecture/ADR-002-zhixing-federated-theme.org][ADR-002: Publish tao3k.site as an independent Zhixing theme]]

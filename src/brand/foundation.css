@@ -1,0 +1,186 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f0e7;
+  --bg-2: #ebe7dc;
+  --panel: rgba(255, 255, 255, 0.76);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --line: rgba(18, 30, 23, 0.14);
+  --line-strong: rgba(18, 30, 23, 0.28);
+  --text: #152019;
+  --muted: rgba(21, 32, 25, 0.7);
+  --soft: rgba(21, 32, 25, 0.48);
+  --green: #176b45;
+  --blue: #1e8390;
+  --amber: #a36d2c;
+  --rust: #8b5d43;
+  --danger: #a4433e;
+  --shadow: 0 24px 80px rgba(24, 37, 28, 0.12);
+  --tao-paper: #f3f0e7;
+  --tao-paper-deep: #e7e1d3;
+  --tao-ink: #152019;
+  --tao-ink-soft: rgba(21, 32, 25, 0.68);
+  --tao-jade: #176b45;
+  --tao-jade-bright: #4fa77a;
+  --tao-signal: #43b8c5;
+  --tao-authority: #bf8237;
+  --tao-runtime: #09100d;
+  --tao-runtime-soft: #101b16;
+  --tao-runtime-line: rgba(232, 245, 236, 0.14);
+  --tao-runtime-text: #edf5ef;
+  --tao-runtime-muted: rgba(237, 245, 239, 0.62);
+  --tao-radius-sm: 14px;
+  --tao-radius-md: 22px;
+  --tao-radius-lg: 34px;
+}
+
+html {
+  background: var(--tao-paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 14% -8%, rgba(79, 167, 122, 0.13), transparent 28rem),
+    radial-gradient(circle at 88% 4%, rgba(67, 184, 197, 0.1), transparent 30rem),
+    var(--tao-paper);
+  color: var(--tao-ink);
+}
+
+::selection {
+  background: rgba(23, 107, 69, 0.2);
+  color: var(--tao-ink);
+}
+
+.site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  width: min(1460px, calc(100% - 24px));
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(16px, 2.5vw, 38px);
+  margin: 12px auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(241, 246, 241, 0.52)),
+    rgba(245, 247, 243, 0.58);
+  padding: 10px 12px 10px 16px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.82) inset,
+    0 18px 60px rgba(24, 37, 28, 0.12),
+    0 2px 12px rgba(24, 37, 28, 0.08);
+  backdrop-filter: blur(28px) saturate(165%);
+  -webkit-backdrop-filter: blur(28px) saturate(165%);
+}
+
+.site-header::before,
+.site-header::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.site-header::before {
+  top: -42px;
+  left: 12%;
+  width: 46%;
+  height: 74px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  filter: blur(24px);
+  opacity: 0.62;
+  transform: rotate(-4deg);
+}
+
+.site-header::after {
+  right: 12%;
+  bottom: -36px;
+  width: 34%;
+  height: 58px;
+  border-radius: 999px;
+  background: rgba(67, 184, 197, 0.2);
+  filter: blur(24px);
+}
+
+.site-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-mark {
+  min-width: max-content;
+}
+
+.site-nav {
+  gap: 2px;
+  justify-content: center;
+}
+
+.nav-link {
+  min-height: 40px;
+  border-color: transparent;
+  border-radius: 14px;
+  color: rgba(21, 32, 25, 0.68);
+  padding-inline: 14px;
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.nav-link:hover,
+.nav-link[data-active="true"] {
+  border-color: rgba(255, 255, 255, 0.68);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.38)),
+    rgba(255, 255, 255, 0.38);
+  color: var(--tao-ink);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 8px 24px rgba(24, 37, 28, 0.08);
+}
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.site-github-link,
+.site-primary-action {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  font-weight: 720;
+}
+
+.site-github-link {
+  color: rgba(21, 32, 25, 0.62);
+}
+
+.site-github-link:hover {
+  color: var(--tao-ink);
+}
+
+.site-primary-action {
+  border: 1px solid rgba(8, 43, 26, 0.24);
+  background:
+    linear-gradient(180deg, rgba(55, 137, 91, 0.98), rgba(23, 107, 69, 0.98)),
+    var(--tao-jade);
+  color: #f8fcf9;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.34) inset,
+    0 10px 26px rgba(23, 107, 69, 0.22);
+}
+
+.site-primary-action:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 14px 32px rgba(23, 107, 69, 0.28);
+}
