@@ -43,7 +43,10 @@ export default defineConfig({
   tools: {
     rspack: {
       module: {
-        rules: [{ resourceQuery: /url/, type: "asset/resource" }],
+        rules: [
+          { resourceQuery: /url/, type: "asset/resource" },
+          { resourceQuery: /raw/, type: "asset/source" },
+        ],
       },
     },
   },

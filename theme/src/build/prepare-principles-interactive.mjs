@@ -20,6 +20,7 @@ const flowFields = [
   "FLOW_AI",
   "FLOW_TONE",
   "FLOW_PRESSURE",
+  "FLOW_GUARD",
 ];
 
 initSync({ module: await readFile(new URL(import.meta.resolve("orgize/wasm"))) });
@@ -79,6 +80,7 @@ const nodes = sectionProjection.records.flatMap((record) => {
       ai: properties.get("FLOW_AI"),
       tone: properties.get("FLOW_TONE"),
       pressure: properties.get("FLOW_PRESSURE"),
+      guard: properties.get("FLOW_GUARD"),
     },
   ];
 });

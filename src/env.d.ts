@@ -15,6 +15,10 @@ declare module "*?url" {
   const source: string;
   export default source;
 }
+declare module "*?raw" {
+  const source: string;
+  export default source;
+}
 declare module "@poo-flow/runtime-wasm/wasm" {
   const source: string;
   export default source;

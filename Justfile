@@ -28,10 +28,15 @@ site port="3000":
     local_config_path="$repo_root/.cache/org-zhixing/local-preview.toml"
     content_root="$repo_root/docs"
     theme_port="${ORG_ZHIXING_THEME_PORT:-$(( {{port}} + 1 ))}"
+    theme_dist="$repo_root/theme/dist"
 
     test -f "$config_path"
     test -d "$content_root"
     test -f "$zhixing_root/package.json"
+
+    # A failed Rsbuild dev compilation must not be mistaken for a ready remote
+    # because a manifest from an earlier run is still present.
+    rm -rf "$theme_dist"
 
     echo "Theme remote: http://{{host}}:$theme_port/mf-manifest.json"
     direnv exec "$repo_root" env \
@@ -47,7 +52,7 @@ site port="3000":
     trap cleanup EXIT INT TERM
 
     for _ in $(seq 1 120); do
-    if curl --fail --silent --output /dev/null "http://{{host}}:$theme_port/mf-manifest.json"; then
+      if curl --fail --silent --output /dev/null "http://{{host}}:$theme_port/mf-manifest.json"; then
         break
       fi
       if ! kill -0 "$theme_pid" 2>/dev/null; then
@@ -56,7 +61,10 @@ site port="3000":
       fi
       sleep 0.25
     done
-    curl --fail --silent --output /dev/null "http://{{host}}:$theme_port/mf-manifest.json"
+    if ! curl --fail --silent --output /dev/null "http://{{host}}:$theme_port/mf-manifest.json"; then
+      echo "TAO3K-SITE-E001 theme remote did not produce a fresh manifest" >&2
+      exit 1
+    fi
 
     direnv exec "$repo_root" node theme/src/build/prepare-local-config.mjs \
       "$config_path" \

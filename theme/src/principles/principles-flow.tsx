@@ -3,10 +3,15 @@ import {
   BackgroundVariant,
   Panel,
   ReactFlow,
+  PanOnScrollMode,
   ReactFlowProvider,
   useReactFlow,
   type NodeTypes,
 } from "@xyflow/react";
+import { createHighlighterCore } from "@shikijs/core";
+import { createJavaScriptRegexEngine } from "@shikijs/engine-javascript";
+import scheme from "@shikijs/langs/scheme";
+import catppuccinMocha from "@shikijs/themes/catppuccin-mocha";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   openPrinciplesFlowSession,
@@ -15,20 +20,47 @@ import {
   type PrinciplesFlowNode,
   type PrinciplesFlowSession,
 } from "./principles-flow-model";
+import type { WorkflowCursorSnapshot } from "@poo-flow/runtime-wasm";
 import { PrinciplesFlowNodeView } from "./principles-flow-node";
+import { ProofExplorer } from "./proof-explorer";
+import schemeSource from "./human-capability.ss?raw";
 import "./principles-flow.css";
 
 const nodeTypes: NodeTypes = { principle: PrinciplesFlowNodeView };
 const fitOptions = { padding: 0.16, duration: 520, maxZoom: 1.05 } as const;
+const schemeHighlighter = createHighlighterCore({
+  langs: [scheme],
+  themes: [catppuccinMocha],
+  engine: createJavaScriptRegexEngine(),
+});
 
-function PrinciplesFlowCanvas() {
+const executionStateLabel = {
+  waiting: "blocked",
+  ready: "eligible",
+  running: "checking",
+  complete: "admitted",
+} as const;
+
+function PrinciplesFlowCanvas({
+  focusedEvidenceId,
+  onGraphFocusChange,
+}: {
+  focusedEvidenceId?: string;
+  onGraphFocusChange?: (graphId: string) => void;
+}) {
   const [model, setModel] = useState<PrinciplesFlowModel>();
-  const [completedSteps, setCompletedSteps] = useState(0);
+  const [cursor, setCursor] = useState<WorkflowCursorSnapshot>({
+    completedSteps: 0,
+    stepCount: 0,
+  });
   const [selectedId, setSelectedId] = useState<string>();
+  const [pinnedNodeId, setPinnedNodeId] = useState<string>();
   const [running, setRunning] = useState(false);
+  const [sourceOpen, setSourceOpen] = useState(false);
+  const [sourceHtml, setSourceHtml] = useState<string>();
   const [error, setError] = useState<string>();
   const sessionRef = useRef<PrinciplesFlowSession | undefined>(undefined);
-  const { fitView } = useReactFlow<PrinciplesFlowNode, PrinciplesFlowEdge>();
+  const { fitView, setCenter } = useReactFlow<PrinciplesFlowNode, PrinciplesFlowEdge>();
 
   useEffect(() => {
     let disposed = false;
@@ -40,6 +72,7 @@ function PrinciplesFlowCanvas() {
         }
         sessionRef.current = session;
         setModel(session.model);
+        setCursor(session.cursor.position());
         setSelectedId(
           session.model.nodes.find(({ data }) => data.semanticId === "human-capability")?.id,
         );
@@ -55,16 +88,54 @@ function PrinciplesFlowCanvas() {
   }, []);
 
   useEffect(() => {
+    if (!sourceOpen) return;
+    let disposed = false;
+    void schemeHighlighter
+      .then((highlighter) =>
+        highlighter.codeToHtml(schemeSource, { lang: "scheme", theme: "catppuccin-mocha" }),
+      )
+      .then((html) => {
+        if (!disposed) setSourceHtml(html);
+      })
+      .catch((reason: unknown) => {
+        if (!disposed) setError(reason instanceof Error ? reason.message : String(reason));
+      });
+    return () => {
+      disposed = true;
+    };
+  }, [sourceOpen]);
+
+  useEffect(() => {
     if (!model) return;
     const frame = requestAnimationFrame(() => void fitView(fitOptions));
     return () => cancelAnimationFrame(frame);
   }, [fitView, model]);
 
+  useEffect(() => {
+    if (!model || !focusedEvidenceId) return;
+    const node = model.nodes.find(
+      ({ id, data }) => id === focusedEvidenceId || data.semanticId === focusedEvidenceId,
+    );
+    if (!node) return;
+    setSelectedId(node.id);
+    setPinnedNodeId(node.id);
+    const width = typeof node.style?.width === "number" ? node.style.width : 320;
+    const height = typeof node.style?.height === "number" ? node.style.height : 176;
+    const frame = requestAnimationFrame(
+      () =>
+        void setCenter(node.position.x + width / 2, node.position.y + height / 2, {
+          duration: 520,
+          zoom: 1,
+        }),
+    );
+    return () => cancelAnimationFrame(frame);
+  }, [focusedEvidenceId, model, setCenter]);
+
   const step = useCallback(() => {
     const session = sessionRef.current;
     if (!session) return;
     const snapshot = session.cursor.step();
-    setCompletedSteps(snapshot.completedSteps);
+    setCursor(snapshot);
     if (snapshot.completedSteps >= snapshot.stepCount) setRunning(false);
   }, []);
 
@@ -78,20 +149,22 @@ function PrinciplesFlowCanvas() {
     const session = sessionRef.current;
     if (!session) return;
     setRunning(false);
-    setCompletedSteps(session.cursor.reset().completedSteps);
+    setPinnedNodeId(undefined);
+    setCursor(session.cursor.reset());
     requestAnimationFrame(() => void fitView(fitOptions));
   }, [fitView]);
 
   const toggleRun = useCallback(() => {
     const session = sessionRef.current;
     if (!session) return;
-    if (completedSteps >= session.cursor.stepCount) {
-      setCompletedSteps(session.cursor.reset().completedSteps);
+    setPinnedNodeId(undefined);
+    if (cursor.completedSteps >= session.cursor.stepCount) {
+      setCursor(session.cursor.reset());
       setRunning(true);
       return;
     }
     setRunning((value) => !value);
-  }, [completedSteps]);
+  }, [cursor.completedSteps]);
 
   const nodes = useMemo(
     () =>
@@ -101,14 +174,16 @@ function PrinciplesFlowCanvas() {
         data: {
           ...node.data,
           status:
-            node.data.order <= completedSteps
+            node.data.order <= cursor.completedSteps
               ? ("complete" as const)
-              : node.data.order === completedSteps + 1
-                ? ("active" as const)
-                : ("waiting" as const),
+              : node.data.order === cursor.completedSteps + 1 && running
+                ? ("running" as const)
+                : node.data.order === cursor.completedSteps + 1
+                  ? ("ready" as const)
+                  : ("waiting" as const),
         },
       })) ?? [],
-    [completedSteps, model, selectedId],
+    [cursor.completedSteps, model, running, selectedId],
   );
 
   const nodeOrder = useMemo(
@@ -120,19 +195,75 @@ function PrinciplesFlowCanvas() {
       model?.edges.map((edge) => {
         const sourceOrder = nodeOrder.get(edge.source) ?? Number.MAX_SAFE_INTEGER;
         const targetOrder = nodeOrder.get(edge.target) ?? Number.MAX_SAFE_INTEGER;
-        const complete = sourceOrder <= completedSteps && targetOrder <= completedSteps;
-        const active = sourceOrder <= completedSteps && targetOrder === completedSteps + 1;
+        const complete =
+          sourceOrder <= cursor.completedSteps && targetOrder <= cursor.completedSteps;
+        const active =
+          running &&
+          sourceOrder <= cursor.completedSteps &&
+          targetOrder === cursor.completedSteps + 1;
+        const ready =
+          !running &&
+          sourceOrder <= cursor.completedSteps &&
+          targetOrder === cursor.completedSteps + 1;
         return {
           ...edge,
           animated: running && active,
-          className: complete ? "is-complete" : active ? "is-active" : "is-waiting",
+          className: complete
+            ? "is-complete"
+            : active
+              ? "is-active"
+              : ready
+                ? "is-ready"
+                : "is-waiting",
+          label: complete ? "admitted" : active ? "checking" : ready ? "eligible" : "blocked",
+          labelBgPadding: [6, 4] as [number, number],
+          labelBgBorderRadius: 5,
         };
       }) ?? [],
-    [completedSteps, model, nodeOrder, running],
+    [cursor.completedSteps, model, nodeOrder, running],
   );
 
-  const selectedNode = nodes.find(({ id }) => id === selectedId) ?? nodes[0];
-  const stepCount = sessionRef.current?.cursor.stepCount ?? model?.nodes.length ?? 0;
+  const runtimeNode =
+    nodes.find(({ data }) => data.status === "running") ??
+    nodes.find(({ data }) => data.status === "ready");
+  const inspectorNode =
+    nodes.find(({ id }) => id === pinnedNodeId) ??
+    runtimeNode ??
+    nodes.find(({ id }) => id === selectedId) ??
+    nodes[0];
+  const inboundNodes =
+    inspectorNode && model
+      ? model.nodes.filter(({ id }) =>
+          model.edges.some((edge) => edge.target === inspectorNode.id && edge.source === id),
+        )
+      : [];
+  const outboundCount =
+    inspectorNode && model
+      ? model.edges.filter((edge) => edge.source === inspectorNode.id).length
+      : 0;
+  const transitionExplanation = !inspectorNode
+    ? "No transition selected."
+    : inboundNodes.length > 1
+      ? "AND-join: " +
+        inboundNodes.map(({ data }) => data.title).join(" + ") +
+        " must each return an admitted receipt."
+      : inboundNodes.length === 1
+        ? "Serial gate: requires the admitted receipt from " + inboundNodes[0].data.title + "."
+        : outboundCount > 1
+          ? "Fan-out: once admitted, " +
+            outboundCount +
+            " downstream transitions may become eligible independently."
+          : "Entry gate: this transition starts only after its declared condition is checked.";
+  const stateExplanation = !inspectorNode
+    ? ""
+    : inspectorNode.data.status === "complete"
+      ? "Admitted: the declared condition and predecessor receipt are satisfied."
+      : inspectorNode.data.status === "running"
+        ? "Checking: the declared condition is being evaluated before admission."
+        : inspectorNode.data.status === "ready"
+          ? "Eligible: predecessor receipts are present; this condition is next for evaluation."
+          : "Blocked: waiting for the required predecessor receipt or entry condition.";
+  const stepCount = cursor.stepCount || model?.nodes.length || 0;
 
   if (error) {
     return (
@@ -153,74 +284,152 @@ function PrinciplesFlowCanvas() {
   }
 
   return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      nodeTypes={nodeTypes}
-      onNodeClick={(_, node) => setSelectedId(node.id)}
-      nodesDraggable
-      nodesConnectable={false}
-      elementsSelectable
-      panOnDrag
-      zoomOnScroll={false}
-      zoomOnPinch
-      minZoom={0.38}
-      maxZoom={1.5}
-      fitView
-      fitViewOptions={fitOptions}
-      proOptions={{ hideAttribution: true }}
-      aria-label="POO Flow human capability composition"
-    >
-      <Background variant={BackgroundVariant.Dots} gap={30} size={1} />
+    <div className="tao3k-principles-flow__layout">
+      <div className="tao3k-principles-flow__workflow">
+        <div className="tao3k-principles-flow__canvas">
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            nodeTypes={nodeTypes}
+            onNodeClick={(_, node) => {
+              setSelectedId(node.id);
+              setPinnedNodeId(node.id);
+              onGraphFocusChange?.(node.data.semanticId);
+            }}
+            nodesDraggable
+            nodeDragThreshold={3}
+            nodesConnectable={false}
+            elementsSelectable
+            panOnDrag
+            panOnScroll
+            panOnScrollMode={PanOnScrollMode.Free}
+            panOnScrollSpeed={0.75}
+            onlyRenderVisibleElements
+            elevateNodesOnSelect={false}
+            zoomOnScroll={false}
+            zoomOnPinch
+            minZoom={0.38}
+            maxZoom={1.5}
+            fitView
+            fitViewOptions={fitOptions}
+            proOptions={{ hideAttribution: true }}
+            aria-label="POO Flow human capability composition"
+          >
+            <Background variant={BackgroundVariant.Dots} gap={30} size={1} />
 
-      {selectedNode ? (
-        <Panel position="top-right" className="tao3k-principles-inspector">
+            {sourceOpen ? (
+              <Panel
+                position="top-left"
+                className="tao3k-principles-source"
+                aria-label="Scheme source code"
+              >
+                <header>
+                  <span>human-capability.ss</span>
+                  <button
+                    type="button"
+                    onClick={() => setSourceOpen(false)}
+                    aria-label="Close source code"
+                  >
+                    Close
+                  </button>
+                </header>
+                {sourceHtml ? (
+                  <div
+                    className="tao3k-principles-source__highlight"
+                    dangerouslySetInnerHTML={{ __html: sourceHtml }}
+                  />
+                ) : (
+                  <p className="tao3k-principles-source__loading">Highlighting Scheme…</p>
+                )}
+              </Panel>
+            ) : null}
+          </ReactFlow>
+        </div>
+        <div className="tao3k-principles-flow__runtime-dock">
+          <div className="tao3k-principles-runtime">
+            <div>
+              <span>WASM CURSOR</span>
+              <strong>
+                {String(cursor.completedSteps).padStart(2, "0")} /{" "}
+                {String(stepCount).padStart(2, "0")}
+              </strong>
+            </div>
+            <button type="button" onClick={toggleRun}>
+              {running ? "Pause" : cursor.completedSteps >= stepCount ? "Replay" : "Run"}
+            </button>
+            <button
+              type="button"
+              onClick={step}
+              disabled={running || cursor.completedSteps >= stepCount}
+            >
+              Step
+            </button>
+            <button type="button" onClick={reset}>
+              Reset
+            </button>
+            <button
+              type="button"
+              className="tao3k-principles-runtime__source"
+              aria-expanded={sourceOpen}
+              onClick={() => setSourceOpen((value) => !value)}
+            >
+              {sourceOpen ? "Hide Scheme" : "Source code"}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {inspectorNode ? (
+        <aside className="tao3k-principles-inspector">
           <header>
-            <span>{selectedNode.data.kind}</span>
-            <strong>{selectedNode.data.boundary}</strong>
+            <span>{pinnedNodeId ? "Pinned inspection" : "Runtime follow"}</span>
+            <strong>{executionStateLabel[inspectorNode.data.status]}</strong>
           </header>
-          <h3>{selectedNode.data.title}</h3>
-          <p>{selectedNode.data.summary}</p>
+          <h3>{inspectorNode.data.title}</h3>
+          <p>{inspectorNode.data.summary}</p>
           <dl>
             <div>
               <dt>Human</dt>
-              <dd>{selectedNode.data.human}</dd>
+              <dd>{inspectorNode.data.human}</dd>
             </div>
             <div>
               <dt>AI</dt>
-              <dd>{selectedNode.data.ai}</dd>
+              <dd>{inspectorNode.data.ai}</dd>
+            </div>
+            <div>
+              <dt>Guard</dt>
+              <dd>{inspectorNode.data.guard}</dd>
+            </div>
+            <div>
+              <dt>State</dt>
+              <dd>{stateExplanation}</dd>
+            </div>
+            <div>
+              <dt>Topology</dt>
+              <dd>{transitionExplanation}</dd>
             </div>
             <div>
               <dt>Pressure test</dt>
-              <dd>{selectedNode.data.pressureDetail}</dd>
+              <dd>{inspectorNode.data.pressureDetail}</dd>
             </div>
           </dl>
-          <footer>{selectedNode.data.result}</footer>
-        </Panel>
+          <footer>
+            <span>{inspectorNode.data.boundary}</span>
+            {pinnedNodeId ? (
+              <button type="button" onClick={() => setPinnedNodeId(undefined)}>
+                Follow run
+              </button>
+            ) : null}
+            <strong>{inspectorNode.data.result}</strong>
+          </footer>
+        </aside>
       ) : null}
-
-      <Panel position="bottom-center" className="tao3k-principles-runtime">
-        <div>
-          <span>WASM CURSOR</span>
-          <strong>
-            {String(completedSteps).padStart(2, "0")} / {String(stepCount).padStart(2, "0")}
-          </strong>
-        </div>
-        <button type="button" onClick={toggleRun}>
-          {running ? "Pause" : completedSteps >= stepCount ? "Replay" : "Run"}
-        </button>
-        <button type="button" onClick={step} disabled={running || completedSteps >= stepCount}>
-          Step
-        </button>
-        <button type="button" onClick={reset}>
-          Reset
-        </button>
-      </Panel>
-    </ReactFlow>
+    </div>
   );
 }
 
 export function PrinciplesFlow() {
+  const [focusedEvidenceId, setFocusedEvidenceId] = useState<string>();
   return (
     <section className="tao3k-principles-flow" aria-labelledby="principles-flow-title">
       <header className="tao3k-principles-flow__header">
@@ -236,9 +445,16 @@ export function PrinciplesFlow() {
       </header>
       <div className="tao3k-principles-flow__surface">
         <ReactFlowProvider>
-          <PrinciplesFlowCanvas />
+          <PrinciplesFlowCanvas
+            focusedEvidenceId={focusedEvidenceId}
+            onGraphFocusChange={setFocusedEvidenceId}
+          />
         </ReactFlowProvider>
       </div>
+      <ProofExplorer
+        selectedEvidenceId={focusedEvidenceId}
+        onSelectEvidence={setFocusedEvidenceId}
+      />
     </section>
   );
 }

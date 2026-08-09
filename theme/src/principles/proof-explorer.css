@@ -1,0 +1,1134 @@
+.proof-explorer {
+  --tao3k-green: var(--tao-green);
+  --tao3k-cyan: var(--tao-mint);
+  --tao3k-ink: var(--tao-ink);
+  --tao3k-paper: var(--tao-paper);
+  --tao3k-amber: #f4bd70;
+  --tao3k-coral: var(--tao-coral);
+  --tao3k-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --tao3k-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-block: 1px solid color-mix(in srgb, var(--tao3k-line) 76%, transparent);
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 5rem);
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      color-mix(in srgb, var(--tao3k-cyan) 15%, transparent),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--tao3k-ink) 82%, var(--tao3k-green)),
+      color-mix(in srgb, var(--tao3k-ink) 76%, var(--tao3k-cyan))
+    );
+}
+
+.proof-explorer::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--tao3k-cyan) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--tao3k-cyan) 9%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 34px 34px;
+  content: "";
+  mask-image: radial-gradient(circle at 28% 38%, black, transparent 70%);
+}
+
+.proof-explorer__header {
+  max-width: min(76rem, 100%);
+  margin-inline: auto;
+}
+
+.proof-explorer__eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--tao3k-cyan);
+  font: 700 0.75rem/1.2 var(--tao3k-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.proof-explorer__header h2 {
+  max-width: 14ch;
+  margin: 0;
+  color: var(--tao3k-paper);
+  font-size: clamp(3.25rem, 8.4vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+}
+
+.proof-explorer__header > p:not(.proof-explorer__eyebrow) {
+  max-width: 58rem;
+  margin: 2rem 0 0;
+  color: color-mix(in srgb, var(--tao3k-paper) 74%, transparent);
+  font-size: clamp(1.05rem, 1.55vw, 1.45rem);
+  line-height: 1.65;
+}
+
+.proof-explorer__runtime {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 38%, var(--tao3k-line));
+  border-radius: 24px;
+  padding: 0.55rem;
+  color: color-mix(in srgb, var(--tao3k-paper) 62%, transparent);
+  background:
+    linear-gradient(
+      120deg,
+      color-mix(in srgb, var(--tao3k-green) 18%, var(--tao3k-ink)),
+      transparent
+    ),
+    color-mix(in srgb, var(--tao3k-ink) 80%, var(--tao3k-cyan));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
+    0 16px 44px color-mix(in srgb, black 22%, transparent);
+  font: 800 0.72rem/1.1 var(--tao3k-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-explorer__runtime-telemetry {
+  display: flex;
+  align-items: center;
+  gap: 0.68rem;
+  padding: 0.35rem 0.75rem;
+  white-space: nowrap;
+}
+
+.proof-explorer__runtime-telemetry strong {
+  color: var(--tao3k-paper);
+  font-size: 0.86rem;
+}
+
+.proof-explorer__runtime-telemetry em {
+  border-radius: 999px;
+  padding: 0.42rem 0.62rem;
+  color: var(--tao3k-ink);
+  background: var(--tao3k-cyan);
+  font-style: normal;
+}
+
+.proof-explorer__runtime {
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.proof-explorer__runtime[data-running="true"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 62%, white);
+  background:
+    radial-gradient(
+      circle at 18% 50%,
+      color-mix(in srgb, var(--tao3k-green) 28%, transparent),
+      transparent 68%
+    ),
+    color-mix(in srgb, var(--tao3k-green) 24%, var(--tao3k-ink));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
+    0 0 38px color-mix(in srgb, var(--tao3k-green) 24%, transparent);
+}
+
+.proof-explorer__runtime[data-running="true"] .proof-explorer__runtime-telemetry em {
+  background: var(--tao3k-green);
+}
+
+.proof-explorer__runtime-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.proof-explorer__runtime-action {
+  min-height: 2.75rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.68rem 1rem;
+  color: var(--tao3k-paper);
+  font: 900 0.7rem/1 var(--tao3k-mono);
+  letter-spacing: 0.055em;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.proof-explorer__runtime-action:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.proof-explorer__runtime-action--primary {
+  border-color: color-mix(in srgb, var(--tao3k-green) 76%, white);
+  color: color-mix(in srgb, var(--tao3k-ink) 84%, black);
+  background: linear-gradient(135deg, var(--tao3k-green), var(--tao3k-cyan));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 46%, transparent),
+    0 0 24px color-mix(in srgb, var(--tao3k-green) 30%, transparent);
+}
+
+.proof-explorer__runtime-action--secondary {
+  border-color: color-mix(in srgb, var(--tao3k-cyan) 42%, var(--tao3k-line));
+  background: color-mix(in srgb, var(--tao3k-cyan) 16%, transparent);
+}
+
+.proof-explorer__runtime-action--reset {
+  border-color: color-mix(in srgb, var(--tao3k-paper) 26%, var(--tao3k-line));
+  color: color-mix(in srgb, var(--tao3k-paper) 86%, var(--tao3k-cyan));
+  background: color-mix(in srgb, var(--tao3k-paper) 7%, transparent);
+}
+
+.proof-explorer__runtime-action:focus-visible {
+  outline: 2px solid var(--tao3k-paper);
+  outline-offset: 3px;
+}
+
+.proof-explorer__runtime-action:disabled {
+  border-color: transparent;
+  color: color-mix(in srgb, var(--tao3k-paper) 40%, transparent);
+  background: color-mix(in srgb, var(--tao3k-paper) 6%, transparent);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.proof-explorer__runtime button {
+  font: 800 0.7rem/1 var(--tao3k-mono);
+  letter-spacing: 0.04em;
+}
+
+.proof-explorer__grid {
+  display: grid;
+  grid-template-columns: minmax(30rem, 1.45fr) minmax(21rem, 0.78fr);
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  max-width: min(92rem, 100%);
+  margin: clamp(1.2rem, 2vw, 1.6rem) auto 0;
+}
+
+.proof-explorer__obligations,
+.proof-explorer__detail,
+.proof-explorer__evidence-map,
+.proof-explorer__receipt {
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 22%, var(--tao3k-line));
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, white 7%, transparent), transparent),
+    color-mix(in srgb, var(--tao3k-ink) 86%, black);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 13%, transparent),
+    0 30px 90px color-mix(in srgb, black 44%, transparent);
+  min-width: 0;
+}
+
+.proof-explorer__obligations {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  padding: 1rem;
+}
+
+.proof-flow-shell {
+  position: relative;
+  overflow: hidden;
+  height: clamp(26rem, 48vw, 36rem);
+  max-width: min(92rem, 100%);
+  margin: clamp(2.5rem, 5vw, 4.5rem) auto 0;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 26%, var(--tao3k-line));
+  border-radius: 34px;
+  background:
+    radial-gradient(
+      circle at 48% 42%,
+      color-mix(in srgb, var(--tao3k-green) 14%, transparent),
+      transparent 38rem
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--tao3k-ink) 82%, var(--tao3k-green)),
+      color-mix(in srgb, var(--tao3k-ink) 76%, var(--tao3k-cyan))
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
+    0 36px 110px color-mix(in srgb, black 42%, transparent);
+}
+
+.proof-flow-shell__label {
+  position: absolute;
+  top: 1rem;
+  left: 1.2rem;
+  z-index: 5;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 28%, transparent);
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  color: color-mix(in srgb, var(--tao3k-green) 82%, white);
+  background: color-mix(in srgb, black 30%, transparent);
+  font: 900 0.68rem/1 var(--tao3k-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.proof-flow-shell .react-flow__background-pattern circle {
+  fill: color-mix(in srgb, var(--tao3k-green) 46%, transparent);
+}
+
+.proof-flow-shell .react-flow__node-proof {
+  width: 18.5rem;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.proof-flow-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.8rem 1rem;
+  min-height: 8.7rem;
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 24%, var(--tao3k-line));
+  border-radius: 24px;
+  padding: 1.05rem;
+  color: var(--tao3k-paper);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, white 7%, transparent), transparent),
+    color-mix(in srgb, var(--tao3k-ink) 84%, black);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 13%, transparent),
+    0 20px 60px color-mix(in srgb, black 34%, transparent);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.proof-flow-shell .react-flow__node-proof {
+  cursor: grab;
+}
+
+.proof-flow-shell .react-flow__node-proof.dragging {
+  cursor: grabbing;
+}
+
+.proof-flow-card[data-kind="receipt"] {
+  border-style: double;
+}
+
+.proof-flow-card[data-state="active"] {
+  transform: translateY(-3px) scale(1.035);
+  border-color: color-mix(in srgb, var(--tao3k-green) 84%, white);
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      color-mix(in srgb, var(--tao3k-green) 38%, transparent),
+      transparent 70%
+    ),
+    color-mix(in srgb, var(--tao3k-green) 22%, var(--tao3k-ink));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 18%, transparent),
+    0 0 44px color-mix(in srgb, var(--tao3k-green) 34%, transparent),
+    0 28px 80px color-mix(in srgb, black 38%, transparent);
+}
+
+.proof-flow-card[data-state="proved"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 50%, var(--tao3k-line));
+}
+
+.proof-flow-card[data-state="authority"],
+.proof-flow-card[data-state="witness"] {
+  border-color: color-mix(in srgb, var(--tao3k-amber) 58%, var(--tao3k-line));
+}
+
+.proof-flow-card[data-selected="true"] {
+  outline: 2px solid color-mix(in srgb, var(--tao3k-cyan) 74%, white);
+  outline-offset: 4px;
+}
+
+.proof-flow-card__order {
+  display: grid;
+  width: 2.85rem;
+  height: 2.85rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 35%, transparent);
+  border-radius: 18px;
+  color: var(--tao3k-cyan);
+  background:
+    linear-gradient(145deg, color-mix(in srgb, white 8%, transparent), transparent),
+    color-mix(in srgb, var(--tao3k-cyan) 8%, transparent);
+  font: 900 1rem/1 var(--tao3k-mono);
+}
+
+.proof-flow-card strong,
+.proof-flow-card small,
+.proof-flow-card em {
+  display: block;
+}
+
+.proof-flow-card strong {
+  overflow: hidden;
+  color: var(--tao3k-paper);
+  font-size: 1.05rem;
+  line-height: 1.18;
+  text-overflow: ellipsis;
+}
+
+.proof-flow-card code {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 0.48rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 28%, transparent);
+  border-radius: 999px;
+  padding: 0.24rem 0.5rem;
+  color: color-mix(in srgb, var(--tao3k-green) 88%, white);
+  background: color-mix(in srgb, var(--tao3k-green) 8%, transparent);
+  font: 900 0.7rem/1.1 var(--tao3k-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.proof-flow-card small {
+  margin-top: 0.38rem;
+  overflow: hidden;
+  color: color-mix(in srgb, var(--tao3k-paper) 54%, transparent);
+  font: 700 0.68rem/1.2 var(--tao3k-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.proof-flow-card em {
+  grid-column: 2;
+  align-self: end;
+  color: color-mix(in srgb, var(--tao3k-green) 84%, white);
+  font: 900 0.7rem/1.1 var(--tao3k-mono);
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.proof-flow-card__handle {
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 64%, white);
+  background: color-mix(in srgb, var(--tao3k-green) 72%, black);
+  box-shadow: 0 0 13px color-mix(in srgb, var(--tao3k-green) 54%, transparent);
+  opacity: 1;
+}
+
+.proof-flow-shell .react-flow__edge-path {
+  stroke: color-mix(in srgb, var(--tao3k-cyan) 18%, var(--tao3k-line));
+  stroke-width: 2.6;
+  opacity: 0.55;
+  transition:
+    opacity 180ms ease,
+    stroke 180ms ease,
+    stroke-width 180ms ease,
+    filter 180ms ease;
+}
+
+.proof-flow-shell .proof-flow-edge--proved .react-flow__edge-path {
+  stroke: color-mix(in srgb, var(--tao3k-green) 62%, var(--tao3k-cyan));
+  stroke-width: 3.4;
+  opacity: 0.88;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--tao3k-green) 28%, transparent));
+}
+
+.proof-flow-shell .proof-flow-edge--active .react-flow__edge-path {
+  stroke: var(--tao3k-green);
+  stroke-width: 7;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--tao3k-green) 88%, transparent))
+    drop-shadow(0 0 18px color-mix(in srgb, var(--tao3k-green) 52%, transparent));
+  animation: proof-flow-line 620ms linear infinite;
+}
+
+.proof-flow-shell .proof-flow-edge--active .react-flow__edge-interaction {
+  stroke-width: 18;
+}
+
+.proof-flow-shell .react-flow__controls {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 24%, var(--tao3k-line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--tao3k-ink) 82%, black);
+  box-shadow: 0 18px 50px color-mix(in srgb, black 36%, transparent);
+}
+
+.proof-flow-shell .react-flow__controls-button {
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--tao3k-line) 58%, transparent);
+  color: var(--tao3k-paper);
+  background: transparent;
+}
+
+@keyframes proof-flow-line {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.proof-wave-bridge {
+  display: grid;
+  justify-items: center;
+  gap: 0.62rem;
+  max-width: min(92rem, 100%);
+  margin: 1rem auto 1.2rem;
+  color: color-mix(in srgb, var(--tao3k-paper) 56%, transparent);
+  font: 900 0.68rem/1 var(--tao3k-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.proof-wave-bridge__plan {
+  display: grid;
+  justify-items: center;
+  gap: 0.28rem;
+}
+
+.proof-wave-bridge strong {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 56%, white);
+  border-radius: 999px;
+  color: var(--tao3k-green);
+  background: color-mix(in srgb, var(--tao3k-green) 12%, black);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--tao3k-green) 26%, transparent);
+  font-size: 1.28rem;
+  letter-spacing: 0;
+}
+
+.proof-wave-bridge em {
+  color: color-mix(in srgb, var(--tao3k-green) 84%, white);
+  font-style: normal;
+}
+
+.proof-wave-bridge .proof-explorer__runtime {
+  justify-self: center;
+  margin: 0;
+}
+
+.proof-math-board {
+  display: grid;
+  grid-template-columns: minmax(28rem, 1.2fr) minmax(22rem, 0.8fr);
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  max-width: min(92rem, 100%);
+  margin: clamp(1.1rem, 2vw, 1.6rem) auto 0;
+}
+
+.proof-math-board__selected,
+.proof-review-panel {
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 26%, var(--tao3k-line));
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 12% 0%,
+      color-mix(in srgb, var(--tao3k-green) 14%, transparent),
+      transparent 70%
+    ),
+    color-mix(in srgb, var(--tao3k-ink) 78%, var(--tao3k-green));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 12%, transparent),
+    0 24px 76px color-mix(in srgb, black 36%, transparent);
+}
+
+.proof-math-board__selected {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.proof-math-board__selected::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    color-mix(in srgb, var(--tao3k-green) 11%, transparent) 48%,
+    transparent 58%
+  );
+  content: "";
+  opacity: 0;
+  transform: translateX(-80%);
+}
+
+.proof-math-board__selected[data-state="active"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 72%, white);
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      color-mix(in srgb, var(--tao3k-green) 30%, transparent),
+      transparent 68%
+    ),
+    color-mix(in srgb, var(--tao3k-green) 16%, var(--tao3k-ink));
+}
+
+.proof-math-board__selected[data-state="active"]::after {
+  animation: proof-math-scan 900ms ease-in-out infinite;
+  opacity: 1;
+}
+
+.proof-math-board__selected h3 {
+  margin: 0;
+  color: color-mix(in srgb, var(--tao3k-green) 86%, white);
+  font: 900 clamp(2rem, 4vw, 4.4rem) / 0.95 var(--tao3k-mono);
+  letter-spacing: -0.08em;
+}
+
+.proof-math-board__selected pre,
+.proof-formula-source {
+  overflow: auto;
+  margin: 1rem 0 0;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 25%, transparent);
+  border-radius: 18px;
+  padding: 1rem;
+  color: color-mix(in srgb, var(--tao3k-paper) 90%, white);
+  background: color-mix(in srgb, black 35%, var(--tao3k-ink));
+}
+
+.proof-math-board__selected code,
+.proof-formula-source code {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: 850 clamp(0.9rem, 1.3vw, 1.18rem) / 1.5 var(--tao3k-mono);
+  white-space: pre-wrap;
+}
+
+.proof-math-board__selected p:not(.proof-explorer__eyebrow) {
+  max-width: 62rem;
+  margin: 1rem 0 0;
+  color: color-mix(in srgb, var(--tao3k-paper) 72%, transparent);
+  font-size: 1.02rem;
+  line-height: 1.68;
+}
+
+.proof-wave-stack {
+  display: grid;
+  gap: 0.72rem;
+  margin-top: 1rem;
+}
+
+.proof-wave-stack article {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--tao3k-line) 70%, transparent);
+  border-radius: 18px;
+  padding: 0.88rem;
+  background: color-mix(in srgb, white 4%, transparent);
+}
+
+.proof-wave-stack article::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.25rem;
+  background: color-mix(in srgb, var(--tao3k-cyan) 62%, transparent);
+  content: "";
+}
+
+.proof-wave-stack article[data-active="true"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 70%, white);
+  background:
+    linear-gradient(
+      100deg,
+      color-mix(in srgb, var(--tao3k-green) 18%, transparent),
+      color-mix(in srgb, var(--tao3k-cyan) 6%, transparent)
+    ),
+    color-mix(in srgb, var(--tao3k-green) 8%, var(--tao3k-ink));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--tao3k-green) 20%, transparent);
+}
+
+.proof-wave-stack article[data-active="true"]::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    color-mix(in srgb, var(--tao3k-green) 13%, transparent),
+    transparent
+  );
+  content: "";
+  transform: translateX(-100%);
+  animation: proof-math-scan 1.1s ease-in-out infinite;
+}
+
+.proof-wave-stack span {
+  display: block;
+  color: color-mix(in srgb, var(--tao3k-green) 82%, white);
+  font: 900 0.66rem/1.1 var(--tao3k-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.proof-wave-stack p {
+  margin: 0.45rem 0 0;
+  color: color-mix(in srgb, var(--tao3k-paper) 74%, transparent);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.proof-review-panel {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  margin: 0;
+  padding: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.proof-review-panel h3 {
+  margin: 0;
+  color: var(--tao3k-paper);
+  font-size: clamp(1.8rem, 3.2vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.proof-review-panel p {
+  margin: 0;
+  color: color-mix(in srgb, var(--tao3k-paper) 72%, transparent);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.proof-review-panel ul {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof-review-panel li {
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--tao3k-line) 70%, transparent);
+  border-radius: 18px;
+  padding: 0.9rem;
+  background: color-mix(in srgb, white 4%, transparent);
+}
+
+.proof-review-panel li strong {
+  color: color-mix(in srgb, var(--tao3k-green) 84%, white);
+  font: 900 0.72rem/1.2 var(--tao3k-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.proof-review-panel li span {
+  color: color-mix(in srgb, var(--tao3k-paper) 72%, transparent);
+  line-height: 1.48;
+}
+
+@keyframes proof-math-scan {
+  to {
+    transform: translateX(90%);
+  }
+}
+
+.proof-explorer__panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.7rem 1rem;
+  color: color-mix(in srgb, var(--tao3k-paper) 62%, transparent);
+  font: 700 0.76rem/1.2 var(--tao3k-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.proof-explorer__panel-title strong {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 35%, transparent);
+  border-radius: 999px;
+  color: var(--tao3k-cyan);
+}
+
+.proof-explorer__obligations ol {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.proof-obligation {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.8rem;
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--tao3k-line) 72%, transparent);
+  border-radius: 20px;
+  padding: 0.95rem;
+  color: var(--tao3k-paper);
+  background: color-mix(in srgb, white 4%, transparent);
+  text-align: left;
+}
+
+.proof-obligation[data-selected="true"] {
+  border-color: color-mix(in srgb, var(--tao3k-cyan) 68%, white);
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      color-mix(in srgb, var(--tao3k-cyan) 20%, transparent),
+      transparent 60%
+    ),
+    color-mix(in srgb, var(--tao3k-cyan) 9%, transparent);
+}
+
+.proof-obligation[data-state="active"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 72%, white);
+  background:
+    radial-gradient(
+      circle at 12% 0%,
+      color-mix(in srgb, var(--tao3k-green) 36%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--tao3k-green) 24%, transparent),
+      color-mix(in srgb, var(--tao3k-cyan) 10%, transparent)
+    ),
+    color-mix(in srgb, var(--tao3k-green) 12%, var(--tao3k-ink));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 18%, transparent),
+    0 0 34px color-mix(in srgb, var(--tao3k-green) 30%, transparent);
+}
+
+.proof-obligation[data-state="active"][data-selected="true"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 84%, white);
+  background:
+    radial-gradient(
+      circle at 16% 0%,
+      color-mix(in srgb, var(--tao3k-green) 44%, transparent),
+      transparent 72%
+    ),
+    color-mix(in srgb, var(--tao3k-green) 20%, var(--tao3k-ink));
+}
+
+.proof-obligation__status {
+  width: 0.82rem;
+  height: 0.82rem;
+  margin-top: 0.28rem;
+  border-radius: 999px;
+  background: var(--tao3k-cyan);
+  box-shadow: 0 0 22px currentColor;
+}
+
+.proof-obligation[data-state="proved"] .proof-obligation__status {
+  color: var(--tao3k-green);
+  background: var(--tao3k-green);
+}
+
+.proof-obligation[data-state="authority"] .proof-obligation__status,
+.proof-obligation[data-state="witness"] .proof-obligation__status {
+  color: var(--tao3k-amber);
+  background: var(--tao3k-amber);
+}
+
+.proof-obligation[data-state="failed"] .proof-obligation__status {
+  color: var(--tao3k-coral);
+  background: var(--tao3k-coral);
+}
+
+.proof-obligation strong,
+.proof-obligation small,
+.proof-obligation em {
+  display: block;
+}
+
+.proof-obligation small {
+  margin-top: 0.3rem;
+  overflow: hidden;
+  color: color-mix(in srgb, var(--tao3k-paper) 48%, transparent);
+  font: 600 0.7rem/1.2 var(--tao3k-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.proof-obligation em {
+  grid-column: 2;
+  margin-top: 0.75rem;
+  color: color-mix(in srgb, var(--tao3k-cyan) 84%, white);
+  font: 700 0.68rem/1.2 var(--tao3k-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-explorer__detail {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  overflow: hidden;
+  padding: clamp(1.35rem, 2vw, 1.8rem);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.proof-explorer__detail[data-state="active"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 70%, white);
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      color-mix(in srgb, var(--tao3k-green) 30%, transparent),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--tao3k-green) 16%, var(--tao3k-ink)),
+      color-mix(in srgb, var(--tao3k-ink) 88%, black)
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 18%, transparent),
+    0 0 52px color-mix(in srgb, var(--tao3k-green) 28%, transparent),
+    0 34px 100px color-mix(in srgb, black 44%, transparent);
+}
+
+.proof-explorer__detail h3,
+.proof-explorer__receipt h3 {
+  margin: 0 0 1.25rem;
+  color: var(--tao3k-paper);
+  font-size: clamp(1.65rem, 3vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.proof-explorer__detail dl,
+.proof-explorer__receipt dl {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0 0 1.4rem;
+}
+
+.proof-explorer__detail dl div,
+.proof-explorer__receipt dl div {
+  display: grid;
+  gap: 0.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--tao3k-line) 70%, transparent);
+  padding-bottom: 0.75rem;
+}
+
+.proof-explorer__detail dt,
+.proof-explorer__receipt dt {
+  color: color-mix(in srgb, var(--tao3k-cyan) 80%, white);
+  font: 700 0.68rem/1.2 var(--tao3k-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.proof-explorer__detail dd,
+.proof-explorer__receipt dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: color-mix(in srgb, var(--tao3k-paper) 78%, transparent);
+  line-height: 1.55;
+}
+
+.proof-explorer__detail code {
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 25%, transparent);
+  border-radius: 999px;
+  padding: 0.15rem 0.45rem;
+  color: var(--tao3k-cyan);
+  background: color-mix(in srgb, var(--tao3k-cyan) 8%, transparent);
+}
+
+.proof-lean-source {
+  overflow: auto;
+  max-width: 100%;
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 22%, var(--tao3k-line));
+  border-radius: 18px;
+  padding: 1rem;
+  color: color-mix(in srgb, var(--tao3k-paper) 84%, white);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--tao3k-cyan) 7%, transparent), transparent),
+    color-mix(in srgb, black 38%, var(--tao3k-ink));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 9%, transparent);
+}
+
+.proof-lean-source code {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: 700 0.78rem/1.62 var(--tao3k-mono);
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.proof-evidence-chip {
+  display: inline-flex;
+  margin: 0.2rem 0.35rem 0.2rem 0;
+  border: 1px solid color-mix(in srgb, var(--tao3k-green) 28%, transparent);
+  border-radius: 999px;
+  padding: 0.28rem 0.55rem;
+  color: color-mix(in srgb, var(--tao3k-green) 88%, white);
+  background: color-mix(in srgb, var(--tao3k-green) 8%, transparent);
+  font: 700 0.68rem/1.2 var(--tao3k-mono);
+}
+
+.proof-explorer__detail > p:last-child {
+  margin: 1.4rem 0 0;
+  color: color-mix(in srgb, var(--tao3k-paper) 70%, transparent);
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+.proof-explorer__receipt {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  overflow: hidden;
+  padding: clamp(1.2rem, 1.8vw, 1.55rem);
+}
+
+.proof-explorer__evidence-map {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  overflow: hidden;
+  padding: clamp(1.1rem, 1.7vw, 1.45rem);
+}
+
+.proof-explorer__evidence-map h3 {
+  margin: 0 0 1rem;
+  color: var(--tao3k-paper);
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.proof-evidence-map__items {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.proof-evidence-map__items button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.3rem 0.65rem;
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--tao3k-line) 76%, transparent);
+  border-radius: 16px;
+  padding: 0.75rem;
+  color: var(--tao3k-paper);
+  background: color-mix(in srgb, white 4%, transparent);
+  text-align: left;
+}
+
+.proof-evidence-map__items button[data-selected="true"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 70%, white);
+  background: color-mix(in srgb, var(--tao3k-green) 11%, transparent);
+}
+
+.proof-evidence-map__items button[data-state="active"] {
+  border-color: color-mix(in srgb, var(--tao3k-green) 62%, white);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--tao3k-green) 20%, transparent),
+      color-mix(in srgb, var(--tao3k-cyan) 8%, transparent)
+    ),
+    color-mix(in srgb, var(--tao3k-green) 10%, var(--tao3k-ink));
+  box-shadow: 0 0 24px color-mix(in srgb, var(--tao3k-green) 20%, transparent);
+}
+
+.proof-evidence-map__items span {
+  justify-self: start;
+  border: 1px solid color-mix(in srgb, var(--tao3k-cyan) 34%, transparent);
+  border-radius: 999px;
+  padding: 0.22rem 0.42rem;
+  color: var(--tao3k-cyan);
+  font: 800 0.58rem/1.1 var(--tao3k-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-evidence-map__items strong,
+.proof-evidence-map__items small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.proof-evidence-map__items small {
+  color: color-mix(in srgb, var(--tao3k-paper) 50%, transparent);
+  font: 700 0.66rem/1.2 var(--tao3k-mono);
+}
+
+.proof-receipt-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.proof-receipt-metrics span {
+  display: grid;
+  gap: 0.25rem;
+  border: 1px solid color-mix(in srgb, var(--tao3k-line) 72%, transparent);
+  border-radius: 18px;
+  padding: 0.85rem;
+  color: color-mix(in srgb, var(--tao3k-paper) 62%, transparent);
+  font: 700 0.68rem/1.2 var(--tao3k-mono);
+  text-transform: uppercase;
+}
+
+.proof-receipt-metrics strong {
+  color: var(--tao3k-paper);
+  font: 800 1.45rem/1 var(--tao3k-sans);
+}
+
+@media (max-width: 1080px) {
+  .proof-explorer__grid,
+  .proof-math-board {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-explorer__obligations,
+  .proof-explorer__detail,
+  .proof-explorer__evidence-map,
+  .proof-explorer__receipt {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .proof-explorer__runtime {
+    grid-template-columns: 1fr;
+    width: min(100%, 28rem);
+  }
+
+  .proof-explorer__runtime-telemetry {
+    justify-content: space-between;
+  }
+
+  .proof-explorer__runtime-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .proof-explorer__runtime-action {
+    padding-inline: 0.55rem;
+  }
+
+  .proof-wave-bridge .proof-explorer__runtime {
+    justify-self: stretch;
+  }
+}

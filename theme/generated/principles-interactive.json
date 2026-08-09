@@ -14,7 +14,8 @@
         "human": "Purpose, judgment, responsibility, and the right to contest.",
         "ai": "Retrieval, synthesis, simulation, and bounded execution.",
         "tone": "core",
-        "pressure": "STEWARDSHIP"
+        "pressure": "STEWARDSHIP",
+        "guard": "A named purpose, accountable human owner, and retained right to stop exist for every composed stage."
       },
       {
         "id": "human-capability-cycle",
@@ -27,7 +28,8 @@
         "human": "Own the purpose of the cycle and judge whether it remains legitimate.",
         "ai": "Carry bounded work across the composed cases.",
         "tone": "cycle",
-        "pressure": "EVIDENCE"
+        "pressure": "EVIDENCE",
+        "guard": "Knowledge, qualification, and outcome receipts are all present before the lifecycle may close."
       },
       {
         "id": "knowledge",
@@ -40,7 +42,8 @@
         "human": "Frame the question, supply context, and challenge meaning.",
         "ai": "Discover, retrieve, connect, and expose relevant material.",
         "tone": "knowledge",
-        "pressure": "PARTICIPATION"
+        "pressure": "PARTICIPATION",
+        "guard": "The question, source scope, and challenge path are explicit before material becomes working context."
       },
       {
         "id": "access",
@@ -53,7 +56,8 @@
         "human": "Choose what matters and whose knowledge must remain visible.",
         "ai": "Discover, retrieve, and attribute relevant sources.",
         "tone": "access",
-        "pressure": "OPENNESS"
+        "pressure": "OPENNESS",
+        "guard": "The request has a declared purpose and every returned source carries provenance and attribution."
       },
       {
         "id": "understand",
@@ -66,7 +70,8 @@
         "human": "Interpret significance, uncertainty, and lived context.",
         "ai": "Contextualize evidence and expose competing explanations.",
         "tone": "understand",
-        "pressure": "EVIDENCE"
+        "pressure": "EVIDENCE",
+        "guard": "Sources, uncertainty, disagreement, and semantic limits are attached to the interpretation."
       },
       {
         "id": "compose",
@@ -79,7 +84,8 @@
         "human": "Frame the synthesis and preserve the purpose behind it.",
         "ai": "Connect records, code, models, and candidate structures.",
         "tone": "compose",
-        "pressure": "PARTICIPATION"
+        "pressure": "PARTICIPATION",
+        "guard": "At least two compatible artifacts are connected to a stated human purpose and reviewable context."
       },
       {
         "id": "governed-action",
@@ -92,7 +98,8 @@
         "human": "Retain accountable authority at consequential transitions.",
         "ai": "Execute only the admitted and inspectable operation.",
         "tone": "authority",
-        "pressure": "AUTHORITY"
+        "pressure": "AUTHORITY",
+        "guard": "A bounded operation has evidence, policy constraints, a responsible authority, and a stop path."
       },
       {
         "id": "qualify",
@@ -105,7 +112,8 @@
         "human": "Judge adequacy, responsibility, and acceptable risk.",
         "ai": "Verify constraints, evidence, and formal obligations.",
         "tone": "qualify",
-        "pressure": "EVIDENCE"
+        "pressure": "EVIDENCE",
+        "guard": "Verification, applicable policy, proof obligations, and named accountable authority all admit the action."
       },
       {
         "id": "act",
@@ -118,7 +126,8 @@
         "human": "Decide, execute, pause, appeal, or stop.",
         "ai": "Perform the bounded action and preserve an operational receipt.",
         "tone": "act",
-        "pressure": "AUTHORITY"
+        "pressure": "AUTHORITY",
+        "guard": "The admitted plan remains within authority scope and preserves pause, appeal, rollback, and stop controls."
       },
       {
         "id": "evidence-return",
@@ -131,7 +140,8 @@
         "human": "Interpret the outcome and decide what should change next.",
         "ai": "Record, index, and reconnect receipts to their sources.",
         "tone": "return",
-        "pressure": "STEWARDSHIP"
+        "pressure": "STEWARDSHIP",
+        "guard": "An outcome, failure, or correction is attributable to its action and available for inspection."
       },
       {
         "id": "learn",
@@ -144,22 +154,23 @@
         "human": "Correct meaning, share experience, and choose the next question.",
         "ai": "Record, retrieve, and reuse qualified outcomes.",
         "tone": "learn",
-        "pressure": "STEWARDSHIP"
+        "pressure": "STEWARDSHIP",
+        "guard": "The returned receipt is attributable, contestable, reusable, and linked to the next question."
       }
     ]
   },
   "pressure": {
     "source": {
       "start": {
-        "line": 432,
+        "line": 443,
         "column": 1
       },
       "end": {
-        "line": 449,
+        "line": 460,
         "column": 1
       },
-      "rangeStart": 18137,
-      "rangeEnd": 19327
+      "rangeStart": 19362,
+      "rangeEnd": 20552
     },
     "id": "principle-pressure",
     "method": "choice",

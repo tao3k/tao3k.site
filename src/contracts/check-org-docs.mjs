@@ -227,6 +227,18 @@ export const validateContractRegistry = (file, source) => {
   }
 };
 
+export const validateOrgInteractive = (file, source) => {
+  const document = new Org(source);
+  try {
+    document.orgInteractiveJson();
+    return [];
+  } catch (cause) {
+    return [error("ORG-DOC-E015", file, `invalid Org-Interactive contract: ${String(cause)}`)];
+  } finally {
+    document.free();
+  }
+};
+
 export const validateContractConfigurations = async () => {
   const failures = [];
 
@@ -270,6 +282,7 @@ export const validateDocumentation = async () => {
   for (const file of inventory.org.sort()) {
     const source = await readFile(file, "utf8");
     failures.push(...validateOrgDocument(file, source));
+    failures.push(...validateOrgInteractive(file, source));
     failures.push(...(await validateFileLinks(file, source)));
     failures.push(...(await validateContentContractBinding(file, source)));
     if (relative(root, file) === contractSource) {

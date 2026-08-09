@@ -49,14 +49,14 @@ function projectNavigation(shell: unknown): readonly NavigationItem[] {
 
 function BrandMark() {
   return (
-    <a className="tao3k-brand" href="/" aria-label="TAO Three K home">
+    <a className="tao3k-brand" href="/" aria-label="tao3k home">
       <TaoLogo compact />
       <span className="tao3k-brand__sigil" aria-hidden="true">
         <i />
         <i />
         <i />
       </span>
-      <span className="tao3k-brand__name">TAO THREE K</span>
+      <span className="tao3k-brand__name">tao3k</span>
     </a>
   );
 }
@@ -328,7 +328,7 @@ export function Tao3kSiteHome(_props: { readonly title?: string } = {}) {
             <span>the right to act.</span>
           </h1>
           <p className="tao3k-home-hero__lede">
-            TAO Three K turns knowledge, code, scientific models and human records into admissible
+            tao3k turns knowledge, code, scientific models and human records into admissible
             action—and turns every action back into searchable, verifiable and evolvable evidence.
           </p>
           <div className="tao3k-home-hero__actions">
@@ -352,7 +352,7 @@ export function Tao3kSiteHome(_props: { readonly title?: string } = {}) {
             AI should not cross a consequential boundary on confidence alone.
           </h2>
           <p>
-            Research, software and operations lose trust at their handoffs. TAO Three K makes those
+            Research, software and operations lose trust at their handoffs. tao3k makes those
             handoffs explicit: claims carry provenance, decisions carry qualification, and execution
             returns evidence.
           </p>

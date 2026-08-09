@@ -1,7 +1,10 @@
 import { graphlib, layout } from "@dagrejs/dagre";
 import {
   loadPooFlowWasmRuntime,
+  PFW_BUNDLE_SYMBOL_KIND_COMPONENT,
+  PFW_BUNDLE_SYMBOL_KIND_POLICY,
   type PooFlowTopologyComponent,
+  type PooFlowTopology,
   type WorkflowCursorSession,
 } from "@poo-flow/runtime-wasm";
 import wasmUrl from "@poo-flow/runtime-wasm/wasm?url";
@@ -10,7 +13,7 @@ import arenaUrl from "../../generated/human-capability.arena.bin?url";
 import descriptorUrl from "../../generated/human-capability.descriptor.bin?url";
 import generatedProjection from "../../generated/principles-interactive.json";
 
-export type PrinciplesFlowStatus = "waiting" | "active" | "complete";
+export type PrinciplesFlowStatus = "waiting" | "ready" | "running" | "complete";
 
 type OrgFlowNode = Readonly<{
   id: string;
@@ -24,6 +27,7 @@ type OrgFlowNode = Readonly<{
   ai: string;
   tone: string;
   pressure: string;
+  guard: string;
 }>;
 
 type PressureEntry = Readonly<{
@@ -50,6 +54,7 @@ export type PrinciplesFlowNodeData = Readonly<{
   ai: string;
   tone: string;
   pressure: string;
+  guard: string;
   pressureDetail: string;
   status: PrinciplesFlowStatus;
 }> &
@@ -71,6 +76,9 @@ export type PrinciplesFlowSession = Readonly<{
 
 const projection = generatedProjection as PrinciplesProjection;
 const expectedNodeCount = projection.topology.nodes.length;
+const expectedPolicyCount = projection.topology.nodes.filter(
+  ({ kind }) => kind !== "composition",
+).length;
 const runtimePromise = loadPooFlowWasmRuntime({ url: wasmUrl });
 
 const fetchBytes = async (url: string, owner: string) => {
@@ -87,9 +95,9 @@ const bundlePromise = Promise.all([
 ]);
 
 const dimensions = (kind: OrgFlowNode["kind"]) => {
-  if (kind === "composition") return { width: 440, height: 132 };
-  if (kind === "case") return { width: 330, height: 142 };
-  return { width: 286, height: 148 };
+  if (kind === "composition") return { width: 440, height: 168 };
+  if (kind === "case") return { width: 330, height: 184 };
+  return { width: 286, height: 176 };
 };
 
 const layoutTopology = (
@@ -98,6 +106,7 @@ const layoutTopology = (
   metadata: ReadonlyMap<string, OrgFlowNode>,
   pressureDetails: ReadonlyMap<string, string>,
   topologyEdges: readonly PrinciplesFlowEdge[],
+  topology: PooFlowTopology,
 ): PrinciplesFlowModel => {
   const graph = new graphlib.Graph().setDefaultEdgeLabel(() => ({}));
   graph.setGraph({
@@ -118,12 +127,19 @@ const layoutTopology = (
         `TAO3K-PRINCIPLES-E102 Bundle component ${component.componentId.key} has no Org presentation`,
       );
     }
+    const policy = topology.policyForComponent(component);
+    if (presentation.kind !== "composition" && !policy) {
+      throw new Error(
+        `TAO3K-PRINCIPLES-E106 Bundle component ${semanticId} is missing its declared policy`,
+      );
+    }
     const node: PrinciplesFlowNode = {
       id: component.componentId.key,
       type: "principle",
       position: { x: 0, y: 0 },
       data: {
         ...presentation,
+        guard: policy?.value ?? presentation.guard,
         semanticId,
         pressureDetail: pressureDetails.get(presentation.pressure) ?? presentation.pressure,
         status: "waiting",
@@ -155,22 +171,41 @@ export const openPrinciplesFlowSession = async (): Promise<PrinciplesFlowSession
   const topology = runtime.openTopology({ descriptor, arena });
   let cursor: WorkflowCursorSession | undefined;
   try {
-    if (
-      topology.componentCount !== expectedNodeCount ||
-      topology.symbolCount !== expectedNodeCount
-    ) {
+    if (topology.componentCount !== expectedNodeCount) {
       throw new Error(
-        `TAO3K-PRINCIPLES-E103 Bundle expected ${expectedNodeCount} components and symbols; received ${topology.componentCount}/${topology.symbolCount}`,
+        `TAO3K-PRINCIPLES-E103 Bundle expected ${expectedNodeCount} components; received ${topology.componentCount}`,
       );
     }
 
-    const names = new Map(topology.symbols().map(({ id, value }) => [id.key, value]));
+    const symbols = topology.symbols();
+    const componentSymbols = new Map(
+      symbols
+        .filter(({ kind }) => kind === PFW_BUNDLE_SYMBOL_KIND_COMPONENT)
+        .map(({ id, value }) => [id.key, value]),
+    );
+    const policyCount = symbols.filter(({ kind }) => kind === PFW_BUNDLE_SYMBOL_KIND_POLICY).length;
+    if (policyCount !== expectedPolicyCount) {
+      throw new Error(
+        `TAO3K-PRINCIPLES-E107 Bundle expected ${expectedPolicyCount} policies; received ${policyCount}`,
+      );
+    }
     const metadata = new Map(projection.topology.nodes.map((node) => [node.id, node]));
     const pressureDetails = new Map(
       projection.pressure.entries.map(({ id, full, useIf }) => [id, `${full} — ${useIf}`]),
     );
     const components = [...topology.components()].sort((left, right) =>
       Number(left.compositionOrder - right.compositionOrder),
+    );
+    const names = new Map(
+      components.map((component) => {
+        const name = componentSymbols.get(component.componentId.key);
+        if (!name) {
+          throw new Error(
+            `TAO3K-PRINCIPLES-E105 Bundle component ${component.componentId.key} has no symbol`,
+          );
+        }
+        return [component.componentId.key, name];
+      }),
     );
     const edges = topology.edges().map(
       (edge, index): PrinciplesFlowEdge => ({
@@ -190,7 +225,7 @@ export const openPrinciplesFlowSession = async (): Promise<PrinciplesFlowSession
       throw new Error("TAO3K-PRINCIPLES-E104 Bundle symbols and Org flow nodes diverged");
     }
 
-    const model = layoutTopology(components, names, metadata, pressureDetails, edges);
+    const model = layoutTopology(components, names, metadata, pressureDetails, edges, topology);
     cursor = topology.openCursor();
     return {
       model,

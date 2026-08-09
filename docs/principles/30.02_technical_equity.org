@@ -9,8 +9,14 @@
 
 * Position
 
-Advanced technical capability should broaden participation across society, not
-concentrate power in fewer institutions.
+People are tao3k's primary compounding asset. Human judgment, domain knowledge,
+craft, relationships, and the capacity to learn create durable value that
+technology should extend rather than erase.
+
+Technical equity means knowledge equality: people should have a realistic path
+to access, understand, contest, produce, and apply consequential knowledge. It
+does not flatten expertise or promise equal outcomes. It prevents advanced
+capability from becoming the exclusive property of a few institutions.
 
 Technical equity is a company principle and social commitment. It is not the
 commercial category of the tao3k platform and must not be used to position the
@@ -61,11 +67,29 @@ supervision, craft, and system improvement.
 
 * Participation during rapid technical transition
 
-Students, farmers, technical workers, independent builders, and people with limited institutional resources are not a narrow tao3k market segment. They are a test of whether the ecosystem's values survive contact with unequal access to capital, compute, education, and organizational power.
+Students, farmers, technical workers, independent builders, and people with
+limited institutional resources are not a narrow tao3k market segment. They are
+a test of whether the ecosystem's values survive unequal access to compute,
+education, institutional support, and organizational power.
 
-tao3k does not promise to preserve every existing job form or deny that automation changes work. It does reject workforce removal as the only measure of AI value, people as obsolete inefficiencies, and technical speed as a justification for denying participation. The ecosystem should provide inspectable conclusions, open formats, data portability, local and self-hosted foundations, learnable documentation, attribution, and realistic paths for people to acquire new capability at a humanly sustainable pace.
+As AI reduces information asymmetry, access to information alone becomes less
+differentiating. A new capability gap appears between people who can frame useful
+questions, judge evidence, collaborate with AI, organize responsible action, and
+learn from outcomes, and people who receive abundant answers without gaining
+those capabilities.
 
-Technical equity means expanding who can learn, inspect, contest, build, migrate, and create value with advanced systems. It does not mean hiding complexity, lowering evidence standards, or turning a public-value commitment into a marketing category.
+tao3k does not promise to preserve every existing job form or deny that
+automation changes work. It does reject workforce removal as the only measure of
+AI value, people as obsolete inefficiencies, and technical speed as a
+justification for denying participation. The ecosystem should provide
+inspectable conclusions, open formats, data portability, local and self-hosted
+foundations, learnable documentation, attribution, and realistic paths for
+people to acquire new capability at a humanly sustainable pace.
+
+Technical equity means expanding who can learn, inspect, contest, build,
+migrate, and create value with advanced systems. It does not mean hiding
+complexity, lowering evidence standards, or turning a public-value commitment
+into a marketing category.
 
 * Design implications
 
@@ -96,13 +120,24 @@ institutions. The same foundations can lower barriers for students, farmers,
 independent practitioners, and technical workers, but those communities belong
 to the public-value commitment rather than the product-category headline.
 
-* Inspectable meaning and authority
+* Knowledge-action interface
 
-Technical equity requires more than access to an AI interface. People must be able to inspect the Claims, evidence, assumptions, semantic definitions, and authority boundaries that shape consequential decisions.
+The human--AI interface is a knowledge-action interface. It connects human
+purpose and domain knowledge with machine search, synthesis, simulation, and
+execution so that people can turn accessible information into inspectable
+judgment and responsible action.
 
-Ontology cannot remain hidden inside proprietary embeddings. Domain experts, students, workers, farmers, researchers, and affected communities must be able to challenge a definition or mapping without first becoming model engineers.
+This interface requires more than conversational access to a model. People must
+be able to inspect the Claims, evidence, assumptions, semantic definitions, and
+authority boundaries that shape consequential decisions. Domain experts,
+students, workers, farmers, researchers, and affected communities must be able
+to challenge a definition or mapping without first becoming model engineers.
 
-Likewise, machine qualification cannot silently replace human standing. Authority Envelopes make the permitted scope, responsible people, affected interests, and revocation conditions visible.
+Human purpose, judgment, responsibility, and the right to stop remain sovereign.
+Machine capability can broaden reach and reduce friction, but it cannot silently
+replace human standing. Qualified actions must expose their permitted scope,
+responsible people, affected interests, revocation conditions, and returned
+outcomes.
 
 * Related records
 

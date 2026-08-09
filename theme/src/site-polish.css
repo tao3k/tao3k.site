@@ -3,10 +3,11 @@
 }
 
 .theme-surface--tao3k-site > .tao3k-header {
-  min-height: 76px;
-  padding: 0 clamp(20px, 4vw, 64px);
+  min-height: 58px;
+  padding: 0 clamp(16px, 2vw, 40px);
+  display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: clamp(20px, 3vw, 44px);
+  gap: clamp(16px, 2vw, 32px);
   border-bottom: 1px solid rgba(21, 45, 38, 0.1);
   overflow: hidden;
   background: rgba(242, 241, 234, 0.88);
@@ -26,42 +27,52 @@
 }
 
 .theme-surface--tao3k-site .tao3k-header__nav {
-  width: fit-content;
+  width: min(100%, 1080px);
   max-width: 100%;
   margin: 0 auto;
-  padding: 5px;
-  border: 1px solid rgba(21, 45, 38, 0.1);
-  border-radius: 999px;
-  gap: 2px;
-  background: rgba(255, 255, 255, 0.42);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: clamp(12px, 1.25vw, 26px);
+  background: transparent;
+  box-shadow: none;
 }
 
 [data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav {
-  border-color: rgba(146, 241, 195, 0.11);
-  background: rgba(255, 255, 255, 0.045);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
 }
 
 .theme-surface--tao3k-site .tao3k-header__nav a {
-  padding: 9px clamp(9px, 1vw, 15px);
-  border-radius: 999px;
+  min-height: 40px;
+  padding: 0 clamp(4px, 0.4vw, 8px);
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
   color: #52615c;
-  font-size: 0.82rem;
+  font-size: clamp(0.92rem, 0.82vw, 1rem);
+  font-weight: 620;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
   transition:
     color 180ms ease,
-    background 180ms ease,
-    transform 180ms ease;
+    opacity 180ms ease;
 }
 
 .theme-surface--tao3k-site .tao3k-header__nav a::after {
-  display: none;
+  right: clamp(4px, 0.4vw, 8px);
+  bottom: 0;
+  left: clamp(4px, 0.4vw, 8px);
+  height: 2px;
+  display: block;
+  border-radius: 2px;
 }
 
 .theme-surface--tao3k-site .tao3k-header__nav a:hover {
   color: #10241f;
-  background: rgba(255, 255, 255, 0.76);
-  transform: translateY(-1px);
 }
 
 [data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav a {
@@ -70,7 +81,6 @@
 
 [data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav a:hover {
   color: #ecf5f0;
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .tao3k-header__actions {
@@ -81,7 +91,7 @@
 }
 
 .tao3k-header__utility {
-  min-height: 42px;
+  min-height: 40px;
   padding: 0 16px;
   border: 1px solid rgba(21, 45, 38, 0.1);
   border-radius: 999px;
@@ -99,8 +109,8 @@
 
 .tao3k-mode-toggle {
   position: relative;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 1px solid rgba(21, 45, 38, 0.12);
   border-radius: 50%;
@@ -212,24 +222,95 @@
   border-radius: 0;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
+  .tao3k-header__utility {
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+    font-size: 0;
+  }
+
+  .tao3k-header__utility span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
   .theme-surface--tao3k-site > .tao3k-header {
-    grid-template-columns: auto auto;
-    gap: 12px;
-    padding-top: 12px;
+    min-height: 58px;
+    padding-top: 0;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: none;
+    gap: clamp(14px, 1.8vw, 24px);
+    overflow: hidden;
+  }
+
+  .theme-surface--tao3k-site .tao3k-brand,
+  .theme-surface--tao3k-site .tao3k-header__nav,
+  .theme-surface--tao3k-site .tao3k-header__actions {
+    grid-area: auto;
   }
 
   .theme-surface--tao3k-site .tao3k-header__nav {
+    grid-row: auto;
+    grid-column: auto;
+    order: 0;
+    width: min(100%, 860px);
+    min-height: 40px;
+    padding: 0;
+    border-top: 0;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: clamp(8px, 1.5vw, 18px);
+  }
+
+  .theme-surface--tao3k-site .tao3k-header__nav a {
+    min-height: 40px;
+    padding-inline: 4px;
+  }
+}
+
+@media (max-width: 760px) {
+  .theme-surface--tao3k-site > .tao3k-header {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "brand actions"
+      "navigation navigation";
+    min-height: 0;
+    gap: 12px;
+    padding-top: 12px;
+    overflow: visible;
+  }
+
+  .theme-surface--tao3k-site .tao3k-brand {
+    grid-area: brand;
+  }
+
+  .theme-surface--tao3k-site .tao3k-header__nav {
+    grid-area: navigation;
     grid-row: 2;
     grid-column: 1 / -1;
+    order: 0;
     width: 100%;
     margin: 0;
-    border-right: 0;
-    border-left: 0;
+    min-height: 50px;
+    padding-inline: 2px;
+    border-top: 1px solid rgba(21, 45, 38, 0.08);
     border-radius: 0;
     overflow-x: auto;
     justify-content: flex-start;
+    gap: clamp(12px, 3vw, 28px);
     scrollbar-width: none;
+  }
+
+  [data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav {
+    border-top-color: rgba(146, 241, 195, 0.08);
+  }
+
+  .theme-surface--tao3k-site .tao3k-header__nav a {
+    min-height: 48px;
+    padding-inline: 10px;
+    flex: 0 0 auto;
   }
 
   .theme-surface--tao3k-site .tao3k-header__nav::-webkit-scrollbar {
@@ -237,6 +318,7 @@
   }
 
   .tao3k-header__actions {
+    grid-area: actions;
     justify-self: end;
   }
 }
@@ -248,17 +330,6 @@
 
   .tao3k-brand__name {
     font-size: 0.66rem;
-  }
-
-  .tao3k-header__utility {
-    width: 42px;
-    padding: 0;
-    justify-content: center;
-    font-size: 0;
-  }
-
-  .tao3k-header__utility span {
-    font-size: 0.9rem;
   }
 }
 

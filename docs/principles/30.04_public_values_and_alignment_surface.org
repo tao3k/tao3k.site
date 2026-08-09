@@ -116,6 +116,7 @@ TypeScript-generated plan or a positional guess.
 :FLOW_AI: Retrieval, synthesis, simulation, and bounded execution.
 :FLOW_TONE: core
 :FLOW_PRESSURE: STEWARDSHIP
+:FLOW_GUARD: A named purpose, accountable human owner, and retained right to stop exist for every composed stage.
 :END:
 
 The composition is the public overview of the cycle, not an extra runtime or a
@@ -134,6 +135,7 @@ second workflow definition.
 :FLOW_AI: Carry bounded work across the composed cases.
 :FLOW_TONE: cycle
 :FLOW_PRESSURE: EVIDENCE
+:FLOW_GUARD: Knowledge, qualification, and outcome receipts are all present before the lifecycle may close.
 :END:
 
 **** ACCEPTED Knowledge interface
@@ -149,6 +151,7 @@ second workflow definition.
 :FLOW_AI: Discover, retrieve, connect, and expose relevant material.
 :FLOW_TONE: knowledge
 :FLOW_PRESSURE: PARTICIPATION
+:FLOW_GUARD: The question, source scope, and challenge path are explicit before material becomes working context.
 :END:
 
 ***** ACCEPTED Access
@@ -164,6 +167,7 @@ second workflow definition.
 :FLOW_AI: Discover, retrieve, and attribute relevant sources.
 :FLOW_TONE: access
 :FLOW_PRESSURE: OPENNESS
+:FLOW_GUARD: The request has a declared purpose and every returned source carries provenance and attribution.
 :END:
 
 ***** ACCEPTED Understand
@@ -179,6 +183,7 @@ second workflow definition.
 :FLOW_AI: Contextualize evidence and expose competing explanations.
 :FLOW_TONE: understand
 :FLOW_PRESSURE: EVIDENCE
+:FLOW_GUARD: Sources, uncertainty, disagreement, and semantic limits are attached to the interpretation.
 :END:
 
 ***** ACCEPTED Compose
@@ -194,6 +199,7 @@ second workflow definition.
 :FLOW_AI: Connect records, code, models, and candidate structures.
 :FLOW_TONE: compose
 :FLOW_PRESSURE: PARTICIPATION
+:FLOW_GUARD: At least two compatible artifacts are connected to a stated human purpose and reviewable context.
 :END:
 
 **** ACCEPTED Governed action
@@ -209,6 +215,7 @@ second workflow definition.
 :FLOW_AI: Execute only the admitted and inspectable operation.
 :FLOW_TONE: authority
 :FLOW_PRESSURE: AUTHORITY
+:FLOW_GUARD: A bounded operation has evidence, policy constraints, a responsible authority, and a stop path.
 :END:
 
 ***** ACCEPTED Qualify
@@ -224,6 +231,7 @@ second workflow definition.
 :FLOW_AI: Verify constraints, evidence, and formal obligations.
 :FLOW_TONE: qualify
 :FLOW_PRESSURE: EVIDENCE
+:FLOW_GUARD: Verification, applicable policy, proof obligations, and named accountable authority all admit the action.
 :END:
 
 ***** ACCEPTED Act
@@ -239,6 +247,7 @@ second workflow definition.
 :FLOW_AI: Perform the bounded action and preserve an operational receipt.
 :FLOW_TONE: act
 :FLOW_PRESSURE: AUTHORITY
+:FLOW_GUARD: The admitted plan remains within authority scope and preserves pause, appeal, rollback, and stop controls.
 :END:
 
 **** ACCEPTED Evidence return
@@ -254,6 +263,7 @@ second workflow definition.
 :FLOW_AI: Record, index, and reconnect receipts to their sources.
 :FLOW_TONE: return
 :FLOW_PRESSURE: STEWARDSHIP
+:FLOW_GUARD: An outcome, failure, or correction is attributable to its action and available for inspection.
 :END:
 
 ***** ACCEPTED Learn
@@ -269,6 +279,7 @@ second workflow definition.
 :FLOW_AI: Record, retrieve, and reuse qualified outcomes.
 :FLOW_TONE: learn
 :FLOW_PRESSURE: STEWARDSHIP
+:FLOW_GUARD: The returned receipt is attributable, contestable, reusable, and linked to the next question.
 :END:
 
 The public route SHOULD make this cycle interactive without turning it into a
