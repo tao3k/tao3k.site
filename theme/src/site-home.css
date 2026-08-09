@@ -125,13 +125,23 @@ a {
   transition: transform 180ms ease;
 }
 
-.tao3k-header__nav a:hover,
-.tao3k-header__utility:hover {
-  color: var(--tao-ink);
+@media (hover: hover) {
+  .tao3k-header__nav a:hover,
+  .tao3k-header__utility:hover {
+    color: var(--tao-ink);
+  }
+  .tao3k-header__nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
-.tao3k-header__nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.tao3k-header__nav a:focus-visible,
+.tao3k-header__utility:focus-visible,
+.tao3k-button:focus-visible,
+.tao3k-live__controls button:focus-visible,
+.tao3k-home-exit a:focus-visible {
+  outline: 2px solid var(--tao-mint);
+  outline-offset: 4px;
 }
 .tao3k-header__utility {
   justify-self: end;
@@ -193,6 +203,14 @@ a {
   line-height: 1.65;
 }
 
+.tao3k-home-hero__human {
+  max-width: 630px;
+  margin: 16px 0 0;
+  color: #61736d;
+  font-size: clamp(0.96rem, 1.1vw, 1.08rem);
+  line-height: 1.65;
+}
+
 .tao3k-home-hero__actions {
   margin-top: 38px;
   display: flex;
@@ -217,16 +235,20 @@ a {
     color 180ms ease;
 }
 
-.tao3k-button:hover {
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .tao3k-button:hover {
+    transform: translateY(-2px);
+  }
 }
 .tao3k-button--primary {
   color: #f7fff9;
   background: var(--tao-night);
   border-color: var(--tao-night);
 }
-.tao3k-button--primary:hover {
-  background: var(--tao-green);
+@media (hover: hover) {
+  .tao3k-button--primary:hover {
+    background: var(--tao-green);
+  }
 }
 .tao3k-button--quiet {
   background: rgba(255, 255, 255, 0.24);
@@ -255,6 +277,7 @@ a {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: tao3k-orbit 36s linear infinite;
+  will-change: transform;
 }
 
 .tao3k-stage__halo--outer {
@@ -313,6 +336,7 @@ a {
   border-top-color: var(--tao-mint);
   border-radius: 50%;
   animation: tao3k-core-orbit 7s linear infinite;
+  will-change: transform;
 }
 
 .tao3k-stage__input {
@@ -455,9 +479,15 @@ a {
     sans-serif;
   cursor: pointer;
 }
-.tao3k-live__controls button:hover {
-  color: #0b1916;
-  background: var(--tao-mint);
+.tao3k-live__controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+@media (hover: hover) {
+  .tao3k-live__controls button:not(:disabled):hover {
+    color: #0b1916;
+    background: var(--tao-mint);
+  }
 }
 
 .tao3k-live__surface {
@@ -468,6 +498,7 @@ a {
   border: 1px solid rgba(146, 241, 195, 0.15);
   background: rgba(4, 13, 11, 0.42);
   box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.2);
+  contain: layout paint;
 }
 .tao3k-live__surface .react-flow__pane {
   cursor: grab;
@@ -518,6 +549,7 @@ a {
     0 0 0 1px rgba(146, 241, 195, 0.18),
     0 22px 55px rgba(0, 0, 0, 0.34),
     inset 0 0 36px rgba(146, 241, 195, 0.055);
+  will-change: transform;
 }
 .tao3k-live-node.is-complete {
   border-color: rgba(146, 241, 195, 0.38);
@@ -774,9 +806,11 @@ a {
     color 160ms ease,
     padding 160ms ease;
 }
-.tao3k-home-exit a:hover {
-  padding-right: 14px;
-  color: var(--tao-green);
+@media (hover: hover) {
+  .tao3k-home-exit a:hover {
+    padding-right: 14px;
+    color: var(--tao-green);
+  }
 }
 
 @keyframes tao3k-orbit {

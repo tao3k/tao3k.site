@@ -143,6 +143,38 @@ The combined Agent Core comparison covers the additional POO Flow composition an
 
 Named comparisons must be evidence-backed and distinguish shipped, active-development, and intended capabilities. Product category membership is not proof of feature parity.
 
+* Issue-first comparison sequence
+
+The public Comparison page begins from observed failure rather than a vendor
+feature grid.  Its narrative sequence is:
+
+1. a dated public issue, incident, or primary enterprise discussion;
+2. the directly supported observation and evidence state;
+3. the operational or commercial consequence;
+4. the missing system invariant;
+5. the tao3k owner or owners responsible for that invariant; and
+6. the current maturity and evidence gap of the tao3k response.
+
+GitHub issues are user-reported evidence unless a maintainer or vendor publishes
+an authoritative resolution.  Multiple related issues can reveal a recurring
+architectural demand, but they do not prove a product-wide defect.
+
+Comparison distinguishes a larger context window from durable continuation.
+Context compression asks what representation fits inside the next model turn.
+Runtime continuity asks which goal, evidence, authority, checkpoint, completed
+work, failure, budget, and outstanding obligation remain valid after the turn.
+
+The concise issue-first comparison statement is:
+
+#+begin_quote
+A larger context window postpones compression.  A durable evidence case changes
+what can be lost.
+#+end_quote
+
+The live page MUST identify tao3k integration maturity.  An accepted
+architecture or independent engine is not presented as a shipped cross-engine
+solution.
+
 * Human role
 
 Every comparison must ask: /What role remains for people?/

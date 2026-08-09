@@ -15,16 +15,28 @@ The home page introduces the complete tao3k ecosystem. It is not a product featu
 
 * Hero
 
-The primary doctrine is:
+The governing doctrine is:
 
 #+begin_quote
 Intelligence must earn the right to act.
+#+end_quote
+
+The approved public heading is:
+
+#+begin_quote
+Turn intelligence into reproducible work.
 #+end_quote
 
 The stable description is:
 
 #+begin_quote
 tao3k turns knowledge, code, scientific models and human records into admissible action—and turns every action back into searchable, verifiable and evolvable evidence.
+#+end_quote
+
+The human explanation is:
+
+#+begin_quote
+Real work needs more than a plausible answer. It needs a record of what was known, why an action was allowed, who remains responsible, and how the result can be checked, repeated, and improved.
 #+end_quote
 
 The primary calls to action are =Explore the vision= and =View the roadmap=. Open-source and documentation actions remain visible without displacing the doctrine.
@@ -36,16 +48,16 @@ The primary calls to action are =Explore the vision= and =View the roadmap=. Ope
 Render the hero from the canonical message hierarchy rather than composing new campaign copy:
 
 - Category :: Evidence--Action Ecosystem
-- Heading :: Intelligence must earn the right to act.
+- Heading :: Turn intelligence into reproducible work.
 - Promise :: tao3k turns knowledge, code, scientific models, and human records into admissible action---and turns every action back into searchable, verifiable, and evolvable evidence.
-- Commitment :: Built for accountable operation, research-to-industry continuity, open technical agency, and long-term stewardship.
+- Commitment :: Built for scientific standards, accountable operation, research-to-industry continuity, open technical agency, and long-term stewardship.
 - Primary actions :: Explore the Evidence--Action Ecosystem; See How Intelligence Earns the Right to Act.
 - Secondary actions :: View the Roadmap; Explore Open Source Projects.
 - Commercial action :: Work with tao3k.
 
 Do not use /Get Started/ or /Book a Demo/ as the dominant hero action, and do not classify tao3k as a generic AI, workflow, knowledge, agent, or operating-system product.
 
-Lead with =Intelligence must earn the right to act.= and the stable company description. Keep product names and training-data claims out of the opening claim. The primary actions are =Explore the vision= and =View the roadmap=.
+Lead with =Turn intelligence into reproducible work.= and the stable company description. =Intelligence must earn the right to act.= remains the governing doctrine that gives the heading its practical meaning. Keep product names and training-data claims out of the opening claim. The primary actions are =Explore the vision= and =View the roadmap=.
 
 ** 2. The root problem
 
@@ -71,6 +83,8 @@ Record → Understand → Model → Qualify → Authorize → Act → Verify →
 Present the Admissibility Circuit as the way trust moves through the ecosystem: Evidence -> Frame an Action Case -> Qualify -> Authorize -> Act -> Verify -> Return Evidence. A workflow tells a system what to do; the circuit establishes why it may act, under whose authority, and what evidence it must return. The detailed object semantics remain owned by the lifecycle specification.
 
 Present [[file:../platform/10.01_evidence_native_ai_lifecycle.org][The Admissibility Circuit]] before introducing project names. Show that intelligence is provisional, evidence grants qualification, execution emits evidence, and evidence changes the next decision. Overlay the Intelligence, Action, and Evolution lifecycles as three views of one circuit.
+
+State the standard explicitly: Science is the method, evidence and qualification are the admission mechanisms, and traceability, verification, and reproducibility are the lifecycle guarantees. These are not compliance decoration. They are how organisations can inspect, repeat, challenge, and improve consequential work.
 
 
 #+begin_quote

@@ -71,16 +71,20 @@
   border-radius: 2px;
 }
 
-.theme-surface--tao3k-site .tao3k-header__nav a:hover {
-  color: #10241f;
+@media (hover: hover) {
+  .theme-surface--tao3k-site .tao3k-header__nav a:hover {
+    color: #10241f;
+  }
 }
 
 [data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav a {
   color: #a9b9b3;
 }
 
-[data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav a:hover {
-  color: #ecf5f0;
+@media (hover: hover) {
+  [data-theme-variant="night"] .theme-surface--tao3k-site .tao3k-header__nav a:hover {
+    color: #ecf5f0;
+  }
 }
 
 .tao3k-header__actions {
@@ -129,8 +133,10 @@
     transform 180ms ease;
 }
 
-.tao3k-mode-toggle:hover {
-  transform: translateY(-1px) scale(1.025);
+@media (hover: hover) {
+  .tao3k-mode-toggle:hover {
+    transform: translateY(-1px) scale(1.025);
+  }
 }
 
 .tao3k-mode-toggle:focus-visible {
@@ -180,6 +186,15 @@
 
 .tao3k-mode-toggle.is-night .tao3k-mode-toggle__orb::after {
   transform: translate(38%, -24%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-surface--tao3k-site > .tao3k-header,
+  .tao3k-mode-toggle,
+  .tao3k-mode-toggle__orb,
+  .tao3k-mode-toggle__orb::after {
+    transition: none;
+  }
 }
 
 /* Curves are used for interactive material; structural diagrams keep their lines. */

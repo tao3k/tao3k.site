@@ -1,0 +1,154 @@
+#+TITLE: RFC-001: Reproducible Intelligence Systems
+#+DATE: 2026-08-09
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:rfc:architecture:science:reproducibility:products:
+#+STATUS: Accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: Company, product, research, architecture, and ecosystem teams
+#+CLAIM_MATURITY: policy
+
+* Decision
+
+tao3k defines its category as =Reproducible Intelligence Systems=:
+
+#+begin_quote
+A scientific systems architecture that turns model capability, human knowledge,
+code, and scientific computation into traceable, qualified, executable, and
+verifiable organisational work.
+#+end_quote
+
+The concise public description is:
+
+#+begin_quote
+The scientific systems layer for intelligent organisations.
+#+end_quote
+
+This category is more precise than /AI infrastructure/, /Agent framework/, or
+/AI operating system/.  Those categories foreground a technical component.
+tao3k foregrounds the quality of consequential organisational work.
+
+* Problem
+
+Model capability is advancing faster than the ability of organisations to make
+intelligent work inspectable, governable, reproducible, and durable.  A stronger
+model does not by itself preserve source meaning, establish authority, survive a
+long-running failure, qualify a scientific claim, or return an attributable
+record of what happened.
+
+The missing systems layer joins organisation, context, semantic query,
+deduction, evidence, authority, workflow, runtime continuity, verification, and
+human responsibility without collapsing their independent owners.
+
+* Scientific invariants
+
+Every tao3k system projected as production-capable MUST preserve these
+invariants:
+
+- every consequential claim has addressable evidence, provenance, and semantic
+  scope;
+- every material query preserves enough structure and version identity to be
+  inspected and repeated;
+- every deduction distinguishes asserted evidence from derived relations;
+- every action is qualified against declared conditions, authority, risk, and
+  proof obligations;
+- every execution returns a receipt that records state, effects, failures, and
+  responsible boundaries;
+- every result is reproducible from versioned inputs or produces an explicit
+  typed explanation of why reproduction is unavailable; and
+- human responsibility, contest, intervention, and stopping authority remain
+  visible for consequential work.
+
+Science is the method.  Evidence and qualification are the admission
+mechanisms.  Traceability, verification, and reproducibility are lifecycle
+guarantees.
+
+* Responsibility architecture
+
+| Responsibility | Responsible engines | Boundary |
+|-
+| Human records and source structure | Orgize and Org Zhixing | Preserve structured records and project them without silently claiming semantic or execution authority |
+| Knowledge and provenance | Wendao family | Preserve knowledge relations, identity, ownership, and trust context |
+| Parser-owned semantic evidence | Agent Semantic Protocols | Retrieve facts owned by the source language or evidence provider |
+| Graph query | GQL Rust | Express precise, composable, inspectable queries over graph-shaped evidence |
+| Relational deduction | Ascent | Derive explicit relations from declared facts and rules without becoming the authority for source evidence |
+| Scientific and graph computation | Julia and graph engines | Own domain algorithms, numerical evidence, simulation, and graph analysis |
+| Qualification and proof | Contracts, POO Flow, Cedar, and Lean | Establish admissibility, bounded effect authority, and proof obligations at their respective boundaries |
+| Workflow expression | POO Flow | Define organisation, cases, profiles, composition, and compilation; it is not the resident runtime |
+| Durable execution | Marlin | Own long-running runtime state, recovery, capability execution, and receipts |
+| Evidence return | Evidence graph and product projections | Return verified outcomes as searchable, attributable, versioned evidence |
+
+No engine may silently absorb another engine's authority merely to simplify a
+demo or public diagram.
+
+* Query-to-action circuit
+
+#+begin_example
+Question
+  -> GQL query
+  -> parser, knowledge, and graph evidence
+  -> Ascent deduction
+  -> reasoning calibration
+  -> qualification and authority
+  -> bounded execution
+  -> verification
+  -> reproducible receipt
+#+end_example
+
+GQL does not become the reasoning engine merely because it expresses a query.
+Ascent does not become the source of truth merely because it derives a relation.
+ASP, knowledge providers, and scientific engines retain ownership of the
+evidence they publish.  The combined circuit improves reasoning quality by
+making questions, evidence, derivations, uncertainty, and action boundaries
+inspectable.
+
+=Ascent= is the canonical public name for the relational deduction engine in
+this RFC.  =ASCN= MUST NOT be introduced as an alias unless a separate canonical
+project record defines it.
+
+* Maturity contract
+
+Public capability claims use the following states:
+
+| State | Meaning |
+|-
+| shipped | The responsible project publishes a supported implementation and current verification evidence |
+| active-development | An implementation exists and is moving through active integration or validation gates |
+| research | Experimental evidence exists, but production promotion remains incomplete |
+| vision | Directional architecture without a shipped integration claim |
+| policy | Accepted company, product, documentation, or governance decision |
+
+Repository existence, a diagram, a passing isolated test, or a financing signal
+does not establish that the complete circuit is shipped.
+
+* Public Products projection
+
+The Products page presents production responsibilities rather than a flat
+repository catalogue.  It may show external market evidence that independent
+companies and investors are validating evaluation, context, security,
+reliability, workflow, and observability as valuable categories.
+
+External financing and investor commentary are market signals, not technical
+proof.  Public projections MUST expose source, publication date, evidence type,
+observed fact, and tao3k relevance.  Investor rankings, fundraising targets,
+relationship strategy, and private fit scores remain outside the public site.
+
+* Non-goals
+
+- Defining tao3k as a model company, generic chatbot, No-Code workflow product,
+  database, cloud platform, or universal Agent framework.
+- Claiming that one central repository implements the complete architecture.
+- Treating search recall, model confidence, authorization, scientific validity,
+  and reproducibility as interchangeable scores.
+- Using investment activity as evidence that a tao3k implementation is correct
+  or available.
+- Removing people, institutions, rights, or responsibility from the evidence
+  lifecycle.
+
+* Related records
+
+- [[file:../platform/10.01_evidence_native_ai_lifecycle.org][Evidence-native AI Lifecycle]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]
+- [[file:../compare/50.03_industry_evidence_watch.org][Industry Evidence Watch]]
+- [[file:ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]
+- [[file:ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
+- [[file:ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]

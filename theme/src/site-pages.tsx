@@ -133,12 +133,122 @@ const products = [
     tone: "green",
   },
   {
-    key: "GPH",
-    name: "Graph & Science",
-    role: "Ontology + compute",
-    detail: "Graph-theoretic algorithms, Julia science and formal qualification surfaces.",
+    key: "GQL",
+    name: "GQL Rust",
+    role: "Reproducible graph query",
+    detail: "Precise, composable queries over graph-shaped knowledge, code and evidence.",
+    href: "https://github.com/tao3k/gql-rust",
+    tone: "blue",
+  },
+  {
+    key: "ASC",
+    name: "Ascent",
+    role: "Relational deduction",
+    detail:
+      "Declared rules derive inspectable relations, constraints and uncertainty from evidence.",
+    href: "https://github.com/s-arash/ascent",
+    tone: "amber",
+  },
+  {
+    key: "SCI",
+    name: "Scientific Qualification",
+    role: "Graph, computation + proof",
+    detail:
+      "Julia computation, graph algorithms and Lean obligations qualify what may enter action.",
     href: "https://github.com/tao3k",
     tone: "blue",
+  },
+] as const;
+
+const productionResponsibilities = [
+  {
+    signal: "KNOW",
+    title: "Evidence and records",
+    engines: "Orgize · Wendao",
+    question: "What do we know, where did it come from, and who owns it?",
+    outcome: "Durable context with provenance, source identity and human meaning attached.",
+  },
+  {
+    signal: "ASK",
+    title: "Semantic query",
+    engines: "GQL Rust · Agent Semantic Protocols",
+    question: "Which facts, code paths and relationships answer this question?",
+    outcome: "Precise, composable retrieval over parser-owned and graph-shaped evidence.",
+  },
+  {
+    signal: "REASON",
+    title: "Deduction and calibration",
+    engines: "Ascent · ontology · graph engines",
+    question: "What follows from the evidence—and what remains uncertain?",
+    outcome: "Asserted facts stay distinct from derived relations, constraints and uncertainty.",
+  },
+  {
+    signal: "QUALIFY",
+    title: "Scientific qualification",
+    engines: "Julia · Lean · contracts · Cedar · POO Flow",
+    question: "Is this claim or action admissible under the declared conditions?",
+    outcome: "Numerical evidence, proof obligations, policy and human authority become explicit.",
+  },
+  {
+    signal: "OPERATE",
+    title: "Durable operation",
+    engines: "POO Flow · Marlin",
+    question: "Can qualified work continue, recover and remain accountable?",
+    outcome: "Composable workflows meet a runtime with checkpoints, recovery and bounded effects.",
+  },
+  {
+    signal: "RETURN",
+    title: "Evidence return",
+    engines: "Org Zhixing · evidence graph",
+    question: "What happened, can it be checked, and what should the system learn?",
+    outcome: "Results return as searchable, attributable, verifiable and reproducible receipts.",
+  },
+] as const;
+
+const adoptionPath = [
+  {
+    title: "Begin at one consequential boundary",
+    detail:
+      "Choose a decision, handoff or operation where provenance and responsibility already matter.",
+  },
+  {
+    title: "Connect evidence without replacing its owners",
+    detail:
+      "Keep records, code, knowledge, scientific models and policy under explicit authorities.",
+  },
+  {
+    title: "Qualify one transition",
+    detail: "Declare the evidence, conditions, risk and human authority required before action.",
+  },
+  {
+    title: "Return an inspectable receipt",
+    detail: "Measure the outcome, preserve failures and make the next decision better informed.",
+  },
+] as const;
+
+const marketSignals = [
+  {
+    date: "MAY 2025",
+    source: "HSG · xbench",
+    title: "Capability scores are not real-world utility.",
+    detail: "Profession-aligned, reproducible evaluation is becoming a deployment requirement.",
+    href: "https://www.hsgcap.com/article/introducing-xbench-the-evergreen-benchmark-for-ai-agents/",
+  },
+  {
+    date: "MAR 2026",
+    source: "Lanchi Ventures · NVIDIA GTC",
+    title: "Long-horizon work changes the architecture.",
+    detail:
+      "Partial execution, compounding errors and trajectory correction make reliability more valuable than raw intelligence.",
+    href: "https://lanchiventures.com/live-from-nvidia-gtc-6-lanchi-ventures-portfolio-companies-take-the-stage-to-tackle-6-technical-challenges-in-ai-deployment/",
+  },
+  {
+    date: "MAY 2026",
+    source: "Vertex Ventures SEA",
+    title: "The durable value is encoded context.",
+    detail:
+      "Enterprise systems become defensible when they preserve local entities, workflows, decision logic and institutional knowledge.",
+    href: "https://www.vertexventures.sg/news/south-east-asia-has-never-produced-an-enterprise-software-giant-ai-might-change-that-/",
   },
 ] as const;
 
@@ -146,40 +256,134 @@ function ProductsPage() {
   return (
     <div className="tao3k-products-page">
       <section className="tao3k-products-hero">
-        <p className="tao3k-route-kicker">OPEN-SOURCE ECOSYSTEM</p>
+        <p className="tao3k-route-kicker">REPRODUCIBLE INTELLIGENCE SYSTEMS</p>
         <h1>
-          Independent engines.
+          From a question
           <br />
-          <em>One evidence contract.</em>
+          to an action
+          <br />
+          <em>you can defend.</em>
         </h1>
-        <p>
-          No monolith owns the system. Each project has a narrow responsibility and a testable
-          boundary.
-        </p>
+        <div className="tao3k-products-hero__copy">
+          <strong>The scientific systems layer for intelligent organisations.</strong>
+          <p>
+            tao3k joins human records, semantic code and knowledge search, graph reasoning,
+            scientific computation, qualification, workflow and durable execution without hiding how
+            a conclusion became an authorised action.
+          </p>
+        </div>
       </section>
 
-      <section className="tao3k-product-constellation" aria-label="TAO Three K product ecosystem">
-        <div className="tao3k-product-axis" aria-hidden="true">
-          <span>EVIDENCE</span>
-          <i />
-          <span>ACTION</span>
+      <section className="tao3k-products-audiences" aria-label="Product value by audience">
+        <article>
+          <span>FOR PEOPLE</span>
+          <h2>Understand before you delegate.</h2>
+          <p>
+            See the source, reasoning, limits and responsible authority behind consequential work.
+          </p>
+        </article>
+        <article>
+          <span>FOR ORGANISATIONS</span>
+          <h2>Adopt intelligence without adopting a black box.</h2>
+          <p>Introduce one governed boundary at a time while existing systems retain ownership.</p>
+        </article>
+        <article>
+          <span>FOR LONG-HORIZON BUILDERS</span>
+          <h2>Build assets that compound beyond a model cycle.</h2>
+          <p>
+            Evidence, policy, workflows and receipts become reusable organisational infrastructure.
+          </p>
+        </article>
+      </section>
+
+      <section className="tao3k-production-system" aria-labelledby="production-system-title">
+        <header>
+          <p className="tao3k-route-kicker">THE PRODUCTION RESPONSIBILITY CHAIN</p>
+          <h2 id="production-system-title">
+            The product is the system between model output and accountable work.
+          </h2>
+          <p>
+            Strong models make proposals. Production systems must still preserve meaning, test
+            conditions, grant authority, survive execution and return evidence.
+          </p>
+        </header>
+        <ol>
+          {productionResponsibilities.map((item, index) => (
+            <li key={item.signal}>
+              <span className="tao3k-production-system__index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="tao3k-production-system__title">
+                <small>{item.signal}</small>
+                <h3>{item.title}</h3>
+                <span>{item.engines}</span>
+              </div>
+              <blockquote>{item.question}</blockquote>
+              <p>{item.outcome}</p>
+            </li>
+          ))}
+        </ol>
+        <aside>
+          <strong>Search improves recall.</strong>
+          <strong>Semantic calibration improves judgement.</strong>
+          <span>Neither one grants action authority.</span>
+        </aside>
+      </section>
+
+      <section className="tao3k-adoption-path" aria-labelledby="adoption-path-title">
+        <header>
+          <p className="tao3k-route-kicker">A PRACTICAL ADOPTION PATH</p>
+          <h2 id="adoption-path-title">Start with one boundary—not a platform replacement.</h2>
+          <p>
+            The ecosystem is modular by design. An organisation can prove value at one handoff
+            before expanding the evidence–action lifecycle.
+          </p>
+        </header>
+        <ol>
+          {adoptionPath.map((step, index) => (
+            <li key={step.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="tao3k-product-registry" aria-labelledby="product-registry-title">
+        <header>
+          <p className="tao3k-route-kicker">INDEPENDENT OPEN-SOURCE ENGINES</p>
+          <h2 id="product-registry-title">
+            Clear owners. Replaceable boundaries. Shared evidence.
+          </h2>
+          <p>
+            Each project owns a narrow responsibility. The complete architecture is a direction;
+            repository availability alone is not a claim that every integration has shipped.
+          </p>
+        </header>
+        <div className="tao3k-product-constellation" aria-label="tao3k product ecosystem">
+          <div className="tao3k-product-axis" aria-hidden="true">
+            <span>EVIDENCE</span>
+            <i />
+            <span>ACTION</span>
+          </div>
+          {products.map((product, index) => (
+            <a
+              className={`tao3k-product-unit tao3k-product-unit--${product.tone}`}
+              href={product.href}
+              key={product.key}
+            >
+              <span className="tao3k-product-unit__index">0{index + 1}</span>
+              <span className="tao3k-product-unit__key">{product.key}</span>
+              <div>
+                <small>{product.role}</small>
+                <h2>{product.name}</h2>
+                <p>{product.detail}</p>
+              </div>
+              <strong aria-hidden="true">↗</strong>
+            </a>
+          ))}
         </div>
-        {products.map((product, index) => (
-          <a
-            className={`tao3k-product-unit tao3k-product-unit--${product.tone}`}
-            href={product.href}
-            key={product.key}
-          >
-            <span className="tao3k-product-unit__index">0{index + 1}</span>
-            <span className="tao3k-product-unit__key">{product.key}</span>
-            <div>
-              <small>{product.role}</small>
-              <h2>{product.name}</h2>
-              <p>{product.detail}</p>
-            </div>
-            <strong aria-hidden="true">↗</strong>
-          </a>
-        ))}
       </section>
 
       <aside className="tao3k-products-rule">
@@ -189,6 +393,68 @@ function ProductsPage() {
           that transition trustworthy.
         </p>
       </aside>
+
+      <section className="tao3k-market-signals" aria-labelledby="market-signals-title">
+        <header>
+          <p className="tao3k-route-kicker">WHY THIS ARCHITECTURE IS CONVERGING NOW</p>
+          <h2 id="market-signals-title">
+            The market is moving from impressive answers to dependable work.
+          </h2>
+          <p>
+            These are external market signals—not proof that tao3k has shipped the complete system.
+            They show independent attention converging on evaluation, context and runtime
+            reliability.
+          </p>
+        </header>
+        <div>
+          {marketSignals.map((signal) => (
+            <a href={signal.href} key={signal.source}>
+              <span>{signal.date}</span>
+              <small>{signal.source}</small>
+              <h3>{signal.title}</h3>
+              <p>{signal.detail}</p>
+              <strong>Read source ↗</strong>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="tao3k-compounding-value" aria-labelledby="compounding-value-title">
+        <div>
+          <p className="tao3k-route-kicker">LONG-HORIZON VALUE</p>
+          <h2 id="compounding-value-title">Models turn over. Organisational evidence compounds.</h2>
+        </div>
+        <dl>
+          <div>
+            <dt>Encoded knowledge</dt>
+            <dd>
+              Source identity, semantic relationships and institutional context survive a provider
+              change.
+            </dd>
+          </div>
+          <div>
+            <dt>Reusable qualification</dt>
+            <dd>
+              Contracts, policy and proof obligations improve every later workflow that depends on
+              them.
+            </dd>
+          </div>
+          <div>
+            <dt>Operational learning</dt>
+            <dd>
+              Receipts turn outcomes and failures into attributable material for evaluation and
+              improvement.
+            </dd>
+          </div>
+          <div>
+            <dt>Open distribution</dt>
+            <dd>
+              Independent engines invite inspection, contribution and adoption without surrendering
+              the whole stack.
+            </dd>
+          </div>
+        </dl>
+      </section>
     </div>
   );
 }
@@ -200,6 +466,22 @@ const solutionStages = [
   "Qualification",
   "Operation",
   "Receipt",
+] as const;
+
+const reasoningCircuit = [
+  ["Question", "A decision, claim or operational ambiguity needs a defensible answer."],
+  ["GQL query", "A precise query selects the relevant graph-shaped evidence without hiding scope."],
+  ["Evidence", "Parser, knowledge and scientific owners retain provenance and source authority."],
+  [
+    "Ascent deduction",
+    "Declared rules derive explicit relationships while preserving asserted versus derived facts.",
+  ],
+  ["Calibrate", "Uncertainty, constraints and applicability determine what can be claimed next."],
+  [
+    "Qualify",
+    "Policy, proof obligations and human authority decide whether an action is admissible.",
+  ],
+  ["Receipt", "The outcome becomes attributable evidence for inspection, revision and reuse."],
 ] as const;
 
 function SolutionsPage() {
@@ -268,98 +550,365 @@ function SolutionsPage() {
           </p>
         </article>
       </section>
+
+      <section className="tao3k-reasoning-solution" aria-labelledby="reasoning-solution-title">
+        <header>
+          <p className="tao3k-route-kicker">PRODUCTION REASONING &amp; DECISION CALIBRATION</p>
+          <h2 id="reasoning-solution-title">A good answer is not yet an admissible decision.</h2>
+          <p>
+            Production reasoning must expose what was asked, which evidence answered it, what was
+            derived, what remains uncertain and who may authorise the next transition.
+          </p>
+        </header>
+        <ol aria-label="Question-to-receipt reasoning circuit">
+          {reasoningCircuit.map(([title, detail], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{detail}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <aside>
+          <strong>GQL improves the precision of the question.</strong>
+          <strong>Ascent makes declared derivation inspectable.</strong>
+          <p>Neither substitutes for evidence ownership, qualification or human authority.</p>
+        </aside>
+      </section>
     </div>
   );
 }
 
+const comparisonIncidents = [
+  {
+    date: "JUN 07 · 2026",
+    source: "OPENAI / CODEX #26889",
+    state: "OPEN DESIGN ISSUE",
+    title: "Compaction can erase the context that gives a task continuity.",
+    observed:
+      "A cluster of reports asks for explicit thread-scoped context pins because long-running sessions can lose constraints, decisions and task state after compaction.",
+    consequence:
+      "The enterprise risk is not a shorter summary. It is resuming work without knowing which obligations survived.",
+    href: "https://github.com/openai/codex/issues/26889",
+  },
+  {
+    date: "JUN 15 · 2026",
+    source: "ANTHROPIC / CLAUDE CODE #68619",
+    state: "USER-REPORTED ISSUE",
+    title: "Recursive delegation can burn budget while losing recoverable work.",
+    observed:
+      "The report describes permission denials cascading into nested subagents, retry storms and discarded intermediate results after interruption.",
+    consequence:
+      "Delegation without bounded topology, durable handoff and a typed stop condition turns scale into uncontrolled cost.",
+    href: "https://github.com/anthropics/claude-code/issues/68619",
+  },
+  {
+    date: "JUN 24 · 2026",
+    source: "OPENAI / CODEX #29915",
+    state: "OPEN BUG REPORT",
+    title: "Displayed permission and effective permission can diverge.",
+    observed:
+      "The report shows thread start and resume paths where a selected permission profile may not match the live effective state.",
+    consequence:
+      "A UI choice is not an authority record. Production systems need provenance for the policy actually enforced at execution time.",
+    href: "https://github.com/openai/codex/issues/29915",
+  },
+  {
+    date: "JUL · 2026",
+    source: "OPENAI / CODEX #27588",
+    state: "OPEN BUG REPORT",
+    title: "An agent can repeat preparation for hours without reaching work.",
+    observed:
+      "The report describes compaction-driven reread loops, no durable phase transition and ambiguity about whether the backend failed, continued or partially wrote files.",
+    consequence:
+      "Without explicit progress state and no-progress gates, time, spend and repository truth separate from the interface.",
+    href: "https://github.com/openai/codex/issues/27588",
+  },
+  {
+    date: "JUL 28–29 · 2026",
+    source: "OPENAI / CODEX #35935",
+    state: "USER-REPORTED REGRESSION",
+    title: "Lossy continuation can repeat completed work and exhaust usage.",
+    observed:
+      "The report asks for durable checkpoints, completed-work retention, subagent result recovery and synchronization with actual repository state.",
+    consequence:
+      "A long-running task needs a recoverable execution receipt, not only a reconstructed conversation.",
+    href: "https://github.com/openai/codex/issues/35935",
+  },
+] as const;
+
+const enterprisePressure = [
+  {
+    date: "JUN 04 · 2026",
+    source: "GITHUB AVAILABILITY REPORT",
+    title: "A dependency release caused 36,800 Copilot review failures.",
+    detail:
+      "GitHub reported an 81.6% average failure rate during the incident and noted that affected jobs did not fail fast.",
+    implication:
+      "Runtime provenance, compatibility admission and typed failure are business controls.",
+    href: "https://github.blog/news-insights/company-news/github-availability-report-june-2026/",
+  },
+  {
+    date: "JUL 14 · 2026",
+    source: "OPENAI · AI INVESTMENTS",
+    title: "Token price is not the measure of useful work.",
+    detail:
+      "OpenAI argues for explicit stopping conditions, usage visibility, governed tools, approval paths and funding tied to maturity.",
+    implication: "Cost, authority and outcome quality must be evaluated as one operational case.",
+    href: "https://openai.com/index/managing-ai-investments-in-agentic-era/",
+  },
+  {
+    date: "JUL 22 · 2026",
+    source: "OPENAI PRESENCE",
+    title: "Production begins with one job, bounded access and escalation.",
+    detail:
+      "The product description starts deployments from a specific workflow, required knowledge, policies, approved actions and human takeover rules.",
+    implication: "The market is converging on governed action—not generic autonomous capability.",
+    href: "https://openai.com/index/introducing-openai-presence/",
+  },
+] as const;
+
 const comparisonRows = [
   [
-    "Primary unit",
-    "Prompt and response",
-    "Workflow task",
-    "Model experiment",
-    "Evidence-bearing transition",
+    "Primary object",
+    "Conversation and tool turn",
+    "Task graph or checkpoint",
+    "Managed agent deployment",
+    "Versioned evidence case",
   ],
   [
-    "Source provenance",
-    "Usually external",
-    "Attached by convention",
-    "Dataset-centric",
-    "Native and continuous",
+    "Compression question",
+    "What text should remain?",
+    "What state must resume?",
+    "What context and policy are reusable?",
+    "Which evidence, authority and obligations remain valid?",
   ],
   [
-    "Action authority",
-    "Model confidence",
-    "Process permission",
-    "Research approval",
-    "Explicit qualification",
+    "Progress truth",
+    "Agent transcript and UI status",
+    "Node and workflow state",
+    "Platform telemetry and evaluation",
+    "Typed transition, checkpoint, effect and receipt",
   ],
   [
-    "Cross-tool handoff",
-    "Context copied",
-    "Payload forwarded",
-    "Artifact exported",
-    "Evidence survives",
+    "Authority truth",
+    "Tool approval or sandbox policy",
+    "Workflow permission and integration policy",
+    "Identity, policy and administrative control",
+    "Versioned Authority Envelope plus enforced runtime receipt",
   ],
-  ["Human role", "Reviewer after output", "Task owner", "Research operator", "Sovereign authority"],
   [
-    "Learning return",
-    "Conversation logs",
-    "Execution logs",
-    "Evaluation metrics",
-    "Qualified receipts",
+    "Evidence truth",
+    "Context supplied to the model",
+    "Payload attached to the process",
+    "Curated enterprise context",
+    "Source-owned claims, deductions, proof and invalidation state",
   ],
+  [
+    "Human position",
+    "Operator or reviewer",
+    "Process owner",
+    "Administrator, approver and escalation owner",
+    "Knowledge contributor, authority holder and contesting party",
+  ],
+] as const;
+
+const tao3kIssueResponses = [
+  {
+    issue: "LOSSY COMPRESSION",
+    invariant: "Compression is a projection of durable state—not the authority for state.",
+    owners: "POO Flow organisation · Marlin checkpoints · Org evidence",
+    maturity: "MIXED · INTEGRATION ACTIVE",
+  },
+  {
+    issue: "RUNAWAY OR STALLED WORK",
+    invariant:
+      "Every run exposes phase, progress, retry budget, stop condition and recoverable output.",
+    owners: "POO Flow conditions · Marlin runtime · Scenario Benchmarks",
+    maturity: "ACTIVE DEVELOPMENT",
+  },
+  {
+    issue: "AUTHORITY DRIFT",
+    invariant:
+      "The effective permission must be versioned, scoped and receipted at the action boundary.",
+    owners: "Contracts · Authority Envelope · Cedar · Lean · Marlin",
+    maturity: "ARCHITECTURE ACCEPTED · INTEGRATION ACTIVE",
+  },
+  {
+    issue: "CONTEXT WITHOUT PROVENANCE",
+    invariant:
+      "Models consume evidence projections while source systems retain semantic ownership.",
+    owners: "Orgize · Wendao · ASP · GQL Rust · Ascent",
+    maturity: "INDEPENDENT ENGINES · CIRCUIT INTEGRATION ACTIVE",
+  },
+  {
+    issue: "LOGS WITHOUT LEARNING",
+    invariant:
+      "An outcome becomes reusable only after verification, attribution and rights checks.",
+    owners: "Org Zhixing · Julia · Lean · evidence graph",
+    maturity: "MIXED · LONG-TERM LIFECYCLE",
+  },
 ] as const;
 
 function ComparisonPage() {
   return (
     <div className="tao3k-comparison-page">
       <section className="tao3k-comparison-hero">
-        <div className="tao3k-comparison-hero__number">04</div>
+        <p className="tao3k-route-kicker">REAL FAILURES · NOT CHECKLISTS</p>
+        <h1>
+          The model did not
+          <br />
+          lose the work.
+          <br />
+          <em>The system did.</em>
+        </h1>
         <div>
-          <p className="tao3k-route-kicker">ARCHITECTURAL COMPARISON</p>
-          <h1>
-            Compare the handoff,
-            <br />
-            not the feature list.
-          </h1>
+          <strong>Comparison begins where production confidence breaks.</strong>
+          <p>
+            Context compacts. Permissions drift. Agents loop. Dependencies fail. Intermediate work
+            disappears. The useful comparison is which system responsibility was missing—and who can
+            prove it was restored.
+          </p>
         </div>
-        <p>
-          A capability is not trustworthy because it exists. The test is whether provenance,
-          authority and accountability survive when work crosses a boundary.
-        </p>
       </section>
 
-      <section className="tao3k-comparison-table-wrap" aria-label="Architecture comparison">
-        <table className="tao3k-comparison-table">
-          <thead>
-            <tr>
-              <th>Evaluation surface</th>
-              <th>AI assistant</th>
-              <th>Workflow suite</th>
-              <th>Science platform</th>
-              <th>tao3k</th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparisonRows.map((row) => (
-              <tr key={row[0]}>
-                {row.map((cell, index) => (
-                  <td className={index === 4 ? "is-tao3k" : undefined} key={cell}>
-                    {cell}
-                  </td>
-                ))}
+      <section className="tao3k-issue-ledger" aria-labelledby="issue-ledger-title">
+        <header>
+          <p className="tao3k-route-kicker">PUBLIC ISSUE LEDGER</p>
+          <h2 id="issue-ledger-title">
+            The community is already describing the missing primitives.
+          </h2>
+          <p>
+            These are user-reported or open issue records, not vendor-confirmed product-wide
+            verdicts. Their value is the repeated architectural pattern they expose.
+          </p>
+        </header>
+        <ol>
+          {comparisonIncidents.map((incident, index) => (
+            <li key={incident.source}>
+              <div className="tao3k-issue-ledger__rail">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <i />
+              </div>
+              <div className="tao3k-issue-ledger__source">
+                <time>{incident.date}</time>
+                <strong>{incident.source}</strong>
+                <small>{incident.state}</small>
+              </div>
+              <div className="tao3k-issue-ledger__body">
+                <h3>{incident.title}</h3>
+                <p>{incident.observed}</p>
+              </div>
+              <div className="tao3k-issue-ledger__consequence">
+                <span>ENTERPRISE CONSEQUENCE</span>
+                <p>{incident.consequence}</p>
+                <a href={incident.href}>Inspect issue ↗</a>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="tao3k-enterprise-pressure" aria-labelledby="enterprise-pressure-title">
+        <header>
+          <p className="tao3k-route-kicker">THE BUYER'S QUESTION HAS CHANGED</p>
+          <h2 id="enterprise-pressure-title">
+            Can the work remain reliable, governed and worth its cost?
+          </h2>
+          <p>
+            Post-May 2026 primary sources increasingly describe deployment as a systems problem:
+            bounded workflows, compatibility, stopping conditions, policy and measurable outcomes.
+          </p>
+        </header>
+        <div>
+          {enterprisePressure.map((signal) => (
+            <a href={signal.href} key={signal.source}>
+              <time>{signal.date}</time>
+              <small>{signal.source}</small>
+              <h3>{signal.title}</h3>
+              <p>{signal.detail}</p>
+              <strong>{signal.implication}</strong>
+              <span>Read primary source ↗</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="tao3k-comparison-matrix" aria-labelledby="comparison-matrix-title">
+        <header>
+          <p className="tao3k-route-kicker">COMPARE THE MANAGED OBJECT</p>
+          <h2 id="comparison-matrix-title">
+            Products can share features while owning different truths.
+          </h2>
+          <p>
+            This matrix describes primary responsibility, not universal absence. Integrations can
+            extend every category; the question is which truth remains native and accountable.
+          </p>
+        </header>
+        <div className="tao3k-comparison-table-wrap" aria-label="Responsibility comparison">
+          <table className="tao3k-comparison-table">
+            <thead>
+              <tr>
+                <th>Responsibility surface</th>
+                <th>Coding / general agent</th>
+                <th>Agent workflow</th>
+                <th>Enterprise agent suite</th>
+                <th>tao3k target</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr key={row[0]}>
+                  {row.map((cell, index) => (
+                    <td className={index === 4 ? "is-tao3k" : undefined} key={cell}>
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="tao3k-issue-response" aria-labelledby="issue-response-title">
+        <header>
+          <p className="tao3k-route-kicker">WHY TAO3K CAN ADDRESS THE ROOT</p>
+          <h2 id="issue-response-title">Give each failure a system owner—not another prompt.</h2>
+          <p>
+            tao3k does not claim that every cross-engine path is shipped. It defines independent
+            owners so the failure can be tested, repaired and promoted without hiding behind model
+            behavior.
+          </p>
+        </header>
+        <ol>
+          {tao3kIssueResponses.map((response) => (
+            <li key={response.issue}>
+              <span>{response.issue}</span>
+              <h3>{response.invariant}</h3>
+              <p>{response.owners}</p>
+              <small>{response.maturity}</small>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="tao3k-comparison-verdict">
-        <span>THE DIFFERENCE</span>
-        <h2>Most systems optimize a moment. tao3k preserves the evidence lifecycle around it.</h2>
+        <span>THE HONEST DIFFERENCE</span>
+        <h2>
+          A larger context window postpones compression. A durable evidence case changes what can be
+          lost.
+        </h2>
+        <p>
+          Most current tools are stronger at their native interaction, orchestration or enterprise
+          administration surface. tao3k's differentiation is the accepted architecture joining
+          source evidence, scientific qualification, authority, execution and return. Its public
+          maturity must continue to be proven one owner and one integration at a time.
+        </p>
         <a href="https://github.com/tao3k">
-          Inspect the open-source evidence <span aria-hidden="true">↗</span>
+          Inspect the open-source work <span aria-hidden="true">↗</span>
         </a>
       </section>
     </div>

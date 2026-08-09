@@ -35,6 +35,12 @@ People are the primary source of durable value. Technology should help their
 knowledge travel farther, their judgment become more informed, and their ability
 to create responsible action grow over time.
 
+Scientific standards are part of that responsibility. tao3k treats evidence,
+qualification, traceability, verification, and reproducibility as the conditions
+that let people and institutions inspect, repeat, challenge, and improve
+consequential work. They are not a compliance layer applied after the fact; they
+are the way trustworthy work is made.
+
 * ACCEPTED People are the compounding asset
 :PROPERTIES:
 :CUSTOM_ID: public-values-people-compounding-asset

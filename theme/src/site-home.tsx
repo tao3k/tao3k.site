@@ -1,9 +1,10 @@
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Background,
   Handle,
   Position,
   ReactFlow,
+  useNodesState,
   type Edge,
   type Node,
   type NodeProps,
@@ -184,6 +185,8 @@ const LiveEvidenceNode = memo(function LiveEvidenceNode({ data }: NodeProps<Live
   );
 });
 
+const liveNodeTypes = { "live-evidence": LiveEvidenceNode };
+
 const liveStages = [
   ["01", "Record", "provenance attached"],
   ["02", "Retrieve", "owner resolved"],
@@ -201,44 +204,58 @@ const terminalLines = [
   "[receipt] evidence://operation/7f3a returned",
 ] as const;
 
+const initialLiveNodes: LiveNode[] = liveStages.map(([index, label, detail], stage) => ({
+  id: `live-${index}`,
+  type: "live-evidence",
+  position: { x: stage * 270, y: stage % 2 === 0 ? 30 : 180 },
+  data: { index, label, detail, state: stage === 0 ? "active" : "waiting" },
+}));
+
 function LiveEvidenceFlow() {
   const [activeStage, setActiveStage] = useState(0);
-  const [running, setRunning] = useState(true);
+  const activeStageRef = useRef(0);
+  const [nodes, setNodes, onNodesChange] = useNodesState<LiveNode>(initialLiveNodes);
+  const [reducedMotion, setReducedMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const [running, setRunning] = useState(() => !reducedMotion);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reducedMotion.matches) setRunning(false);
     const synchronize = (event: MediaQueryListEvent) => {
+      setReducedMotion(event.matches);
       if (event.matches) setRunning(false);
     };
     reducedMotion.addEventListener("change", synchronize);
     return () => reducedMotion.removeEventListener("change", synchronize);
   }, []);
 
+  const setStage = useCallback(
+    (nextStage: number) => {
+      activeStageRef.current = nextStage;
+      setActiveStage(nextStage);
+      setNodes((current) =>
+        current.map((node, stage) => ({
+          ...node,
+          data: {
+            ...node.data,
+            state: stage < nextStage ? "complete" : stage === nextStage ? "active" : "waiting",
+          },
+        })),
+      );
+    },
+    [setNodes],
+  );
+
   useEffect(() => {
     if (!running) return;
     const timer = window.setInterval(() => {
-      setActiveStage((current) => (current + 1) % liveStages.length);
+      setStage((activeStageRef.current + 1) % liveStages.length);
     }, 1450);
     return () => window.clearInterval(timer);
-  }, [running]);
-
-  const nodes = useMemo<LiveNode[]>(
-    () =>
-      liveStages.map(([index, label, detail], stage) => ({
-        id: `live-${index}`,
-        type: "live-evidence",
-        position: { x: stage * 270, y: stage % 2 === 0 ? 30 : 180 },
-        data: {
-          index,
-          label,
-          detail,
-          state: stage < activeStage ? "complete" : stage === activeStage ? "active" : "waiting",
-        },
-        draggable: true,
-      })),
-    [activeStage],
-  );
+  }, [running, setStage]);
 
   const edges = useMemo<Edge[]>(
     () =>
@@ -268,14 +285,19 @@ function LiveEvidenceFlow() {
           <span>
             <i className={running ? "is-running" : undefined} /> {running ? "RUNNING" : "PAUSED"}
           </span>
-          <button type="button" onClick={() => setRunning((value) => !value)}>
+          <button
+            type="button"
+            onClick={() => setRunning((value) => !value)}
+            disabled={reducedMotion}
+            aria-pressed={running}
+          >
             {running ? "Pause" : "Run"}
           </button>
           <button
             type="button"
             onClick={() => {
-              setActiveStage(0);
-              setRunning(true);
+              setStage(0);
+              if (!reducedMotion) setRunning(true);
             }}
           >
             Replay
@@ -286,19 +308,21 @@ function LiveEvidenceFlow() {
         <ReactFlow
           nodes={nodes}
           edges={edges}
-          nodeTypes={{ "live-evidence": LiveEvidenceNode }}
+          nodeTypes={liveNodeTypes}
+          onNodesChange={onNodesChange}
           fitView
           fitViewOptions={{ padding: 0.14 }}
           minZoom={0.45}
           maxZoom={1.5}
           panOnScroll
           zoomOnScroll={false}
+          onlyRenderVisibleElements
           proOptions={{ hideAttribution: true }}
         >
           <Background color="rgba(146, 241, 195, 0.16)" gap={28} size={1} />
         </ReactFlow>
       </div>
-      <div className="tao3k-live-terminal" aria-live="polite">
+      <div className="tao3k-live-terminal" aria-live="off">
         <div className="tao3k-live-terminal__bar">
           <span />
           <span />
@@ -322,21 +346,26 @@ export function Tao3kSiteHome(_props: { readonly title?: string } = {}) {
     <main className="tao3k-home">
       <section className="tao3k-home-hero">
         <div className="tao3k-home-hero__copy">
-          <p className="tao3k-eyebrow">EVIDENCE-NATIVE AI INFRASTRUCTURE</p>
+          <p className="tao3k-eyebrow">SCIENTIFIC EVIDENCE INFRASTRUCTURE</p>
           <h1>
-            Intelligence must earn
-            <span>the right to act.</span>
+            Turn intelligence into
+            <span>reproducible work.</span>
           </h1>
           <p className="tao3k-home-hero__lede">
             tao3k turns knowledge, code, scientific models and human records into admissible
             action—and turns every action back into searchable, verifiable and evolvable evidence.
           </p>
+          <p className="tao3k-home-hero__human">
+            Real work needs more than a plausible answer: it needs a record of what was known, why
+            an action was allowed, who remains responsible, and how the result can be checked,
+            repeated and improved.
+          </p>
           <div className="tao3k-home-hero__actions">
             <a className="tao3k-button tao3k-button--primary" href="/platform">
-              Enter the platform <span aria-hidden="true">→</span>
+              Explore the vision <span aria-hidden="true">→</span>
             </a>
-            <a className="tao3k-button tao3k-button--quiet" href="/principles">
-              Read our principles
+            <a className="tao3k-button tao3k-button--quiet" href="/roadmap">
+              View the roadmap
             </a>
           </div>
         </div>

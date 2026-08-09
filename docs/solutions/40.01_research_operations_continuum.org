@@ -109,6 +109,28 @@ An Action Case preserves the exact mappings and Evidence Set used during qualifi
 
 Authority remains continuous as well: research approval, deployment authorization, operational responsibility, and post-deployment acceptance are distinct decisions represented in the graph.
 
+* Production reasoning and decision calibration
+
+The continuum needs a distinct reasoning boundary before qualification.  A
+plausible model answer is not, by itself, a production decision.
+
+#+begin_example
+Question
+-> GQL Rust query
+-> parser-owned, knowledge, and graph evidence
+-> Ascent relational deduction
+-> uncertainty and applicability calibration
+-> qualification, policy, and human authority
+-> governed execution
+-> reproducible receipt
+#+end_example
+
+GQL Rust narrows the question through precise, composable and inspectable graph
+queries.  Ascent derives explicit relations from declared facts and rules.
+Neither engine becomes the authority for a source, proof, policy, or action
+merely by participating in the circuit.  Asserted evidence, derived relations,
+uncertainty, qualification and authority remain separately inspectable.
+
 * Message
 
 #+begin_quote
@@ -122,6 +144,7 @@ their evidence on the way back.
 - [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
 - [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
 - [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../architecture/RFC-001-reproducible-intelligence-systems.org][RFC-001: Reproducible Intelligence Systems]]
 - [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
 - [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]
 - [[file:../architecture/ADR-003-qualify-act-verify-contract.org][ADR-003: Qualify-Act-Verify Contract]]

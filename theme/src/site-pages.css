@@ -179,10 +179,11 @@
 /* Products: an asymmetric product constellation with an evidence/action axis. */
 .tao3k-products-page {
   color: var(--tao-ink);
-  padding: clamp(90px, 10vw, 160px) clamp(24px, 6vw, 104px);
   background: #eeede5;
 }
 .tao3k-products-hero {
+  min-height: 760px;
+  padding: clamp(90px, 10vw, 160px) clamp(24px, 6vw, 104px);
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   align-items: end;
@@ -204,14 +205,226 @@
   font-family: Georgia, serif;
   font-weight: 400;
 }
-.tao3k-products-hero > p:not(.tao3k-route-kicker) {
+.tao3k-products-hero__copy {
+  padding: 28px 0 8px;
+  border-top: 1px solid var(--tao-ink);
+}
+.tao3k-products-hero__copy strong {
+  display: block;
+  margin-bottom: 24px;
+  font:
+    400 1.5rem/1.35 Georgia,
+    serif;
+}
+.tao3k-products-hero__copy p {
+  margin: 0;
   color: var(--tao-muted);
   font-size: 1.15rem;
   line-height: 1.72;
 }
+.tao3k-products-audiences {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--tao-line);
+  border-bottom: 1px solid var(--tao-line);
+}
+.tao3k-products-audiences article {
+  min-height: 360px;
+  padding: 52px clamp(28px, 4vw, 68px);
+  border-right: 1px solid var(--tao-line);
+  display: flex;
+  flex-direction: column;
+}
+.tao3k-products-audiences article:last-child {
+  border-right: 0;
+}
+.tao3k-products-audiences span {
+  color: var(--tao-green);
+  font:
+    700 0.64rem/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.14em;
+}
+.tao3k-products-audiences h2 {
+  max-width: 14ch;
+  margin: auto 0 20px;
+  font:
+    400 clamp(1.75rem, 2.5vw, 2.7rem)/1.05 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+}
+.tao3k-products-audiences p {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--tao-muted);
+  line-height: 1.6;
+}
+.tao3k-production-system {
+  padding: clamp(90px, 10vw, 160px) clamp(24px, 6vw, 104px);
+  color: #e8efeb;
+  background: #101d1a;
+}
+.tao3k-production-system > header {
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.55fr;
+  gap: 30px 90px;
+  align-items: end;
+}
+.tao3k-production-system > header .tao3k-route-kicker {
+  grid-column: 1 / -1;
+}
+.tao3k-production-system > header h2 {
+  margin: 0;
+  font-size: clamp(3rem, 5.7vw, 6.6rem);
+  font-weight: 570;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+.tao3k-production-system > header > p:last-child {
+  margin: 0;
+  color: #92a49e;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+.tao3k-production-system ol {
+  margin: 100px 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(146, 241, 195, 0.22);
+  list-style: none;
+}
+.tao3k-production-system li {
+  min-height: 190px;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(146, 241, 195, 0.14);
+  display: grid;
+  grid-template-columns: 70px 0.85fr 1.1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+.tao3k-production-system__index {
+  color: #6f817b;
+  font:
+    700 0.66rem/1 "IBM Plex Mono",
+    monospace;
+}
+.tao3k-production-system__title small {
+  color: var(--tao-mint);
+  font:
+    700 0.6rem/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.13em;
+}
+.tao3k-production-system__title h3 {
+  margin: 12px 0 10px;
+  font:
+    500 1.45rem/1.1 Georgia,
+    serif;
+}
+.tao3k-production-system__title > span {
+  color: #778b84;
+  font:
+    600 0.7rem/1.4 "IBM Plex Mono",
+    monospace;
+}
+.tao3k-production-system blockquote {
+  margin: 0;
+  color: #d6e0dc;
+  font:
+    400 1.25rem/1.45 Georgia,
+    serif;
+}
+.tao3k-production-system li > p {
+  margin: 0;
+  color: #849790;
+  line-height: 1.6;
+}
+.tao3k-production-system > aside {
+  margin: 70px 0 0 auto;
+  width: min(900px, 76%);
+  padding: 30px 0;
+  border-top: 2px solid var(--tao-mint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 38px;
+}
+.tao3k-production-system > aside strong {
+  font:
+    400 1.2rem/1.4 Georgia,
+    serif;
+}
+.tao3k-production-system > aside span {
+  width: 100%;
+  color: #7d9089;
+  font:
+    700 0.68rem/1.4 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.tao3k-adoption-path {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 104px);
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: clamp(60px, 9vw, 150px);
+  background: #dfe5dc;
+}
+.tao3k-adoption-path > header h2,
+.tao3k-product-registry > header h2,
+.tao3k-market-signals > header h2,
+.tao3k-compounding-value h2 {
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+  font-weight: 580;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
+}
+.tao3k-adoption-path > header > p:last-child,
+.tao3k-product-registry > header > p:last-child,
+.tao3k-market-signals > header > p:last-child {
+  max-width: 48ch;
+  margin: 30px 0 0;
+  color: var(--tao-muted);
+  line-height: 1.65;
+}
+.tao3k-adoption-path ol {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--tao-ink);
+  list-style: none;
+}
+.tao3k-adoption-path li {
+  padding: 27px 0;
+  border-bottom: 1px solid var(--tao-line);
+  display: grid;
+  grid-template-columns: 52px 0.7fr 1fr;
+  gap: 24px;
+}
+.tao3k-adoption-path li > span {
+  color: var(--tao-green);
+  font:
+    700 0.65rem/1.5 "IBM Plex Mono",
+    monospace;
+}
+.tao3k-adoption-path h3 {
+  margin: 0;
+  font:
+    500 1.17rem/1.35 Georgia,
+    serif;
+}
+.tao3k-adoption-path li p {
+  margin: 0;
+  color: var(--tao-muted);
+  line-height: 1.55;
+}
+.tao3k-product-registry {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 104px) 50px;
+}
+.tao3k-product-registry > header {
+  max-width: 920px;
+}
 .tao3k-product-constellation {
   position: relative;
-  margin-top: 120px;
+  margin-top: 90px;
   padding: 80px 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -277,6 +490,13 @@
   margin-top: 80px;
 }
 .tao3k-product-unit:nth-child(6) {
+  grid-column: 2 / span 5;
+}
+.tao3k-product-unit:nth-child(7) {
+  grid-column: 7 / span 5;
+  margin-top: 80px;
+}
+.tao3k-product-unit:nth-child(8) {
   grid-column: 3 / span 7;
 }
 .tao3k-product-unit__index {
@@ -338,8 +558,11 @@
 .tao3k-product-unit--blue .tao3k-product-unit__key {
   background: #367d9c;
 }
+.tao3k-product-unit--amber .tao3k-product-unit__key {
+  background: #a3662d;
+}
 .tao3k-products-rule {
-  margin: 80px 0 0 auto;
+  margin: 30px clamp(24px, 6vw, 104px) 120px auto;
   width: min(760px, 70%);
   padding: 34px 0;
   border-top: 3px solid var(--tao-ink);
@@ -359,6 +582,103 @@
   font:
     400 1.35rem/1.5 Georgia,
     serif;
+}
+.tao3k-market-signals {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 104px);
+  color: #e8efeb;
+  background: #171b22;
+}
+.tao3k-market-signals > header {
+  display: grid;
+  grid-template-columns: 1.25fr 0.55fr;
+  gap: 30px 90px;
+  align-items: end;
+}
+.tao3k-market-signals > header .tao3k-route-kicker {
+  grid-column: 1 / -1;
+}
+.tao3k-market-signals > header > p:last-child {
+  color: #929ca0;
+}
+.tao3k-market-signals > div {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.tao3k-market-signals a {
+  min-height: 420px;
+  padding: 34px;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+.tao3k-market-signals a:last-child {
+  border-right: 0;
+}
+.tao3k-market-signals a:hover {
+  background: rgba(146, 241, 195, 0.07);
+}
+.tao3k-market-signals a > span,
+.tao3k-market-signals a > small {
+  color: #7f908a;
+  font:
+    700 0.62rem/1.4 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.tao3k-market-signals a > small {
+  margin-top: 10px;
+  color: var(--tao-mint);
+}
+.tao3k-market-signals h3 {
+  margin: auto 0 18px;
+  font:
+    400 1.75rem/1.15 Georgia,
+    serif;
+}
+.tao3k-market-signals a p {
+  margin: 0 0 30px;
+  color: #97a39f;
+  line-height: 1.6;
+}
+.tao3k-market-signals a strong {
+  color: #d6e0dc;
+  font:
+    700 0.66rem/1 "IBM Plex Mono",
+    monospace;
+}
+.tao3k-compounding-value {
+  padding: clamp(90px, 10vw, 160px) clamp(24px, 6vw, 104px);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(70px, 10vw, 170px);
+  background: #d8cfbf;
+}
+.tao3k-compounding-value dl {
+  margin: 0;
+  border-top: 1px solid var(--tao-ink);
+}
+.tao3k-compounding-value dl > div {
+  padding: 27px 0;
+  border-bottom: 1px solid rgba(16, 36, 31, 0.22);
+  display: grid;
+  grid-template-columns: 0.48fr 1fr;
+  gap: 32px;
+}
+.tao3k-compounding-value dt {
+  font:
+    500 1.08rem/1.35 Georgia,
+    serif;
+}
+.tao3k-compounding-value dd {
+  margin: 0;
+  color: #59625d;
+  line-height: 1.6;
 }
 
 /* Solutions: a directional bridge, not the platform circuit. */
@@ -507,40 +827,329 @@
   color: var(--tao-muted);
   line-height: 1.65;
 }
-
-/* Comparison: editorial matrix. */
-.tao3k-comparison-page {
-  color: var(--tao-ink);
-  padding-bottom: 130px;
-  background: #f0efe8;
+.tao3k-reasoning-solution {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 105px);
+  color: #e9f2ed;
+  background: #102620;
 }
-.tao3k-comparison-hero {
-  padding: clamp(90px, 10vw, 160px) clamp(24px, 6vw, 105px) 100px;
-  display: grid;
-  grid-template-columns: 0.28fr 1.1fr 0.62fr;
-  gap: 55px;
-  align-items: end;
+.tao3k-reasoning-solution > header {
+  max-width: 800px;
 }
-.tao3k-comparison-hero__number {
-  color: rgba(16, 36, 31, 0.12);
+.tao3k-reasoning-solution > header h2 {
+  max-width: 780px;
+  margin: 18px 0 22px;
   font:
-    700 clamp(7rem, 13vw, 14rem)/0.75 "IBM Plex Mono",
-    monospace;
+    500 clamp(2.6rem, 5.4vw, 5.5rem) / 0.96 Georgia,
+    serif;
+  letter-spacing: -0.055em;
 }
-.tao3k-comparison-hero h1 {
-  color: var(--tao-ink);
-  margin: 0;
-  font-size: clamp(3.6rem, 6.5vw, 7rem);
-  line-height: 0.92;
-  letter-spacing: -0.07em;
-  font-weight: 590;
-}
-.tao3k-comparison-hero > p {
-  color: var(--tao-muted);
+.tao3k-reasoning-solution > header > p:last-child {
+  max-width: 650px;
+  color: #a7bbb2;
+  font-size: 1.06rem;
   line-height: 1.7;
 }
+.tao3k-reasoning-solution ol {
+  margin: 70px 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(183, 240, 209, 0.22);
+  list-style: none;
+}
+.tao3k-reasoning-solution li {
+  display: grid;
+  grid-template-columns: 92px minmax(170px, 0.6fr) 1.4fr;
+  gap: 26px;
+  align-items: baseline;
+  min-height: 112px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(183, 240, 209, 0.16);
+}
+.tao3k-reasoning-solution li > span {
+  color: var(--tao-mint);
+  font:
+    700 0.65rem/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.tao3k-reasoning-solution h3 {
+  margin: 0;
+  font:
+    500 1.35rem/1.12 Georgia,
+    serif;
+}
+.tao3k-reasoning-solution li p {
+  grid-column: 3;
+  margin: 0;
+  color: #9fb4aa;
+  line-height: 1.55;
+}
+.tao3k-reasoning-solution > aside {
+  margin-top: 44px;
+  padding-top: 22px;
+  border-top: 2px solid var(--tao-mint);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 30px;
+}
+.tao3k-reasoning-solution > aside strong {
+  color: var(--tao-mint);
+  font:
+    600 1rem/1.35 Georgia,
+    serif;
+}
+.tao3k-reasoning-solution > aside p {
+  grid-column: 1 / -1;
+  margin: 10px 0 0;
+  color: #9fb4aa;
+}
+
+/* Comparison: a dated failure ledger before any category matrix. */
+.tao3k-comparison-page {
+  color: #e9efec;
+  background: #101714;
+}
+.tao3k-comparison-hero {
+  min-height: 800px;
+  padding: clamp(100px, 12vw, 180px) clamp(24px, 6vw, 105px) 110px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.55fr;
+  gap: 38px 90px;
+  align-items: end;
+  background:
+    linear-gradient(90deg, transparent 64%, rgba(146, 241, 195, 0.035) 64%),
+    radial-gradient(circle at 78% 18%, rgba(107, 92, 198, 0.2), transparent 30%);
+}
+.tao3k-comparison-hero .tao3k-route-kicker {
+  grid-column: 1 / -1;
+}
+.tao3k-comparison-hero h1 {
+  color: #eef4f0;
+  margin: 0;
+  font-size: clamp(4rem, 7.4vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+  font-weight: 570;
+}
+.tao3k-comparison-hero h1 em {
+  color: #c199ff;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.tao3k-comparison-hero > div {
+  padding: 28px 0 8px;
+  border-top: 1px solid rgba(233, 239, 236, 0.5);
+}
+.tao3k-comparison-hero strong {
+  display: block;
+  margin-bottom: 22px;
+  font:
+    400 1.4rem/1.4 Georgia,
+    serif;
+}
+.tao3k-comparison-hero > div p {
+  margin: 0;
+  color: #8fa099;
+  line-height: 1.7;
+}
+.tao3k-issue-ledger {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 105px);
+  color: var(--tao-ink);
+  background: #e7e4da;
+}
+.tao3k-issue-ledger > header,
+.tao3k-enterprise-pressure > header,
+.tao3k-comparison-matrix > header,
+.tao3k-issue-response > header {
+  max-width: 1160px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.55fr;
+  gap: 30px 90px;
+  align-items: end;
+}
+.tao3k-issue-ledger > header .tao3k-route-kicker,
+.tao3k-enterprise-pressure > header .tao3k-route-kicker,
+.tao3k-comparison-matrix > header .tao3k-route-kicker,
+.tao3k-issue-response > header .tao3k-route-kicker {
+  grid-column: 1 / -1;
+}
+.tao3k-issue-ledger h2,
+.tao3k-enterprise-pressure > header h2,
+.tao3k-comparison-matrix > header h2,
+.tao3k-issue-response > header h2 {
+  margin: 0;
+  font-size: clamp(3rem, 5.5vw, 6.3rem);
+  font-weight: 580;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+.tao3k-issue-ledger > header > p:last-child,
+.tao3k-enterprise-pressure > header > p:last-child,
+.tao3k-comparison-matrix > header > p:last-child,
+.tao3k-issue-response > header > p:last-child {
+  margin: 0;
+  color: #66736e;
+  line-height: 1.65;
+}
+.tao3k-issue-ledger ol {
+  margin: 100px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--tao-ink);
+  list-style: none;
+}
+.tao3k-issue-ledger li {
+  min-height: 280px;
+  padding: 35px 0;
+  border-bottom: 1px solid rgba(16, 36, 31, 0.2);
+  display: grid;
+  grid-template-columns: 70px 0.7fr 1.2fr 0.9fr;
+  gap: 34px;
+}
+.tao3k-issue-ledger__rail {
+  position: relative;
+  color: #7b8883;
+  font:
+    700 0.66rem/1 "IBM Plex Mono",
+    monospace;
+}
+.tao3k-issue-ledger__rail i {
+  position: absolute;
+  top: 42px;
+  bottom: -36px;
+  left: 4px;
+  width: 1px;
+  background: rgba(16, 36, 31, 0.24);
+}
+.tao3k-issue-ledger__source {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.tao3k-issue-ledger__source time,
+.tao3k-issue-ledger__source strong,
+.tao3k-issue-ledger__source small,
+.tao3k-issue-ledger__consequence > span {
+  font:
+    700 0.64rem/1.4 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.tao3k-issue-ledger__source strong {
+  color: var(--tao-green);
+}
+.tao3k-issue-ledger__source small {
+  width: fit-content;
+  padding: 6px 8px;
+  border: 1px solid rgba(16, 36, 31, 0.25);
+  color: #69756f;
+  letter-spacing: 0.04em;
+}
+.tao3k-issue-ledger__body h3 {
+  margin: 0 0 22px;
+  font:
+    500 clamp(1.6rem, 2.5vw, 2.7rem)/1.08 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+}
+.tao3k-issue-ledger__body p,
+.tao3k-issue-ledger__consequence p {
+  margin: 0;
+  color: #65716c;
+  line-height: 1.62;
+}
+.tao3k-issue-ledger__consequence {
+  padding-left: 28px;
+  border-left: 1px solid rgba(16, 36, 31, 0.18);
+}
+.tao3k-issue-ledger__consequence > span {
+  display: block;
+  margin-bottom: 18px;
+  color: #7b5dab;
+}
+.tao3k-issue-ledger__consequence a {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--tao-green);
+  text-decoration: none;
+  font:
+    700 0.68rem/1 "IBM Plex Mono",
+    monospace;
+}
+.tao3k-enterprise-pressure {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 105px);
+  color: #edf3ef;
+  background: #18201e;
+}
+.tao3k-enterprise-pressure > header > p:last-child {
+  color: #8c9b96;
+}
+.tao3k-enterprise-pressure > div {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.tao3k-enterprise-pressure a {
+  min-height: 500px;
+  padding: 34px;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+.tao3k-enterprise-pressure a:last-child {
+  border-right: 0;
+}
+.tao3k-enterprise-pressure a:hover {
+  background: rgba(193, 153, 255, 0.08);
+}
+.tao3k-enterprise-pressure time,
+.tao3k-enterprise-pressure small,
+.tao3k-enterprise-pressure a > span {
+  color: #83928d;
+  font:
+    700 0.64rem/1.4 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.09em;
+}
+.tao3k-enterprise-pressure small {
+  margin-top: 10px;
+  color: var(--tao-mint);
+}
+.tao3k-enterprise-pressure h3 {
+  margin: 80px 0 24px;
+  font:
+    400 1.8rem/1.15 Georgia,
+    serif;
+}
+.tao3k-enterprise-pressure a p {
+  margin: 0 0 30px;
+  color: #94a29d;
+  line-height: 1.6;
+}
+.tao3k-enterprise-pressure a strong {
+  margin-top: auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  color: #d7e1dd;
+  line-height: 1.45;
+}
+.tao3k-enterprise-pressure a > span {
+  margin-top: 24px;
+  color: #bd9af1;
+}
+.tao3k-comparison-matrix {
+  padding: clamp(90px, 10vw, 150px) 0;
+  color: var(--tao-ink);
+  background: #f0efe8;
+}
+.tao3k-comparison-matrix > header {
+  margin: 0 clamp(24px, 6vw, 105px);
+}
 .tao3k-comparison-table-wrap {
-  margin: 0 clamp(24px, 4vw, 70px);
+  margin: 90px clamp(24px, 4vw, 70px) 0;
   overflow-x: auto;
   box-shadow: 0 30px 75px rgba(16, 36, 31, 0.09);
 }
@@ -576,13 +1185,57 @@
   background: #12382e;
   border-color: rgba(146, 241, 195, 0.2);
 }
-.tao3k-comparison-verdict {
-  margin: 100px clamp(24px, 7vw, 120px) 0 32%;
-  padding-top: 34px;
-  border-top: 3px solid var(--tao-ink);
+.tao3k-issue-response {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 105px);
+  color: #eaf1ed;
+  background: #271f32;
+}
+.tao3k-issue-response > header > p:last-child {
+  color: #a196a8;
+}
+.tao3k-issue-response ol {
+  margin: 100px 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  list-style: none;
+}
+.tao3k-issue-response li {
+  padding: 31px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   display: grid;
-  grid-template-columns: 0.28fr 1fr;
-  gap: 38px;
+  grid-template-columns: 0.55fr 1.3fr 0.85fr 0.55fr;
+  gap: 34px;
+  align-items: start;
+}
+.tao3k-issue-response li > span,
+.tao3k-issue-response li > small {
+  color: #c4a2f2;
+  font:
+    700 0.64rem/1.45 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.tao3k-issue-response h3 {
+  margin: 0;
+  font:
+    400 1.35rem/1.35 Georgia,
+    serif;
+}
+.tao3k-issue-response li p {
+  margin: 0;
+  color: #a297a9;
+  line-height: 1.55;
+}
+.tao3k-issue-response li > small {
+  color: #83d6ae;
+}
+.tao3k-comparison-verdict {
+  padding: clamp(90px, 10vw, 150px) clamp(24px, 7vw, 120px);
+  display: grid;
+  grid-template-columns: 0.3fr 1.1fr 0.6fr;
+  gap: 48px;
+  color: var(--tao-ink);
+  background: #d9d2c2;
 }
 .tao3k-comparison-verdict > span {
   font:
@@ -591,9 +1244,15 @@
   letter-spacing: 0.1em;
 }
 .tao3k-comparison-verdict h2 {
+  margin: 0;
   font:
     400 clamp(2rem, 3.3vw, 3.6rem)/1.12 Georgia,
     serif;
+}
+.tao3k-comparison-verdict > p {
+  margin: 0;
+  color: #5c6661;
+  line-height: 1.65;
 }
 .tao3k-comparison-verdict a {
   grid-column: 2;
@@ -839,6 +1498,10 @@
 @media (max-width: 1000px) {
   .tao3k-platform-hero,
   .tao3k-products-hero,
+  .tao3k-production-system > header,
+  .tao3k-adoption-path,
+  .tao3k-market-signals > header,
+  .tao3k-compounding-value,
   .tao3k-solutions-hero,
   .tao3k-roadmap-hero {
     grid-template-columns: 1fr;
@@ -858,6 +1521,28 @@
     grid-column: span 6;
     margin-top: 0;
   }
+  .tao3k-products-audiences {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-products-audiences article {
+    min-height: 300px;
+    border-right: 0;
+    border-bottom: 1px solid var(--tao-line);
+  }
+  .tao3k-production-system li {
+    grid-template-columns: 54px 0.8fr 1.2fr;
+  }
+  .tao3k-production-system li > p {
+    grid-column: 2 / -1;
+  }
+  .tao3k-market-signals > div {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-market-signals a {
+    min-height: 330px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
   .tao3k-continuum-map {
     grid-template-columns: 1fr;
   }
@@ -871,14 +1556,45 @@
   .tao3k-continuum-map__return {
     display: none;
   }
-  .tao3k-comparison-hero {
-    grid-template-columns: 0.25fr 1fr;
+  .tao3k-reasoning-solution li {
+    grid-template-columns: 54px 0.65fr 1.35fr;
   }
-  .tao3k-comparison-hero > p {
+  .tao3k-comparison-hero,
+  .tao3k-issue-ledger > header,
+  .tao3k-enterprise-pressure > header,
+  .tao3k-comparison-matrix > header,
+  .tao3k-issue-response > header {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-issue-ledger li {
+    grid-template-columns: 54px 0.7fr 1.3fr;
+  }
+  .tao3k-issue-ledger__consequence {
+    grid-column: 2 / -1;
+    padding: 24px 0 0;
+    border-top: 1px solid rgba(16, 36, 31, 0.18);
+    border-left: 0;
+  }
+  .tao3k-enterprise-pressure > div {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-enterprise-pressure a {
+    min-height: 380px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .tao3k-issue-response li {
+    grid-template-columns: 0.5fr 1.5fr;
+  }
+  .tao3k-issue-response li p,
+  .tao3k-issue-response li > small {
     grid-column: 2;
   }
   .tao3k-comparison-verdict {
-    margin-left: 20%;
+    grid-template-columns: 0.35fr 1fr;
+  }
+  .tao3k-comparison-verdict > p {
+    grid-column: 2;
   }
   .tao3k-application-footer__lead {
     grid-template-columns: 0.4fr 1fr;
@@ -905,6 +1621,23 @@
     padding-right: 20px;
     padding-left: 20px;
   }
+  .tao3k-products-page {
+    padding: 0;
+  }
+  .tao3k-products-hero,
+  .tao3k-production-system,
+  .tao3k-adoption-path,
+  .tao3k-product-registry,
+  .tao3k-market-signals,
+  .tao3k-compounding-value,
+  .tao3k-reasoning-solution,
+  .tao3k-issue-ledger,
+  .tao3k-enterprise-pressure,
+  .tao3k-issue-response,
+  .tao3k-comparison-verdict {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .tao3k-platform-hero h1,
   .tao3k-products-hero h1,
   .tao3k-solutions-hero h1,
@@ -927,6 +1660,31 @@
   }
   .tao3k-product-constellation {
     grid-template-columns: 1fr;
+  }
+  .tao3k-production-system li {
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+  }
+  .tao3k-production-system blockquote,
+  .tao3k-production-system li > p {
+    grid-column: 2;
+  }
+  .tao3k-production-system > aside {
+    width: 100%;
+  }
+  .tao3k-adoption-path li {
+    grid-template-columns: 40px 1fr;
+  }
+  .tao3k-adoption-path li p {
+    grid-column: 2;
+  }
+  .tao3k-products-rule {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .tao3k-compounding-value dl > div {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .tao3k-product-axis {
     display: none;
@@ -957,15 +1715,53 @@
   .tao3k-comparison-hero {
     grid-template-columns: 1fr;
   }
-  .tao3k-comparison-hero__number {
-    display: none;
+  .tao3k-comparison-hero h1 {
+    font-size: clamp(3.3rem, 15vw, 5rem);
   }
-  .tao3k-comparison-hero > p {
+  .tao3k-issue-ledger > header,
+  .tao3k-enterprise-pressure > header,
+  .tao3k-comparison-matrix > header,
+  .tao3k-issue-response > header {
+    display: block;
+  }
+  .tao3k-issue-ledger > header h2,
+  .tao3k-enterprise-pressure > header h2,
+  .tao3k-comparison-matrix > header h2,
+  .tao3k-issue-response > header h2 {
+    margin-bottom: 30px;
+  }
+  .tao3k-issue-ledger li {
+    grid-template-columns: 36px 1fr;
+    gap: 20px;
+  }
+  .tao3k-issue-ledger__body,
+  .tao3k-issue-ledger__consequence {
+    grid-column: 2;
+  }
+  .tao3k-issue-ledger__consequence {
+    margin-top: 8px;
+  }
+  .tao3k-enterprise-pressure a {
+    min-height: 440px;
+    padding: 28px 0;
+  }
+  .tao3k-comparison-matrix > header {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .tao3k-issue-response li {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .tao3k-issue-response li p,
+  .tao3k-issue-response li > small {
     grid-column: auto;
   }
   .tao3k-comparison-verdict {
-    margin: 70px 20px 0;
     grid-template-columns: 1fr;
+  }
+  .tao3k-comparison-verdict > p {
+    grid-column: auto;
   }
   .tao3k-comparison-verdict a {
     grid-column: auto;
