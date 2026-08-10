@@ -14,7 +14,7 @@ git_override(
 
 git_override(
     module_name = "poo_flow",
-    commit = "6688a02c6b077638b9dc52cf3abd5d9ea6cfb5ba",
+    commit = "7f60e82b609ed2227ce3e71d17c5a1a351902e54",
     remote = "https://github.com/tao3k/poo-flow.git",
 )
 

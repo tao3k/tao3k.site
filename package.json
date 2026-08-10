@@ -46,7 +46,8 @@
     "pages:routes": "node --experimental-strip-types theme/src/build/prepare-application-pages.mjs",
     "principles:bundle:generate": "node theme/src/build/prepare-principles-bundle.mjs",
     "principles:bundle:check": "node theme/src/build/prepare-principles-bundle.mjs --check",
-    "principles:authoring:check": "npm run principles:bundle:check && npm run principles:check",
+    "principles:bundle:runtime:check": "node theme/tests/check-principles-bundle.mjs",
+    "principles:authoring:check": "npm run principles:bundle:check && npm run principles:check && npm run principles:bundle:runtime:check",
     "principles:generate": "node theme/src/build/prepare-principles-interactive.mjs",
     "principles:check": "node theme/src/build/prepare-principles-interactive.mjs --check",
     "theme:contract:sync": "node theme/src/build/sync-contract.mjs && npm run principles:generate",
@@ -54,7 +55,7 @@
     "theme:preview": "rsbuild preview --config theme/rsbuild.config.ts --host 127.0.0.1",
     "typecheck": "npm run theme:prepare && tsc --noEmit",
     "test": "npm run typecheck",
-    "validate": "npm run theme:contract:sync && npm run principles:check && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
+    "validate": "npm run theme:contract:sync && npm run principles:authoring:check && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.0.0",
