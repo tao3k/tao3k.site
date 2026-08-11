@@ -20,14 +20,16 @@ and evidence must determine whether an action is admissible.
 * Product category
 
 #+begin_quote
-Evidence-native AI lifecycle infrastructure for science and industry.
+Evidence--Action system infrastructure for vertical AI and durable user-owned work.
 #+end_quote
 
-The primary product audience is enterprises, laboratories, research
-institutions, and complex engineering organizations. Students, farmers,
-independent practitioners, and technical workers belong to the company's human
-and social commitments; they must not be used to shrink the commercial category
-into a small-team utility.
+The primary product audience is vertical enterprises, laboratories, research
+institutions, complex engineering organisations, and product partners building
+domain systems.  tao3k also serves serious users who need a durable,
+user-owned system for knowledge, research, code, records, and action history.
+Students, farmers, independent practitioners, and technical workers belong to
+the company's human and social commitments; they must not be used to shrink the
+commercial category into a small-team utility.
 
 * Stable company description
 
@@ -54,6 +56,25 @@ improving traceability, operational quality, and decision confidence.
 Reducing friction is not the same as treating headcount reduction as the only
 measure of success.
 
+* Model, cloud, and Agent boundary
+
+tao3k is not a substitute for a foundation model, a cloud platform, or a
+general-purpose coding Agent.  Those capability layers generate, reason, host,
+scale, or complete a task.  tao3k supplies the system layer around them:
+evidence ownership, semantic structure, qualification, authority, durable state,
+recovery, and attributable receipts.
+
+The intended relationship is complementary.  Enterprises, partners, and users
+can use the best available models and Agents without allowing their knowledge,
+authority, operating history, and outcomes to become a disposable by-product of
+one provider or one session.
+
+Vertical applications provide their own domain expertise, interfaces, and
+workflows.  tao3k provides the reusable system beneath them.  A clinical
+conversation, research review, industrial intervention, contract workflow, or
+personal research loop is therefore a scenario built by a customer or partner,
+not a claim that tao3k offers every vertical end-user application.
+
 * Human covenant
 
 #+begin_quote
@@ -70,7 +91,7 @@ decisions.
 | Layer | Statement |
 |-------+-----------|
 | Doctrine | Intelligence must earn the right to act. |
-| Category | Evidence-native AI lifecycle infrastructure for science and industry. |
+| Category | Evidence--Action system infrastructure for vertical AI and durable user-owned work. |
 | Description | Turn knowledge, code, scientific models, and human records into admissible action and evidence. |
 | Mission | Close the trust and reproducibility gap between research and operations. |
 | Human covenant | Every action should expand human agency. |
@@ -156,14 +177,13 @@ The tao3k voice is precise, calm, durable, and willing to take a position.
 * Home-page foundation
 
 #+begin_example
-EVIDENCE-NATIVE AI LIFECYCLE
+THE SYSTEM AROUND AI
 
-Intelligence must earn
-the right to act.
+Build AI systems
+that can continue.
 
-tao3k turns knowledge, code, scientific models and human records
-into admissible action—and turns every action back into searchable,
-verifiable and evolvable evidence.
+For vertical enterprises, product partners and serious users, tao3k provides
+the evidence, authority, durable state and recovery system around AI.
 #+end_example
 
 The home page must also expose the lifecycle, the Research--Operations

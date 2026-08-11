@@ -26,6 +26,83 @@ and industry.
 The objective is not only to shorten deployment time. It is to preserve and
 improve quality across the complete passage.
 
+* Industry adaptation boundary
+
+The continuum describes shared tao3k infrastructure, not a vertical product
+bundle.  A laboratory, manufacturer, systems integrator, or product partner
+keeps its domain model, interface, operational workflow, and accountable
+decision.  tao3k carries the evidence, assumptions, qualification, authority,
+durable state, recovery, and outcome record around that work.
+
+Clinical conversation, therapeutic research, industrial intervention, and
+other domain workflows are partner or customer scenarios.  They demonstrate the
+constraints a vertical system must satisfy; they do not imply that tao3k sells
+each scenario as a separate end-user SaaS offering.
+
+** Solution eligibility and category axes
+
+A Solution starts with a concrete industry or research problem, an accountable
+actor, an operating environment, and a measurable outcome. It composes Platform
+capabilities, tao3k Products, customer or partner components, and a deployment
+profile. It does not redefine those components.
+
+The primary Solution category is the domain system, such as Life Sciences,
+Regulated Operations, or Scientific and Industrial Systems. Reusable operating
+patterns, such as research-to-operations transfer or qualified Agent operation,
+are secondary patterns. Local, on-premises, hybrid, and cloud are deployment
+facets, not separate Solutions.
+
+Every Solution record must therefore state: problem, user, system composition,
+workflow, evidence path, authority boundary, deployment profile, intended
+outcome, and what remains the responsibility of the customer or partner.
+
+** Interactive solution navigation
+
+The Solutions page must let a reader understand an industry system before
+opening its full record. It uses one stable /Solution Preview Stage/, informed
+by the direct solution previews used by Luminance, Harvey, and Tempus, rather
+than decorative cards or transient tooltips.
+
+Each trigger identifies an industry system or partner scenario. Pointer hover
+and keyboard focus update the persistent stage without changing page geometry.
+Click or keyboard activation pins the current preview so the reader can inspect
+its links and compare details without losing context.
+
+Every preview makes these boundaries visible:
+
+- industry problem and accountable user;
+- representative figure, workflow, or system topology;
+- tao3k platform faces used by the solution;
+- customer or partner capability that remains outside tao3k;
+- local, on-premises, hybrid, or cloud deployment profile;
+- evidence, qualification, and human-authority boundary;
+- link to the complete solution record.
+
+The preview is explanatory, not promotional decoration. A figure shows a real
+system relationship, evidence path, deployment boundary, or operational
+decision. It must not imply that a partner scenario is a shipped tao3k vertical
+SaaS product.
+
+*** Interaction contract
+
+- Keep one preview surface mounted and replace its content instead of opening
+  and closing adjacent floating windows.
+- Use hover intent and an exit grace period so movement between neighboring
+  triggers cannot produce flicker or competing panels.
+- Cross-fade and translate content inside the stable surface; never animate page
+  height, trigger position, or surrounding layout.
+- Make keyboard focus equivalent to pointer hover. Escape releases a pinned
+  preview and returns to the default selection.
+- On touch devices, use tap-to-select followed by tap-to-open; do not depend on
+  simulated hover.
+- Respect reduced-motion preferences and preserve the explanation without
+  animation.
+- Make the pinned state visible without covering navigation or content.
+
+The default stage contains one strong sentence, one system figure, and a compact
+capability and deployment ledger. Deeper implementation detail belongs in the
+linked solution record.
+
 * Lifecycle
 
 #+begin_example
@@ -144,6 +221,8 @@ their evidence on the way back.
 - [[file:../architecture/ADR-005-separate-flow-compiler-and-agent-runtime.org][ADR-005: Separate Flow Compiler and Agent Runtime]]
 - [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
 - [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:40.02_evidence_carrying_ontology_for_therapeutic_rd.org][Life Sciences System Requirements]]
+- [[file:40.03_enterprise_ai_decision_operations.org][Enterprise AI System Requirements]]
 - [[file:../architecture/RFC-001-reproducible-intelligence-systems.org][RFC-001: Reproducible Intelligence Systems]]
 - [[file:../architecture/ADR-004-action-authority-envelope.org][ADR-004: Action Authority Envelope]]
 - [[file:../platform/10.02_action_case_and_evidence_action_graph.org][Action Case and Evidence-Action Graph Engine]]

@@ -1,7 +1,8 @@
 set shell := ["bash", "-uc"]
 
 host := "127.0.0.1"
-org_zhixing_host := env_var_or_default("ORG_ZHIXING_HOST", "../orgize/.data/org-zhixing")
+org_zhixing_host := env_var_or_default("ORG_ZHIXING_HOST", "")
+org_zhixing_source := env_var_or_default("ORG_ZHIXING_SOURCE", "../orgize/.data/org-zhixing")
 
 default:
     @just --list
@@ -23,7 +24,6 @@ site port="3000":
     set -euo pipefail
 
     repo_root="$PWD"
-    zhixing_root="$(cd "{{org_zhixing_host}}" && pwd)"
     config_path="$repo_root/org-zhixing.toml"
     local_config_path="$repo_root/.cache/org-zhixing/local-preview.toml"
     content_root="$repo_root/docs"
@@ -32,7 +32,17 @@ site port="3000":
 
     test -f "$config_path"
     test -d "$content_root"
+
+    zhixing_root="$(direnv exec "$repo_root" node theme/src/build/prepare-local-host.mjs \
+      "$repo_root/package.json" \
+      "{{org_zhixing_source}}" \
+      "$repo_root/.cache/org-zhixing/hosts" \
+      "{{org_zhixing_host}}")"
     test -f "$zhixing_root/package.json"
+    zhixing_environment_root="{{org_zhixing_source}}"
+    if [ -n "{{org_zhixing_host}}" ]; then
+      zhixing_environment_root="$zhixing_root"
+    fi
 
     # A failed Rsbuild dev compilation must not be mistaken for a ready remote
     # because a manifest from an earlier run is still present.
@@ -74,12 +84,11 @@ site port="3000":
     echo "Org-Zhixing config: $local_config_path"
     echo "Site development server: http://{{host}}:{{port}}/"
     (
-      cd "$zhixing_root"
-      direnv exec . env \
+      direnv exec "$zhixing_environment_root" env \
         ORG_ZHIXING_CONFIG="$local_config_path" \
         ORG_ZHIXING_CONTENT_DIR="$content_root" \
         ORG_ZHIXING_BASE_PATH="/" \
-        just dev {{port}}
+        npm --prefix "$zhixing_root" run dev -- --port {{port}}
     )
 
 # Run the contract, Org, lint, type, application, and theme gates.

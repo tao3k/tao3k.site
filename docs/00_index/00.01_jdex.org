@@ -55,6 +55,7 @@ principles, solution, comparison, architecture, and operations documents.
 |-
 | 20.02 | [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]] | Accepted |
 | 20.03 | [[file:../brand/20.03_homepage_content_contract.org][Homepage Content Contract]] | Accepted |
+| 10.07 | [[file:../platform/10.07_platform_information_architecture.org][Platform Information Architecture]] | Accepted |
 | 30.03 | [[file:../principles/30.03_tao3k_values.org][tao3k Values and Principles]] | Accepted |
 | 60.01 | [[file:../roadmap/60.01_tao3k_ecosystem_roadmap.org][tao3k Ecosystem Roadmap]] | Active |
 | 70.01 | [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]] | Accepted |

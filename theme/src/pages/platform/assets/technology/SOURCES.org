@@ -1,0 +1,70 @@
+#+TITLE: Platform Technology Mark Sources
+#+AUTHOR: tao3k
+#+DATE: 2026-08-10
+#+FILETAGS: :tao3k:platform:brand:assets:
+#+STATUS: active
+#+OWNER: tao3k.site
+#+AUDIENCE: maintainers, brand reviewers, site engineering
+#+CLAIM_MATURITY: active-development
+
+* Purpose
+
+These marks identify upstream technologies used by the tao3k platform. They do not imply
+endorsement, partnership, or ownership by tao3k. The application imports local copies so the
+official site does not depend on third-party runtime requests.
+
+* Sources and terms
+
+** Bazel
+
+- File :: =bazel.svg=
+- Source :: https://github.com/bazelbuild/bazel/blob/master/site/en/images/bazel-navbar.svg
+- Project notice :: Bazel name and marks remain subject to the Bazel project's brand terms.
+
+** Gerbil Scheme
+
+- File :: =gerbil.svg=
+- Source :: https://cons.io/img/gerbil-detailed-consio_OPT.svg
+- Project :: https://cons.io/
+- Embedded license reference :: https://git.cons.io/mighty-gerbils/gerbil#logo
+- Runtime foundation :: https://gambitscheme.org/
+
+** Julia
+
+- File :: =julia.svg=
+- Source :: https://github.com/JuliaLang/julia-logo-graphics/blob/master/images/julia-dots.svg
+- Terms :: CC BY-NC-SA 4.0. Commercial publication requires a separate permission review.
+
+** Nix / NixOS
+
+- File :: =nixos.svg=
+- Source :: https://github.com/NixOS/nixos-artwork/blob/master/logo/nix-snowflake-colours.svg
+- Current brand authority :: https://github.com/NixOS/branding
+- Terms :: CC BY 4.0; the current NixOS branding repository contains the required attribution.
+
+** Lean
+
+- File :: =lean.svg=
+- Source :: https://lean-lang.org/logos/
+- Asset :: https://lean-lang.org/static/svg/lean-logo-official-TM-transparent-2400x900.svg
+- Terms :: Unmodified nominative use under the Lean FRO trademark policy; the TM remains visible.
+
+** Python
+
+- File :: =python.svg=
+- Source :: https://www.python.org/community/logos/
+- Asset :: https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg
+- Terms :: Unmodified nominative use under the Python Software Foundation trademark policy.
+
+** Rust
+
+- File :: =rust.svg=
+- Source :: https://rust-lang.org/static/images/rust-logo-blk.svg
+- Media guide :: https://rust-lang.org/policies/media-guide/
+- Terms :: CC BY; use also remains subject to the Rust trademark policy.
+
+* Scheme language mark
+
+Scheme has no single central official logo. The interface therefore combines a code-native lambda
+glyph with the official Gerbil mark and labels the runtime stack as Gambit + Gerbil Scheme. It does
+not present the lambda glyph as an official project trademark.

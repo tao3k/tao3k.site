@@ -10,6 +10,7 @@ import {
   type NodeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
+import { platformNavigation } from "./site-routes";
 import "./site-home.css";
 import "./site-mobile-fixes.css";
 import "./site-polish.css";
@@ -17,10 +18,45 @@ import "./site-polish.css";
 type NavigationItem = {
   readonly label: string;
   readonly href: string;
+  readonly children?: readonly NavigationChild[];
+};
+
+type NavigationChild = {
+  readonly label: string;
+  readonly href: string;
+  readonly detail: string;
+};
+
+const platformMenuPreviews: Readonly<
+  Record<
+    string,
+    { readonly question: string; readonly stages: readonly string[]; readonly result: string }
+  >
+> = {
+  platform: {
+    question: "How does the complete system move?",
+    stages: ["Native evidence", "Qualified action", "Searchable receipt"],
+    result: "One governed path from knowledge to operation and back.",
+  },
+  "on-premises": {
+    question: "What remains inside your boundary?",
+    stages: ["Customer data + identity", "Local policy", "Local runtime"],
+    result: "The customer infrastructure remains the operating authority.",
+  },
+  hybrid: {
+    question: "What may cross the boundary?",
+    stages: ["Local evidence", "Declared gateway", "Elastic compute", "Receipt return"],
+    result: "Capability moves; consequential authority stays local.",
+  },
+  "managed-cloud": {
+    question: "What makes managed operation inspectable?",
+    stages: ["Qualified tenant", "Named model + region", "Operation receipt"],
+    result: "Evidence remains portable, attributable and usable as an exit path.",
+  },
 };
 
 const fallbackNavigation: readonly NavigationItem[] = [
-  { label: "Platform", href: "/platform" },
+  { label: "Platform", href: "/platform", children: platformNavigation },
   { label: "Products", href: "/products" },
   { label: "Solutions", href: "/solutions" },
   { label: "Comparison", href: "/comparison" },
@@ -43,7 +79,23 @@ function projectNavigation(shell: unknown): readonly NavigationItem[] {
     if (!item || typeof item !== "object") return [];
     const label = (item as { readonly label?: unknown }).label;
     const href = (item as { readonly href?: unknown }).href;
-    return typeof label === "string" && typeof href === "string" ? [{ label, href }] : [];
+    const rawChildren = (item as { readonly children?: unknown }).children;
+    const children = Array.isArray(rawChildren)
+      ? rawChildren.flatMap((child): NavigationChild[] => {
+          if (!child || typeof child !== "object") return [];
+          const childLabel = (child as { readonly label?: unknown }).label;
+          const childHref = (child as { readonly href?: unknown }).href;
+          const detail = (child as { readonly detail?: unknown }).detail;
+          return typeof childLabel === "string" &&
+            typeof childHref === "string" &&
+            typeof detail === "string"
+            ? [{ label: childLabel, href: childHref, detail }]
+            : [];
+        })
+      : undefined;
+    return typeof label === "string" && typeof href === "string"
+      ? [{ label, href, ...(children && children.length > 0 ? { children } : {}) }]
+      : [];
   });
   return projected.length > 0 ? projected : fallbackNavigation;
 }
@@ -108,17 +160,137 @@ function ThemeModeToggle() {
   );
 }
 
+function PlatformNavigationMenu({ items }: { readonly items: readonly NavigationChild[] }) {
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const activeItem = items[activeIndex] ?? items[0];
+  const activePreviewId = activeItem?.href.split("/").at(-1) ?? "platform";
+  const activePreview = platformMenuPreviews[activePreviewId] ?? platformMenuPreviews.platform;
+
+  useEffect(() => {
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof globalThis.Node && !rootRef.current?.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      rootRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`tao3k-platform-menu${open ? " is-open" : ""}`}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+      }}
+      onPointerEnter={(event) => {
+        if (event.pointerType !== "touch") setOpen(true);
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType !== "touch") setOpen(false);
+      }}
+      ref={rootRef}
+    >
+      <button
+        aria-controls="tao3k-platform-navigation"
+        aria-expanded={open}
+        className="tao3k-platform-menu__trigger"
+        onClick={() => setOpen(true)}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowDown") {
+            event.preventDefault();
+            setOpen(true);
+          }
+        }}
+        type="button"
+      >
+        Platform <span aria-hidden="true">⌄</span>
+      </button>
+      <div
+        aria-hidden={!open}
+        className="tao3k-platform-menu__panel"
+        id="tao3k-platform-navigation"
+      >
+        <div className="tao3k-platform-menu__frame">
+          <section className="tao3k-platform-menu__directory">
+            <header>
+              <small>PLATFORM / DEPLOYMENT SURFACES</small>
+              <strong>One qualified system. Choose where its authority lives.</strong>
+            </header>
+            <nav aria-label="Platform navigation">
+              {items.map((item, index) => (
+                <a
+                  className={activeIndex === index ? "is-active" : undefined}
+                  href={item.href}
+                  key={item.href}
+                  onFocus={() => setActiveIndex(index)}
+                  onPointerEnter={() => setActiveIndex(index)}
+                  tabIndex={open ? 0 : -1}
+                >
+                  <span>{String(index).padStart(2, "0")}</span>
+                  <div>
+                    <strong>{item.label}</strong>
+                    <small>{item.detail}</small>
+                  </div>
+                  <i aria-hidden="true">↗</i>
+                </a>
+              ))}
+            </nav>
+          </section>
+          {activeItem ? (
+            <aside aria-label={`${activeItem.label} preview`} data-deployment={activePreviewId}>
+              <div className="tao3k-platform-menu__authority-map">
+                <small>{activePreview.question}</small>
+                <ol>
+                  {activePreview.stages.map((stage, index) => (
+                    <li key={stage}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <strong>{stage}</strong>
+                    </li>
+                  ))}
+                </ol>
+                <p>{activePreview.result}</p>
+              </div>
+              <small>QUALIFIED DEPLOYMENT</small>
+              <strong>{activeItem.label}</strong>
+              <p>{activeItem.detail}</p>
+            </aside>
+          ) : null}
+        </div>
+        <footer>
+          <span>DEPLOYMENT IS AN AUTHORITY MODEL</span>
+          <small>Same reproducible core · independently qualified boundary</small>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
 export function Tao3kSiteHeader({ shell }: { readonly shell?: unknown }) {
   const navigation = useMemo(() => projectNavigation(shell), [shell]);
   return (
     <header className="tao3k-header">
       <BrandMark />
       <nav className="tao3k-header__nav" aria-label="Primary navigation">
-        {navigation.map((item) => (
-          <a href={item.href} key={`${item.href}:${item.label}`}>
-            {item.label}
-          </a>
-        ))}
+        {navigation.map((item) =>
+          item.children ? (
+            <PlatformNavigationMenu items={item.children} key={`${item.href}:${item.label}`} />
+          ) : (
+            <a href={item.href} key={`${item.href}:${item.label}`}>
+              {item.label}
+            </a>
+          ),
+        )}
       </nav>
       <div className="tao3k-header__actions">
         <ThemeModeToggle />
@@ -131,6 +303,21 @@ export function Tao3kSiteHeader({ shell }: { readonly shell?: unknown }) {
 }
 
 const evidenceInputs = ["Knowledge", "Code", "Scientific models", "Human records"] as const;
+
+const systemBoundaries = [
+  {
+    layer: "MODELS & CODING AGENTS",
+    purpose: "Generate, reason and help complete a task.",
+  },
+  {
+    layer: "CLOUD & MODEL PLATFORMS",
+    purpose: "Host, scale and make intelligence available.",
+  },
+  {
+    layer: "TAO3K",
+    purpose: "Preserve evidence, qualify action, recover work and return receipts.",
+  },
+] as const;
 
 function AdmissibilityStage() {
   return (
@@ -346,30 +533,56 @@ export function Tao3kSiteHome(_props: { readonly title?: string } = {}) {
     <main className="tao3k-home">
       <section className="tao3k-home-hero">
         <div className="tao3k-home-hero__copy">
-          <p className="tao3k-eyebrow">SCIENTIFIC EVIDENCE INFRASTRUCTURE</p>
+          <p className="tao3k-eyebrow">THE SYSTEM AROUND AI</p>
           <h1>
-            Turn intelligence into
-            <span>reproducible work.</span>
+            Build AI systems
+            <span>that can continue.</span>
           </h1>
           <p className="tao3k-home-hero__lede">
-            tao3k turns knowledge, code, scientific models and human records into admissible
-            action—and turns every action back into searchable, verifiable and evolvable evidence.
+            For vertical enterprises, product partners and serious users, tao3k provides the
+            evidence, authority, durable state and recovery system around AI.
           </p>
           <p className="tao3k-home-hero__human">
-            Real work needs more than a plausible answer: it needs a record of what was known, why
-            an action was allowed, who remains responsible, and how the result can be checked,
-            repeated and improved.
+            Use the best models. Keep your own system. tao3k does not replace models, clouds or
+            coding agents; it makes their work traceable, qualified, recoverable and reusable.
           </p>
           <div className="tao3k-home-hero__actions">
             <a className="tao3k-button tao3k-button--primary" href="/platform">
-              Explore the vision <span aria-hidden="true">→</span>
+              Explore the system <span aria-hidden="true">→</span>
             </a>
-            <a className="tao3k-button tao3k-button--quiet" href="/roadmap">
-              View the roadmap
+            <a className="tao3k-button tao3k-button--quiet" href="/solutions">
+              See industry systems
             </a>
           </div>
         </div>
         <AdmissibilityStage />
+      </section>
+
+      <section className="tao3k-home-system-boundary" aria-labelledby="system-boundary-title">
+        <header>
+          <p className="tao3k-section-index">THE DISTINCTION</p>
+          <h2 id="system-boundary-title">Not another model, cloud, or chat window.</h2>
+          <p>
+            Vertical products bring their domain expertise and interfaces. tao3k supplies the system
+            layer that lets intelligence survive beyond one session, provider or model cycle.
+          </p>
+        </header>
+        <ol>
+          {systemBoundaries.map((item, index) => (
+            <li className={index === 2 ? "is-tao3k" : undefined} key={item.layer}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{item.layer}</strong>
+              <p>{item.purpose}</p>
+            </li>
+          ))}
+        </ol>
+        <aside>
+          <strong>Vertical systems are built on tao3k.</strong>
+          <p>
+            Clinical conversations, scientific evidence review, industrial intervention and personal
+            research are scenarios or partner products—not separate tao3k SaaS claims.
+          </p>
+        </aside>
       </section>
 
       <LiveEvidenceFlow />

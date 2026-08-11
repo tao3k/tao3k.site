@@ -24,19 +24,19 @@ Intelligence must earn the right to act.
 The approved public heading is:
 
 #+begin_quote
-Turn intelligence into reproducible work.
+Build AI systems that can continue.
 #+end_quote
 
 The stable description is:
 
 #+begin_quote
-tao3k turns knowledge, code, scientific models and human records into admissible action—and turns every action back into searchable, verifiable and evolvable evidence.
+For vertical enterprises, product partners and serious users, tao3k provides the evidence, authority, durable state and recovery system around AI.
 #+end_quote
 
 The human explanation is:
 
 #+begin_quote
-Real work needs more than a plausible answer. It needs a record of what was known, why an action was allowed, who remains responsible, and how the result can be checked, repeated, and improved.
+Use the best models. Keep your own system. tao3k does not replace models, clouds or coding agents; it makes their work traceable, qualified, recoverable and reusable.
 #+end_quote
 
 The primary calls to action are =Explore the vision= and =View the roadmap=. Open-source and documentation actions remain visible without displacing the doctrine.
@@ -47,17 +47,36 @@ The primary calls to action are =Explore the vision= and =View the roadmap=. Ope
 
 Render the hero from the canonical message hierarchy rather than composing new campaign copy:
 
-- Category :: Evidence--Action Ecosystem
-- Heading :: Turn intelligence into reproducible work.
-- Promise :: tao3k turns knowledge, code, scientific models, and human records into admissible action---and turns every action back into searchable, verifiable, and evolvable evidence.
+- Category :: Evidence--Action System Infrastructure
+- Heading :: Build AI systems that can continue.
+- Promise :: tao3k provides the evidence, authority, durable state, and recovery system around AI for vertical enterprises, product partners, and serious users.
 - Commitment :: Built for scientific standards, accountable operation, research-to-industry continuity, open technical agency, and long-term stewardship.
-- Primary actions :: Explore the Evidence--Action Ecosystem; See How Intelligence Earns the Right to Act.
+- Primary actions :: Explore the System; See Industry Systems.
 - Secondary actions :: View the Roadmap; Explore Open Source Projects.
 - Commercial action :: Work with tao3k.
 
-Do not use /Get Started/ or /Book a Demo/ as the dominant hero action, and do not classify tao3k as a generic AI, workflow, knowledge, agent, or operating-system product.
+Do not use /Get Started/ or /Book a Demo/ as the dominant hero action, and do not classify tao3k as a generic AI assistant, workflow, knowledge, agent, or operating-system product.
 
-Lead with =Turn intelligence into reproducible work.= and the stable company description. =Intelligence must earn the right to act.= remains the governing doctrine that gives the heading its practical meaning. Keep product names and training-data claims out of the opening claim. The primary actions are =Explore the vision= and =View the roadmap=.
+Lead with =Build AI systems that can continue.= and the stable company description. =Intelligence must earn the right to act.= remains the governing doctrine that gives the heading its practical meaning. Keep product names and training-data claims out of the opening claim. The primary actions are =Explore the system= and =See industry systems=.
+
+** 1a. The non-replacement boundary
+
+Immediately after the Hero, distinguish the system layer from adjacent capability
+layers:
+
+- Models and coding agents :: generate, reason, and help complete a task;
+- Cloud and model platforms :: host, scale, and make intelligence available; and
+- tao3k :: preserve evidence, qualify action, recover work, and return receipts.
+
+Do not make a feature-count or superiority claim about named providers.  State
+the complementary boundary: tao3k may use the best available model, cloud, or
+coding agent while preserving a user- or organisation-owned system of evidence,
+authority, durable state, and outcomes.
+
+Vertical products bring their domain expertise and interfaces.  tao3k supplies
+the reusable system layer beneath them.  Clinical conversations, scientific
+evidence review, industrial intervention, and personal research are partner or
+customer scenarios; they are not separate tao3k end-user SaaS claims.
 
 ** 2. The root problem
 

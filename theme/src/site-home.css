@@ -48,7 +48,7 @@ a {
   background: color-mix(in srgb, var(--tao-paper) 92%, transparent);
   backdrop-filter: blur(18px);
   max-width: 100vw;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .tao3k-brand {
@@ -252,6 +252,87 @@ a {
 }
 .tao3k-button--quiet {
   background: rgba(255, 255, 255, 0.24);
+}
+
+.tao3k-home-system-boundary {
+  padding: clamp(82px, 10vw, 148px) clamp(24px, 4.4vw, 76px);
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(450px, 1.2fr);
+  gap: 74px clamp(50px, 10vw, 170px);
+  color: #e7f2ec;
+  background: #10241f;
+}
+.tao3k-home-system-boundary header h2 {
+  max-width: 620px;
+  margin: 0;
+  font:
+    500 clamp(2.8rem, 5vw, 5.5rem)/0.95 Georgia,
+    "Times New Roman",
+    serif;
+  letter-spacing: -0.06em;
+}
+.tao3k-home-system-boundary header > p:last-child {
+  max-width: 560px;
+  margin: 28px 0 0;
+  color: #a6bbb1;
+  line-height: 1.68;
+}
+.tao3k-home-system-boundary .tao3k-section-index {
+  color: var(--tao-mint);
+}
+.tao3k-home-system-boundary ol {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(196, 239, 213, 0.18);
+  list-style: none;
+}
+.tao3k-home-system-boundary li {
+  min-height: 115px;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(196, 239, 213, 0.18);
+  display: grid;
+  grid-template-columns: 48px minmax(150px, 0.75fr) 1.25fr;
+  gap: 18px;
+  align-items: start;
+}
+.tao3k-home-system-boundary li > span,
+.tao3k-home-system-boundary li > strong {
+  color: #91a89d;
+  font:
+    700 0.62rem/1.5 "IBM Plex Mono",
+    "SFMono-Regular",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.tao3k-home-system-boundary li > p {
+  margin: 0;
+  color: #aebfb7;
+  line-height: 1.55;
+}
+.tao3k-home-system-boundary li.is-tao3k > span,
+.tao3k-home-system-boundary li.is-tao3k > strong {
+  color: var(--tao-mint);
+}
+.tao3k-home-system-boundary li.is-tao3k > p {
+  color: #e8f5ee;
+}
+.tao3k-home-system-boundary aside {
+  grid-column: 2;
+  padding-top: 29px;
+  border-top: 2px solid var(--tao-mint);
+}
+.tao3k-home-system-boundary aside strong {
+  color: var(--tao-mint);
+  font:
+    500 1.25rem/1.25 Georgia,
+    "Times New Roman",
+    serif;
+}
+.tao3k-home-system-boundary aside p {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: #a6bbb1;
+  line-height: 1.65;
 }
 
 .tao3k-stage {
@@ -851,6 +932,12 @@ a {
   .tao3k-home-hero {
     grid-template-columns: 1fr;
   }
+  .tao3k-home-system-boundary {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-home-system-boundary aside {
+    grid-column: auto;
+  }
   .tao3k-stage {
     width: min(760px, 100%);
     justify-self: center;
@@ -881,6 +968,17 @@ a {
   }
   .tao3k-home-hero {
     padding: 66px 20px 72px;
+  }
+  .tao3k-home-system-boundary {
+    padding: 76px 20px;
+    gap: 48px;
+  }
+  .tao3k-home-system-boundary li {
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+  }
+  .tao3k-home-system-boundary li > p {
+    grid-column: 2;
   }
   .tao3k-live {
     min-height: 900px;

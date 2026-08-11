@@ -1,0 +1,93 @@
+.tao3k-platform-overview-hero {
+  min-height: min(880px, 90vh);
+  padding: clamp(120px, 14vh, 190px) clamp(28px, 6vw, 108px) clamp(78px, 10vh, 132px);
+  border-bottom: 1px solid var(--platform-line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
+  gap: clamp(64px, 9vw, 170px);
+  align-items: end;
+  background:
+    linear-gradient(122deg, transparent 54%, rgba(142, 242, 197, 0.045)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(20% - 1px),
+      rgba(151, 238, 197, 0.032) 20%
+    );
+}
+
+.tao3k-platform-overview-hero__copy h1 {
+  max-width: 1220px;
+  margin: 0;
+  font-size: clamp(4rem, 7.25vw, 8.4rem);
+  font-weight: 550;
+  line-height: 0.9;
+  letter-spacing: -0.072em;
+}
+
+.tao3k-platform-overview-hero__lead {
+  max-width: 850px;
+  margin: clamp(36px, 5vh, 64px) 0 0;
+  color: #a8bdb5;
+  font-size: clamp(1.08rem, 1.35vw, 1.42rem);
+  line-height: 1.62;
+}
+
+.tao3k-platform-overview-hero aside {
+  padding-top: 28px;
+  border-top: 1px solid rgba(141, 240, 194, 0.58);
+}
+
+.tao3k-platform-overview-hero aside > span {
+  color: #8df0c2;
+  font:
+    700 0.65rem/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.15em;
+}
+
+.tao3k-platform-overview-hero dl {
+  margin: 28px 0 0;
+}
+
+.tao3k-platform-overview-hero dl div {
+  padding: 18px 0;
+  border-top: 1px solid var(--platform-line);
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 22px;
+}
+
+.tao3k-platform-overview-hero dt {
+  color: #698079;
+  font:
+    650 0.62rem/1.55 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+
+.tao3k-platform-overview-hero dd {
+  margin: 0;
+  color: #d7e5e0;
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+
+@media (max-width: 900px) {
+  .tao3k-platform-overview-hero {
+    min-height: auto;
+    padding-top: 108px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .tao3k-platform-overview-hero {
+    padding: 96px 20px 72px;
+    gap: 58px;
+  }
+
+  .tao3k-platform-overview-hero__copy h1 {
+    font-size: clamp(3.25rem, 15vw, 5.2rem);
+  }
+}
