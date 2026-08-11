@@ -49,6 +49,58 @@ Every Products entry links to the responsible GitHub repository and project docu
 
 Platform and architecture records in tao3k.site define brand-level roles, relationships, future direction, and site narrative. They do not supersede project-owned technical documentation.
 
+** Platform, Products, and Solutions taxonomy
+
+The three destinations describe different public object types. They are not
+three editorial variations of the same capability list.
+
+| Destination | Canonical object | Question answered | Owns | Must not own |
+|-
+| Platform | Shared capability domain and system law | How does the tao3k system work across products and industries? | architecture, contracts, lifecycle, authority, data, compute, operations, deployment | project catalogues, vertical sales stories, duplicated release status |
+| Products | Independently adoptable and maintained deliverable | What can a user install, integrate, extend, or procure? | identity, role, owner, repository, docs, release and adoption boundary | ecosystem-wide architecture, invented implementation facts, industry outcome claims |
+| Solutions | Outcome-specific system composition | How is a concrete industrial or research problem addressed? | problem, accountable user, composition, workflow, deployment profile, evidence and authority boundary, expected outcome | generic feature catalogues, disguised product directories, terminal vertical SaaS claims |
+
+*** Classification tests
+
+1. If the concept survives replacement of every current implementation, it is
+   Platform.
+2. If it has an independent identity, owner, repository or distribution unit,
+   documentation, version or release lifecycle, it is a Product.
+3. If it requires a named industry context, accountable actor, workflow,
+   constraints, deployment setting, and outcome, it is a Solution.
+4. If an item passes more than one test, one canonical owner is selected and the
+   other pages reference it instead of copying its explanation.
+
+*** Shared facets
+
+Deployment locality, lifecycle stage, maturity, audience, evidence grade, and
+authority risk are facets, not primary navigation categories. The same Platform
+capability, Product, or Solution may be filtered or annotated by these facets
+without changing object identity.
+
+*** Reference direction
+
+Platform defines each shared capability once. Products declare which Platform
+capabilities they implement or expose. Solutions compose Platform capability
+references, Product references, customer or partner components, and a deployment
+profile. Project-owned documentation remains authoritative for shipped status,
+APIs, benchmarks, and release evidence.
+
+*** Platform content boundary
+
+Platform is the customer-facing system of stable responsibilities connecting
+evidence, knowledge and data, reasoning and science, qualification, governed
+operation, and reproducible delivery.  It answers how an enterprise constructs
+and operates a qualified vertical AI system.  It does not answer which project
+owns a repository, which industry scenario should be adopted, which competitor
+is preferable, or why tao3k holds a social principle.
+
+The overview and subroute contract is defined in
+[[file:../platform/10.07_platform_information_architecture.org][Platform Information Architecture]].
+Platform capability pages reference Products as implementation evidence and
+Solutions as applied compositions.  They must not copy either destination's
+canonical content.
+
 * Primary navigation
 
 The primary Navigator is:
@@ -133,6 +185,26 @@ Research-to-Operations is a core mission presented prominently on Home, Vision, 
 Products opens a desktop menu containing a limited, scannable list of open-source projects, their short roles, and direct GitHub and Documentation actions. A =View all products= action enters =/products=.
 
 The menu does not contain detailed feature matrices or long descriptions. Those belong to the project documentation.
+
+* Page implementation boundary
+
+The application page registry is a routing boundary, not a page implementation
+module.  =theme/src/site-pages.tsx= maps stable route IDs to independently owned
+page components and supplies the shared document shell.  It must not accumulate
+page copy, datasets, timers, visual state machines, or page-owned CSS.
+
+Each primary route owns a directory under =theme/src/pages/=.  Its TypeScript
+and CSS remain colocated.  A complex interactive feature becomes a child module
+inside that route directory when it owns state, animation, accessibility
+behavior, or a distinct visual contract.  The Platform delivery model therefore
+owns its Scheme-to-SDLC-to-SDOS state machine and styles separately from the
+Platform overview and deployment-mode pages.
+
+=site-pages.css= is restricted to the small cross-route shell and responsive
+coordination layer.  Page-owned selectors belong to their page module.  Moving
+code out of the registry without separating ownership is not sufficient: the
+dependency direction must remain registry -> page -> feature, never feature ->
+registry.
 
 * Mobile and accessibility
 

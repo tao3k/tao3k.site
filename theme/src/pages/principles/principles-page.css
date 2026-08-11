@@ -1,0 +1,652 @@
+/* Principles: manifesto typography and a numbered charter. */
+.tao3k-principles-page {
+  color: #f0eee7;
+  background: #211f2d;
+}
+.tao3k-principles-hero {
+  min-height: 760px;
+  padding: clamp(100px, 12vw, 190px) clamp(24px, 9vw, 150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(circle at 86% 15%, rgba(115, 88, 217, 0.25), transparent 30%);
+}
+.tao3k-principles-hero .tao3k-route-kicker {
+  color: #bbaaff;
+}
+.tao3k-principles-hero blockquote {
+  max-width: 1250px;
+  margin: 0;
+  font:
+    400 clamp(3.6rem, 7vw, 7.5rem)/0.98 Georgia,
+    serif;
+  letter-spacing: -0.055em;
+}
+.tao3k-principles-hero > p:not(.tao3k-route-kicker) {
+  max-width: 720px;
+  margin: 50px 0 0 auto;
+  color: #aaa7b8;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.tao3k-principles-risk {
+  margin-top: 120px;
+  padding: 100px clamp(24px, 9vw, 150px);
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 100px;
+  color: var(--tao-ink);
+  background: #c9ffdf;
+}
+.tao3k-principles-risk span {
+  font:
+    700 0.65rem/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.tao3k-principles-risk h2 {
+  margin: 36px 0 0;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+.tao3k-principles-risk > p {
+  align-self: end;
+  line-height: 1.72;
+}
+
+/* Principles is a public governance surface, not a repeated product grid. */
+.tao3k-principles-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.tao3k-principles-hero {
+  order: 1;
+}
+
+.tao3k-values-thesis {
+  order: 2;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(420px, 1.2fr);
+  gap: clamp(48px, 8vw, 150px);
+  padding: clamp(78px, 10vw, 150px) clamp(24px, 6vw, 104px);
+  border-top: 1px solid var(--tao-line);
+  border-bottom: 1px solid var(--tao-line);
+}
+
+.tao3k-values-thesis-heading span,
+.tao3k-values-audience,
+.tao3k-values-operating-model > header span,
+.tao3k-values-refusals > div span {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--tao-accent, #65c997);
+  font-family: var(--tao-mono);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.15em;
+}
+
+.tao3k-values-thesis h2,
+.tao3k-values-operating-model h2,
+.tao3k-values-refusals h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.35rem, 5.4vw, 6.4rem);
+  font-weight: 610;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.tao3k-values-thesis-copy {
+  display: grid;
+  align-content: end;
+  gap: 34px;
+  max-width: 780px;
+}
+
+.tao3k-values-thesis-copy p {
+  margin: 0;
+  font-size: clamp(1.08rem, 1.65vw, 1.52rem);
+  line-height: 1.62;
+}
+
+.tao3k-values-thesis-copy p:first-child {
+  font-size: clamp(1.35rem, 2.35vw, 2.35rem);
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.tao3k-values-alignment {
+  order: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--tao-line);
+}
+
+.tao3k-values-partner {
+  position: relative;
+  min-width: 0;
+  padding: clamp(60px, 7vw, 112px) clamp(24px, 6vw, 104px);
+  overflow: hidden;
+}
+
+.tao3k-values-partner + .tao3k-values-partner {
+  border-left: 1px solid var(--tao-line);
+}
+
+.tao3k-values-partner::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--tao-accent, #65c997) 12%, transparent),
+    transparent 54%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.tao3k-values-enterprise::before {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, #a98bd8 13%, transparent),
+    transparent 54%
+  );
+}
+
+.tao3k-values-partner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tao3k-values-enterprise .tao3k-values-audience {
+  color: #a98bd8;
+}
+
+.tao3k-values-partner header {
+  display: block;
+  min-height: 330px;
+}
+
+.tao3k-values-partner h2 {
+  max-width: 11ch;
+  margin: 0 0 28px;
+  font-size: clamp(2.4rem, 4.8vw, 5.6rem);
+  font-weight: 620;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
+}
+
+.tao3k-values-partner header p {
+  max-width: 52ch;
+  margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.28rem);
+  line-height: 1.55;
+  opacity: 0.76;
+}
+
+.tao3k-values-partner ol {
+  margin: 52px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--tao-line);
+  list-style: none;
+}
+
+.tao3k-values-partner li {
+  display: block;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--tao-line);
+}
+
+.tao3k-values-partner strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.tao3k-values-partner li p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.68;
+}
+
+.tao3k-values-operating-model {
+  order: 5;
+  padding: clamp(78px, 10vw, 150px) clamp(24px, 5vw, 88px);
+  border-top: 1px solid var(--tao-line);
+  border-bottom: 1px solid var(--tao-line);
+}
+
+.tao3k-values-operating-model > header {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  align-items: end;
+  gap: 48px;
+  margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.tao3k-values-operating-model > header span {
+  margin: 0;
+}
+
+.tao3k-values-operating-model h2 {
+  max-width: 13ch;
+}
+
+.tao3k-values-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr) 28px) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tao3k-values-rail li {
+  min-height: 230px;
+  padding: 26px 24px;
+  border-top: 2px solid currentcolor;
+  background: color-mix(in srgb, currentcolor 3%, transparent);
+}
+
+.tao3k-values-rail li span {
+  display: block;
+  margin-bottom: 54px;
+  font-family: var(--tao-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  opacity: 0.52;
+}
+
+.tao3k-values-rail li strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.08rem;
+}
+
+.tao3k-values-rail li p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.52;
+  opacity: 0.66;
+}
+
+.tao3k-values-rail > i {
+  align-self: center;
+  font-family: var(--tao-mono);
+  font-size: 1.15rem;
+  font-style: normal;
+  opacity: 0.4;
+}
+
+.tao3k-values-mutual-choice {
+  order: 6;
+  display: grid;
+  grid-template-columns: 0.42fr 1.2fr 0.7fr;
+  align-items: end;
+  gap: clamp(36px, 7vw, 120px);
+  padding: clamp(88px, 11vw, 172px) clamp(24px, 6vw, 104px);
+  border-bottom: 1px solid var(--tao-line);
+  background: color-mix(in srgb, var(--tao-accent, #65c997) 7%, transparent);
+}
+
+.tao3k-values-mutual-choice > span {
+  align-self: start;
+  color: var(--tao-accent, #65c997);
+  font-family: var(--tao-mono);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.15em;
+}
+
+.tao3k-values-mutual-choice blockquote {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--tao-serif);
+  font-size: clamp(2.5rem, 5.3vw, 6.4rem);
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.tao3k-values-mutual-choice > p {
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  line-height: 1.6;
+  opacity: 0.72;
+}
+
+.tao3k-values-pressure {
+  order: 7;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(260px, 0.62fr) minmax(380px, 1fr);
+  min-height: 780px;
+  border-bottom: 1px solid var(--tao-line);
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 66.666%,
+      var(--tao-line) 66.666% 66.75%,
+      transparent 66.75%
+    ),
+    color-mix(in srgb, var(--tao-accent, #65c997) 3%, transparent);
+}
+
+.tao3k-values-pressure > header,
+.tao3k-values-pressure__choices,
+.tao3k-values-pressure__reading {
+  padding: clamp(54px, 7vw, 108px) clamp(24px, 4vw, 72px);
+}
+
+.tao3k-values-pressure > header {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--tao-line);
+}
+
+.tao3k-values-pressure > header > span,
+.tao3k-values-pressure__reading-content > span {
+  color: var(--tao-accent, #65c997);
+  font-family: var(--tao-mono);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.15em;
+}
+
+.tao3k-values-pressure > header h2 {
+  max-width: 10ch;
+  margin: auto 0 34px;
+  font-size: clamp(2.5rem, 4.8vw, 5.8rem);
+  font-weight: 610;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
+}
+
+.tao3k-values-pressure > header p {
+  max-width: 38ch;
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  opacity: 0.64;
+}
+
+.tao3k-values-pressure__choices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  border-right: 1px solid var(--tao-line);
+}
+
+.tao3k-values-pressure__choice {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  border-bottom: 1px solid var(--tao-line);
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: color 180ms ease;
+}
+
+.tao3k-values-pressure__choice::before {
+  position: absolute;
+  inset: 8px -14px;
+  z-index: -1;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--tao-accent, #65c997) 10%, transparent);
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.96);
+  transition:
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.tao3k-values-pressure__choice:first-child {
+  border-top: 1px solid var(--tao-line);
+}
+
+.tao3k-values-pressure__choice > i {
+  font-family: var(--tao-mono);
+  font-size: 0.66rem;
+  font-style: normal;
+  opacity: 0.42;
+}
+
+.tao3k-values-pressure__choice > strong {
+  font-family: var(--tao-mono);
+  font-size: clamp(0.76rem, 0.9vw, 0.9rem);
+  letter-spacing: 0.08em;
+}
+
+.tao3k-values-pressure__choice[data-preview-active] {
+  color: var(--tao-accent, #65c997);
+}
+
+.tao3k-values-pressure__choice[data-preview-active]::before,
+.tao3k-values-pressure__choice[data-focus-visible]::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.tao3k-values-pressure__choice[data-focus-visible] {
+  box-shadow: inset 3px 0 var(--tao-accent, #65c997);
+}
+
+.tao3k-values-pressure__choice[data-selected] > i {
+  opacity: 1;
+}
+
+.tao3k-values-pressure__reading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 25% 35%,
+    color-mix(in srgb, var(--tao-accent, #65c997) 10%, transparent),
+    transparent 48%
+  );
+}
+
+.tao3k-values-pressure__reading-content {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  justify-content: center;
+  animation: tao3k-principle-summon 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes tao3k-principle-summon {
+  from {
+    opacity: 0.28;
+    filter: blur(3px);
+    clip-path: inset(0 0 0 12%);
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    clip-path: inset(0);
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tao3k-values-pressure__choice,
+  .tao3k-values-pressure__choice::before {
+    transition: none;
+  }
+
+  .tao3k-values-pressure__reading-content {
+    animation: none;
+  }
+
+  .tao3k-trust-hero__rail-signal::after {
+    animation: none;
+  }
+
+  .tao3k-platform-face__path::after {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.tao3k-values-pressure__reading-content h3 {
+  max-width: 12ch;
+  margin: 42px 0 32px;
+  font-family: var(--tao-serif);
+  font-size: clamp(2.7rem, 5vw, 6rem);
+  font-weight: 520;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.tao3k-values-pressure__reading-content p {
+  max-width: 38ch;
+  margin: 0;
+  font-size: clamp(1.06rem, 1.4vw, 1.4rem);
+  line-height: 1.55;
+}
+
+.tao3k-values-pressure__reading-content small {
+  max-width: 48ch;
+  margin-top: 72px;
+  padding-top: 18px;
+  border-top: 1px solid var(--tao-line);
+  font-family: var(--tao-mono);
+  font-size: 0.68rem;
+  line-height: 1.6;
+  opacity: 0.52;
+}
+
+.tao3k-values-refusals {
+  order: 8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(50px, 9vw, 170px);
+  padding: clamp(78px, 10vw, 150px) clamp(24px, 6vw, 104px);
+  background: color-mix(in srgb, #c46f66 7%, transparent);
+}
+
+.tao3k-values-refusals > div span {
+  color: #c98279;
+}
+
+.tao3k-values-refusals ul {
+  align-self: end;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--tao-line);
+  list-style: none;
+}
+
+.tao3k-values-refusals li {
+  position: relative;
+  padding: 22px 42px 22px 0;
+  border-bottom: 1px solid var(--tao-line);
+  font-size: clamp(1rem, 1.25vw, 1.28rem);
+  line-height: 1.4;
+}
+
+.tao3k-values-refusals li::after {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  font-family: var(--tao-mono);
+  content: "×";
+  opacity: 0.52;
+  transform: translateY(-50%);
+}
+
+.tao3k-principles-risk {
+  order: 9;
+}
+
+@media (max-width: 1100px) {
+  .tao3k-values-pressure {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    background: color-mix(in srgb, var(--tao-accent, #65c997) 3%, transparent);
+  }
+
+  .tao3k-values-pressure > header,
+  .tao3k-values-pressure__choices {
+    border-right: 0;
+    border-bottom: 1px solid var(--tao-line);
+  }
+
+  .tao3k-values-pressure > header h2 {
+    margin-top: 88px;
+  }
+
+  .tao3k-values-pressure__reading-content {
+    min-height: clamp(360px, 70vw, 500px);
+  }
+}
+
+@media (max-width: 900px) {
+  .tao3k-values-thesis,
+  .tao3k-values-alignment,
+  .tao3k-values-operating-model > header,
+  .tao3k-values-mutual-choice,
+  .tao3k-values-refusals {
+    grid-template-columns: 1fr;
+  }
+
+  .tao3k-values-thesis {
+    gap: 52px;
+  }
+
+  .tao3k-values-partner + .tao3k-values-partner {
+    border-top: 1px solid var(--tao-line);
+    border-left: 0;
+  }
+
+  .tao3k-values-partner header {
+    min-height: auto;
+  }
+
+  .tao3k-values-operating-model > header {
+    align-items: start;
+  }
+
+  .tao3k-values-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .tao3k-values-rail > i {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .tao3k-values-thesis,
+  .tao3k-values-partner,
+  .tao3k-values-operating-model,
+  .tao3k-values-mutual-choice,
+  .tao3k-values-pressure > header,
+  .tao3k-values-pressure__choices,
+  .tao3k-values-pressure__reading,
+  .tao3k-values-refusals {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .tao3k-values-thesis h2,
+  .tao3k-values-operating-model h2,
+  .tao3k-values-refusals h2,
+  .tao3k-values-partner h2 {
+    max-width: none;
+  }
+}

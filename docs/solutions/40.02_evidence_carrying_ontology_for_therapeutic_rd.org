@@ -1,0 +1,143 @@
+#+TITLE: Life Sciences System Requirements
+#+DATE: 2026-08-09
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:solutions:industry:life-sciences:ontology:requirements:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: biopharma, translational research, data platforms, and scientific operations
+#+CLAIM_MATURITY: policy
+
+* Industry adaptation
+
+This record defines the requirements tao3k must preserve when a life-sciences
+company or product partner builds a therapeutic, diagnostic, laboratory, or
+research workflow on its system layer.
+
+The partner owns the domain workflow, scientific interface, and product claim.
+tao3k provides the evidence, semantic, qualification, composition, and durable
+execution infrastructure beneath it.
+
+* Purpose
+
+This is not a tao3k therapeutic-R&D product specification.  It is an industry
+adaptation contract that makes the system requirements explicit without
+claiming that tao3k diagnoses patients, recommends treatment, replaces a
+scientist, or provides a regulatory determination.
+
+Its narrow objective is to make research evidence, semantic relationships, and
+promotion conditions inspectable before they influence a consequential research
+or operational decision.
+
+* Current failure
+
+Drug discovery and translational research move through papers, assay results,
+ELNs, protocol revisions, private datasets, CSV exports, model outputs, and
+clinical evidence.  These materials can be searchable while still failing to
+support a trustworthy scientific handoff.
+
+The failure modes are concrete:
+
+- a semantically similar text span is mistaken for a valid biological or
+  clinical relationship;
+- a source and target exist but their relation has no valid domain/range type;
+- a projection is stale after an assay, registry, or private extension changes;
+- an otherwise plausible relation has no evidence anchor, review state, or
+  privacy scope; and
+- an AI-generated summary crosses from candidate extraction into scientific
+  assertion without an explicit promotion decision.
+
+These are not retrieval-quality problems alone.  They are ontology, evidence,
+and authority problems.
+
+* Tao3k system responsibilities
+
+tao3k provides an evidence-carrying ontology read-model boundary rather than a
+graph store or embedding index.  A partner can compose this boundary into its
+own clinical, laboratory, therapeutic, or research application.
+
+#+begin_example
+PDF / ELN / assay / dataset / protocol
+-> candidate extraction
+-> typed object, relation, and evidence read-model
+-> domain/range, freshness, provenance, privacy, and review gate
+-> ontology promotion decision
+-> partner-composed POO Flow scenario
+-> attributable research or operational receipt
+#+end_example
+
+The source systems retain authority over their records.  Wendao materialises a
+typed read-model with source identity, evidence spans, projection version and
+status.  GQL Rust can ask precise questions over the graph-shaped evidence.
+Ascent can derive declared relations without converting a derivation into source
+authority.  Julia and Catlab/ACSets remain validation and research-proof
+surfaces for structural invariants; they do not become the source parser,
+ontology mutation authority, or resident runtime.
+
+* Non-negotiable requirements
+
+No material relation enters a high-confidence research evidence set unless it
+has all of the following:
+
+1. a registered object type and relation kind;
+2. source and target objects whose types satisfy the declared domain/range;
+3. an addressable evidence anchor and source identity;
+4. a current projection version, explicit freshness or staleness status, and
+   applicable privacy scope;
+5. a confidence and human-review state that distinguish candidate from accepted
+   evidence; and
+6. a named promotion authority for the intended research use.
+
+An invalid relation is valuable output.  A missing type, stale projection, or
+missing evidence anchor becomes a visible gate failure, not a silently ranked
+answer.
+
+* Partner-composed scenarios
+
+The following are examples a partner may compose.  They are not a universal
+medical workflow or a claim that tao3k supplies an end-user clinical product:
+
+- /Evidence Intake/ :: classify incoming literature, assay and protocol material
+  into candidate objects, relations, and evidence anchors;
+- /Relation Readiness/ :: test domain/range, registry presence, projection
+  freshness, privacy, and review conditions before promotion;
+- /Hypothesis Review/ :: assemble a bounded evidence case for an accountable
+  scientist to inspect, contest, accept, defer, or reject; and
+- /Evidence Return/ :: attach outcomes, failed assumptions, corrections, and
+  new evidence to the originating case.
+
+Profiles compose these scenarios according to a research program, therapeutic
+area, and institutional authority.  The composition is not a claim that all
+biopharma programmes share one ontology or one approval process.
+
+* Requirements extracted from the Wendao ontology review
+
+The current Solution requirements follow the *Wendao Episteme / Catlab-ACSets
+Forward Report* (2026-06-26):
+
+- establish a typed read-model contract before considering Catlab/ACSets as a
+  runtime dependency;
+- keep Rust/RDF materialisation and source validation separate from Julia/Catlab
+  structural validation;
+- preserve provenance, source span, parser strategy, confidence, review state,
+  evidence status, projection version, freshness, and privacy scope with each
+  research fact;
+- require domain/range readiness before high-confidence search evidence or
+  ontology promotion; and
+- model Catlab/ACSets and satisfiability tools as isolated proof backends until
+  typed handoff, versioning, performance, replay, and audit evidence justify a
+  narrower production boundary.
+
+* Human and public boundary
+
+The public site may describe the system requirements and the partner-composable
+scenarios.  It MUST NOT claim clinical validation, regulatory approval, a
+deployed therapeutic programme, improved patient outcomes, or a numerical
+discovery-performance result without the responsible evidence record.
+
+* Related records
+
+- [[file:40.01_research_operations_continuum.org][Research--Operations Continuum]]
+- [[file:../architecture/RFC-001-reproducible-intelligence-systems.org][RFC-001: Reproducible Intelligence Systems]]
+- [[file:../platform/10.04_living_semantic_ontology.org][Living Semantic Ontology]]
+- [[file:../platform/10.03_typed_claims_and_evidence.org][Typed Claims and Evidence Semantics]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]

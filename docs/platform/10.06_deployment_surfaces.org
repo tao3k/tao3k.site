@@ -1,0 +1,294 @@
+#+TITLE: Platform Deployment Surfaces
+#+DATE: 2026-08-09
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:deployment:cloud:on-premises:hybrid:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, platform teams, operators
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+Deployment is a Platform concern because every product and industry solution
+depends on the same artifact identity, qualification boundary, authority model,
+and receipt contract.  It is not a product category and it is not an industry
+solution.
+
+The public navigation exposes Platform as a capability entry point rather than
+a single terminal page.  Its deployment surfaces are independently addressable
+because each represents a materially different ownership and authority model.
+
+* Public route contract
+
+| Route                           | Authority position                         | Stable question                                      |
+|---------------------------------+--------------------------------------------+------------------------------------------------------|
+| =/platform=                     | Cross-environment system architecture      | Which platform laws remain stable everywhere?        |
+| =/platform/on-premises=         | Customer-owned trust domain                | How does tao3k operate entirely inside our boundary?  |
+| =/platform/hybrid=              | Local authority with qualified cloud work  | What may cross the boundary, and under whose policy?  |
+| =/platform/managed-cloud=       | tao3k-operated, customer-qualified service | What remains inspectable in a managed deployment?     |
+
+The main navigation contains one Platform trigger.  Its stable submenu contains
+the overview followed by On-Premises, Hybrid, and Managed Cloud.  Subroutes must
+not appear as additional top-level navigation items.
+
+* Shared invariant
+
+The deployment artifact may travel.  Permission does not.
+
+Bazel owns the reproducible build graph, Nix closes the runtime and system
+environment, Omnibus composes higher-order topology, and Hive realizes that
+topology through the NixOS and nixpkgs ecosystem.  Every destination must still
+qualify its environment-specific identity, secrets, hardware, data rights,
+policy, region, accountable authority, and operational receipt path.
+
+* One delivery discipline: SDLC and SDOS
+
+tao3k treats software construction and system delivery as two connected but
+separately inspectable disciplines.
+
+** SDLC: immutable software identity
+
+The software-development lifecycle moves through source and policy, a Bazel
+build graph, and a Nix system closure.  Bazel describes and evaluates the build
+graph.  Nix fixes toolchains, dependencies, runtime inputs, and the operating
+environment.  The result is a reproducible release identity rather than a
+machine-specific build story.
+
+The closure—not an undocumented build host—is the unit promoted between local,
+cloud, hybrid, and customer-owned environments.
+
+** Enterprise construction economics
+
+The Platform shortens the path from system intent to a running, supportable
+service.  Enterprises reuse the nixpkgs and NixOS ecosystem instead of
+reconstructing package integration, operating-system policy, service wiring,
+and update mechanics for every project.  Immutable Nix closures make the
+software and system environment reproducible across development, validation,
+cloud, and customer-owned infrastructure.
+
+Omnibus adds a higher-order extension and composition system above those
+closures.  Teams can inherit a qualified system profile, extend the parts that
+express their domain, and project the result into different machine and service
+surfaces without copying an entire deployment stack.  This reduces bespoke
+integration, environment drift, repeated certification work, and the human
+operations required to keep parallel delivery systems aligned.
+
+The economic claim must remain concrete.  tao3k lowers total delivery cost by
+reusing ecosystem components, preserving one system identity, automating
+repeatable evaluation and deployment, and returning inspectable receipts.  It
+must not claim that infrastructure becomes free or that every operational
+responsibility disappears.
+
+** AI-assisted configuration under system constraints
+
+AI may author and revise deployment intent, but generated text is not accepted
+as a deployable system merely because it parses.  POO Flow is the upper
+composition language and compiler for modular intent, profiles, conditions,
+state transitions, and qualification boundaries.  Nickel may be evaluated as a
+typed configuration and schema surface where it improves authoring, but it is
+not declared as the sole or final language.  The resulting configuration still
+passes through module interfaces, dependency analysis, Nix evaluation, Bazel
+build identity, target qualification, policy, and receipt checks.  This turns
+AI from an unconstrained script generator into an accelerator operating inside
+a reproducible system contract.
+
+The public demonstration should show this distinction directly: an operator or
+AI changes one bounded host or service intent; evaluation reveals the affected
+closures and target projections; qualification identifies unsafe or incomplete
+changes before promotion; and only an admitted result reaches the deployment
+surface.  Human authority remains explicit for consequential production
+changes.
+
+** Configuration and realization boundaries
+
+The Platform must not flatten configuration expression, composition, build,
+system realization, and target deployment into one tool:
+
+- POO Flow :: owns high-level compositional intent and compilation, including
+  reusable modules, cases, profiles, conditions, state, and qualification
+  checkpoints.
+- Nickel :: remains an optional candidate for typed data, contracts, and
+  configuration authoring where its semantics are useful; it is not the final
+  architecture by declaration.
+- Omnibus :: provides extensible higher-order composition for Nix systems and
+  services.
+- Nix and nixpkgs :: own derivations, immutable dependency closure, package and
+  system realization, reproducibility, and distribution identity.
+- Hivebus :: collects host declarations and projects them into supported NixOS,
+  Darwin, Home Manager, Colmena, or other target configuration interfaces.
+- Target adapters :: lower an admitted system projection into a required
+  runtime surface such as Kubernetes without becoming the source of system
+  truth.
+
+This separation lets tao3k improve the authoring language and target adapters
+without weakening the derivation and closure guarantees beneath them.
+
+** SDOS: reproducible system delivery
+
+The system-delivery and operations discipline begins with the qualified Nix
+closure.  Omnibus composes the complete service and multi-machine intent; Hive
+realizes it across NixOS machines using the nixpkgs ecosystem.  A customer
+expresses domain, authority, data, and deployment intent without inheriting the
+learning curve of Nix, Bazel, or the internal topology language.
+
+This path can replace cloud-init scripts, hand-built images, and imperative
+cluster glue.  Kubernetes is not forced into a separate configuration truth:
+when Kubernetes-native scheduling, controllers, or APIs are product
+requirements, a target adapter can lower the admitted POO Flow and Omnibus
+system projection into Kubernetes resources.  Kubenix is prior exploration of
+this boundary, not the declared final architecture.  When Kubernetes adds no
+product value, a direct NixOS or fleet target remains available.  tao3k chooses
+the required runtime surface without duplicating the system identity that
+produced it.
+
+Across local, on-premises, hybrid, and managed-cloud targets, the stable chain
+is:
+
+#+begin_example
+source + policy -> Bazel graph -> Nix closure -> Omnibus plan
+                -> Hive / NixOS fleet -> environment qualification -> receipt
+#+end_example
+
+** Public delivery model
+
+The Platform overview demonstrates this chain as an observable run rather than
+another static architecture card.  A Scheme-authored system intent advances
+through Bazel, Nix, Omnibus, Hive, and receipt phases.  The adjacent projection
+shows local, on-premises, and managed-cloud destinations receiving the same
+closure identity while retaining independent qualification boundaries.
+
+The demonstration supports pause and replay, exposes the current phase and
+target state, and respects reduced-motion preferences.  It is explicitly a
+delivery model: its command surface must not imply that an unreleased public CLI
+already exists.
+
+** Embedded deployment evaluation
+
+The public demonstration is a source-to-system evaluation, not a workflow
+editor.  The primary surface statically embeds the Nix source object, the
+Omnibus and Hivebus transformation boundary, and the current projected system.
+It contains no draggable canvas, nested subflow container, zoom control, or
+decorative process edge.
+
+The compact Hivebus case surface shows one authentic Nix excerpt at a time.  As
+the run advances, that excerpt changes with declaration, load, composition,
+closure, application, and verification while the adjacent system projection
+changes with it.  Each excerpt is paired with a concise explanation of the
+system object or guarantee created by that expression; the demonstration must
+teach the source-to-system relationship rather than present unexplained code.
+The lower edge displays only the current green phase and its result; it does not
+repeat all six phases.  This explains how a real
+=flake-parts-hive= case maps host declarations through =setHosts= and
+=addInputs= into NixOS, Darwin, Home Manager, and Colmena exports without
+forcing the complete program into a narrow column.
+
+The Delivery Model header carries the official Bazel and Nix marks.  They name
+the two implementation responsibilities directly: Bazel preserves the
+hermetic build graph, and Nix realizes the immutable system closure.  These
+marks are architectural evidence, not a generic technology-logo inventory.
+
+The complete Hivebus =let ... in= case remains authoritative and inspectable.
+The reader opens it on demand in a dedicated source window rendered with the
+shared Shiki Nix grammar.  The window preserves full source width, uses the site
+dark surface rather than a white code background, and closes with its explicit
+control or Escape without propagating Escape to the site shell.
+
+The evaluation projection changes with the run.  Declaration and load expose
+=host1= and =host2= as source-backed host objects; composition exposes Hive
+membership; closure projects the source into NixOS, Darwin, Home Manager, and
+Colmena exports; apply and verify change target and receipt state without
+inventing CPU or memory telemetry.  Object selection may narrow the case
+context, but the projection itself is not draggable.
+
+The final closure, destination state, and returned evidence remain visible in a
+compact status rail.  React Flow is reserved for POO Flow and other scenarios
+whose meaning genuinely includes graph composition or editing.
+
+The workbench height derives from its available width and information density
+rather than the browser viewport height.  Empty canvas below the fleet is a
+layout defect, not breathing room.
+
+* On-Premises
+
+On-Premises keeps identity, secrets, data, compute, policy, runtime authority,
+and evidence retention inside the customer-owned trust domain.  tao3k supplies
+an inspectable system closure and an evidence-bearing update path.  It must not
+imply that a tao3k cloud control plane silently owns the installation.
+
+* Hybrid
+
+Hybrid separates evidence authority, consequential policy, and sensitive data
+from qualified elastic capability.  Every boundary crossing declares workload
+identity, model identity, permitted fields, purpose, region, retention, and the
+receipt that must return to the local evidence owner.
+
+Hybrid is not an undocumented mixture of local services and cloud APIs.  The
+boundary itself is a first-class qualified object.
+
+* Managed Cloud
+
+Managed Cloud delegates service operation without erasing tenant, region,
+artifact, model, policy, or decision identity.  Customers retain inspectable
+receipts, portable records, explicit escalation, and an exit path.
+
+Managed convenience must not be described as authority transfer.  The customer
+still qualifies what the managed service may do within consequential systems.
+
+* Interaction contract
+
+The desktop Platform menu opens through hover, focus, or click.  Its pointer
+bridge and shared interaction boundary prevent the trigger and panel from
+oscillating when the pointer moves between them.  Escape and outside activation
+close it.  Touch users open it through the trigger and all submenu routes remain
+keyboard reachable.
+
+The panel uses progressive opacity and transform motion.  It does not resize the
+header or move page content, and therefore must not introduce layout shift.
+
+The menu is not a compact route table.  It is a product-navigation window with
+one Platform overview surface and three independently composed deployment
+surfaces.  Each surface carries its own topology figure, title, ownership
+position, and destination.  The surrounding panel explains the shared decision:
+/one qualified system; choose where its authority lives/.
+
+* Deployment page information contract
+
+Each deployment route must contain enough information for a customer to decide
+whether to continue into architecture discovery.  A hero and four generic
+labels are insufficient.  Every route therefore owns the following public
+sections:
+
+- Fit and trade :: who should choose the model, which constraints it solves,
+  and which responsibilities remain with the customer or tao3k.
+- Authority topology :: the owner of identity, secrets, data, compute, runtime,
+  policy, and returned evidence.
+- Platform delivery :: the actual Evidence, Data, Reason, Science, Operate, and
+  Deliver layers, with representative implementation systems.
+- Deployment qualification :: which environment-specific facts must be
+  requalified even when the reproducible artifact is unchanged.
+- Adoption path :: bounded discovery, pilot, failure testing, promotion, and
+  evidence-backed expansion rather than a one-step production promise.
+- Customer questions :: direct answers about keys, data movement, model and
+  artifact change, disconnection, evidence ownership, portability, and exit.
+
+The three routes share a visual family because they are deployment modes of one
+Platform.  Their decisions, authority diagrams, adoption paths, obligations,
+and customer answers must remain mode-specific.  Reusing a component is allowed;
+reusing undifferentiated content is not.
+
+* Public implementation evidence
+
+The deployment pages may name implementation systems only as evidence for the
+Platform layer they implement:
+
+- Evidence :: Orgize, Org Zhixing, and Agent Semantic Protocols.
+- Data :: Apache Arrow, Parquet, DuckDB, and Arrow Flight.
+- Reason :: GQL Rust, Ascent, and ontology-driven graph structures.
+- Science :: Julia, Julia Graphs, and WendaoGraphs.jl.
+- Operate :: POO Flow composition and Marlin Agent Core runtime.
+- Deliver :: SDLC through Bazel build graphs and Nix system closure; SDOS
+  through Omnibus topology and Hive-managed NixOS fleets.
+
+These names do not imply that repository existence proves production shipping.
+Performance, certification, availability, and deployment claims still require
+project-owned release artifacts, benchmarks, tests, or operational receipts.

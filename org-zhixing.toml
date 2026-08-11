@@ -4,7 +4,7 @@ content_dirs = ["docs"]
 
 [theme_config]
 navigation = [
-  { label = "Platform", href = "/platform" },
+  { label = "Platform", href = "/platform", children = [{ label = "Platform overview", href = "/platform", detail = "System architecture" }, { label = "On-Premises", href = "/platform/on-premises", detail = "Customer-owned authority boundary" }, { label = "Hybrid", href = "/platform/hybrid", detail = "Local authority, elastic capability" }, { label = "Managed Cloud", href = "/platform/managed-cloud", detail = "Managed operation with explicit evidence" }] },
   { label = "Products", href = "/products" },
   { label = "Solutions", href = "/solutions" },
   { label = "Comparison", href = "/comparison" },

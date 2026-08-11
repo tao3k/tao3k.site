@@ -41,12 +41,14 @@
     "start": "rsbuild preview",
     "theme:prepare": "npm run theme:contract:sync",
     "theme:build": "npm run theme:prepare && rsbuild build --config theme/rsbuild.config.ts && npm run theme:check",
-    "theme:check": "node theme/tests/check-manifest.mjs && node theme/tests/check-local-config.mjs && npm run theme:routes:check",
+    "theme:check": "node theme/tests/check-manifest.mjs && node theme/tests/check-local-config.mjs && npm run theme:host:check && npm run theme:routes:check",
+    "theme:host:check": "node theme/tests/check-host-revision.mjs && node theme/tests/check-local-host.mjs",
     "theme:routes:check": "node --experimental-strip-types theme/tests/check-application-routes.mjs",
     "pages:routes": "node --experimental-strip-types theme/src/build/prepare-application-pages.mjs",
     "principles:bundle:generate": "node theme/src/build/prepare-principles-bundle.mjs",
     "principles:bundle:check": "node theme/src/build/prepare-principles-bundle.mjs --check",
-    "principles:authoring:check": "npm run principles:bundle:check && npm run principles:check",
+    "principles:bundle:runtime:check": "node theme/tests/check-principles-bundle.mjs",
+    "principles:authoring:check": "npm run principles:bundle:check && npm run principles:check && npm run principles:bundle:runtime:check",
     "principles:generate": "node theme/src/build/prepare-principles-interactive.mjs",
     "principles:check": "node theme/src/build/prepare-principles-interactive.mjs --check",
     "theme:contract:sync": "node theme/src/build/sync-contract.mjs && npm run principles:generate",
@@ -54,7 +56,7 @@
     "theme:preview": "rsbuild preview --config theme/rsbuild.config.ts --host 127.0.0.1",
     "typecheck": "npm run theme:prepare && tsc --noEmit",
     "test": "npm run typecheck",
-    "validate": "npm run theme:contract:sync && npm run principles:check && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
+    "validate": "npm run theme:contract:sync && npm run principles:authoring:check && npm run docs:check && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run theme:build"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.0.0",
@@ -150,8 +152,8 @@
     },
     "contract": {
       "package": "@org-zhixing/theme-contract",
-      "revision": "5ca54c9fd501c8fbac14932dc11df52fd00e6943",
-      "source": "https://github.com/tao3k/org-zhixing-themes/tree/5ca54c9fd501c8fbac14932dc11df52fd00e6943/packages/theme-contract",
+      "revision": "576343ca1b8d007adbb5840c148f7c7fb0bcb796",
+      "source": "https://github.com/tao3k/org-zhixing-themes/tree/576343ca1b8d007adbb5840c148f7c7fb0bcb796/packages/theme-contract",
       "integrity": {
         "package.json": "25a7b40347751a261fb2fc0c5d047226733d0bcdac060575ff34706f415071e5",
         "src/index.ts": "e7397f3e632a690734bdfbf1728889a99498d11ee5c5539d419a30d07880af5c"

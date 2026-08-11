@@ -17,6 +17,62 @@ platform, coding agent, or scientific-compute service. Each of those systems
 optimizes a stage. tao3k connects the stages while preserving meaning,
 authority, and evidence across their boundaries.
 
+** Five platform faces and deployment
+
+The public Platform page presents one scientific AI system deployable across
+local, on-premises, private-cloud, hybrid-cloud, and managed-cloud environments.
+It is organized through five connected faces:
+
+- Evidence and Semantic Fabric :: source identity, provenance, typed claims,
+  ontology, contracts, authority, and evidence-action relationships.
+- Arrow-native Data Fabric :: native sources remain provenance authority;
+  Apache Arrow is the analytical interchange and in-memory boundary; Parquet is
+  the portable analytical persistence layer; DuckDB and data-lake SQL are
+  first-class access paths.
+- Scientific Graph Compute :: Julia, Arrow, Julia Graphs, and WendaoGraphs.jl
+  provide high-performance graph computation for ontology-derived and scientific
+  workloads. Ontology meaning, computation, qualification, and human authority
+  remain separate responsibilities.
+- Qualified Agent Operations :: models, tools, code, and scientific capability
+  enter operation through Action Cases, qualification, authority envelopes,
+  durable state, recovery, and receipts.
+- Reproducible Deployment Fabric :: SDLC uses Bazel to own the build graph and
+  Nix to close the runtime and system environment.  SDOS uses Omnibus to compose
+  higher-order service topology and Hive to realize multi-machine intent through
+  NixOS and nixpkgs.
+
+The stable public description is: /One scientific AI system. Deployed
+anywhere./ The same qualified artifact identity should move between development,
+customer-owned infrastructure, and cloud targets without an undocumented
+rebuild. Environment-specific identity, policy, secrets, hardware, data
+authority, and accountable human control must still be requalified.
+
+The delivery path is source and policy -> Bazel build graph -> Nix system
+closure -> Omnibus topology -> Hive / NixOS fleet -> environment qualification
+-> deployment and operational receipts. Users express domain, authority, data,
+and deployment intent; the learning curve of Nix, Bazel, Julia packaging, and
+internal topology stays inside the platform.
+
+Public security language must say /supply-chain-resilient/, not claim that Nix
+or Bazel eliminates attacks. Pinned inputs, hermetic builds, content-addressed
+artifacts, signed caches, provenance, SBOMs, workload identity, secrets, and
+deployment policy remain complementary controls. Architecture acceptance is not
+shipping evidence; shipped deployment and performance claims require
+project-owned tests, benchmarks, release artifacts, or receipts.
+
+*** Platform eligibility
+
+Platform contains horizontal capability domains, cross-product contracts, and
+system invariants. A capability belongs here when multiple products and
+solutions depend on it and its meaning remains stable if the current
+implementation is replaced.
+
+Named projects may appear as implementation evidence, but their feature lists,
+release state, APIs, and benchmarks remain on Products or in project-owned
+documentation. Industry problems and customer outcomes belong to Solutions.
+The five platform faces are the canonical Platform category set; deployment,
+maturity, lifecycle stage, and authority risk are facets applied to them.
+
 * Stable description
 
 #+begin_quote

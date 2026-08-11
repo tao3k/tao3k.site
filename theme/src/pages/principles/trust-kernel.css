@@ -1,0 +1,416 @@
+/* Principles / Trust Kernel sample: cyber-industrial evidence lab. */
+.tao3k-principles-page {
+  --trust-bg: #071512;
+  --trust-panel: #0b1d1a;
+  --trust-panel-strong: #102824;
+  --trust-line: rgb(118 198 180 / 20%);
+  --trust-ink: #e8eee8;
+  --trust-muted: #91a7a1;
+  --trust-cyan: #70e2d3;
+  --trust-amber: #e3a969;
+  --trust-coral: #d46f61;
+  display: block;
+  color: var(--trust-ink);
+  background: var(--trust-bg);
+}
+
+.tao3k-principles-page > * {
+  order: initial;
+}
+
+.tao3k-trust-hero {
+  position: relative;
+  display: grid;
+  min-height: min(880px, calc(100svh - 78px));
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.tao3k-trust-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgb(2 12 11 / 97%) 0%, rgb(2 12 11 / 76%) 35%, transparent 68%),
+    linear-gradient(0deg, var(--trust-bg) 0%, transparent 34%);
+  content: "";
+}
+
+.tao3k-trust-hero__scene {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.tao3k-trust-hero__plate,
+.tao3k-trust-hero__foliage-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.78) contrast(1.03);
+}
+
+.tao3k-trust-hero__foliage-canvas {
+  opacity: 0;
+  transition: opacity 120ms linear;
+}
+
+.tao3k-trust-hero__foliage-canvas[data-ready="true"] {
+  opacity: 1;
+}
+
+.tao3k-trust-hero__rail-signal {
+  position: absolute;
+  top: 43.2%;
+  left: 52%;
+  width: 25%;
+  height: 1px;
+  overflow: hidden;
+  transform: rotate(5.2deg);
+  transform-origin: left center;
+  opacity: 0.58;
+}
+
+.tao3k-trust-hero__rail-signal::after {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, rgb(159 237 225 / 85%), transparent);
+  transform: translate3d(-120%, 0, 0);
+  animation: tao3k-rail-signal 8.5s cubic-bezier(0.36, 0, 0.24, 1) infinite;
+  content: "";
+  will-change: transform;
+}
+
+@keyframes tao3k-rail-signal {
+  0%,
+  18% {
+    transform: translate3d(-120%, 0, 0);
+  }
+  72%,
+  100% {
+    transform: translate3d(430%, 0, 0);
+  }
+}
+
+.tao3k-trust-hero__copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  width: min(820px, 67vw);
+  margin-left: clamp(24px, 6.2vw, 112px);
+  padding: 90px 0 150px;
+}
+
+.tao3k-trust-hero .tao3k-route-kicker,
+.tao3k-trust-architecture .tao3k-route-kicker,
+.tao3k-trust-ledger-heading .tao3k-route-kicker {
+  color: var(--trust-cyan);
+  font-family: var(--tao-mono);
+  font-size: 0.68rem;
+  font-weight: 720;
+  letter-spacing: 0.17em;
+}
+
+.tao3k-trust-hero h1 {
+  max-width: 10ch;
+  margin: 30px 0 42px;
+  font-family: var(--tao-serif);
+  font-size: clamp(4.4rem, 7.7vw, 9.2rem);
+  font-weight: 480;
+  letter-spacing: -0.068em;
+  line-height: 0.87;
+  text-wrap: balance;
+}
+
+.tao3k-trust-hero__copy > p:last-child {
+  max-width: 62ch;
+  margin: 0;
+  color: #bdccc7;
+  font-size: clamp(1rem, 1.35vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.tao3k-trust-hero__telemetry {
+  position: absolute;
+  right: clamp(20px, 3vw, 54px);
+  bottom: 36px;
+  left: clamp(20px, 3vw, 54px);
+  z-index: 2;
+  display: flex;
+  gap: 16px 34px;
+  justify-content: flex-end;
+  padding-top: 18px;
+  border-top: 1px solid rgb(178 228 217 / 30%);
+  font-family: var(--tao-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.11em;
+}
+
+.tao3k-trust-hero__telemetry span {
+  color: #879994;
+}
+
+.tao3k-trust-hero__telemetry b {
+  margin-left: 8px;
+  color: var(--trust-cyan);
+}
+
+.tao3k-trust-ledger-heading h2,
+.tao3k-trust-refusal h2 {
+  margin: 25px 0 0;
+  font-family: var(--tao-serif);
+  font-size: clamp(3rem, 5.6vw, 6.8rem);
+  font-weight: 490;
+  letter-spacing: -0.06em;
+  line-height: 0.93;
+}
+
+.tao3k-principles-page .tao3k-values-pressure {
+  min-height: 760px;
+  color: var(--trust-ink);
+  border-bottom: 1px solid var(--trust-line);
+  background:
+    linear-gradient(rgb(112 226 211 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(112 226 211 / 3%) 1px, transparent 1px), #081814;
+  background-size: 52px 52px;
+}
+
+.tao3k-principles-page .tao3k-values-pressure > header,
+.tao3k-principles-page .tao3k-values-pressure__choices {
+  border-color: var(--trust-line);
+  background: rgb(5 19 16 / 84%);
+  backdrop-filter: blur(18px);
+}
+
+.tao3k-principles-page .tao3k-values-pressure > header > span,
+.tao3k-principles-page .tao3k-values-pressure__reading-content > span {
+  color: var(--trust-cyan);
+}
+
+.tao3k-principles-page .tao3k-values-pressure > header h2,
+.tao3k-principles-page .tao3k-values-pressure__reading-content h3 {
+  font-family: var(--tao-serif);
+}
+
+.tao3k-principles-page .tao3k-values-pressure__choice {
+  border-color: var(--trust-line);
+  color: #9eb2ac;
+}
+
+.tao3k-principles-page .tao3k-values-pressure__choice[data-preview-active] {
+  color: var(--trust-ink);
+}
+
+.tao3k-principles-page .tao3k-values-pressure__choice > i {
+  color: var(--trust-cyan);
+  font-size: 0.55rem;
+  letter-spacing: 0.09em;
+}
+
+.tao3k-values-pressure__status {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 28px;
+  color: #789088;
+  font-family: var(--tao-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+
+.tao3k-values-pressure__status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--trust-cyan);
+  box-shadow: 0 0 18px var(--trust-cyan);
+}
+
+.tao3k-trust-ledger-heading {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr 0.6fr;
+  gap: clamp(40px, 7vw, 120px);
+  align-items: end;
+  padding: clamp(90px, 11vw, 170px) clamp(24px, 6vw, 108px) clamp(70px, 8vw, 120px);
+}
+
+.tao3k-trust-ledger-heading h2 {
+  max-width: 11ch;
+}
+
+.tao3k-trust-ledger-heading > p:last-child {
+  margin: 0;
+  color: var(--trust-muted);
+  line-height: 1.65;
+}
+
+.tao3k-principles-page .tao3k-principle-ledger {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid var(--trust-line);
+}
+
+.tao3k-principles-page .tao3k-principle-ledger article {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: clamp(24px, 4vw, 66px);
+  min-height: 320px;
+  padding: clamp(44px, 5vw, 82px) clamp(24px, 5vw, 92px);
+  border-right: 1px solid var(--trust-line);
+  border-bottom: 1px solid var(--trust-line);
+  background: linear-gradient(145deg, rgb(112 226 211 / 4%), transparent 54%);
+}
+
+.tao3k-principles-page .tao3k-principle-ledger article:nth-child(even) {
+  border-right: 0;
+}
+
+.tao3k-principles-page .tao3k-principle-ledger article:last-child {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(120px, 0.22fr) 1fr;
+}
+
+.tao3k-principles-page .tao3k-principle-ledger span {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  color: var(--trust-cyan);
+  font-family: var(--tao-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+.tao3k-principles-page .tao3k-principle-ledger span i {
+  width: 8px;
+  height: 8px;
+  margin-top: 2px;
+  border: 1px solid currentcolor;
+  transform: rotate(45deg);
+}
+
+.tao3k-principles-page .tao3k-principle-ledger h2 {
+  margin: 0 0 24px;
+  color: var(--trust-ink);
+  font-family: var(--tao-serif);
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.tao3k-principles-page .tao3k-principle-ledger p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--trust-muted);
+  font-family: var(--tao-sans);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.62;
+}
+
+.tao3k-trust-refusal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(60px, 10vw, 180px);
+  padding: clamp(90px, 11vw, 180px) clamp(24px, 6vw, 108px);
+  border-bottom: 1px solid rgb(212 111 97 / 32%);
+  background: radial-gradient(circle at 90% 20%, rgb(212 111 97 / 12%), transparent 30%), #100f10;
+}
+
+.tao3k-trust-refusal > div span {
+  color: var(--trust-coral);
+  font-family: var(--tao-mono);
+  font-size: 0.65rem;
+  font-weight: 740;
+  letter-spacing: 0.14em;
+}
+
+.tao3k-trust-refusal h2 {
+  max-width: 10ch;
+}
+
+.tao3k-trust-refusal ul {
+  align-self: end;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgb(212 111 97 / 27%);
+  list-style: none;
+}
+
+.tao3k-trust-refusal li {
+  position: relative;
+  padding: 24px 48px 24px 0;
+  border-bottom: 1px solid rgb(212 111 97 / 20%);
+  color: #c8c1bf;
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  line-height: 1.45;
+}
+
+.tao3k-trust-refusal li::after {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  color: var(--trust-coral);
+  font-family: var(--tao-mono);
+  content: "DENY";
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 760px) {
+  .tao3k-trust-hero {
+    min-height: 760px;
+  }
+
+  .tao3k-trust-hero::after {
+    background: linear-gradient(0deg, var(--trust-bg), rgb(2 12 11 / 35%) 70%);
+  }
+
+  .tao3k-trust-hero__scene {
+    opacity: 0.68;
+  }
+
+  .tao3k-trust-hero__foliage-canvas,
+  .tao3k-trust-hero__rail-signal {
+    display: none;
+  }
+
+  .tao3k-trust-hero__copy {
+    align-self: end;
+    width: auto;
+    margin: 0;
+    padding: 150px 20px 170px;
+  }
+
+  .tao3k-trust-hero h1 {
+    font-size: clamp(3.6rem, 17vw, 5.5rem);
+  }
+
+  .tao3k-trust-hero__telemetry {
+    flex-direction: column;
+  }
+
+  .tao3k-trust-ledger-heading,
+  .tao3k-principles-page .tao3k-principle-ledger,
+  .tao3k-trust-refusal {
+    grid-template-columns: 1fr;
+  }
+
+  .tao3k-trust-ledger-heading > p:last-child {
+    grid-column: 1;
+  }
+
+  .tao3k-principles-page .tao3k-principle-ledger article,
+  .tao3k-principles-page .tao3k-principle-ledger article:last-child {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-right: 0;
+  }
+}

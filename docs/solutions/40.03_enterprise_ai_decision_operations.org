@@ -1,0 +1,114 @@
+#+TITLE: Enterprise AI System Requirements
+#+DATE: 2026-08-09
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:solutions:enterprise:agents:operations:requirements:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: enterprise technology, operations, security, and governance teams
+#+CLAIM_MATURITY: policy
+
+* Industry adaptation
+
+This record defines the requirements tao3k must preserve when an enterprise or
+product partner builds a regulated, high-consequence, or governed AI operation
+on its system layer.
+
+The partner owns the business process, interface, user relationship, and domain
+policy.  tao3k provides the source-backed context, declared conditions,
+delegated authority, durable execution state, and receipt infrastructure.
+
+* Current failure
+
+The production gap is not merely that models can be wrong.  Enterprise systems
+lose control at specific handoffs:
+
+- relevant context is copied into a prompt without retaining source identity,
+  access scope, or semantic ownership;
+- a tool call has no first-class action-approval boundary, or approval failure
+  silently changes the execution posture;
+- checkpoint history blocks writes, forks contaminate sibling state, or an
+  overlapping reconnect and cleanup operation can hang indefinitely;
+- late human input, approval, or cancellation cannot be admitted exactly once
+  into a durable resumed run; and
+- logs describe activity but do not form a bounded, attributable record of what
+  was allowed, attempted, changed, failed, and escalated.
+
+These are state, authority, and recovery requirements.  A longer context window
+or stronger model does not resolve them by itself.
+
+* Tao3k system responsibilities
+
+#+begin_example
+Source systems and policy
+-> parser-owned semantic evidence and GQL query
+-> bounded Action Case
+-> partner-composed POO Flow scenario and declared conditions
+-> qualification, delegated authority, and human approval where required
+-> Marlin runtime checkpoint, recovery, and bounded effect
+-> attributable receipt and evidence return
+#+end_example
+
+Agent Semantic Protocols and GQL Rust preserve source-addressable evidence.
+POO Flow expresses the case, roles, conditions, and composable workflow
+structure.  Contracts, Cedar, Julia, and Lean qualify their respective
+boundaries.  Marlin owns the live runtime state, recovery and effect execution.
+No component turns model confidence into authority.
+
+* Non-negotiable requirements
+
+1. Every material retrieval retains source identity, access scope, and enough
+   semantic structure to be inspected or repeated.
+2. Every consequential tool invocation reaches an explicit allow, deny, defer,
+   or escalation boundary before its effect.
+3. Lifecycle operations have coherent ownership: they serialize, fail fast, or
+   produce a typed recovery state; they do not wait indefinitely.
+4. A checkpoint fork cannot alter a sibling branch's replayed history.
+5. Resumed input, approval, tool completion, and receipt transitions have an
+   explicit ordering and exactly-once contract.
+6. A human may inspect, contest, pause, revoke, or assume responsibility at the
+   defined authority boundary.
+
+* Partner-composed scenarios
+
+The following are examples a partner may compose.  They are not a claim that
+tao3k autonomously owns an enterprise business process:
+
+- /Source-grounded investigation/ :: assemble evidence from controlled systems
+  without collapsing source identity into unowned prompt context;
+- /Bounded operational handoff/ :: qualify a proposed action, named authority,
+  risk class, required approval and permissible effects;
+- /Interrupted work recovery/ :: preserve current state, pending input,
+  approvals, executed effects and recovery conditions across pause or failure;
+- /Human escalation/ :: route a decision packet to an accountable person without
+  losing context, provenance, or the ability to stop the workflow; and
+- /Receipt return/ :: preserve effects, failures, interventions and decisions as
+  attributable material for review and later improvement.
+
+* Evidence basis
+
+This contract is informed by public framework issues reported after 2026-05:
+
+- LangGraph checkpoint-history iteration blocking concurrent checkpoint writes;
+- LangGraph fork updates replaying into a sibling branch;
+- an AutoGen community implementation of a workbench-level tool-call approval
+  gate because that boundary remains an extension seam; and
+- OpenAI Agents issues concerning concurrent MCP lifecycle hangs and durable,
+  exactly-once pending input for resumable state.
+
+Those reports establish concrete implementation and operations requirements;
+they do not establish that any tao3k integration is already shipped.
+
+* Human and public boundary
+
+The public site may describe the system requirements and partner-composable
+operating path.  It MUST NOT claim that tao3k has autonomously
+replaced an enterprise function, that every cross-engine integration is
+production-ready, or that a customer outcome has been achieved without the
+responsible public evidence record.
+
+* Related records
+
+- [[file:40.01_research_operations_continuum.org][Research--Operations Continuum]]
+- [[file:40.02_evidence_carrying_ontology_for_therapeutic_rd.org][Therapeutic R&D Knowledge Integrity]]
+- [[file:../architecture/RFC-001-reproducible-intelligence-systems.org][RFC-001: Reproducible Intelligence Systems]]
+- [[file:../platform/10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]

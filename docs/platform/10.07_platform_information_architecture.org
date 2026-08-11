@@ -1,0 +1,251 @@
+#+TITLE: Platform Information Architecture
+#+DATE: 2026-08-10
+#+AUTHOR: tao3k
+#+FILETAGS: :tao3k:platform:information-architecture:enterprise-ai:
+#+STATUS: accepted
+#+OWNER: tao3k.site
+#+AUDIENCE: public, industry, platform teams, partners
+#+CLAIM_MATURITY: policy
+
+* Purpose
+
+This record defines what the tao3k Platform page owns, the customer decisions
+it must support, and its boundary with Products, Solutions, Comparison,
+Principles, Roadmap, and project-owned documentation.
+
+Platform answers one canonical question:
+
+/How can an enterprise build and operate a vertical AI system whose knowledge,
+reasoning, actions, and deployment remain inspectable, qualified, reproducible,
+and evolvable?/
+
+It is not a technology inventory, an open-source directory, an industry
+catalogue, or a substitute for project documentation.
+
+* Public promise
+
+The preferred public heading is:
+
+/Build vertical AI systems that can be verified, reproduced, and operated./
+
+The supporting statement explains that tao3k connects domain evidence,
+semantic reasoning, scientific computation, governed AI operations, and
+reproducible delivery in one inspectable system.
+
+The hero must not enumerate languages, repositories, deployment tools, or
+implementation claims.  Those appear later as bounded evidence for a Platform
+responsibility.
+
+* Customer decision contract
+
+The Platform overview must answer nine customer questions.
+
+| Question | Platform answer | Required evidence surface |
+|----------+-----------------+---------------------------|
+| What is offered? | One system for building and operating qualified vertical AI | Public promise and system boundary |
+| How does enterprise data enter? | Evidence-preserving ingestion and typed analytical storage | Source, provenance, rights, and retention projection |
+| How does the system understand a domain? | Semantic knowledge, ontology, code, and graph search | Inspectable domain graph and query path |
+| How are conclusions formed? | Search, graph reasoning, scientific computation, and model collaboration | Reasoning trace with source and model identity |
+| What prevents arbitrary action? | Contracts, qualification, policy, proof obligations, and human authority | Admission boundary and contestable decision |
+| How is complex work composed? | POO Flow modules, profiles, cases, conditions, states, and compilation | Executable system graph |
+| How is admitted work executed? | Runtime checkpoints, effects, recovery, and receipts | Observable runtime state and returned evidence |
+| How does the system enter enterprise infrastructure? | Reproducible construction, composition, projection, and environment qualification | Source-to-closure-to-target delivery model |
+| How does the system improve without losing trust? | Outcomes return as searchable, versioned, and requalifiable evidence | Evidence-to-Action-to-Evidence loop |
+
+* Stable Platform responsibilities
+
+The overview presents six implementation-independent responsibilities:
+
+1. Evidence preserves source, identity, provenance, rights, and change.
+2. Knowledge and Data organize domain semantics and analytical state.
+3. Reason and Science search, compute, model, and expose assumptions.
+4. Qualify determines whether a proposed action is admissible.
+5. Operate executes admitted work and returns effects and receipts.
+6. Deliver reproduces software and systems across an explicit authority
+   boundary.
+
+The visual relationship is:
+
+#+begin_example
+Evidence -> Understand -> Reason -> Qualify -> Act -> Return Evidence
+#+end_example
+
+The system figure communicates this loop before exposing implementations.  It
+must not render the responsibilities as unrelated feature cards.
+
+* Capability surfaces
+
+Every capability surface contains three public layers:
+
+- Enterprise problem :: the operational or epistemic failure experienced by
+  the customer.
+- Platform responsibility :: what tao3k makes possible independent of a
+  particular implementation.
+- Implementation evidence :: representative Products and external systems,
+  linked to authoritative documentation.
+
+The initial capability routes are:
+
+| Route | Responsibility | Representative evidence |
+|-------+----------------+-------------------------|
+| =/platform/evidence-knowledge= | Evidence, knowledge, provenance, and typed data | Orgize, Org Zhixing, Agent Semantic Protocols, Arrow, Parquet |
+| =/platform/reason-science= | Semantic search, graph reasoning, scientific computation, and qualification | GQL, Ascent, ontology systems, Julia, Lean |
+| =/platform/agent-operations= | Composable Agent systems, admission, effects, recovery, and receipts | POO Flow, Marlin, contracts, authority policies |
+| =/platform/security-governance= | Identity, rights, human authority, contestability, and audit | Evidence Contracts, Authority Envelopes, qualification receipts |
+| =/platform/reproducible-delivery= | Reproducible construction, composition, realization, and target delivery | Bazel, Nix, nixpkgs, Omnibus, Hivebus, target adapters |
+
+Product names are evidence, not capability headings.  Replacing an
+implementation must not invalidate the Platform responsibility.
+
+* Platform Overview sequence
+
+The overview follows this narrative order:
+
+1. Public promise and enterprise audience.
+2. One system and six responsibilities as the Evidence-to-Action loop.
+3. Capability surfaces expressed as problem, responsibility, and evidence.
+4. Governed operation: evidence, qualification, human authority, runtime
+   enforcement, and returned receipts.
+5. Reproducible delivery: POO Flow intent, system IR, Omnibus composition, Nix
+   derivations and closures, Hivebus projection, target adaptation, and
+   deployment qualification.
+6. Deployment choices: Local, On-Premises, Hybrid, and Managed Cloud.
+7. Adoption path from a bounded scenario to evidence-backed expansion.
+8. Proof surface containing contracts, receipts, Scenario Benchmarks,
+   failure/recovery evidence, and explicit maturity.
+9. Separate actions for evaluating the Platform, exploring architecture, and
+   inspecting open-source implementations.
+
+Sections must not repeat the same claim in different visual forms.  Every
+section advances a customer decision.
+
+** Reproducible-delivery visualization boundary
+
+The delivery demonstration presents a Nix source object being evaluated into a
+qualified system projection.  Its Evaluation surface is an embedded,
+non-draggable transform rather than a generic workflow canvas.  The complete
+Nix case opens on demand in a dedicated syntax-highlighted source window;
+Escape closes only that window and must not escape into site navigation.
+
+The compact source surface follows the active phase with one syntax-highlighted
+Nix excerpt and one current-state indicator.  Historical phases must not be
+expanded into a persistent checklist beside the projection.
+
+React Flow belongs to POO Flow and other capability surfaces that actually own
+graph composition, subflows, or graph editing.  It must not be introduced into
+an otherwise fixed Platform illustration merely to create visual activity.
+
+* Governed operation contract
+
+The Platform preserves the responsibility boundaries behind trustworthy
+operation:
+
+- evidence and semantic records establish what the system knows;
+- graph and scientific systems compute over declared assumptions;
+- contracts, Lean obligations, policies, and human authority contribute
+  distinct qualification evidence;
+- POO Flow compiles organization, conditions, states, and checkpoints;
+- Marlin enforces the admitted compiled plan at runtime; and
+- effects and receipts return to the Evidence Graph.
+
+A receipt is evidence that an effect occurred, not proof that the result was
+correct.  Human authority remains explicit at consequential boundaries.
+
+* Reproducible delivery placement
+
+Reproducible Delivery is one Platform responsibility, not the organizing frame
+for the entire Platform page.  Its workbench appears after governed operation
+and links to the dedicated delivery route.
+
+#+begin_example
+AI or human-authored POO Flow intent
+-> compiled system IR
+-> Omnibus system composition
+-> Nix derivations and immutable closures
+-> Hivebus target projection
+-> environment-specific adapter
+-> deployment qualification and receipt
+#+end_example
+
+POO Flow is the primary compositional entry.  Nix source and derivations are
+expandable implementation evidence, not the only public authoring interface.
+Nickel remains an optional typed configuration candidate.  Kubenix remains
+prior exploration rather than the declared Kubernetes architecture.
+
+* Deployment and authority
+
+Deployment routes answer authority questions rather than merely naming server
+locations: who owns data, identity, and keys; who operates compute and runtime;
+who qualifies consequential actions; which evidence crosses a boundary; where
+receipts are retained; and how the customer disconnects, migrates, or exits.
+
+Local, On-Premises, Hybrid, and Managed Cloud remain independent routes under
+Reproducible Delivery.  Their contract is defined in
+[[file:10.06_deployment_surfaces.org][Platform Deployment Surfaces]].
+
+* Enterprise adoption path
+
+The Platform does not require replacement of every existing system before an
+enterprise obtains value:
+
+#+begin_example
+Bounded scenario
+-> existing evidence and system connection
+-> qualification contract
+-> pilot deployment
+-> failure and recovery testing
+-> controlled expansion
+#+end_example
+
+Every expansion preserves explicit authority, evidence ownership, portability,
+and an exit path.
+
+* Proof and maturity
+
+Material claims require an adjacent proof surface appropriate to maturity:
+contract validation, reproducible build or closure identity, Scenario Benchmark
+results, deployment qualification, runtime or recovery receipts, source and
+project documentation, and an explicit shipped, active-development, research,
+vision, or policy label.
+
+The main site may summarize evidence.  Current implementation, API, benchmark,
+and support claims link to the responsible Product documentation.
+
+* Navigation contract
+
+The Platform navigation window has two stable groups:
+
+- System :: Overview, Evidence & Knowledge, Reason & Science, Agent Operations,
+  and Security & Governance.
+- Delivery :: Reproducible Delivery, Local, On-Premises, Hybrid, and Managed
+  Cloud.
+
+The window previews customer decisions rather than presenting a dense route
+table.  Mobile exposes the same hierarchy through expandable groups.  Platform
+subroutes do not become primary-navigation items.
+
+* Editorial exclusions
+
+Platform excludes named industry scenarios, repository biographies, release
+inventories, alternative-product matrices, company values, long-horizon
+doctrine, detailed syntax, internal RFCs, APIs, and support matrices.  These
+belong to Solutions, Products, Comparison, Principles, Roadmap, or project Docs.
+Cross-links are required; duplicated explanations are prohibited.
+
+* Acceptance criteria
+
+- A first-time enterprise reader can state the offer without naming a language.
+- Every major section answers a different customer decision.
+- Platform responsibilities remain meaningful if an implementation changes.
+- Products and Solutions are referenced without duplication.
+- Deployment appears as one responsibility rather than the whole Platform.
+- Every material trust or maturity claim links to appropriate evidence.
+- Desktop, Mobile, reduced-motion, and keyboard users reach the same hierarchy.
+
+* Related records
+
+- [[file:10.01_evidence_native_ai_lifecycle.org][Evidence-native AI Lifecycle]]
+- [[file:10.05_poo_flow_marlin_agent_core.org][POO Flow and Marlin Next-Generation Agent Core]]
+- [[file:10.06_deployment_surfaces.org][Platform Deployment Surfaces]]
+- [[file:../brand/20.02_site_scope_and_information_architecture.org][Site Scope and Information Architecture]]
+- [[file:../products/70.01_products_navigation_contract.org][Products Navigation Contract]]

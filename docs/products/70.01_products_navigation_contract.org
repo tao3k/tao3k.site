@@ -13,6 +13,29 @@ This record defines how tao3k.site presents open-source projects in the Navigato
 
 Products provides discovery and external navigation. It does not duplicate project documentation.
 
+** Product eligibility and categories
+
+A Products entry is eligible only when it represents an independently named and
+maintained deliverable with a responsible owner, adoption surface, repository or
+distribution identity, and authoritative documentation. A library, service,
+runtime, command-line tool, theme, protocol implementation, or managed offering
+may qualify; a general capability, technology dependency, or industry use case
+does not.
+
+Products are grouped by adoption role rather than by programming language or
+internal team:
+
+- Knowledge and human records;
+- Semantic search, reasoning, and retrieval;
+- Scientific models, ontology, and graph compute;
+- Workflow, qualification, and Agent Core;
+- Delivery, deployment, and operations.
+
+A family is navigation metadata, not a substitute for product identity. Nix,
+Bazel, Arrow, Parquet, React, and other enabling technologies appear as
+dependencies or architecture evidence unless tao3k publishes a distinct
+adoptable deliverable around them.
+
 * Registry contract
 
 Every Products entry contains:
@@ -108,16 +131,12 @@ results do not grant action authority.
 =Ascent= is the canonical public project name.  =ASCN= is not used as an alias
 unless a separate canonical project record defines it.
 
-* Market-convergence projection
+* Page boundary
 
-The Products page may present a compact /Why this architecture is converging
-now/ section sourced from [[file:../compare/50.03_industry_evidence_watch.org][Industry Evidence Watch]].  Each item exposes a date,
-source type, observed fact, architectural gap, and tao3k relevance.
-
-The public page does not publish VC rankings, fundraising targets, investor-fit
-scores, or private relationship strategy.  Financing is evidence that a market
-is pricing a problem; it is not evidence that a tao3k capability is technically
-correct or shipped.
+The Products page explains ownership and integration boundaries only.  It does
+not duplicate adoption journeys, market-convergence analysis, industry pain, or
+long-horizon company positioning.  Those belong respectively to Solutions,
+Comparison, and Principles or the Home page.
 
 * Products page
 

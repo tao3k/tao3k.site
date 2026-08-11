@@ -1,12 +1,26 @@
 import assert from "node:assert/strict";
-import { resolveSiteRoute, siteNavigation, siteRouteIds, siteRoutes } from "../src/site-routes.ts";
+import {
+  platformDeploymentRouteIds,
+  platformNavigation,
+  primarySiteRouteIds,
+  resolveSiteRoute,
+  siteNavigation,
+  siteRouteIds,
+  siteRoutes,
+} from "../src/site-routes.ts";
 
-assert.equal(siteRouteIds.length, 6);
+assert.equal(primarySiteRouteIds.length, 6);
+assert.equal(platformDeploymentRouteIds.length, 3);
+assert.equal(siteRouteIds.length, 9);
 assert.equal(new Set(siteRouteIds).size, siteRouteIds.length);
 assert.equal(new Set(siteRoutes.map(({ path }) => path)).size, siteRoutes.length);
 assert.deepEqual(
   siteNavigation.map(({ href }) => href),
-  siteRouteIds.map((id) => `/${id}`),
+  primarySiteRouteIds.map((id) => `/${id}`),
+);
+assert.deepEqual(
+  platformNavigation.map(({ href }) => href),
+  ["/platform", ...platformDeploymentRouteIds.map((id) => `/${id}`)],
 );
 
 for (const route of siteRoutes) {

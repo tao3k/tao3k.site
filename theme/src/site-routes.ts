@@ -1,4 +1,4 @@
-export const siteRouteIds = [
+export const primarySiteRouteIds = [
   "platform",
   "products",
   "solutions",
@@ -6,6 +6,14 @@ export const siteRouteIds = [
   "principles",
   "roadmap",
 ] as const;
+
+export const platformDeploymentRouteIds = [
+  "platform/on-premises",
+  "platform/hybrid",
+  "platform/managed-cloud",
+] as const;
+
+export const siteRouteIds = [...primarySiteRouteIds, ...platformDeploymentRouteIds] as const;
 
 export type SiteRouteId = (typeof siteRouteIds)[number];
 
@@ -73,12 +81,52 @@ export const siteRoutes: readonly SiteRouteDefinition[] = [
     summary:
       "The roadmap is organized by capabilities that must become trustworthy before the next layer can depend on them—not by promotional version numbers or artificial deadlines.",
   },
+  {
+    id: "platform/on-premises",
+    path: "/platform/on-premises",
+    label: "On-Premises",
+    kicker: "Customer-owned authority boundary",
+    title: "Run the qualified system inside infrastructure you control.",
+    summary:
+      "Data, identity, secrets, hardware policy and operational authority remain inside the customer boundary while tao3k delivers a reproducible system closure and evidence-bearing updates.",
+  },
+  {
+    id: "platform/hybrid",
+    path: "/platform/hybrid",
+    label: "Hybrid",
+    kicker: "Local authority, elastic capability",
+    title: "Keep consequential authority local while qualified workloads move.",
+    summary:
+      "Hybrid deployment separates the authority and sensitive-data plane from qualified compute and coordination surfaces without turning the boundary into an undocumented integration.",
+  },
+  {
+    id: "platform/managed-cloud",
+    path: "/platform/managed-cloud",
+    label: "Managed Cloud",
+    kicker: "Managed operation with explicit evidence",
+    title: "Use a managed system without surrendering artifact or decision identity.",
+    summary:
+      "tao3k manages service operation while tenant, region, model, artifact, policy and receipt identity remain visible and independently qualifiable.",
+  },
 ];
 
-export const siteNavigation = siteRoutes.map(({ label, path }) => ({
-  label,
-  href: path,
-}));
+const primarySiteRouteIdSet = new Set<SiteRouteId>(primarySiteRouteIds);
+
+export const siteNavigation = siteRoutes
+  .filter(({ id }) => primarySiteRouteIdSet.has(id))
+  .map(({ label, path }) => ({
+    label,
+    href: path,
+  }));
+
+const platformDeploymentRouteIdSet = new Set<SiteRouteId>(platformDeploymentRouteIds);
+
+export const platformNavigation = [
+  { label: "Platform overview", href: "/platform", detail: "System architecture" },
+  ...siteRoutes
+    .filter(({ id }) => platformDeploymentRouteIdSet.has(id))
+    .map(({ label, path, kicker }) => ({ label, href: path, detail: kicker })),
+] as const;
 
 export const resolveSiteRoute = (documentId: string): SiteRouteDefinition | null => {
   const normalized = documentId.replace(/^\/+|\/+$/g, "").toLowerCase();
