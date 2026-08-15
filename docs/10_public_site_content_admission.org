@@ -1,0 +1,180 @@
+#+TITLE: Tao3k Public Site Content Admission
+#+DATE: 2026-08-15
+#+AUTHOR: tao3k
+#+OWNER: tao3k
+#+AUDIENCE: public
+#+STATUS: Active
+#+CLAIM_MATURITY: policy
+#+FILETAGS: :tao3k:website:products:platform:solutions:evidence:
+
+* Purpose
+
+The Tao3k public site is an overview for customers, prospective customers,
+investors, and developers.  It explains system boundaries, customer value,
+technical direction, and evidence of seriousness.  It is not a replacement for
+package READMEs, RFCs, benchmarks, deployment runbooks, or implementation docs.
+
+No repository is presented as a customer Product merely because it is public or
+technically important.  Public site claims must be owned by a real repository
+and supported by its source, canonical documentation, or repeatable evidence.
+
+* Content admission rule
+
+Every public statement must identify:
+
+- owner :: the repository and responsible package or document.
+- maturity :: current implementation, measured result, design direction, or
+  future roadmap.
+- evidence :: a source-backed capability, a released interface, a benchmark
+  receipt, a scenario gate, or an explicit deployment definition.
+- audience :: why the statement matters to a customer, investor, or developer.
+
+The site must not turn an architecture ambition into a capability claim.  Exact
+file coverage, throughput, retrieval quality, model-quality impact, deployment
+atomicity, and rollback guarantees require current measured or executable
+evidence before they appear as quantified public claims.
+
+* Current source-backed classification
+
+** Product: [[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
+
+This is the current customer-facing product system.  Its repository describes a
+Rust-first native agent infrastructure that combines:
+
+- =Wendao= :: knowledge and retrieval, including shared contracts, host/runtime
+  behavior, Arrow Flight transport, bounded SQL helpers, and Julia/Modelica
+  repository intelligence.
+- =Qianji= :: workflow, Flowhub, BPMN control, validation, and runtime activity
+  adapters.
+- =Qianhuan= :: context and persona rendering.
+- =Zhenfa= :: native tool and routing substrate.
+
+The public Product page may say that these surfaces work together to make
+knowledge, retrieval, workflow control, context, and native routing part of one
+deployable system.  It must link to the repository and avoid renaming the
+repository as a generic product category.
+
+The repository also has explicit retrieval-performance and quality-gate tooling:
+p95/average latency gates, fixed query-matrix Top1/Top3/Top10 evaluation, and a
+multi-run rollout sign-off.  The public site may describe the existence of
+quality gates.  It must not advertise a current latency, corpus capacity, or
+retrieval score until the associated current benchmark receipt is selected.
+
+** Platform foundation: [[https://github.com/tao3k/orgize][tao3k/orgize]]
+
+=orgize= is a Rust library, not a peer customer Product.  It parses Org into
+non-mutating, source-backed data projections: source blocks, links, agenda
+metadata, capture plans, publishing graphs, and runtime-adjacent Org features.
+It belongs in the Platform knowledge/evidence story and may be named as an open
+foundation behind stable references, Contracts, and durable human-readable
+records.
+
+** Platform foundation: [[https://github.com/tao3k/poo-flow][tao3k/poo-flow]]
+
+=poo-flow= is a Gerbil Scheme Control Plane for higher-order strategies.  It
+expresses policies, profiles, modules, workflows, sessions, and loop descriptors
+as inspectable values before projecting them to execution backends.  It belongs
+under Platform / Control Plane, not as a workflow-runtime product claim.
+
+** Platform foundation: [[https://github.com/tao3k/marlin-agent-core][tao3k/marlin-agent-core]]
+
+=marlin-agent-core= explicitly states that it is not a terminal-user product
+shell.  It is a typed, Org-native agent-runtime substrate for graph loops,
+queries, policy integration, sandbox visibility, receipts, and replay.  The
+public site may identify it as an open runtime foundation; it must not present
+it as a standalone customer Product without a product layer above it.
+
+** Platform foundation: [[https://github.com/tao3k/agent-semantic-protocols][tao3k/agent-semantic-protocols]]
+
+=agent-semantic-protocols= owns shared protocol contracts, Hook runtime,
+parser-oriented semantic language harnesses, schema packets, and replay
+sandtables.  It belongs in the Platform trust and developer-infrastructure
+story, not in a customer Product catalogue.
+
+* What belongs on each public page
+
+** Homepage
+
+State the company proposition and show only durable, cross-system facts:
+knowledge and retrieval, workflow/control, evidence, formal qualification,
+high-performance native systems, and reproducible operation.  Link to the
+appropriate Platform, Product, or Solution surface; do not enumerate package
+internals or publish benchmark numbers here.
+
+** Platform
+
+Describe cross-cutting planes, not a product feature list:
+
+- Knowledge and evidence :: Org-derived structured records, references,
+  provenance, and Contracts.
+- Data Plane :: Apache Arrow and Arrow Flight boundaries where source-backed.
+- Control Plane :: policy, qualification, SDD, BDD, scenario checks, and
+  change-specific Delivery plans.
+- Delivery Plane :: reproducible builds, artifacts, promotion, rollout,
+  rollback, and receipts.
+- Deployment scope :: target machines, environments, topology, configuration,
+  access boundaries, and runtime ownership.
+
+** Products
+
+Present only systems that a customer can evaluate, deploy, integrate, or operate
+as a coherent offering.  At present, feature
+[[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
+once and explain: why it exists, what business/operational boundary it solves,
+which evidence backs the claim, and how it relates to deployment.  List the
+other repositories as open foundations with their correct plane, not as peer
+products.
+
+** Solutions
+
+Show a customer outcome as a composition of named Product, Platform planes, and
+Deployment scope.  A Solution must identify the operational problem, the
+selected system, the governing/quality boundary, the deployment choice, and the
+resulting inspectable evidence.  It should use reference links rather than
+repeat component descriptions.
+
+* Org-WASM reference role
+
+Org-WASM makes this information architecture maintainable: one source-backed
+claim can reference its Product, Platform plane, deployment definition, scenario
+benchmark, and owner documentation.  The website may project those links into
+customer-friendly navigation, while detailed evidence remains in the owning
+repository.  A correction to an owner record then changes every public surface
+that references it instead of leaving multiple inconsistent marketing copies.
+
+* Navigator quick windows
+
+Platform, Products, and Solutions use the same compact navigator window.  The
+window is a discovery and routing surface; it must not duplicate the destination
+page or behave as a second full navigation page.
+
+** Platform
+
+- Knowledge & Evidence :: =/platform#knowledge-evidence=
+- Data Plane :: =/platform#data-plane=
+- Control Plane :: =/platform#control-plane=
+- Delivery Plane :: =/platform#delivery-plane=
+- Deployments :: =/platform#deployments=
+
+** Products
+
+- [[https://github.com/tao3k/xiuxian-artisan-workshop][xiuxian-artisan-workshop]] :: the current deployable Product system.
+- System :: =/products#xiuxian-artisan-workshop=, knowledge, retrieval,
+  workflow/BPMN control, context, and native routing.
+- Evidence :: =/products#xiuxian-artisan-workshop=, quality gates and selected
+  benchmark receipts.
+- Open foundations :: =/products#open-foundations=, the correctly classified
+  repositories behind the Product boundary.
+
+** Solutions
+
+- Knowledge and retrieval operations :: =/solutions#knowledge-operations=
+- Workflow and decision control :: =/solutions#workflow-decision=
+- Qualified AI operations :: =/solutions#qualified-ai=
+- Deployment across real operating scopes :: =/solutions#deployment-scope=
+
+Desktop pointer interaction uses hover intent and a no-gap safe corridor so the
+window does not flicker when the pointer travels from the top-level item into
+its contents.  Keyboard activation uses an explicit control with =aria-expanded=;
+mobile uses an explicit accordion action.  The window closes only after focus or
+pointer leaves the complete interaction boundary.

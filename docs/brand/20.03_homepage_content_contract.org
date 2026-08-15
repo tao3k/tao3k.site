@@ -116,6 +116,27 @@ Present tao3k as one Evidence--Action Ecosystem rather than a collection of AI p
 
 Reveal products as responsible engines inside the lifecycle rather than as an unrelated card catalogue. Knowledge and records, semantic understanding, graph and scientific intelligence, qualification and verification, flow compilation, Agent runtime, and evidence return each link to their responsible Products or Platform owner.
 
+** 4a. Specialized languages, shared evidence boundary
+
+The home page MAY reveal the technical substrate after the lifecycle explanation.
+It MUST NOT become a technology-logo wall.  Each mark is an explicit
+responsibility boundary inside one inspectable Evidence--Action Ecosystem.
+
+| Technology | Public role | Boundary |
+| Rust | Low-level systems and runtime infrastructure with deterministic performance | It does not own scientific modelling or formal proof. |
+| Julia | High-performance graph, numerical, optimisation, simulation, and scientific computation | Numerical evidence is not automatically a formal proof. |
+| Scheme | Higher-order policy composition, hygienic macros, and metaprogramming | It expresses programmable intent before runtime execution; it is not the runtime. |
+| Python | Integration with domain, data, ML, and research ecosystems | It is an ecosystem bridge, not tao3k's mandatory core runtime. |
+| Lean | Machine-checked specifications, invariants, proof obligations, and critical formal claims | A valid proof does not create human or organisational authority. |
+| Typst | Native mathematical typesetting and legible technical publication | It presents mathematics; it does not discharge proof obligations. |
+| Org | Durable human-readable evidence, records, and executable research context | It preserves context and links to evidence; it is not a formal proof checker. |
+| Pluto.jl and Plots.jl | Interactive notebooks and visual exploration of algorithms, models, and results | Interactive exploration must still preserve assumptions and reproducible evidence. |
+
+This section must preserve the distinction: Julia computes, Lean proves,
+Typst expresses mathematics, and Org records the surrounding evidence.  Pluto.jl
+and Plots.jl make computation inspectable for people; they do not replace the
+underlying evidence or qualification boundary.
+
 
 
 ** 5. From research to industry

@@ -761,6 +761,161 @@ a {
   animation: tao3k-cursor 900ms steps(1) infinite;
 }
 
+.tao3k-home-engines {
+  padding: clamp(84px, 11vw, 170px) clamp(24px, 7vw, 120px);
+  color: var(--tao-ink);
+  background: #dbe1d5;
+}
+
+.tao3k-home-engines > header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  column-gap: clamp(28px, 5vw, 84px);
+  row-gap: 20px;
+  align-items: end;
+}
+
+.tao3k-home-engines .tao3k-section-index {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--tao-green);
+}
+
+.tao3k-home-engines h2 {
+  max-width: 580px;
+  margin: 0;
+  font-size: clamp(2.5rem, 4.2vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 570;
+}
+
+.tao3k-home-engines > header > p:last-child {
+  max-width: 480px;
+  margin: 0;
+  color: var(--tao-muted);
+  font-size: clamp(0.94rem, 1.1vw, 1.08rem);
+  line-height: 1.52;
+}
+
+.tao3k-home-engines__planes {
+  margin-top: clamp(48px, 6vw, 82px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tao3k-home-engines__planes > article {
+  min-width: 0;
+  border: 1px solid rgba(17, 42, 35, 0.24);
+  background: rgba(248, 249, 242, 0.28);
+}
+
+.tao3k-home-engines__planes > article.is-single {
+  grid-column: span 1;
+}
+
+.tao3k-home-engines__planes > article.is-compute {
+  grid-column: span 2;
+}
+
+.tao3k-home-engines__planes > article.is-formal {
+  grid-column: 1 / -1;
+}
+
+.tao3k-home-engines__plane-heading {
+  min-height: 0;
+  padding: 18px 24px 16px;
+  border-bottom: 1px solid rgba(17, 42, 35, 0.22);
+  background: rgba(248, 249, 242, 0.38);
+}
+
+.tao3k-home-engines__plane-heading span {
+  color: var(--tao-green);
+  font:
+    750 0.63rem/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+
+.tao3k-home-engines ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tao3k-home-engines__planes > article.is-single ul {
+  grid-template-columns: 1fr;
+}
+
+.tao3k-home-engines__planes > article.is-compute ul,
+.tao3k-home-engines__planes > article.is-formal ul {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tao3k-home-engines li {
+  min-width: 0;
+  min-height: 172px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 13px;
+  align-content: center;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.tao3k-home-engines li + li {
+  border-left: 1px solid rgba(17, 42, 35, 0.18);
+}
+
+.tao3k-home-engines__planes > article.is-single li {
+  grid-template-columns: 40px minmax(0, 1fr);
+}
+
+.tao3k-home-engines__mark {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(17, 42, 35, 0.45);
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  color: var(--tao-green);
+  font:
+    700 0.78rem/1 "IBM Plex Mono",
+    monospace;
+}
+
+.tao3k-home-engines__mark img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.tao3k-home-engines li strong {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.tao3k-home-engines li p {
+  margin: 8px 0 0;
+  color: var(--tao-muted);
+  font-size: 0.82rem;
+  line-height: 1.48;
+}
+
+@media (hover: hover) {
+  .tao3k-home-engines li:hover {
+    background: rgba(249, 250, 243, 0.6);
+    transform: translateY(-3px);
+  }
+}
+
 @keyframes tao3k-water-flow {
   to {
     stroke-dashoffset: -28;
@@ -945,6 +1100,16 @@ a {
   .tao3k-home-thesis {
     grid-template-columns: 1fr 2fr;
   }
+  .tao3k-home-engines__planes {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-home-engines__planes > article {
+    grid-column: 1 / -1;
+  }
+  .tao3k-home-engines__planes > article.is-compute,
+  .tao3k-home-engines__planes > article.is-formal {
+    grid-column: 1 / -1;
+  }
   .tao3k-home-thesis__seal {
     grid-column: 2;
     width: 240px;
@@ -979,6 +1144,31 @@ a {
   }
   .tao3k-home-system-boundary li > p {
     grid-column: 2;
+  }
+  .tao3k-home-engines {
+    padding: 78px 20px;
+  }
+  .tao3k-home-engines > header {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-home-engines__planes {
+    margin-top: 56px;
+    grid-template-columns: 1fr;
+  }
+  .tao3k-home-engines__plane-heading {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    border-bottom: 1px solid rgba(17, 42, 35, 0.22);
+  }
+  .tao3k-home-engines ul {
+    grid-template-columns: 1fr;
+  }
+  .tao3k-home-engines li {
+    min-height: 0;
+  }
+  .tao3k-home-engines li + li {
+    border-top: 1px solid rgba(17, 42, 35, 0.18);
+    border-left: 0;
   }
   .tao3k-live {
     min-height: 900px;

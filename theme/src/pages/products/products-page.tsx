@@ -1,231 +1,156 @@
-import "./products-page.css";
-const products = [
-  {
-    key: "ORG",
-    name: "Orgize",
-    role: "Evidence substrate",
-    detail: "Structured human records, contracts and durable provenance.",
-    href: "https://github.com/tao3k/orgize",
-    tone: "paper",
-  },
-  {
-    key: "ASP",
-    name: "Agent Semantic Protocols",
-    role: "Semantic retrieval",
-    detail: "Parser-owned knowledge and code search for evidence-bearing agents.",
-    href: "https://github.com/tao3k/agent-semantic-protocols",
-    tone: "violet",
-  },
-  {
-    key: "POO",
-    name: "POO Flow",
-    role: "Governed composition",
-    detail: "Scheme-native cases, profiles and composable operational workflows.",
-    href: "https://github.com/tao3k/poo-flow",
-    tone: "coral",
-  },
-  {
-    key: "MRL",
-    name: "Marlin",
-    role: "Agent runtime",
-    detail: "The execution core for coding agents, PR agents and long-lived operations.",
-    href: "https://github.com/tao3k/marlin-agent-core",
-    tone: "green",
-  },
-  {
-    key: "GQL",
-    name: "GQL Rust",
-    role: "Reproducible graph query",
-    detail: "Precise, composable queries over graph-shaped knowledge, code and evidence.",
-    href: "https://github.com/tao3k/gql-rust",
-    tone: "blue",
-  },
-  {
-    key: "ASC",
-    name: "Ascent",
-    role: "Relational deduction",
-    detail:
-      "Declared rules derive inspectable relations, constraints and uncertainty from evidence.",
-    href: "https://github.com/s-arash/ascent",
-    tone: "amber",
-  },
-  {
-    key: "SCI",
-    name: "Scientific Qualification",
-    role: "Graph, computation + proof",
-    detail:
-      "Julia computation, graph algorithms and Lean obligations qualify what may enter action.",
-    href: "https://github.com/tao3k",
-    tone: "blue",
-  },
-] as const;
+import { useState } from "react";
 
-const productionResponsibilities = [
+import "./products-page.css";
+
+type ProductView = {
+  id: "system" | "evidence" | "delivery";
+  label: string;
+  title: string;
+  detail: string;
+};
+
+const productViews: readonly ProductView[] = [
   {
-    signal: "KNOW",
-    title: "Evidence and records",
-    engines: "Orgize · Wendao",
-    question: "What do we know, where did it come from, and who owns it?",
-    outcome: "Durable context with provenance, source identity and human meaning attached.",
+    id: "system",
+    label: "System",
+    title: "Knowledge and control in one deployable system.",
+    detail:
+      "Wendao provides knowledge and retrieval; Qianji provides workflow, Flowhub and BPMN control; Qianhuan renders context and persona; Zhenfa supplies native tool and routing substrate. The product boundary is the combination, not a generic Workshop label.",
   },
   {
-    signal: "ASK",
-    title: "Semantic query",
-    engines: "GQL Rust · Agent Semantic Protocols",
-    question: "Which facts, code paths and relationships answer this question?",
-    outcome: "Precise, composable retrieval over parser-owned and graph-shaped evidence.",
+    id: "evidence",
+    label: "Evidence",
+    title: "Performance and quality are release gates, not slogans.",
+    detail:
+      "The repository carries p95 and average latency gates, a fixed retrieval query matrix evaluated at Top1, Top3 and Top10, and multi-run rollout sign-off. Current quantitative claims belong only where their benchmark receipt is selected.",
   },
   {
-    signal: "REASON",
-    title: "Deduction and calibration",
-    engines: "Ascent · ontology · graph engines",
-    question: "What follows from the evidence—and what remains uncertain?",
-    outcome: "Asserted facts stay distinct from derived relations, constraints and uncertainty.",
+    id: "delivery",
+    label: "Delivery context",
+    title: "A product release enters an explicit operating scope.",
+    detail:
+      "The product page does not make an independent deployment promise. It references Tao3k's Control Plane, Delivery Plane and target Deployment scope, where Contract, specification, behavioural scenarios, qualified artifacts and runtime receipts are owned.",
+  },
+];
+
+const foundations = [
+  {
+    name: "orgize",
+    plane: "Knowledge & evidence",
+    href: "https://github.com/tao3k/orgize",
+    detail:
+      "Rust parsing and non-mutating source-backed projections for Org records, links, blocks and publishing graphs.",
   },
   {
-    signal: "QUALIFY",
-    title: "Scientific qualification",
-    engines: "Julia · Lean · contracts · Cedar · POO Flow",
-    question: "Is this claim or action admissible under the declared conditions?",
-    outcome: "Numerical evidence, proof obligations, policy and human authority become explicit.",
+    name: "poo-flow",
+    plane: "Control Plane",
+    href: "https://github.com/tao3k/poo-flow",
+    detail:
+      "Gerbil Scheme composition for inspectable policies, profiles, modules, workflows and strategy projections.",
   },
   {
-    signal: "OPERATE",
-    title: "Durable operation",
-    engines: "POO Flow · Marlin",
-    question: "Can qualified work continue, recover and remain accountable?",
-    outcome: "Composable workflows meet a runtime with checkpoints, recovery and bounded effects.",
+    name: "marlin-agent-core",
+    plane: "Runtime substrate",
+    href: "https://github.com/tao3k/marlin-agent-core",
+    detail:
+      "Typed Org-native agent-runtime substrate for graph loops, sandbox visibility, receipts and replay—not a terminal-user product shell.",
   },
   {
-    signal: "RETURN",
-    title: "Evidence return",
-    engines: "Org Zhixing · evidence graph",
-    question: "What happened, can it be checked, and what should the system learn?",
-    outcome: "Results return as searchable, attributable, verifiable and reproducible receipts.",
+    name: "agent-semantic-protocols",
+    plane: "Semantic infrastructure",
+    href: "https://github.com/tao3k/agent-semantic-protocols",
+    detail:
+      "Shared protocol contracts, Hook runtime, parser-oriented semantic harnesses and replay sandtables.",
   },
 ] as const;
 
 export function ProductsPage() {
+  const [selectedId, setSelectedId] = useState<ProductView["id"]>("system");
+  const selected = productViews.find((view) => view.id === selectedId) ?? productViews[0];
+
   return (
-    <div className="tao3k-products-page">
-      <section className="tao3k-products-hero">
-        <p className="tao3k-route-kicker">REPRODUCIBLE INTELLIGENCE SYSTEMS</p>
-        <h1>
-          From a question
-          <br />
-          to an action
-          <br />
-          <em>you can defend.</em>
-        </h1>
-        <div className="tao3k-products-hero__copy">
-          <strong>The scientific systems layer for intelligent organisations.</strong>
-          <p>
-            tao3k joins human records, semantic code and knowledge search, graph reasoning,
-            scientific computation, qualification, workflow and durable execution without hiding how
-            a conclusion became an authorised action.
-          </p>
-        </div>
-      </section>
-
-      <section className="tao3k-products-audiences" aria-label="Product value by audience">
-        <article>
-          <span>FOR PEOPLE</span>
-          <h2>Understand before you delegate.</h2>
-          <p>
-            See the source, reasoning, limits and responsible authority behind consequential work.
-          </p>
-        </article>
-        <article>
-          <span>FOR ORGANISATIONS</span>
-          <h2>Adopt intelligence without adopting a black box.</h2>
-          <p>Introduce one governed boundary at a time while existing systems retain ownership.</p>
-        </article>
-        <article>
-          <span>FOR LONG-HORIZON BUILDERS</span>
-          <h2>Build assets that compound beyond a model cycle.</h2>
-          <p>
-            Evidence, policy, workflows and receipts become reusable organisational infrastructure.
-          </p>
-        </article>
-      </section>
-
-      <section className="tao3k-production-system" aria-labelledby="production-system-title">
-        <header>
-          <p className="tao3k-route-kicker">THE PRODUCTION RESPONSIBILITY CHAIN</p>
-          <h2 id="production-system-title">
-            The product is the system between model output and accountable work.
-          </h2>
-          <p>
-            Strong models make proposals. Production systems must still preserve meaning, test
-            conditions, grant authority, survive execution and return evidence.
-          </p>
-        </header>
-        <ol>
-          {productionResponsibilities.map((item, index) => (
-            <li key={item.signal}>
-              <span className="tao3k-production-system__index">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div className="tao3k-production-system__title">
-                <small>{item.signal}</small>
-                <h3>{item.title}</h3>
-                <span>{item.engines}</span>
-              </div>
-              <blockquote>{item.question}</blockquote>
-              <p>{item.outcome}</p>
-            </li>
-          ))}
-        </ol>
-        <aside>
-          <strong>Search improves recall.</strong>
-          <strong>Semantic calibration improves judgement.</strong>
-          <span>Neither one grants action authority.</span>
-        </aside>
-      </section>
-
-      <section className="tao3k-product-registry" aria-labelledby="product-registry-title">
-        <header>
-          <p className="tao3k-route-kicker">INDEPENDENT OPEN-SOURCE ENGINES</p>
-          <h2 id="product-registry-title">
-            Clear owners. Replaceable boundaries. Shared evidence.
-          </h2>
-          <p>
-            Each project owns a narrow responsibility. The complete architecture is a direction;
-            repository availability alone is not a claim that every integration has shipped.
-          </p>
-        </header>
-        <div className="tao3k-product-constellation" aria-label="tao3k product ecosystem">
-          <div className="tao3k-product-axis" aria-hidden="true">
-            <span>EVIDENCE</span>
-            <i />
-            <span>ACTION</span>
-          </div>
-          {products.map((product, index) => (
-            <a
-              className={`tao3k-product-unit tao3k-product-unit--${product.tone}`}
-              href={product.href}
-              key={product.key}
-            >
-              <span className="tao3k-product-unit__index">0{index + 1}</span>
-              <span className="tao3k-product-unit__key">{product.key}</span>
-              <div>
-                <small>{product.role}</small>
-                <h2>{product.name}</h2>
-                <p>{product.detail}</p>
-              </div>
-              <strong aria-hidden="true">↗</strong>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <aside className="tao3k-products-rule">
-        <span>ECOSYSTEM RULE</span>
+    <main className="tao3k-products">
+      <header className="tao3k-products__hero">
+        <p>PRODUCTS / DEPLOYABLE SYSTEMS</p>
+        <h1>One operating system, supported by open foundations.</h1>
         <p>
-          A product may accelerate a transition. It may not erase the evidence boundary that makes
-          that transition trustworthy.
+          Products are customer-evaluable systems. Foundations remain visible, with their real
+          repository names and their correct technical role.
         </p>
-      </aside>
-    </div>
+      </header>
+
+      <section
+        aria-labelledby="featured-product-title"
+        className="tao3k-products__featured"
+        id="xiuxian-artisan-workshop"
+      >
+        <header>
+          <p>CURRENT PRODUCT SYSTEM</p>
+          <h2 id="featured-product-title">xiuxian-artisan-workshop</h2>
+          <a
+            href="https://github.com/tao3k/xiuxian-artisan-workshop"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Open GitHub repository ↗
+          </a>
+        </header>
+
+        <div className="tao3k-products__product-browser">
+          <nav aria-label="xiuxian-artisan-workshop overview" className="tao3k-products__tabs">
+            {productViews.map((view) => {
+              const active = view.id === selected.id;
+              return (
+                <button
+                  aria-controls="featured-product-detail"
+                  aria-selected={active}
+                  className={active ? "is-active" : undefined}
+                  key={view.id}
+                  onClick={() => setSelectedId(view.id)}
+                  role="tab"
+                  type="button"
+                >
+                  {view.label}
+                </button>
+              );
+            })}
+          </nav>
+          <article
+            aria-live="polite"
+            className="tao3k-products__product-detail"
+            id="featured-product-detail"
+            role="tabpanel"
+          >
+            <p>{selected.label}</p>
+            <h3>{selected.title}</h3>
+            <p>{selected.detail}</p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="foundation-title"
+        className="tao3k-products__foundations"
+        id="open-foundations"
+      >
+        <header>
+          <p>OPEN FOUNDATIONS</p>
+          <h2 id="foundation-title">The source systems behind the product boundary.</h2>
+        </header>
+        <div>
+          {foundations.map((foundation) => (
+            <article key={foundation.name}>
+              <p>{foundation.plane}</p>
+              <h3>
+                <a href={foundation.href} rel="noreferrer" target="_blank">
+                  {foundation.name} ↗
+                </a>
+              </h3>
+              <p>{foundation.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
