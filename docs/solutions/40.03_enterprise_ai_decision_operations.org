@@ -54,22 +54,30 @@ structure.  Contracts, Cedar, Julia, and Lean qualify their respective
 boundaries.  Marlin owns the live runtime state, recovery and effect execution.
 No component turns model confidence into authority.
 
-* Public dual-engine solution narrative
+* Public POO Flow and Cedar solution narrative
 
-The main site may use RFC 45-114 to explain a specific enterprise authorization
-problem: two systems can return the same =Allow= or =Deny= while having evaluated
+The public dual-engine design is *POO Flow + Cedar*. POO Flow governs compositional workflow and policy semantics; Lean verifies selected POO Flow invariants; Cedar provides the separate authorization boundary. This separation is the solution argument: formal workflow correctness and request authorization are related controls, but they are not the same problem and must not be presented as duplicate engines performing the same check.
+
+The main-site dual-engine story is POO Flow plus Cedar.  POO Flow supplies the
+compositional policy and control engine; Cedar supplies the authorization
+engine.  This separates operational composition from authorization without
+disconnecting their capability, authority-risk, and evidence identities.
+
+RFC 45-114 then explains a deeper Cedar assurance problem: a definitional and a
+production engine can return the same =Allow= or =Deny= while having evaluated
 different policy inputs, semantic versions, determining policies, or erroring
 policies.  A final Boolean alone cannot expose that drift.
 
-POO Flow's confirmed design binds one canonical authorization subject and uses
-two independent Cedar engines:
+POO Flow's confirmed design composes the two public engines and binds the Cedar
+side to one canonical authorization subject:
 
 #+begin_example
-effective capability determines authority risk
--> one canonical Cedar policy input
--> Cedar Lean definitional engine + Cedar Rust production engine
--> compare complete outcomes
--> dualWitnessed, conformanceBacked, or fail-closed disagreement receipt
+POO Flow composition and policy control
+-> Cedar authorization
+   -> one canonical Cedar policy input
+   -> Lean definitional observation + Rust production observation
+   -> risk-tier complete-outcome comparison
+-> truthful authorization and arbitration receipt
 -> runtime execution remains behind an independent handoff boundary
 #+end_example
 

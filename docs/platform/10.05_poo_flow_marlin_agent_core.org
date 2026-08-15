@@ -21,19 +21,38 @@ The main site presents enterprise meaning and evidence state.  Cedar policies,
 Scheme adapter objects, Lean theorem owners, DRT commands, runtime ABI, and
 receipt schemas remain in POO Flow project documentation.
 
-* Cedar dual-engine policy proof boundary
+* POO Flow and Cedar dual-engine architecture
 
-POO Flow RFC 45-114 defines two Cedar engines:
+The two engines are *POO Flow* and *Cedar*.
+
+- POO Flow owns compositional policy, workflow conditions, effects, compensation, receipts, and the higher-order semantics expressed in Scheme.
+- Lean supplies machine-checked proofs for selected POO Flow invariants and critical workflow properties.
+- Cedar owns authorization decisions at the access boundary.
+
+POO Flow plus Lean and Cedar are two different assurance directions. The site must not describe Lean and Cedar as interchangeable implementations of one authorization engine, and it must not redefine the public dual-engine term as Cedar's internal Lean/Rust implementation detail.
+
+At the system and product level, =dual engine= means:
+
+1. POO Flow, the compositional policy and control engine; and
+2. Cedar, the authorization engine.
+
+POO Flow owns Profiles, composition, capability and authority-risk projection,
+the Cedar adapter and arbitration policy, external-authority state, and the
+evidence boundary around authorization.  Cedar owns policy authorization.
+Marlin is not one of these two policy engines; it owns runtime execution through
+a separate handoff boundary.
+
+RFC 45-114 adds an internal assurance architecture inside the Cedar engine.  It
+compares:
 
 1. the Cedar Lean definitional engine, which owns the definition of Cedar policy
    semantics and its formal theorem surface; and
 2. the Cedar Rust production engine, which supplies executable authorization
    behind the POO Flow Cedar adapter.
 
-Scheme/POO is not the second engine.  It owns the single Cedar adapter boundary,
-the effective-capability risk projection, arbitration policy, external-authority
-state, and receipts that bind both engine observations.  Marlin is also not a
-Cedar engine; it owns runtime execution through a separate handoff boundary.
+This nested Lean/Rust pair is how the Cedar side can produce stronger evidence.
+It must not be presented as a replacement name for the public POO Flow + Cedar
+dual-engine architecture.
 
 Both Cedar engines must receive the same canonical policy input, including the
 policy set, schema, request, entity-store revision, extensions, ProfileBundle,
@@ -51,8 +70,10 @@ Risk selects verification strength:
   cannot claim a per-request dual witness; and
 - completed shadow disagreement :: deny authority and suspend activation.
 
-The business value is not the presence of two implementations by itself.  It
-is risk-proportional assurance, protection against semantic/input drift hidden
+The primary business value is the separation and composition of two policy
+engines: POO Flow can express higher-order operational policy and control while
+Cedar supplies analyzable authorization.  The nested Cedar proof boundary adds
+risk-proportional assurance, protection against semantic/input drift hidden
 behind the same final decision, and truthful evidence distinguishing
 =dualWitnessed= from =conformanceBacked= authorization.
 

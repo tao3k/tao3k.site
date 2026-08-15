@@ -95,16 +95,28 @@ expresses policies, profiles, modules, workflows, sessions, and loop descriptors
 as inspectable values before projecting them to execution backends.  It belongs
 under Platform / Control Plane, not as a workflow-runtime product claim.
 
-RFC 45-114 defines a separate Cedar dual-engine policy proof boundary.  The two
-engines are the Cedar Lean definitional engine and the Cedar Rust production
-engine---not Cedar plus Scheme.  Scheme/POO owns the single native adapter,
+At the public system level, tao3k's dual-engine architecture is POO Flow plus
+Cedar.  POO Flow is the compositional policy and control engine; Cedar is the
+authorization engine.  They retain different responsibilities while sharing an
+admitted authority and evidence boundary.
+
+RFC 45-114 defines a nested proof boundary inside the Cedar side: the Cedar
+Lean definitional engine and Cedar Rust production engine provide independent
+semantic and executable observations.  This internal pair strengthens the
+Cedar authorization engine; it does not redefine the public POO Flow + Cedar
+dual-engine architecture.  Scheme/POO owns the native adapter,
 capability-to-risk projection, arbitration policy, external-authority result,
-and evidence projection around those engines.  Marlin remains outside this RFC
-as the independent runtime execution boundary.
+and evidence projection.  Marlin remains the independent runtime execution
+boundary.
 
 The public Platform argument may state:
 
-- both Cedar engines consume one canonical policy-input identity;
+- POO Flow composes the policy, Profile, capability, authority-risk, and
+  operational control context in which Cedar authorization is evaluated;
+- Cedar provides the authorization decision while preserving its exact policy
+  evidence;
+- inside the Cedar proof boundary, the definitional and production engines
+  consume one canonical policy-input identity;
 - comparison covers the complete outcome---decision, determining policies,
   erroring policies, semantic version, and canonical input identity---rather
   than comparing only =Allow= or =Deny=;
@@ -215,17 +227,20 @@ Project evidence is translated into a three-part public argument:
 3. Enterprise consequence :: the page shows what becomes safer, more
    inspectable, reproducible, recoverable, or governable for an organization.
 
-For RFC 45-114, the public consequence is precise: an enterprise can require
-stronger per-request evidence for elevated authority, preserve a faster
-conformance-backed path for explicitly admitted ordinary authority, detect
-full-outcome or semantic-input drift, and retain disagreement or unavailable
-states without misreporting them as dual-engine agreement.
+For the POO Flow + Cedar dual-engine architecture, the public consequence is
+precise: enterprise composition and authorization remain independent instead of
+being hidden in one Agent loop.  RFC 45-114 further allows stronger
+per-request Cedar evidence for elevated authority, a faster
+conformance-backed path for explicitly admitted ordinary authority, detection
+of full-outcome or semantic-input drift, and truthful disagreement or
+unavailable-state receipts.
 
-The main site should express this through a compact risk-tier arbitration view:
-one canonical authorization subject, two independent Cedar engine observations,
-complete-outcome comparison, and a truthful receipt.  Cedar policies, Scheme
-adapter objects, Lean theorem lists, DRT commands, and receipt schemas remain in
-POO Flow project documentation.
+The main site should first express the two system engines: POO Flow composition
+and Cedar authorization.  Progressive disclosure may then reveal the nested
+Cedar risk-tier assurance view: one canonical authorization subject, independent
+definitional and production observations, complete-outcome comparison, and a
+truthful receipt.  Cedar policies, Scheme adapter objects, Lean theorem lists,
+DRT commands, and receipt schemas remain in POO Flow project documentation.
 
 Official and owner references:
 
@@ -292,3 +307,11 @@ window does not flicker when the pointer travels from the top-level item into
 its contents.  Keyboard activation uses an explicit control with =aria-expanded=;
 mobile uses an explicit accordion action.  The window closes only after focus or
 pointer leaves the complete interaction boundary.
+
+* POO Flow, Lean, and Cedar terminology
+
+The public dual-engine architecture is *POO Flow + Cedar*. POO Flow owns
+compositional policy and workflow semantics, while Lean proves selected POO Flow
+invariants. Cedar independently owns authorization decisions. POO Flow plus Lean
+and Cedar therefore address two different assurance directions; Lean is not a
+second Cedar engine.
