@@ -46,6 +46,48 @@ Durable ecosystem outcomes such as a closed Evidence--Action lifecycle, research
 
 Global =v2=, =v3=, and similar version narratives are prohibited unless a responsible project defines a concrete release with its own evidence and compatibility contract.
 
+* Path to Availability
+
+The Roadmap may describe future commercial availability without presenting the
+current technical program as a mature product catalogue.  Availability advances
+through evidence-gated states rather than dates or promotional versions.
+
+** Foundation
+
+Shared search, reasoning, evidence, data, control, delivery, runtime, and formal
+qualification foundations exist as inspectable projects with explicit limits.
+
+** Integrated Prototype
+
+Selected foundations are composed into a product direction that demonstrates a
+coherent user and operating boundary.  A prototype proves integration and
+product learning; it does not prove commercial readiness.
+
+** Design Partner
+
+Research institutions or industry partners exercise the prototype in a real
+scenario.  This stage validates requirements, performance, deployment,
+authority, support needs, and economic value without implying a general
+commercial offer.
+
+** Developer Preview or Early Access
+
+A named audience receives stable-enough interfaces, deployment artifacts,
+documentation, compatibility expectations, and limited support.  Scope and
+known limitations remain explicit; enterprise SLA and broad production
+readiness are not inferred.
+
+** Commercial Availability
+
+A self-hosted edition, enterprise support offer, managed cloud service, or
+industry platform may be offered only when its product boundary, release and
+support policy, security and deployment qualification, procurement path, and
+service commitments have current evidence.
+
+The public Roadmap may show these states as the =Path to Availability=.  Product
+and Solution pages link to the relevant state but do not independently upgrade
+their maturity.
+
 * Roadmap item evidence contract
 
 Every roadmap item must expose:

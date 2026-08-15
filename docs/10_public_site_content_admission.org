@@ -14,6 +14,11 @@ investors, and developers.  It explains system boundaries, customer value,
 technical direction, and evidence of seriousness.  It is not a replacement for
 package READMEs, RFCs, benchmarks, deployment runbooks, or implementation docs.
 
+The current site represents an early-stage technical company.  Its purpose is
+to make the company thesis, technical foundations, product directions,
+execution evidence, and path to commercialization understandable.  It must not
+imply that every demonstrated system is already a mature commercial offering.
+
 No repository is presented as a customer Product merely because it is public or
 technically important.  Public site claims must be owned by a real repository
 and supported by its source, canonical documentation, or repeatable evidence.
@@ -38,8 +43,8 @@ evidence before they appear as quantified public claims.
 
 ** Product: [[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
 
-This is the current customer-facing product system.  Its repository describes a
-Rust-first native agent infrastructure that combines:
+This is the current integrated product direction and technical prototype.  Its
+repository describes a Rust-first native agent infrastructure that combines:
 
 - =Wendao= :: knowledge and retrieval, including shared contracts, host/runtime
   behavior, Arrow Flight transport, bounded SQL helpers, and Julia/Modelica
@@ -49,10 +54,10 @@ Rust-first native agent infrastructure that combines:
 - =Qianhuan= :: context and persona rendering.
 - =Zhenfa= :: native tool and routing substrate.
 
-The public Product page may say that these surfaces work together to make
-knowledge, retrieval, workflow control, context, and native routing part of one
-deployable system.  It must link to the repository and avoid renaming the
-repository as a generic product category.
+The public Product page may say that these surfaces work together to explore a
+future product system for knowledge, retrieval, workflow control, context, and
+native routing.  It must link to the repository, state its current maturity,
+and avoid presenting technical deployability as commercial availability.
 
 The repository also has explicit retrieval-performance and quality-gate tooling:
 p95/average latency gates, fixed query-matrix Top1/Top3/Top10 evaluation, and a
@@ -117,21 +122,39 @@ Describe cross-cutting planes, not a product feature list:
 
 ** Products
 
-Present only systems that a customer can evaluate, deploy, integrate, or operate
-as a coherent offering.  At present, feature
+Present product directions that may grow from the shared technical foundations.
+For each direction, explain why it exists, its future operating boundary,
+current maturity, present evidence, known gaps, and the next validation step.
+
+At present, feature
 [[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
-once and explain: why it exists, what business/operational boundary it solves,
-which evidence backs the claim, and how it relates to deployment.  List the
-other repositories as open foundations with their correct plane, not as peer
-products.
+once as an integrated product direction and technical prototype.  List the
+other repositories as open foundations with their correct Platform plane, not
+as peer commercial products.  The page must not imply pricing, SLA, procurement
+readiness, or production support before those states have their own evidence.
 
 ** Solutions
 
-Show a customer outcome as a composition of named Product, Platform planes, and
-Deployment scope.  A Solution must identify the operational problem, the
-selected system, the governing/quality boundary, the deployment choice, and the
-resulting inspectable evidence.  It should use reference links rather than
-repeat component descriptions.
+Show the operational problems and validation scenarios that future Products are
+intended to address.  A Solution identifies the problem, affected participants,
+required Platform foundations, present validation evidence, unresolved risks,
+and a possible Deployment scope.  It is a direction for research,
+design-partner work, or an industry pilot unless a separate availability record
+proves a mature offering.  It should use reference links rather than repeat
+component descriptions.
+
+* Commercial boundary
+
+Commercial ambition belongs on the public site, but availability claims belong
+to the Roadmap.  Platform describes the technical thesis; Products describes
+what is being formed; Solutions describes the real problems and validation
+settings; Roadmap describes the evidence-gated path from foundations to
+commercial availability.
+
+Before commercial availability, calls to action are limited to exploring the
+technology, following development, discussing research or industry pilots, and
+becoming a design partner.  Purchase controls, price plans, enterprise SLAs,
+and managed-service promises require a current commercial availability record.
 
 * Org-WASM reference role
 
