@@ -15,12 +15,18 @@ The home page introduces the company thesis and the system tao3k is building. It
 is not a product feature grid, procurement catalogue, developer reference, or
 technical status dashboard.
 
-* Startup public thesis
+* Company stage and audience
 
-tao3k is an early-stage, open-source-first technology company.  The home page
-must help prospective customers, long-horizon investors, developers,
-researchers, and partners understand the whole direction without presenting
-unfinished foundations as mature commercial products.
+tao3k is a startup building To-B AI infrastructure and systems.  Startup is the
+company's current stage, not a customer segment or a reason for the website to
+look provisional.  The primary audiences are investors, prospective enterprise
+customers, developers, and the technical community.
+
+The home page and every primary destination must use the information
+architecture, clarity, visual quality, and interaction standard expected from a
+mature enterprise technology website.  Stage discipline appears in the
+evidence and availability language; it must not reduce Platform, Products,
+Solutions, or Principles to descriptive essays about future intent.
 
 The narrative must make five things legible:
 
@@ -33,11 +39,11 @@ The narrative must make five things legible:
 5. the commercial, industrial, scientific, and community value that may emerge
    as those foundations mature.
 
-Use =is building= for the complete platform or future product system.  Use
-present-tense capability language only for a named artifact, prototype, proof,
-test, or open-source project with project-owned evidence.  Never borrow the
-procurement language, production-readiness posture, deployment guarantees, or
-support promises of an established vendor.
+Use =is building= for capabilities that are genuinely under construction.  Use
+present-tense capability language for named artifacts, prototypes, proofs,
+tests, open-source projects, and working product surfaces with project-owned
+evidence.  This claim discipline must remain precise and local; do not repeat a
+startup disclaimer across every page.
 
 * Hero
 

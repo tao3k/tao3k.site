@@ -9,11 +9,17 @@
 
 * Purpose
 
-This contract defines the public website navigation.  The site is the public
-thesis of an early-stage, open-source-first company for prospective customers,
-long-horizon investors, developers, researchers, partners, and the tao3k
-open-source ecosystem.  It does not replace project documentation, API
-references, implementation RFCs, or a mature vendor procurement catalogue.
+This contract defines the public website navigation for tao3k, a startup
+building To-B AI infrastructure and systems.  Startup is the company stage, not
+the audience classification.  The primary audiences are investors, prospective
+enterprise customers, developers, and the technical community.
+
+The navigation and destination pages adopt the clarity, progressive disclosure,
+visual hierarchy, product storytelling, and conversion paths of mature
+enterprise technology websites.  Evidence maturity constrains claims; it does
+not turn the site into a project diary or a collection of descriptive essays.
+The site still does not replace project documentation, API references, or
+implementation RFCs.
 
 * Top-level navigation contract
 
@@ -40,8 +46,8 @@ it is not the boundary of the knowledge or resource model.
 ** Products
 :PROPERTIES:
 :ROUTE: /products
-:RESPONSIBILITY: Introduce emerging tao3k product directions and the evidence that makes them credible.
-:INCLUDES: Intended user and problem, differentiation, responsible foundations, current evidence, next maturity boundary, source repository, documentation, and ecosystem relationships.
+:RESPONSIBILITY: Introduce tao3k product systems through a complete customer-facing narrative.
+:INCLUDES: User problem, product experience, differentiation, responsible foundations, current evidence, availability and adoption path, source repository, documentation, and ecosystem relationships.
 :EXCLUDES: Shared-platform claims duplicated from Platform and customer-outcome narratives duplicated from Solutions.
 :END:
 
@@ -56,8 +62,8 @@ contributes structured records, references, deep links, and durable evidence.
 ** Solutions
 :PROPERTIES:
 :ROUTE: /solutions
-:RESPONSIBILITY: Explain high-value problems where tao3k's architecture should matter and what remains to validate.
-:INCLUDES: Problem, affected actor, architectural hypothesis, intended outcome, current evidence, and customer or partner validation obligation.
+:RESPONSIBILITY: Explain how tao3k addresses high-value enterprise problems through composed systems.
+:INCLUDES: Problem, affected operator, operating scenario, system composition, intended outcome, deployment context, evidence, and engagement path.
 :EXCLUDES: Individual product internals and generic technology-stack catalogues.
 :END:
 
