@@ -25,11 +25,27 @@ receipt schemas remain in POO Flow project documentation.
 
 The two engines are *POO Flow* and *Cedar*.
 
-- POO Flow owns compositional policy, workflow conditions, effects, compensation, receipts, and the higher-order semantics expressed in Scheme.
-- Lean supplies machine-checked proofs for selected POO Flow invariants and critical workflow properties.
-- Cedar owns authorization decisions at the access boundary.
+- Gerbil/POO is the higher-order control plane. It compiles the global Agent plan
+  from the task, profiles, environment, and current state; constructs roles and
+  delegation; and keeps constraints generated for tools, handoffs, sessions,
+  memory, sandboxes, and human approval tied to one policy source.
+- Cedar is the deterministic authorization microkernel at the effect boundary.
+  Given a principal, action, resource, and context, it decides whether that one
+  concrete effect is allowed.
+- Lean is the independent verifier. It proves selected invariants across steps,
+  Agents, delegation, workflow structure, runtime traces, and receipts.
+- The Agent runtime performs and persists admitted work.
 
-POO Flow plus Lean and Cedar are two different assurance directions. The site must not describe Lean and Cedar as interchangeable implementations of one authorization engine, and it must not redefine the public dual-engine term as Cedar's internal Lean/Rust implementation detail.
+The dual-engine label therefore refers to *POO Flow + Cedar*. POO Flow plus Lean
+and Cedar address different assurance directions: Lean proves properties of the
+composed system, while Cedar answers a concrete authorization question. The site
+must not describe them as interchangeable engines performing the same check.
+
+The commercial argument is unified policy provenance. Enterprises should not
+have to reconstruct whether an organizational constraint covered every Python
+middleware, tool wrapper, prompt, workflow node, gateway, IAM policy, and runtime
+configuration. POO Flow derives those controls from the composed system; Cedar
+guards concrete effects; Lean makes critical end-to-end claims reviewable.
 
 At the system and product level, =dual engine= means:
 

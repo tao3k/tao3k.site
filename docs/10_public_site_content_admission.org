@@ -310,8 +310,20 @@ pointer leaves the complete interaction boundary.
 
 * POO Flow, Lean, and Cedar terminology
 
-The public dual-engine architecture is *POO Flow + Cedar*. POO Flow owns
-compositional policy and workflow semantics, while Lean proves selected POO Flow
-invariants. Cedar independently owns authorization decisions. POO Flow plus Lean
-and Cedar therefore address two different assurance directions; Lean is not a
-second Cedar engine.
+The public dual-engine architecture is *POO Flow + Cedar*, but the two engines
+must not be presented as duplicate policy evaluators.
+
+- Gerbil/POO is the higher-order control plane. It constructs and evolves the
+  Agent system, composes roles and profiles, coordinates delegation, and derives
+  constraints for different execution paths from one policy source.
+- Cedar is the deterministic authorization microkernel at the effect boundary.
+  It decides whether one concrete principal may perform one action on one
+  resource in the supplied context.
+- Lean is an independent proof direction for cross-step, cross-Agent, and
+  lifecycle invariants, including declared workflow structure, traces, and
+  receipts.
+- The Agent runtime owns execution and persistence.
+
+The main site may call POO Flow and Cedar the dual engine. It must describe Lean
+as formal assurance over the composed system, not as a second Cedar engine or as
+an interchangeable authorization implementation.

@@ -56,7 +56,25 @@ No component turns model confidence into authority.
 
 * Public POO Flow and Cedar solution narrative
 
-The public dual-engine design is *POO Flow + Cedar*. POO Flow governs compositional workflow and policy semantics; Lean verifies selected POO Flow invariants; Cedar provides the separate authorization boundary. This separation is the solution argument: formal workflow correctness and request authorization are related controls, but they are not the same problem and must not be presented as duplicate engines performing the same check.
+The public dual-engine design is *POO Flow + Cedar*.
+
+POO Flow is the higher-order control plane: it constructs the Agent system,
+composes profiles and delegation, evolves the global plan, and derives controls
+for its execution paths from a common policy source. Cedar is the deterministic
+authorization microkernel at the effect boundary: it decides whether one
+concrete principal, action, resource, and context may produce an effect.
+
+Lean provides a separate formal-verification path over the composed system. It
+checks selected invariants that a request-level authorization decision cannot
+establish by itself: lifecycle progression, delegation, workflow structure,
+trace conformance, and receipt continuity. The Agent runtime remains responsible
+for execution and persistence.
+
+This is the enterprise solution argument. A local =ALLOW= is necessary at an
+effect boundary, but it is not proof that a complex Agent workflow was composed
+correctly, followed its declared plan, preserved authority across handoffs, or
+returned sufficient evidence. POO Flow, Cedar, and Lean expose those distinct
+questions without collapsing them into one generic safety claim.
 
 The main-site dual-engine story is POO Flow plus Cedar.  POO Flow supplies the
 compositional policy and control engine; Cedar supplies the authorization
