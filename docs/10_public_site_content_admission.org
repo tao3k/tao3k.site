@@ -14,10 +14,12 @@ investors, and developers.  It explains system boundaries, customer value,
 technical direction, and evidence of seriousness.  It is not a replacement for
 package READMEs, RFCs, benchmarks, deployment runbooks, or implementation docs.
 
-The current site represents an early-stage technical company.  Its purpose is
-to make the company thesis, technical foundations, product directions,
-execution evidence, and path to commercialization understandable.  It must not
-imply that every demonstrated system is already a mature commercial offering.
+Tao3k is an early-stage company building To-B AI infrastructure and systems.
+The site makes the company thesis, technical foundations, product directions,
+execution evidence, and path to commercialization understandable to investors,
+prospective enterprise customers, and developers.  The company's stage explains
+why the site presents an evidence-backed direction rather than a mature product
+catalogue; it does not define startups as the customer category.
 
 No repository is presented as a customer Product merely because it is public or
 technically important.  Public site claims must be owned by a real repository
