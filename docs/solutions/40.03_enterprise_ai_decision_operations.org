@@ -54,6 +54,41 @@ structure.  Contracts, Cedar, Julia, and Lean qualify their respective
 boundaries.  Marlin owns the live runtime state, recovery and effect execution.
 No component turns model confidence into authority.
 
+* Public dual-engine solution narrative
+
+The main site may use RFC 45-114 to explain a specific enterprise authorization
+problem: two systems can return the same =Allow= or =Deny= while having evaluated
+different policy inputs, semantic versions, determining policies, or erroring
+policies.  A final Boolean alone cannot expose that drift.
+
+POO Flow's confirmed design binds one canonical authorization subject and uses
+two independent Cedar engines:
+
+#+begin_example
+effective capability determines authority risk
+-> one canonical Cedar policy input
+-> Cedar Lean definitional engine + Cedar Rust production engine
+-> compare complete outcomes
+-> dualWitnessed, conformanceBacked, or fail-closed disagreement receipt
+-> runtime execution remains behind an independent handoff boundary
+#+end_example
+
+For elevated authority, every request requires strict dual-engine lockstep.  For
+explicitly admitted ordinary authority, the production engine may use pinned
+DRT evidence plus bounded Lean shadow.  A conformance-backed result is never
+reported as a per-request dual witness, and completed disagreement denies
+authority and suspends activation.
+
+This gives an enterprise a risk-proportional authorization architecture and an
+auditable distinction between exact agreement, finite conformance evidence,
+indeterminate engine state, and disagreement.  It does not establish that the
+concrete POO Flow production adapter is already commercially or empirically
+qualified.
+
+The public page should visualize the risk-tier arbitration and business
+consequence.  Exact policy syntax, POO adapter construction, Lean theorem names,
+DRT corpus setup, and runtime receipts belong in POO Flow Docs.
+
 * Non-negotiable requirements
 
 1. Every material retrieval retains source identity, access scope, and enough

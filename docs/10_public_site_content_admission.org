@@ -14,6 +14,18 @@ investors, and developers.  It explains system boundaries, customer value,
 technical direction, and evidence of seriousness.  It is not a replacement for
 package READMEs, RFCs, benchmarks, deployment runbooks, or implementation docs.
 
+The public site and project documentation are separate editorial products:
+
+| Surface | Owns | Does not own |
+|---------+------+--------------|
+| tao3k public site | company thesis, market problem, Platform architecture, Product experience, Solution outcomes, differentiation, selected engineering evidence, commercial path, and routes to inspect or engage | package APIs, language syntax, module inventories, theorem listings, build commands, benchmark internals, runbooks, and exhaustive repository status |
+| project documentation | implementation contracts, APIs, source ownership, language and module semantics, proofs, tests, benchmarks, operations, contribution, and exact maturity evidence | company-wide positioning, duplicated sales narrative, or an independent version of the public site |
+
+A project detail reaches the public site only after it is transformed into a
+customer-, investor-, or developer-relevant claim.  The public site answers
+=why this architecture matters= and =why tao3k can build it=, then links to the
+owning project for =how it works exactly=.
+
 Tao3k is an early-stage company building To-B AI infrastructure and systems.
 The site makes the company thesis, technical foundations, product directions,
 execution evidence, and path to commercialization understandable to investors,
@@ -83,6 +95,38 @@ expresses policies, profiles, modules, workflows, sessions, and loop descriptors
 as inspectable values before projecting them to execution backends.  It belongs
 under Platform / Control Plane, not as a workflow-runtime product claim.
 
+RFC 45-114 defines a separate Cedar dual-engine policy proof boundary.  The two
+engines are the Cedar Lean definitional engine and the Cedar Rust production
+engine---not Cedar plus Scheme.  Scheme/POO owns the single native adapter,
+capability-to-risk projection, arbitration policy, external-authority result,
+and evidence projection around those engines.  Marlin remains outside this RFC
+as the independent runtime execution boundary.
+
+The public Platform argument may state:
+
+- both Cedar engines consume one canonical policy-input identity;
+- comparison covers the complete outcome---decision, determining policies,
+  erroring policies, semantic version, and canonical input identity---rather
+  than comparing only =Allow= or =Deny=;
+- elevated authority requires strict per-request Lean/Rust lockstep;
+- explicitly admitted ordinary authority may use the Rust hot path with pinned
+  differential-randomized-testing evidence and bounded Lean shadow; and
+- missing engines, completed disagreement, malformed projection, or ambiguous
+  risk fail closed and retain a truthful receipt.
+
+This is an architecture and engineering-evidence claim, not a completed product
+availability claim.  The risk-tier arbitration direction and local Lean proof
+owners exist; the concrete production adapter, pinned DRT execution, production
+interoperability, and external empirical qualification remain open.
+
+Industry context may be used without borrowing maturity.  Amazon Verified
+Permissions is an AWS managed authorization service using Cedar, and
+Microsoft's open-source Agent Governance Toolkit specifies an optional bundled
+Cedar dispatcher.  These are evidence that Cedar is gaining production and
+production-oriented recognition in the emerging Agent era; they are not tao3k
+customer endorsements or evidence that POO Flow's production adapter is already
+admitted.
+
 ** Platform foundation: [[https://github.com/tao3k/marlin-agent-core][tao3k/marlin-agent-core]]
 
 =marlin-agent-core= explicitly states that it is not a terminal-user product
@@ -122,6 +166,10 @@ Describe cross-cutting planes, not a product feature list:
 - Deployment scope :: target machines, environments, topology, configuration,
   access boundaries, and runtime ownership.
 
+Platform pages explain these as a coherent architecture using system maps,
+standards, responsibility boundaries, and selected proof points.  They do not
+reproduce the implementation inventory of every foundation repository.
+
 ** Products
 
 Present product directions that may grow from the shared technical foundations.
@@ -135,6 +183,10 @@ other repositories as open foundations with their correct Platform plane, not
 as peer commercial products.  The page must not imply pricing, SLA, procurement
 readiness, or production support before those states have their own evidence.
 
+Product pages explain the product experience, user problem, differentiation,
+system anatomy, evidence, and adoption path.  Repository names appear only
+where they establish credibility or provide a route to inspect the work.
+
 ** Solutions
 
 Show the operational problems and validation scenarios that future Products are
@@ -144,6 +196,43 @@ and a possible Deployment scope.  It is a direction for research,
 design-partner work, or an industry pilot unless a separate availability record
 proves a mature offering.  It should use reference links rather than repeat
 component descriptions.
+
+Solution pages lead with the enterprise problem and operating consequence.
+They may show a concise system composition such as =request -> authorize ->
+qualify -> execute -> verify -> receipt=, but send policy syntax, workflow
+definitions, proof code, and deployment instructions to the responsible
+project documentation.
+
+* Main-site evidence pattern
+
+Project evidence is translated into a three-part public argument:
+
+1. Industry signal :: a recognized standard, managed production service,
+   public incident, or established engineering direction demonstrates that the
+   problem category is real.
+2. tao3k distinction :: the responsible RFC explains the architectural choice
+   and evidence boundary; the website does not invent a simpler replacement.
+3. Enterprise consequence :: the page shows what becomes safer, more
+   inspectable, reproducible, recoverable, or governable for an organization.
+
+For RFC 45-114, the public consequence is precise: an enterprise can require
+stronger per-request evidence for elevated authority, preserve a faster
+conformance-backed path for explicitly admitted ordinary authority, detect
+full-outcome or semantic-input drift, and retain disagreement or unavailable
+states without misreporting them as dual-engine agreement.
+
+The main site should express this through a compact risk-tier arbitration view:
+one canonical authorization subject, two independent Cedar engine observations,
+complete-outcome comparison, and a truthful receipt.  Cedar policies, Scheme
+adapter objects, Lean theorem lists, DRT commands, and receipt schemas remain in
+POO Flow project documentation.
+
+Official and owner references:
+
+- [[https://docs.aws.amazon.com/verifiedpermissions/][Amazon Verified Permissions documentation]];
+- [[https://github.com/cedar-policy/cedar-spec][Cedar Lean specification and DRT owner]];
+- [[https://github.com/microsoft/agent-governance-toolkit/blob/main/policy-engine/spec/SPECIFICATION.md][Microsoft Agent Governance Toolkit policy-engine specification]]; and
+- [[https://github.com/tao3k/poo-flow][POO Flow repository and project documentation]].
 
 * Commercial boundary
 

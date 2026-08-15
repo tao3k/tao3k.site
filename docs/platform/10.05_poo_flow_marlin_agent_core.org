@@ -17,6 +17,51 @@ POO Flow defines and compiles the agent system. Marlin runs it.
 
 This record defines how POO Flow and Marlin appear in the tao3k ecosystem and main-site narrative. It does not replace the POO Flow or Marlin project documentation for current compiler, Runtime, capability, benchmark, or delivery facts.
 
+The main site presents enterprise meaning and evidence state.  Cedar policies,
+Scheme adapter objects, Lean theorem owners, DRT commands, runtime ABI, and
+receipt schemas remain in POO Flow project documentation.
+
+* Cedar dual-engine policy proof boundary
+
+POO Flow RFC 45-114 defines two Cedar engines:
+
+1. the Cedar Lean definitional engine, which owns the definition of Cedar policy
+   semantics and its formal theorem surface; and
+2. the Cedar Rust production engine, which supplies executable authorization
+   behind the POO Flow Cedar adapter.
+
+Scheme/POO is not the second engine.  It owns the single Cedar adapter boundary,
+the effective-capability risk projection, arbitration policy, external-authority
+state, and receipts that bind both engine observations.  Marlin is also not a
+Cedar engine; it owns runtime execution through a separate handoff boundary.
+
+Both Cedar engines must receive the same canonical policy input, including the
+policy set, schema, request, entity-store revision, extensions, ProfileBundle,
+effective capability, and arbitration policy.  Arbitration compares complete
+outcomes: Cedar decision, determining policies, erroring policies, semantic
+version, and canonical input identity.
+
+Risk selects verification strength:
+
+- elevated or ambiguous authority :: strict Lean/Rust lockstep on every
+  request; missing, unavailable, timed-out, malformed, or disagreeing evidence
+  denies external authority and suspends activation;
+- explicitly admitted ordinary authority :: Rust production hot path with
+  pinned DRT conformance and bounded Lean shadow; a conformance-backed receipt
+  cannot claim a per-request dual witness; and
+- completed shadow disagreement :: deny authority and suspend activation.
+
+The business value is not the presence of two implementations by itself.  It
+is risk-proportional assurance, protection against semantic/input drift hidden
+behind the same final decision, and truthful evidence distinguishing
+=dualWitnessed= from =conformanceBacked= authorization.
+
+Current evidence must remain explicit: the architecture direction, risk-tier
+design, upstream Cedar proof dependency, and initial local Lean arbitration
+owners exist.  The concrete production adapter is not admitted; pinned Rust DRT
+execution, live dual-engine interoperability, performance qualification, and
+external empirical closure remain open.
+
 * Product category
 
 Marlin is an Agent Runtime comparable at the category level to the runtimes underlying coding agents, PR agents, Codex-style agents, Claude Code-style agents, and other general or domain-specific agent products.
