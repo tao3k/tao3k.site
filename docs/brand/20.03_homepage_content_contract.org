@@ -11,7 +11,33 @@
 
 This record defines the required narrative order and editorial boundary of the tao3k home page.
 
-The home page introduces the complete tao3k ecosystem. It is not a product feature grid, developer reference, or technical status dashboard.
+The home page introduces the company thesis and the system tao3k is building. It
+is not a product feature grid, procurement catalogue, developer reference, or
+technical status dashboard.
+
+* Startup public thesis
+
+tao3k is an early-stage, open-source-first technology company.  The home page
+must help prospective customers, long-horizon investors, developers,
+researchers, and partners understand the whole direction without presenting
+unfinished foundations as mature commercial products.
+
+The narrative must make five things legible:
+
+1. the consequential problem and why it matters now;
+2. tao3k's distinct position on evidence, authority, Human Agency, and durable
+   learning;
+3. the long-term system and product directions being built;
+4. the named open-source systems, prototypes, proofs, and experiments that make
+   the direction credible today; and
+5. the commercial, industrial, scientific, and community value that may emerge
+   as those foundations mature.
+
+Use =is building= for the complete platform or future product system.  Use
+present-tense capability language only for a named artifact, prototype, proof,
+test, or open-source project with project-owned evidence.  Never borrow the
+procurement language, production-readiness posture, deployment guarantees, or
+support promises of an established vendor.
 
 * Hero
 
@@ -30,7 +56,7 @@ Build AI systems that can continue.
 The stable description is:
 
 #+begin_quote
-For vertical enterprises, product partners and serious users, tao3k provides the evidence, authority, durable state and recovery system around AI.
+tao3k is building the evidence, authority, durable state, and recovery system around consequential AI.
 #+end_quote
 
 The human explanation is:
@@ -39,7 +65,9 @@ The human explanation is:
 Use the best models. Keep your own system. tao3k does not replace models, clouds or coding agents; it makes their work traceable, qualified, recoverable and reusable.
 #+end_quote
 
-The primary calls to action are =Explore the vision= and =View the roadmap=. Open-source and documentation actions remain visible without displacing the doctrine.
+The primary calls to action are =Explore the platform= and =See what we are
+building=. =View the roadmap=, =Explore open-source foundations=, and =Work with
+us= remain visible without implying that a finished product is ready to procure.
 
 * Required narrative order
 
@@ -49,15 +77,20 @@ Render the hero from the canonical message hierarchy rather than composing new c
 
 - Category :: Evidence--Action System Infrastructure
 - Heading :: Build AI systems that can continue.
-- Promise :: tao3k provides the evidence, authority, durable state, and recovery system around AI for vertical enterprises, product partners, and serious users.
+- Promise :: tao3k is building the evidence, authority, durable state, and recovery system around consequential AI.
 - Commitment :: Built for scientific standards, accountable operation, research-to-industry continuity, open technical agency, and long-term stewardship.
-- Primary actions :: Explore the System; See Industry Systems.
-- Secondary actions :: View the Roadmap; Explore Open Source Projects.
+- Primary actions :: Explore the Platform; See What We Are Building.
+- Secondary actions :: View the Roadmap; Explore Open-Source Foundations.
 - Commercial action :: Work with tao3k.
 
 Do not use /Get Started/ or /Book a Demo/ as the dominant hero action, and do not classify tao3k as a generic AI assistant, workflow, knowledge, agent, or operating-system product.
 
-Lead with =Build AI systems that can continue.= and the stable company description. =Intelligence must earn the right to act.= remains the governing doctrine that gives the heading its practical meaning. Keep product names and training-data claims out of the opening claim. The primary actions are =Explore the system= and =See industry systems=.
+Lead with =Build AI systems that can continue.= and the stable company
+description. =Intelligence must earn the right to act.= remains the governing
+doctrine that gives the heading its practical meaning. Keep product names and
+training-data claims out of the opening claim. The opening should invite a
+visitor to understand the thesis and inspect the work, not enter a purchasing
+funnel.
 
 ** 1a. The non-replacement boundary
 
@@ -114,7 +147,13 @@ State the standard explicitly: Science is the method, evidence and qualification
 
 Present tao3k as one Evidence--Action Ecosystem rather than a collection of AI products. At main-site altitude, show a continuous path through Evidence Foundation, Qualification Plane, Action Core, and Evidence Return Loop: knowledge and records become qualified action, while action returns searchable, verifiable, and evolvable evidence. The ecosystem uses multiple specialized engines joined by shared evidence, qualification, and authority contracts; it is neither a loose project list nor a forced monolith. Keep individual projects role-level here and direct implementation claims to their own Docs.
 
-Reveal products as responsible engines inside the lifecycle rather than as an unrelated card catalogue. Knowledge and records, semantic understanding, graph and scientific intelligence, qualification and verification, flow compilation, Agent runtime, and evidence return each link to their responsible Products or Platform owner.
+Reveal emerging product directions as responsible engines inside the lifecycle
+rather than as an unrelated card catalogue. Knowledge and records, semantic
+understanding, graph and scientific intelligence, qualification and
+verification, flow composition, Agent runtime, and evidence return each link to
+their responsible Platform foundation and current evidence.  A repository or
+prototype demonstrates execution; it does not by itself establish product
+maturity.
 
 ** 4a. Specialized languages, shared evidence boundary
 
@@ -169,8 +208,13 @@ Close by directing users to Comparison, Roadmap, and the [[file:../company/80.01
 
 - Visionary language is allowed in Vision and Roadmap sections.
 - Current capability claims require a project-owned evidence link.
+- Product directions must distinguish intended value, current evidence, next
+  maturity boundary, and open validation obligations.
+- Solution directions must distinguish an architectural hypothesis from a
+  customer- or partner-validated outcome.
 - The home page does not display unsupported percentages, customer counts, benchmark claims, or universal superiority claims.
-- Product cards describe ecosystem role, not exhaustive implementation status.
+- Product cards describe intended role and evidence state, not procurement or
+  production readiness.
 - Comparison claims link to the Comparison framework and supporting sources.
 
 * Visual hierarchy

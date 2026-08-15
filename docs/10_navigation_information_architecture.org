@@ -1,4 +1,4 @@
-#+TITLE: Tao3k Website Navigation Information Architecture
+#+TITLE: tao3k Website Navigation Information Architecture
 #+DATE: 2026-08-15
 #+AUTHOR: tao3k
 #+OWNER: tao3k
@@ -9,53 +9,55 @@
 
 * Purpose
 
-This contract defines the public website navigation.  The site is an overview
-for customers, investors, developers, and the Tao3k open-source ecosystem.  It
-does not replace product documentation, API references, or implementation RFCs.
+This contract defines the public website navigation.  The site is the public
+thesis of an early-stage, open-source-first company for prospective customers,
+long-horizon investors, developers, researchers, partners, and the tao3k
+open-source ecosystem.  It does not replace project documentation, API
+references, implementation RFCs, or a mature vendor procurement catalogue.
 
 * Top-level navigation contract
 
 ** Home
 :PROPERTIES:
 :ROUTE: /
-:RESPONSIBILITY: Explain Tao3k as one long-horizon system.
-:INCLUDES: Positioning, system overview, audience paths, and the durable thesis.
+:RESPONSIBILITY: Explain tao3k as one long-horizon company and system thesis.
+:INCLUDES: Positioning, why now, system overview, current evidence, audience paths, and the durable thesis.
 :EXCLUDES: Product specifications, implementation tutorials, and detailed comparisons.
 :END:
 
 ** Platform
 :PROPERTIES:
 :ROUTE: /platform
-:RESPONSIBILITY: Explain the shared substrate and operational guarantees.
-:INCLUDES: Resource fabric, Apache Arrow data interface, qualification boundaries, reproducible delivery, and local/on-premises/hybrid/cloud projections.
+:RESPONSIBILITY: Explain the shared substrate tao3k is building and why it can become defensible.
+:INCLUDES: Resource fabric, Apache Arrow data interface, qualification boundaries, reproducible delivery, and intended local/on-premises/hybrid/cloud projections.
 :EXCLUDES: A product feature catalogue, a workshop walkthrough, and vertical use cases.
 :END:
 
-Platform describes what remains common when several Tao3k products work
+Platform describes what remains common when several tao3k product directions work
 together.  Org is one evidence and linked-record capability in this substrate;
 it is not the boundary of the knowledge or resource model.
 
 ** Products
 :PROPERTIES:
 :ROUTE: /products
-:RESPONSIBILITY: Introduce named, deployable or integrable Tao3k systems.
-:INCLUDES: Product purpose, primary objects, deployment boundary, source repository, documentation, and ecosystem relationships.
+:RESPONSIBILITY: Introduce emerging tao3k product directions and the evidence that makes them credible.
+:INCLUDES: Intended user and problem, differentiation, responsible foundations, current evidence, next maturity boundary, source repository, documentation, and ecosystem relationships.
 :EXCLUDES: Shared-platform claims duplicated from Platform and customer-outcome narratives duplicated from Solutions.
 :END:
 
 [[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
-is a product repository.  Its two coequal cores are the Knowledge and Resource
-Engine and the Workflow and Decision Engine.  The workshop is its human
-operating surface: it is not a separate platform category.  Knowledge and
-resources include Org, Markdown, Office documents, code, attachments, and
-other supported source material; Org contributes structured records,
-references, deep links, and durable evidence.
+is the repository evidence for an emerging product direction.  Its two coequal
+cores are the Knowledge and Resource Engine and the Workflow and Decision
+Engine.  The workshop is its intended human operating surface: it is not a
+separate platform category.  Knowledge and resources include Org, Markdown,
+Office documents, code, attachments, and other supported source material; Org
+contributes structured records, references, deep links, and durable evidence.
 
 ** Solutions
 :PROPERTIES:
 :ROUTE: /solutions
-:RESPONSIBILITY: Explain customer problems solved through product combinations.
-:INCLUDES: Enterprise knowledge and resource operations, governed AI operations, scientific-to-industrial work, and deployment-boundary scenarios.
+:RESPONSIBILITY: Explain high-value problems where tao3k's architecture should matter and what remains to validate.
+:INCLUDES: Problem, affected actor, architectural hypothesis, intended outcome, current evidence, and customer or partner validation obligation.
 :EXCLUDES: Individual product internals and generic technology-stack catalogues.
 :END:
 
@@ -87,7 +89,7 @@ references, deep links, and durable evidence.
 
 | Standard or resource | Website responsibility |
 |----------------------+------------------------|
-| Apache Arrow         | The Tao3k-wide structured data interchange boundary. |
+| Apache Arrow         | The tao3k-wide structured data interchange boundary. |
 | BPMN 2.0 and DMN     | Industrial process and decision semantics used by Xiuxian. |
 | Org                  | Linked records, references, deep links, executable context, and durable evidence. |
 | Bazel, Nix, and HCL  | Reproducible build, environment, and infrastructure discipline. |
@@ -112,7 +114,7 @@ Product entries use their repository name and a canonical GitHub link.
 
 | Repository | Canonical link | Description |
 |------------+----------------+-------------|
-| xiuxian-artisan-workshop | [[https://github.com/tao3k/xiuxian-artisan-workshop][github.com/tao3k/xiuxian-artisan-workshop]] | Deployable knowledge/resource and workflow/decision system with a human workshop surface. |
+| xiuxian-artisan-workshop | [[https://github.com/tao3k/xiuxian-artisan-workshop][github.com/tao3k/xiuxian-artisan-workshop]] | Emerging knowledge/resource and workflow/decision product direction with a human workshop surface. |
 | orgize | [[https://github.com/tao3k/orgize][github.com/tao3k/orgize]] | Org parsing, structured records, links, contracts, and content projection. |
 | poo-flow | [[https://github.com/tao3k/poo-flow][github.com/tao3k/poo-flow]] | Composable operational policy language and profile system. |
 | marlin-agent-core | [[https://github.com/tao3k/marlin-agent-core][github.com/tao3k/marlin-agent-core]] | Agent runtime core. |
