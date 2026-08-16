@@ -1,0 +1,144 @@
+#+TITLE: Tao3k Delivery and Quality Lifecycle
+#+DATE: 2026-08-15
+#+AUTHOR: tao3k
+#+OWNER: tao3k
+#+AUDIENCE: public
+#+STATUS: Active
+#+CLAIM_MATURITY: policy
+#+FILETAGS: :tao3k:delivery:sdlc:org:contract:sdd:evidence:
+
+* Purpose
+
+Deployment is the complete operational scope in which a system exists: machines,
+environments, topology, configuration, access boundaries, runtime observation,
+and lifecycle ownership.  It is not merely the final release step and it is not
+synonymous with a Delivery plan.
+
+A Delivery plan is one auditable change plan within a Deployment.  It accepts a
+qualified result from the same lifecycle that creates knowledge, specifications,
+software, and evidence.  This gives local, on-premises, hybrid, and cloud
+deployments one accountable delivery standard.
+
+* Planes and scope
+
+#+begin_example
+Control Plane
+├── declared intent, authority, and desired state
+├── Org Contract and accepted source references
+├── SDD: specification-driven development
+├── BDD: behaviour and acceptance scenarios
+├── tests, scenario benchmarks, and qualification
+└── Delivery plans for individual proposed changes
+        ↓ qualified artifact and approved change
+Delivery Plane
+├── reproducible build and package
+├── artifact promotion and release orchestration
+├── atomic rollout, verification, and rollback
+└── delivery receipts
+        ↓ operated in
+Deployment scope
+├── target machines and environments
+├── declared topology, configuration, and access boundaries
+└── operational state, runtime receipts, and lifecycle ownership
+#+end_example
+
+The Control Plane determines whether a change is qualified to proceed.  The
+Delivery Plane carries that qualified change into operation and can reverse it
+atomically.  A Deployment is the concrete scope in which the system runs:
+machines, environments, topology, configuration, and ongoing responsibility.
+
+A Delivery plan belongs to the Control Plane.  It answers /what change is being
+made/, /which requirements and quality gates apply/, and /which Deployment scope
+may receive it/.  It is not a synonym for the Delivery Plane.
+
+* The lifecycle
+
+#+begin_example
+Human intent and source material
+        ↓
+Org record and Contract
+        ↓
+Specification-driven development (SDD)
+        ↓
+Implementation, tests, and scenario benchmarks
+        ↓
+Qualified build artifact and deployment declaration
+        ↓
+Atomic deployment or rollback
+        ↓
+Runtime receipt, review, and durable evidence
+        ↺
+Improved knowledge and high-quality future training data
+#+end_example
+
+** Org record and Contract
+
+Org is the durable human-readable source of intent, provenance, references,
+assumptions, and acceptance conditions.  An Org Contract establishes the
+required shape of a record before an Agent can treat it as usable input.  The
+contract is therefore a data-quality boundary, not a decorative document
+template.
+
+** Specification-driven development
+
+SDD turns accepted intent into explicit, reviewable requirements before
+implementation.  An Agent may help draft, connect, and check the specification,
+but cannot erase the named human owner, the source references, or the acceptance
+conditions.  Changes remain linked to the evidence that motivated them.
+
+** Build and qualification
+
+Implementation is built and tested under the declared project rules.  Scenario
+benchmarks measure claims such as ingestion throughput, retrieval quality,
+resource coverage, latency, or reproducibility before those claims appear in a
+customer-facing product page.  A build result is eligible for delivery only when
+the declared checks and evidence are present.
+
+** Delivery Plane, Deployment, and runtime evidence
+
+Nix, Bazel, and HCL support the Delivery Plane: reproducible builds, declared
+artifacts, controlled promotion, atomic rollout, verification, and rollback.
+The Delivery Plane does not decide whether a change is admissible; it carries a
+qualified change issued by the Control Plane.
+
+A Deployment may describe local machines, on-premises infrastructure, a hybrid
+estate, or cloud environments.  Each Deployment scope has explicit topology,
+configuration, access boundaries, operational state, and lifecycle ownership.
+Delivery receipts and runtime receipts return to the Org evidence layer for
+review and future improvement.
+
+* Quality data for Agent work and future training
+
+The lifecycle produces high-quality information only when every stage retains:
+
+- provenance :: where a source, assertion, result, or decision came from.
+- structure :: contracts, schemas, stable references, and explicit semantics.
+- qualification :: tests, benchmarks, review, and declared acceptance criteria.
+- accountability :: a named human authority for consequential decisions.
+- feedback :: runtime receipts and corrections that refine the next iteration.
+
+This prevents a system from treating generated text, disconnected test output,
+or an unreviewed deployment as equivalent to evidence.  The goal is not merely
+to consume AI training data; it is to produce trustworthy, reusable data about
+how knowledge became qualified action.
+
+* Website information architecture
+
+The public site should explain this lifecycle as a linked system rather than
+repeat its prose on every page.
+
+- Platform / Control Plane :: describes declared authority, Org Contracts, SDD,
+  BDD, qualification, benchmarks, and change-specific Delivery plans.
+- Platform / Delivery Plane :: describes Nix, Bazel, HCL, artifact promotion,
+  atomic rollout, rollback, and delivery receipts.  It targets explicit
+  Deployment scopes: environments, topology, machines, and operational
+  boundaries.
+- Products :: describe how a concrete system consumes and produces qualified
+  resources.  [[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
+  is one such system, not a substitute name for the complete lifecycle.
+- Solutions :: show a customer outcome and reference the exact Product,
+  Platform capability, and deployment model involved.
+
+Org-WASM resolves these references into the site so that a product claim can
+lead to its deployment requirement, benchmark evidence, and source record
+without copying each statement into separate marketing pages.

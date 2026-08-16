@@ -234,6 +234,46 @@ receipts, portable records, explicit escalation, and an exit path.
 Managed convenience must not be described as authority transfer.  The customer
 still qualifies what the managed service may do within consequential systems.
 
+** Cloud Manager contract interface
+
+The Managed Cloud route owns a distinct Cloud Manager interface.  It must not
+repeat the Platform overview delivery demonstration.  Its public question is
+how a complex cloud API becomes a manageable, qualified enterprise surface.
+
+Kubernetes OpenAPI v3 documents and structural CRD schemas are external API
+facts.  Cloud Manager records their version and digest, selects the fields that
+matter to a product or tenant, and binds those JSON Schema paths to a tao3k
+Schema Contract.  The Contract gives low-level fields stable enterprise
+meaning, including capacity bounds, tenant identity, regional policy, resource
+profiles, network permissions, accountable authority, and receipt obligations.
+
+Scheme and Nickel are alternative higher-order authoring surfaces above that
+Contract.  Scheme is the compositional and programmable system surface; Nickel
+is a typed configuration and contract authoring surface.  Neither asks a user
+to reproduce Kubernetes YAML or provider JSON by hand.  Their admitted intent
+is lowered through the same Contract into Kubernetes resources and supported
+cloud API projections.  The stable boundary is the Contract rather than one
+authoring syntax.
+
+Nix does not own this cloud configuration language.  Nix and Bazel continue to
+own derivations, hermetic builds, immutable software and system closures, and
+distribution identity beneath the Cloud Manager.  Kubernetes remains a target
+runtime and schema authority rather than a second source of product truth.
+
+The interactive public model advances through five observable stages:
+
+1. =DISCOVER= records Kubernetes and CRD schema identity.
+2. =CONTRACT= maps selected JSON Schema paths into governed domain fields.
+3. =AUTHOR= expresses reusable intent through Scheme or Nickel.
+4. =PROJECT= lowers admitted intent into bounded runtime resources.
+5. =VERIFY= returns schema digest, Contract revision, artifact identity,
+   destination identity, policy result, and receipt.
+
+The model is an architectural authoring demonstration, not a promise that the
+illustrated syntax is a released public CLI.  It supports direct stage
+selection, pause and replay, Scheme/Nickel switching, responsive layouts, and
+reduced-motion preferences without using a draggable workflow canvas.
+
 * Interaction contract
 
 The desktop Platform menu opens through hover, focus, or click.  Its pointer

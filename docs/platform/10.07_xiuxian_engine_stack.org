@@ -1,0 +1,80 @@
+#+TITLE: Xiuxian Engine Stack
+#+DATE: 2026-08-14
+#+AUTHOR: tao3k
+#+OWNER: tao3k
+#+AUDIENCE: public
+#+STATUS: Active
+#+CLAIM_MATURITY: vision
+#+FILETAGS: :tao3k:platform:xiuxian:architecture:
+
+* Architecture
+
+Xiuxian is a deployable dual-engine product built on tao3k infrastructure.  It
+is not a single workshop or a standalone workflow tool.  It can run locally,
+on customer infrastructure, in hybrid environments, or as a managed cloud
+service.
+
+* Shared tao3k data interface
+
+Apache Arrow is tao3k's common high-performance data interoperability layer.
+It carries structured computation, retrieval results, workflow state,
+scientific data, and evidence across language, process, deployment, and
+service boundaries.
+
+Arrow is not an engine, policy system, or evidence authority.  It defines how
+structured data moves efficiently and interoperably through the platform.
+
+* Standards at system boundaries
+
+tao3k treats standards as durable system boundaries rather than compliance
+decoration.
+
+** Org
+
+Org keeps structured human records, references, deep links, and linked context
+addressable across research, design, and operations.
+
+** BPMN 2.0 and DMN
+
+BPMN 2.0 and DMN provide the Workflow and Decision Engine with established
+industrial process and decision semantics.  They are a durable language for
+modelling and execution, while AI may assist modelling or review without
+becoming the source of workflow truth.
+
+** Bazel, Nix, and HCL
+
+Bazel build graphs, Nix reproducible closures, and HCL declared infrastructure
+intent form a shared SDLC discipline.  Every tao3k product should use this
+discipline to project one system into local, on-premises, hybrid, and cloud
+deployment targets.
+
+* Xiuxian engines
+
+** Knowledge Engine
+
+The Knowledge Engine searches, retrieves, indexes, and returns relevant
+knowledge and evidence-aware context.
+
+** Workflow and Decision Engine
+
+The Workflow and Decision Engine models and executes BPMN workflows and DMN
+decisions, tracks runtime state, and returns execution receipts.  BPMN and DMN
+are core Xiuxian workflow and decision semantics, not merely compatibility
+formats.
+
+Both engines use the shared tao3k Arrow data interface.  Neither owns an
+isolated data channel.
+
+* Deployment
+
+The same engine stack is deployable locally and in the cloud.  Local and cloud
+are deployment surfaces of one system, not separate products.
+
+* Product boundary
+
+Xiuxian Workshop is the human-facing workspace within the Xiuxian product.  It
+lets people search knowledge, compose workflow and decision models, run them,
+inspect their state, audit outcomes, and publish governed work.
+
+The Workshop does not replace the engines.  It gives people an intelligible,
+accountable interface to them.

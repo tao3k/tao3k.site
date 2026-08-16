@@ -1,0 +1,153 @@
+#+TITLE: tao3k Website Navigation Information Architecture
+#+DATE: 2026-08-15
+#+AUTHOR: tao3k
+#+OWNER: tao3k
+#+AUDIENCE: public
+#+STATUS: Active
+#+CLAIM_MATURITY: policy
+#+FILETAGS: :tao3k:website:navigation:architecture:
+
+* Purpose
+
+This contract defines the public website navigation for tao3k, a startup
+building To-B AI infrastructure and systems.  Startup is the company stage, not
+the audience classification.  The primary audiences are investors, prospective
+enterprise customers, developers, and the technical community.
+
+The navigation and destination pages adopt the clarity, progressive disclosure,
+visual hierarchy, product storytelling, and conversion paths of mature
+enterprise technology websites.  Evidence maturity constrains claims; it does
+not turn the site into a project diary or a collection of descriptive essays.
+The site still does not replace project documentation, API references, or
+implementation RFCs.
+
+* Top-level navigation contract
+
+** Home
+:PROPERTIES:
+:ROUTE: /
+:RESPONSIBILITY: Explain tao3k as one long-horizon company and system thesis.
+:INCLUDES: Positioning, why now, system overview, current evidence, audience paths, and the durable thesis.
+:EXCLUDES: Product specifications, implementation tutorials, and detailed comparisons.
+:END:
+
+** Platform
+:PROPERTIES:
+:ROUTE: /platform
+:RESPONSIBILITY: Explain the shared substrate tao3k is building and why it can become defensible.
+:INCLUDES: Resource fabric, Apache Arrow data interface, qualification boundaries, reproducible delivery, and intended local/on-premises/hybrid/cloud projections.
+:EXCLUDES: A product feature catalogue, a workshop walkthrough, and vertical use cases.
+:END:
+
+Platform describes what remains common when several tao3k product directions work
+together.  Org is one evidence and linked-record capability in this substrate;
+it is not the boundary of the knowledge or resource model.
+
+** Products
+:PROPERTIES:
+:ROUTE: /products
+:RESPONSIBILITY: Introduce tao3k product systems through a complete customer-facing narrative.
+:INCLUDES: User problem, product experience, differentiation, responsible foundations, current evidence, availability and adoption path, source repository, documentation, and ecosystem relationships.
+:EXCLUDES: Shared-platform claims duplicated from Platform and customer-outcome narratives duplicated from Solutions.
+:END:
+
+[[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
+is the repository evidence for an emerging product direction.  Its two coequal
+cores are the Knowledge and Resource Engine and the Workflow and Decision
+Engine.  The workshop is its intended human operating surface: it is not a
+separate platform category.  Knowledge and resources include Org, Markdown,
+Office documents, code, attachments, and other supported source material; Org
+contributes structured records, references, deep links, and durable evidence.
+
+** Solutions
+:PROPERTIES:
+:ROUTE: /solutions
+:RESPONSIBILITY: Explain how tao3k addresses high-value enterprise problems through composed systems.
+:INCLUDES: Problem, affected operator, operating scenario, system composition, intended outcome, deployment context, evidence, and engagement path.
+:EXCLUDES: Individual product internals and generic technology-stack catalogues.
+:END:
+
+** Comparison
+:PROPERTIES:
+:ROUTE: /comparison
+:RESPONSIBILITY: Give decision-makers honest category and capability comparisons.
+:INCLUDES: Scope boundaries, standards, operating models, and evidence-backed differences with familiar products or categories.
+:EXCLUDES: Unverifiable superiority claims and product implementation detail.
+:END:
+
+** Principles
+:PROPERTIES:
+:ROUTE: /principles
+:RESPONSIBILITY: State Tao3k's human, evidence, trust, and long-horizon commitments.
+:INCLUDES: Human agency, technical equity, evidence, responsibility, and open-source-first commitments.
+:EXCLUDES: Sales claims, release plans, and detailed technical specifications.
+:END:
+
+** Roadmap
+:PROPERTIES:
+:ROUTE: /roadmap
+:RESPONSIBILITY: Show directional investment and ecosystem development.
+:INCLUDES: Durable capability horizons and public milestones where evidence exists.
+:EXCLUDES: Unqualified delivery promises and duplicate product specifications.
+:END:
+
+* Shared standards
+
+| Standard or resource | Website responsibility |
+|----------------------+------------------------|
+| Apache Arrow         | The tao3k-wide structured data interchange boundary. |
+| BPMN 2.0 and DMN     | Industrial process and decision semantics used by Xiuxian. |
+| Org                  | Linked records, references, deep links, executable context, and durable evidence. |
+| Bazel, Nix, and HCL  | Reproducible build, environment, and infrastructure discipline. |
+
+* Secondary navigation contract
+
+The top-level navigator uses progressive disclosure.  Each primary section
+opens one stable mega-menu with named entries and a one-line description.  The
+menu is not a page duplicate, and it does not use generic decorative icons.
+Product entries use their repository name and a canonical GitHub link.
+
+** Platform menu
+
+| Entry | Route | Description |
+|-------+-------+-------------|
+| Resource fabric | /platform#resource-fabric | Shared intake, identity, attribution, and retrieval across documents, records, code, attachments, and other resources. |
+| Data interfaces | /platform#data-interfaces | Apache Arrow and related system boundaries for structured interchange. |
+| Qualification | /platform#qualification | Evidence, policy, formal obligations, and authority boundaries. |
+| Delivery | /platform#delivery | Bazel, Nix, HCL, and projections to local, on-premises, hybrid, and cloud environments. |
+
+** Products menu
+
+| Repository | Canonical link | Description |
+|------------+----------------+-------------|
+| xiuxian-artisan-workshop | [[https://github.com/tao3k/xiuxian-artisan-workshop][github.com/tao3k/xiuxian-artisan-workshop]] | Emerging knowledge/resource and workflow/decision product direction with a human workshop surface. |
+| orgize | [[https://github.com/tao3k/orgize][github.com/tao3k/orgize]] | Org parsing, structured records, links, contracts, and content projection. |
+| poo-flow | [[https://github.com/tao3k/poo-flow][github.com/tao3k/poo-flow]] | Composable operational policy language and profile system. |
+| marlin-agent-core | [[https://github.com/tao3k/marlin-agent-core][github.com/tao3k/marlin-agent-core]] | Agent runtime core. |
+| agent-semantic-protocols | [[https://github.com/tao3k/agent-semantic-protocols][github.com/tao3k/agent-semantic-protocols]] | Semantic code understanding and evidence infrastructure. |
+
+** Solutions menu
+
+| Entry | Route | Description |
+|-------+-------+-------------|
+| Enterprise knowledge operations | /solutions#enterprise-knowledge | Govern heterogeneous resources without losing source identity, ownership, or links. |
+| Governed AI operations | /solutions#governed-ai | Introduce purpose, qualification, policy, and evidence return into AI-assisted work. |
+| Scientific to industrial systems | /solutions#science-industry | Carry models, assumptions, computation, and review into repeatable operations. |
+| Qualified deployment | /solutions#qualified-deployment | Place authority appropriately across local, on-premises, hybrid, and cloud environments. |
+
+** Interaction standard
+
+Desktop menus open through hover intent and remain open while the pointer moves
+between trigger and panel.  Touch and keyboard open through an explicit button
+with =aria-expanded=.  The panel has no layout shift, no competing floating
+windows, and no click-only hidden navigation.  Mobile presents the same entries
+as an accessible accordion.
+
+* Presentation rule
+
+Each page chooses a presentation method that matches its subject.  A running
+workflow can use an executable graph.  A shared data interface can use a data
+bus.  A knowledge system can use a resource constellation.  No visual renderer
+may become the mandatory template for every Tao3k concept.  Brand and standard
+marks must use traceable official resources; generic or invented icons are not
+substitutes.

@@ -1,0 +1,26 @@
+#+TITLE: Official Marks Sources
+#+DATE: 2026-08-15
+#+AUTHOR: tao3k
+#+OWNER: tao3k
+#+AUDIENCE: public
+#+STATUS: Active
+#+CLAIM_MATURITY: policy
+#+FILETAGS: :tao3k:brand:assets:official-marks:
+
+* Purpose
+
+These files are unmodified copies of official upstream marks.  They are kept
+locally so a deployed Tao3k site does not fetch third-party brand assets at
+runtime.
+
+* Sources
+
+| File               | Official source | Use |
+|--------------------+-----------------+-----|
+| apache-arrow.svg   | [[https://arrow.apache.org/visual_identity/][Apache Arrow visual identity]] | Apache Arrow data-plane reference |
+| org-mode.svg       | [[https://orgmode.org/worg/images/orgmode/org-mode-unicorn-logo.svg][Org Mode official logo]] | Org-derived record and evidence reference |
+
+* Usage rule
+
+Do not recolor, distort, or combine these marks with new lettering.  Update
+only from their official source and retain upstream usage guidance.

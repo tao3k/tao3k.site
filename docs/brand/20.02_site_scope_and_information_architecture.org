@@ -13,6 +13,44 @@ This record defines the maintenance boundary and information architecture of tao
 
 The site communicates the tao3k vision, long-term direction, values, ecosystem structure, and open-source entry points. It is not a replacement documentation portal for every project.
 
+* Startup-site position
+
+tao3k.site is the public thesis of an early-stage, open-source-first technology
+company.  Its primary purpose is to help prospective customers, long-horizon
+investors, developers, researchers, and partners understand:
+
+- why tao3k needs to exist;
+- what evidence-native AI infrastructure tao3k is building;
+- which technical and institutional differences can become durable advantages;
+- which open-source systems, prototypes, proofs, and experiments already make
+  the direction credible; and
+- how the current foundations may develop into products, solutions, and a
+  sustainable ecosystem.
+
+Startup describes tao3k's present company stage; it is not a customer category
+or a visual style.  The site is designed for investors, prospective enterprise
+customers, developers, and the technical community.
+
+The site must learn from mature enterprise technology websites in information
+architecture, navigation, visual hierarchy, product storytelling, solution
+framing, and conversion paths.  What it must not copy are unsupported
+procurement claims, support promises, deployment guarantees, or artificial
+product maturity.  Honest evidence changes the claims, not the standard of the
+website.
+
+Public language uses =is building= for the complete platform and future product
+system.  A present-tense capability claim is reserved for a specifically named
+artifact, prototype, proof, test, or open-source project with project-owned
+evidence.
+
+The site therefore answers four questions in order:
+
+1. Why does this problem matter now?
+2. What does tao3k believe the missing system should become?
+3. What real work makes that direction credible today?
+4. What products, applications, and commercial value may emerge as the system
+   matures?
+
 * Main-site ownership
 
 tao3k.site owns:
@@ -56,18 +94,20 @@ three editorial variations of the same capability list.
 
 | Destination | Canonical object | Question answered | Owns | Must not own |
 |-
-| Platform | Shared capability domain and system law | How does the tao3k system work across products and industries? | architecture, contracts, lifecycle, authority, data, compute, operations, deployment | project catalogues, vertical sales stories, duplicated release status |
-| Products | Independently adoptable and maintained deliverable | What can a user install, integrate, extend, or procure? | identity, role, owner, repository, docs, release and adoption boundary | ecosystem-wide architecture, invented implementation facts, industry outcome claims |
-| Solutions | Outcome-specific system composition | How is a concrete industrial or research problem addressed? | problem, accountable user, composition, workflow, deployment profile, evidence and authority boundary, expected outcome | generic feature catalogues, disguised product directories, terminal vertical SaaS claims |
+| Platform | Long-term system thesis and shared capability domain | What system is tao3k building, and why can it become defensible? | architecture, contracts, lifecycle, authority, data, compute, operations, deployment, technical differentiation | mature-product claims, project catalogues, vertical sales stories, duplicated release status |
+| Products | Product system backed by owned foundations | What product experience is tao3k building, why should it exist, and why can tao3k build it? | user problem, product experience, differentiation, responsible foundations, engineering evidence, adoption path | unsupported readiness claims, ecosystem-wide architecture, duplicated solution stories |
+| Solutions | Enterprise problem and system application | How can tao3k address a consequential operating problem? | business problem, affected operator, system composition, intended outcome, deployment context, evidence and validation state | generic feature catalogues, disguised product directories, unsupported customer outcomes |
 
 *** Classification tests
 
 1. If the concept survives replacement of every current implementation, it is
    Platform.
-2. If it has an independent identity, owner, repository or distribution unit,
-   documentation, version or release lifecycle, it is a Product.
-3. If it requires a named industry context, accountable actor, workflow,
-   constraints, deployment setting, and outcome, it is a Solution.
+2. If it has a distinct product identity, intended user experience and adoption
+   boundary, and is supported by named tao3k foundations, it is a Product.  Its
+   evidence state determines the claim language, not whether the site may
+   present it with a complete product narrative.
+3. If it starts from a named enterprise, industrial, research, or community
+   problem and composes tao3k capabilities toward an outcome, it is a Solution.
 4. If an item passes more than one test, one canonical owner is selected and the
    other pages reference it instead of copying its explanation.
 
@@ -88,10 +128,10 @@ APIs, benchmarks, and release evidence.
 
 *** Platform content boundary
 
-Platform is the customer-facing system of stable responsibilities connecting
+Platform is the public-facing system thesis connecting
 evidence, knowledge and data, reasoning and science, qualification, governed
-operation, and reproducible delivery.  It answers how an enterprise constructs
-and operates a qualified vertical AI system.  It does not answer which project
+operation, and reproducible delivery.  It answers what tao3k is building and
+which stable responsibilities make that direction credible.  It does not answer which project
 owns a repository, which industry scenario should be adopted, which competitor
 is preferable, or why tao3k holds a social principle.
 
@@ -110,7 +150,8 @@ The primary Navigator is:
 | Logo | =/= | Return to the tao3k home page |
 | Vision | =/vision= | Why tao3k exists and what future it seeks |
 | Platform | =/platform= | The Evidence-to-Action lifecycle and ecosystem foundations |
-| Products | =/products= | Open-source directory with GitHub and Documentation links |
+| Products | =/products= | Product systems, customer value, differentiation, responsible foundations, and adoption paths |
+| Solutions | =/solutions= | Enterprise problems, system applications, intended outcomes, and evidence |
 | Roadmap | =/roadmap= | The long-term tao3k ecosystem direction |
 | Principles | =/principles= | Values, Human Agency, Technical Equity, and responsibility |
 | Compare | =/compare= | Category boundaries and evidence-backed comparison |
@@ -121,7 +162,8 @@ GitHub and Documentation may appear as distinct utility actions on the right sid
 
 The main site presents one ecosystem and one body of truth. Enterprises, research institutions, communities, and long-term partners enter through different proof obligations, but the site must not create four incompatible product stories or audience-specific capability claims.
 
-- Enterprise lens :: accountable operation, qualification, authority, recovery, integration, and exit;
+- Prospective customer lens :: problem understanding, architectural fit, accountable operation, qualification, integration, and field-validation boundary;
+- Long-horizon investor lens :: market thesis, technical defensibility, evidence of execution, ecosystem leverage, risk retirement, and commercial direction;
 - Research lens :: reproducibility, assumption and limit preservation, field evidence, and revision;
 - Community lens :: inspectability, learning, self-hosting, extension, contestability, attribution, and meaningful exit;
 - Long-term partner lens :: durable value through evidence, operational responsibility, standards, expertise, and non-extractive ecosystem growth.
@@ -133,12 +175,12 @@ Audience lenses change which proof question is foregrounded, not which underlyin
 The primary navigation answers stable public questions rather than mirroring repositories, internal teams, or audience segments.
 
 - Home =/= :: Why does tao3k need to exist? The eight-section homepage narrative remains owned by [[file:20.03_homepage_content_contract.org][Homepage Content Contract]].
-- Ecosystem =/ecosystem= :: How does the Evidence--Action Ecosystem work? This is the public label for the lifecycle, four layers, and shared contracts; /Platform/ is not the primary navigation label.
-- Research to Operations =/research-to-operations= :: How does research become governed operation and return as evidence?
-- Open Source =/open-source= :: What can a visitor inspect, use, and contribute to today? This is the public navigation label for the role-grouped project directory; /Products/ remains an internal information-architecture term where needed.
+- Platform =/platform= :: What evidence-native system is tao3k building, and which shared responsibilities make it technically defensible?
+- Products =/products= :: What is tao3k building for users, why is it different, and what real engineering supports it?
+- Solutions =/solutions= :: How does tao3k apply its platform and products to consequential enterprise problems?
 - Comparison =/comparison= :: How is tao3k different from systems people already know? Framework, maintained products, and Evidence Watch remain distinct evidence surfaces.
+- Principles =/principles= :: Which values constrain company, product, and technical decisions?
 - Roadmap =/roadmap= :: What is available, under construction, under research, and a long-term horizon?
-- Company =/company= :: What kind of institution is tao3k trying to become, how is commercial value sustained, and what responsibilities remain public?
 
 Utility actions are =/docs=, the tao3k GitHub organization, and =/work-with-us=. They must not replace the public position or fragment the main narrative.
 
@@ -162,7 +204,21 @@ Platform explains the shared lifecycle and how knowledge, records, graph intelli
 
 ** Products
 
-Products is an external open-source directory. It explains each project's ecosystem role and provides GitHub and Documentation destinations.
+Products presents coherent product systems rather than a repository catalogue.
+Each product receives its own page and information hierarchy: the user problem,
+product experience, differentiation, system anatomy, engineering evidence,
+deployment and adoption direction, and links to authoritative project facts.
+Maturity is communicated through precise evidence and availability language,
+not by weakening the page into a descriptive status report.
+
+** Solutions
+
+Solutions begins with selected high-value enterprise problems and shows how
+tao3k's Platform and Products combine into an understandable operating system.
+Each solution page owns an outcome-led narrative, a scenario-specific visual
+model, the operating and deployment context, expected value, evidence, and a
+clear path to engage.  Validation boundaries remain explicit without turning
+the whole page into research notes.
 
 ** Roadmap
 
@@ -171,6 +227,33 @@ Roadmap describes long-term tao3k development directions, current construction f
 ** Principles
 
 Principles expresses the non-negotiable values that shape product and technical decisions.
+
+* Enterprise presentation standard
+
+Platform, Products, Solutions, Comparison, Principles, and Roadmap must reach
+the information-design standard of a mature enterprise technology website.
+This requirement applies even while tao3k is early-stage.
+
+Each destination has its own content grammar and visual system rather than a
+shared descriptive article template:
+
+- Platform :: system map, capability boundaries, technical differentiation,
+  standards, and inspectable architecture;
+- Products :: product identity, user experience, differentiated system anatomy,
+  proof points, availability, and adoption path;
+- Solutions :: enterprise problem, operating scenario, composed system,
+  expected outcome, evidence, and engagement path;
+- Principles :: company convictions expressed through decisions, tensions,
+  interactive consequences, and long-horizon commitments;
+- Comparison :: recognizable alternatives, category boundaries, evidence, and
+  decision criteria; and
+- Roadmap :: capability horizons, dependencies, achieved foundations, and what
+  the company is building next.
+
+Pages use concise copy, official marks, scenario-specific interactive visuals,
+real artifacts, and progressive disclosure.  They must not become long prose
+documents, identical card grids, repeated workflow canvases, repository lists,
+or permanent startup disclaimers.
 
 ** Compare
 

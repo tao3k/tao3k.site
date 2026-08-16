@@ -10,7 +10,12 @@ import {
   type NodeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { platformNavigation } from "./site-routes";
+import gerbilMark from "./pages/platform/assets/technology/gerbil.svg";
+import juliaMark from "./pages/platform/assets/technology/julia.svg";
+import leanMark from "./pages/platform/assets/technology/lean.svg";
+import pythonMark from "./pages/platform/assets/technology/python.svg";
+import rustMark from "./pages/platform/assets/technology/rust.svg";
+import { platformNavigation, productNavigation, solutionsNavigation } from "./site-routes";
 import "./site-home.css";
 import "./site-mobile-fixes.css";
 import "./site-polish.css";
@@ -27,38 +32,46 @@ type NavigationChild = {
   readonly detail: string;
 };
 
-const platformMenuPreviews: Readonly<
-  Record<
-    string,
-    { readonly question: string; readonly stages: readonly string[]; readonly result: string }
-  >
-> = {
-  platform: {
-    question: "How does the complete system move?",
-    stages: ["Native evidence", "Qualified action", "Searchable receipt"],
-    result: "One governed path from knowledge to operation and back.",
+type NavigationMenu = Readonly<{
+  eyebrow: string;
+  title: string;
+  question: string;
+  stages: readonly string[];
+  footer: string;
+  items: readonly NavigationChild[];
+}>;
+
+const topNavigationMenus: Readonly<Record<string, NavigationMenu>> = {
+  "/platform": {
+    eyebrow: "PLATFORM / SYSTEM SURFACES",
+    title: "One evidence-bearing system, from record to operation.",
+    question: "What must remain connected?",
+    stages: ["Evidence", "Authority", "Execution", "Receipt"],
+    footer: "PLATFORM DESCRIBES THE SHARED SYSTEM — NOT A SINGLE PRODUCT",
+    items: platformNavigation,
   },
-  "on-premises": {
-    question: "What remains inside your boundary?",
-    stages: ["Customer data + identity", "Local policy", "Local runtime"],
-    result: "The customer infrastructure remains the operating authority.",
+  "/products": {
+    eyebrow: "PRODUCTS / DEPLOYABLE SYSTEMS",
+    title: "Products turn the shared foundations into accountable operating systems.",
+    question: "What does a customer receive?",
+    stages: ["Knowledge", "Workflow", "Qualification", "Operation"],
+    footer: "PRODUCTS HAVE EXPLICIT OWNERSHIP AND A DEPLOYABLE BOUNDARY",
+    items: productNavigation,
   },
-  hybrid: {
-    question: "What may cross the boundary?",
-    stages: ["Local evidence", "Declared gateway", "Elastic compute", "Receipt return"],
-    result: "Capability moves; consequential authority stays local.",
-  },
-  "managed-cloud": {
-    question: "What makes managed operation inspectable?",
-    stages: ["Qualified tenant", "Named model + region", "Operation receipt"],
-    result: "Evidence remains portable, attributable and usable as an exit path.",
+  "/solutions": {
+    eyebrow: "SOLUTIONS / OUTCOMES",
+    title: "Choose the operational problem; retain evidence through the outcome.",
+    question: "Which handoff needs to become reliable?",
+    stages: ["Understand", "Decide", "Act", "Return evidence"],
+    footer: "SOLUTIONS EXPLAIN OUTCOMES — PRODUCTS EXPLAIN THE SYSTEM",
+    items: solutionsNavigation,
   },
 };
 
 const fallbackNavigation: readonly NavigationItem[] = [
   { label: "Platform", href: "/platform", children: platformNavigation },
-  { label: "Products", href: "/products" },
-  { label: "Solutions", href: "/solutions" },
+  { label: "Products", href: "/products", children: productNavigation },
+  { label: "Solutions", href: "/solutions", children: solutionsNavigation },
   { label: "Comparison", href: "/comparison" },
   { label: "Principles", href: "/principles" },
   { label: "Roadmap", href: "/roadmap" },
@@ -97,7 +110,11 @@ function projectNavigation(shell: unknown): readonly NavigationItem[] {
       ? [{ label, href, ...(children && children.length > 0 ? { children } : {}) }]
       : [];
   });
-  return projected.length > 0 ? projected : fallbackNavigation;
+  const navigationItems = projected.length > 0 ? projected : fallbackNavigation;
+  return navigationItems.map((item) => {
+    const menu = topNavigationMenus[item.href];
+    return menu ? { ...item, children: menu.items } : item;
+  });
 }
 
 function BrandMark() {
@@ -160,13 +177,23 @@ function ThemeModeToggle() {
   );
 }
 
-function PlatformNavigationMenu({ items }: { readonly items: readonly NavigationChild[] }) {
+function TopNavigationMenu({
+  label,
+  href,
+  items,
+}: {
+  readonly label: string;
+  readonly href: string;
+  readonly items: readonly NavigationChild[];
+}) {
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);
   const activeItem = items[activeIndex] ?? items[0];
-  const activePreviewId = activeItem?.href.split("/").at(-1) ?? "platform";
-  const activePreview = platformMenuPreviews[activePreviewId] ?? platformMenuPreviews.platform;
+  const menu = topNavigationMenus[href];
+  const navigationId = `tao3k-${href.replaceAll("/", "-").replaceAll("#", "-")}-navigation`;
+
+  if (!menu) return <a href={href}>{label}</a>;
 
   useEffect(() => {
     const closeOutside = (event: PointerEvent) => {
@@ -202,7 +229,7 @@ function PlatformNavigationMenu({ items }: { readonly items: readonly Navigation
       ref={rootRef}
     >
       <button
-        aria-controls="tao3k-platform-navigation"
+        aria-controls={navigationId}
         aria-expanded={open}
         className="tao3k-platform-menu__trigger"
         onClick={() => setOpen(true)}
@@ -214,20 +241,16 @@ function PlatformNavigationMenu({ items }: { readonly items: readonly Navigation
         }}
         type="button"
       >
-        Platform <span aria-hidden="true">⌄</span>
+        {label} <span aria-hidden="true">⌄</span>
       </button>
-      <div
-        aria-hidden={!open}
-        className="tao3k-platform-menu__panel"
-        id="tao3k-platform-navigation"
-      >
+      <div aria-hidden={!open} className="tao3k-platform-menu__panel" id={navigationId}>
         <div className="tao3k-platform-menu__frame">
           <section className="tao3k-platform-menu__directory">
             <header>
-              <small>PLATFORM / DEPLOYMENT SURFACES</small>
-              <strong>One qualified system. Choose where its authority lives.</strong>
+              <small>{menu.eyebrow}</small>
+              <strong>{menu.title}</strong>
             </header>
-            <nav aria-label="Platform navigation">
+            <nav aria-label={`${label} navigation`}>
               {items.map((item, index) => (
                 <a
                   className={activeIndex === index ? "is-active" : undefined}
@@ -248,28 +271,28 @@ function PlatformNavigationMenu({ items }: { readonly items: readonly Navigation
             </nav>
           </section>
           {activeItem ? (
-            <aside aria-label={`${activeItem.label} preview`} data-deployment={activePreviewId}>
+            <aside aria-label={`${activeItem.label} preview`} data-surface={label.toLowerCase()}>
               <div className="tao3k-platform-menu__authority-map">
-                <small>{activePreview.question}</small>
+                <small>{menu.question}</small>
                 <ol>
-                  {activePreview.stages.map((stage, index) => (
+                  {menu.stages.map((stage, index) => (
                     <li key={stage}>
                       <span>{String(index + 1).padStart(2, "0")}</span>
                       <strong>{stage}</strong>
                     </li>
                   ))}
                 </ol>
-                <p>{activePreview.result}</p>
+                <p>{activeItem.detail}</p>
               </div>
-              <small>QUALIFIED DEPLOYMENT</small>
+              <small>{label.toUpperCase()} SURFACE</small>
               <strong>{activeItem.label}</strong>
               <p>{activeItem.detail}</p>
             </aside>
           ) : null}
         </div>
         <footer>
-          <span>DEPLOYMENT IS AN AUTHORITY MODEL</span>
-          <small>Same reproducible core · independently qualified boundary</small>
+          <span>{menu.footer}</span>
+          <small>{activeItem?.detail}</small>
         </footer>
       </div>
     </div>
@@ -284,7 +307,12 @@ export function Tao3kSiteHeader({ shell }: { readonly shell?: unknown }) {
       <nav className="tao3k-header__nav" aria-label="Primary navigation">
         {navigation.map((item) =>
           item.children ? (
-            <PlatformNavigationMenu items={item.children} key={`${item.href}:${item.label}`} />
+            <TopNavigationMenu
+              href={item.href}
+              items={item.children}
+              key={`${item.href}:${item.label}`}
+              label={item.label}
+            />
           ) : (
             <a href={item.href} key={`${item.href}:${item.label}`}>
               {item.label}
@@ -316,6 +344,91 @@ const systemBoundaries = [
   {
     layer: "TAO3K",
     purpose: "Preserve evidence, qualify action, recover work and return receipts.",
+  },
+] as const;
+
+type TechnologyEngineRole = {
+  readonly name: string;
+  readonly glyph: string;
+  readonly mark?: string;
+  readonly purpose: string;
+};
+
+type TechnologyPlane = {
+  readonly title: string;
+  readonly layout: "single" | "compute" | "formal";
+  readonly roles: readonly TechnologyEngineRole[];
+};
+
+const technologyPlanes: readonly TechnologyPlane[] = [
+  {
+    title: "RUNTIME KERNEL",
+    layout: "single",
+    roles: [
+      {
+        name: "Rust",
+        glyph: "R",
+        mark: rustMark,
+        purpose: "Deterministic systems and runtime infrastructure.",
+      },
+    ],
+  },
+  {
+    title: "SCIENTIFIC COMPUTE",
+    layout: "compute",
+    roles: [
+      {
+        name: "Julia",
+        glyph: "J",
+        mark: juliaMark,
+        purpose: "Numerical methods, scientific computing and algorithm exploration.",
+      },
+      {
+        name: "Python",
+        glyph: "Py",
+        mark: pythonMark,
+        purpose: "Research, data, ML and domain ecosystem integration.",
+      },
+      {
+        name: "Pluto.jl + Plots.jl",
+        glyph: "↗",
+        purpose: "Interactive notebooks and visual model exploration.",
+      },
+    ],
+  },
+  {
+    title: "POLICY ENGINE",
+    layout: "single",
+    roles: [
+      {
+        name: "Scheme",
+        glyph: "λ",
+        mark: gerbilMark,
+        purpose: "Higher-order policy, hygienic macros and metaprogramming.",
+      },
+    ],
+  },
+  {
+    title: "FORMAL KNOWLEDGE",
+    layout: "formal",
+    roles: [
+      {
+        name: "Lean",
+        glyph: "⊢",
+        mark: leanMark,
+        purpose: "Machine-checked workflow specifications and critical proofs.",
+      },
+      {
+        name: "Typst",
+        glyph: "∑",
+        purpose: "Native mathematical typesetting and technical publication.",
+      },
+      {
+        name: "Org",
+        glyph: "○",
+        purpose: "Evidence, structured records and executable research context.",
+      },
+    ],
   },
 ] as const;
 
@@ -586,6 +699,38 @@ export function Tao3kSiteHome(_props: { readonly title?: string } = {}) {
       </section>
 
       <LiveEvidenceFlow />
+
+      <section className="tao3k-home-engines" aria-labelledby="home-engines-title">
+        <header>
+          <p className="tao3k-section-index">SPECIALIZED ENGINES / SHARED EVIDENCE</p>
+          <h2 id="home-engines-title">One evidence boundary. Specialized engines.</h2>
+          <p>
+            Each technology owns a precise responsibility inside one inspectable evidence system.
+          </p>
+        </header>
+        <div className="tao3k-home-engines__planes">
+          {technologyPlanes.map((plane) => (
+            <article className={`is-${plane.layout}`} key={plane.title}>
+              <div className="tao3k-home-engines__plane-heading">
+                <span>{plane.title}</span>
+              </div>
+              <ul>
+                {plane.roles.map((role) => (
+                  <li key={role.name}>
+                    <span className="tao3k-home-engines__mark" aria-hidden="true">
+                      {role.mark ? <img alt="" decoding="async" src={role.mark} /> : role.glyph}
+                    </span>
+                    <div>
+                      <strong>{role.name}</strong>
+                      <p>{role.purpose}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="tao3k-home-thesis" aria-labelledby="home-thesis-title">
         <p className="tao3k-section-index">01 / THE POSITION</p>

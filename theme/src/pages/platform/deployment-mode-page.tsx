@@ -1,3 +1,4 @@
+import { CloudManagerInterface } from "./cloud-manager-interface";
 import "./deployment-mode-page.css";
 
 const platformDeploymentModes = {
@@ -305,6 +306,8 @@ export function PlatformDeploymentPage({ modeId }: { readonly modeId: PlatformDe
           </article>
         </div>
       </section>
+
+      {modeId === "platform/managed-cloud" ? <CloudManagerInterface /> : null}
 
       <section className="tao3k-deployment-mode__topology" aria-label={`${mode.label} topology`}>
         <header>

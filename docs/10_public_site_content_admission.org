@@ -1,0 +1,329 @@
+#+TITLE: Tao3k Public Site Content Admission
+#+DATE: 2026-08-15
+#+AUTHOR: tao3k
+#+OWNER: tao3k
+#+AUDIENCE: public
+#+STATUS: Active
+#+CLAIM_MATURITY: policy
+#+FILETAGS: :tao3k:website:products:platform:solutions:evidence:
+
+* Purpose
+
+The Tao3k public site is an overview for customers, prospective customers,
+investors, and developers.  It explains system boundaries, customer value,
+technical direction, and evidence of seriousness.  It is not a replacement for
+package READMEs, RFCs, benchmarks, deployment runbooks, or implementation docs.
+
+The public site and project documentation are separate editorial products:
+
+| Surface | Owns | Does not own |
+|---------+------+--------------|
+| tao3k public site | company thesis, market problem, Platform architecture, Product experience, Solution outcomes, differentiation, selected engineering evidence, commercial path, and routes to inspect or engage | package APIs, language syntax, module inventories, theorem listings, build commands, benchmark internals, runbooks, and exhaustive repository status |
+| project documentation | implementation contracts, APIs, source ownership, language and module semantics, proofs, tests, benchmarks, operations, contribution, and exact maturity evidence | company-wide positioning, duplicated sales narrative, or an independent version of the public site |
+
+A project detail reaches the public site only after it is transformed into a
+customer-, investor-, or developer-relevant claim.  The public site answers
+=why this architecture matters= and =why tao3k can build it=, then links to the
+owning project for =how it works exactly=.
+
+Tao3k is an early-stage company building To-B AI infrastructure and systems.
+The site makes the company thesis, technical foundations, product directions,
+execution evidence, and path to commercialization understandable to investors,
+prospective enterprise customers, and developers.  The company's stage explains
+why the site presents an evidence-backed direction rather than a mature product
+catalogue; it does not define startups as the customer category.
+
+No repository is presented as a customer Product merely because it is public or
+technically important.  Public site claims must be owned by a real repository
+and supported by its source, canonical documentation, or repeatable evidence.
+
+* Content admission rule
+
+Every public statement must identify:
+
+- owner :: the repository and responsible package or document.
+- maturity :: current implementation, measured result, design direction, or
+  future roadmap.
+- evidence :: a source-backed capability, a released interface, a benchmark
+  receipt, a scenario gate, or an explicit deployment definition.
+- audience :: why the statement matters to a customer, investor, or developer.
+
+The site must not turn an architecture ambition into a capability claim.  Exact
+file coverage, throughput, retrieval quality, model-quality impact, deployment
+atomicity, and rollback guarantees require current measured or executable
+evidence before they appear as quantified public claims.
+
+* Current source-backed classification
+
+** Product: [[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
+
+This is the current integrated product direction and technical prototype.  Its
+repository describes a Rust-first native agent infrastructure that combines:
+
+- =Wendao= :: knowledge and retrieval, including shared contracts, host/runtime
+  behavior, Arrow Flight transport, bounded SQL helpers, and Julia/Modelica
+  repository intelligence.
+- =Qianji= :: workflow, Flowhub, BPMN control, validation, and runtime activity
+  adapters.
+- =Qianhuan= :: context and persona rendering.
+- =Zhenfa= :: native tool and routing substrate.
+
+The public Product page may say that these surfaces work together to explore a
+future product system for knowledge, retrieval, workflow control, context, and
+native routing.  It must link to the repository, state its current maturity,
+and avoid presenting technical deployability as commercial availability.
+
+The repository also has explicit retrieval-performance and quality-gate tooling:
+p95/average latency gates, fixed query-matrix Top1/Top3/Top10 evaluation, and a
+multi-run rollout sign-off.  The public site may describe the existence of
+quality gates.  It must not advertise a current latency, corpus capacity, or
+retrieval score until the associated current benchmark receipt is selected.
+
+** Platform foundation: [[https://github.com/tao3k/orgize][tao3k/orgize]]
+
+=orgize= is a Rust library, not a peer customer Product.  It parses Org into
+non-mutating, source-backed data projections: source blocks, links, agenda
+metadata, capture plans, publishing graphs, and runtime-adjacent Org features.
+It belongs in the Platform knowledge/evidence story and may be named as an open
+foundation behind stable references, Contracts, and durable human-readable
+records.
+
+** Platform foundation: [[https://github.com/tao3k/poo-flow][tao3k/poo-flow]]
+
+=poo-flow= is a Gerbil Scheme Control Plane for higher-order strategies.  It
+expresses policies, profiles, modules, workflows, sessions, and loop descriptors
+as inspectable values before projecting them to execution backends.  It belongs
+under Platform / Control Plane, not as a workflow-runtime product claim.
+
+At the public system level, tao3k's dual-engine architecture is POO Flow plus
+Cedar.  POO Flow is the compositional policy and control engine; Cedar is the
+authorization engine.  They retain different responsibilities while sharing an
+admitted authority and evidence boundary.
+
+RFC 45-114 defines a nested proof boundary inside the Cedar side: the Cedar
+Lean definitional engine and Cedar Rust production engine provide independent
+semantic and executable observations.  This internal pair strengthens the
+Cedar authorization engine; it does not redefine the public POO Flow + Cedar
+dual-engine architecture.  Scheme/POO owns the native adapter,
+capability-to-risk projection, arbitration policy, external-authority result,
+and evidence projection.  Marlin remains the independent runtime execution
+boundary.
+
+The public Platform argument may state:
+
+- POO Flow composes the policy, Profile, capability, authority-risk, and
+  operational control context in which Cedar authorization is evaluated;
+- Cedar provides the authorization decision while preserving its exact policy
+  evidence;
+- inside the Cedar proof boundary, the definitional and production engines
+  consume one canonical policy-input identity;
+- comparison covers the complete outcome---decision, determining policies,
+  erroring policies, semantic version, and canonical input identity---rather
+  than comparing only =Allow= or =Deny=;
+- elevated authority requires strict per-request Lean/Rust lockstep;
+- explicitly admitted ordinary authority may use the Rust hot path with pinned
+  differential-randomized-testing evidence and bounded Lean shadow; and
+- missing engines, completed disagreement, malformed projection, or ambiguous
+  risk fail closed and retain a truthful receipt.
+
+This is an architecture and engineering-evidence claim, not a completed product
+availability claim.  The risk-tier arbitration direction and local Lean proof
+owners exist; the concrete production adapter, pinned DRT execution, production
+interoperability, and external empirical qualification remain open.
+
+Industry context may be used without borrowing maturity.  Amazon Verified
+Permissions is an AWS managed authorization service using Cedar, and
+Microsoft's open-source Agent Governance Toolkit specifies an optional bundled
+Cedar dispatcher.  These are evidence that Cedar is gaining production and
+production-oriented recognition in the emerging Agent era; they are not tao3k
+customer endorsements or evidence that POO Flow's production adapter is already
+admitted.
+
+** Platform foundation: [[https://github.com/tao3k/marlin-agent-core][tao3k/marlin-agent-core]]
+
+=marlin-agent-core= explicitly states that it is not a terminal-user product
+shell.  It is a typed, Org-native agent-runtime substrate for graph loops,
+queries, policy integration, sandbox visibility, receipts, and replay.  The
+public site may identify it as an open runtime foundation; it must not present
+it as a standalone customer Product without a product layer above it.
+
+** Platform foundation: [[https://github.com/tao3k/agent-semantic-protocols][tao3k/agent-semantic-protocols]]
+
+=agent-semantic-protocols= owns shared protocol contracts, Hook runtime,
+parser-oriented semantic language harnesses, schema packets, and replay
+sandtables.  It belongs in the Platform trust and developer-infrastructure
+story, not in a customer Product catalogue.
+
+* What belongs on each public page
+
+** Homepage
+
+State the company proposition and show only durable, cross-system facts:
+knowledge and retrieval, workflow/control, evidence, formal qualification,
+high-performance native systems, and reproducible operation.  Link to the
+appropriate Platform, Product, or Solution surface; do not enumerate package
+internals or publish benchmark numbers here.
+
+** Platform
+
+Describe cross-cutting planes, not a product feature list:
+
+- Knowledge and evidence :: Org-derived structured records, references,
+  provenance, and Contracts.
+- Data Plane :: Apache Arrow and Arrow Flight boundaries where source-backed.
+- Control Plane :: policy, qualification, SDD, BDD, scenario checks, and
+  change-specific Delivery plans.
+- Delivery Plane :: reproducible builds, artifacts, promotion, rollout,
+  rollback, and receipts.
+- Deployment scope :: target machines, environments, topology, configuration,
+  access boundaries, and runtime ownership.
+
+Platform pages explain these as a coherent architecture using system maps,
+standards, responsibility boundaries, and selected proof points.  They do not
+reproduce the implementation inventory of every foundation repository.
+
+** Products
+
+Present product directions that may grow from the shared technical foundations.
+For each direction, explain why it exists, its future operating boundary,
+current maturity, present evidence, known gaps, and the next validation step.
+
+At present, feature
+[[https://github.com/tao3k/xiuxian-artisan-workshop][tao3k/xiuxian-artisan-workshop]]
+once as an integrated product direction and technical prototype.  List the
+other repositories as open foundations with their correct Platform plane, not
+as peer commercial products.  The page must not imply pricing, SLA, procurement
+readiness, or production support before those states have their own evidence.
+
+Product pages explain the product experience, user problem, differentiation,
+system anatomy, evidence, and adoption path.  Repository names appear only
+where they establish credibility or provide a route to inspect the work.
+
+** Solutions
+
+Show the operational problems and validation scenarios that future Products are
+intended to address.  A Solution identifies the problem, affected participants,
+required Platform foundations, present validation evidence, unresolved risks,
+and a possible Deployment scope.  It is a direction for research,
+design-partner work, or an industry pilot unless a separate availability record
+proves a mature offering.  It should use reference links rather than repeat
+component descriptions.
+
+Solution pages lead with the enterprise problem and operating consequence.
+They may show a concise system composition such as =request -> authorize ->
+qualify -> execute -> verify -> receipt=, but send policy syntax, workflow
+definitions, proof code, and deployment instructions to the responsible
+project documentation.
+
+* Main-site evidence pattern
+
+Project evidence is translated into a three-part public argument:
+
+1. Industry signal :: a recognized standard, managed production service,
+   public incident, or established engineering direction demonstrates that the
+   problem category is real.
+2. tao3k distinction :: the responsible RFC explains the architectural choice
+   and evidence boundary; the website does not invent a simpler replacement.
+3. Enterprise consequence :: the page shows what becomes safer, more
+   inspectable, reproducible, recoverable, or governable for an organization.
+
+For the POO Flow + Cedar dual-engine architecture, the public consequence is
+precise: enterprise composition and authorization remain independent instead of
+being hidden in one Agent loop.  RFC 45-114 further allows stronger
+per-request Cedar evidence for elevated authority, a faster
+conformance-backed path for explicitly admitted ordinary authority, detection
+of full-outcome or semantic-input drift, and truthful disagreement or
+unavailable-state receipts.
+
+The main site should first express the two system engines: POO Flow composition
+and Cedar authorization.  Progressive disclosure may then reveal the nested
+Cedar risk-tier assurance view: one canonical authorization subject, independent
+definitional and production observations, complete-outcome comparison, and a
+truthful receipt.  Cedar policies, Scheme adapter objects, Lean theorem lists,
+DRT commands, and receipt schemas remain in POO Flow project documentation.
+
+Official and owner references:
+
+- [[https://docs.aws.amazon.com/verifiedpermissions/][Amazon Verified Permissions documentation]];
+- [[https://github.com/cedar-policy/cedar-spec][Cedar Lean specification and DRT owner]];
+- [[https://github.com/microsoft/agent-governance-toolkit/blob/main/policy-engine/spec/SPECIFICATION.md][Microsoft Agent Governance Toolkit policy-engine specification]]; and
+- [[https://github.com/tao3k/poo-flow][POO Flow repository and project documentation]].
+
+* Commercial boundary
+
+Commercial ambition belongs on the public site, but availability claims belong
+to the Roadmap.  Platform describes the technical thesis; Products describes
+what is being formed; Solutions describes the real problems and validation
+settings; Roadmap describes the evidence-gated path from foundations to
+commercial availability.
+
+Before commercial availability, calls to action are limited to exploring the
+technology, following development, discussing research or industry pilots, and
+becoming a design partner.  Purchase controls, price plans, enterprise SLAs,
+and managed-service promises require a current commercial availability record.
+
+* Org-WASM reference role
+
+Org-WASM makes this information architecture maintainable: one source-backed
+claim can reference its Product, Platform plane, deployment definition, scenario
+benchmark, and owner documentation.  The website may project those links into
+customer-friendly navigation, while detailed evidence remains in the owning
+repository.  A correction to an owner record then changes every public surface
+that references it instead of leaving multiple inconsistent marketing copies.
+
+* Navigator quick windows
+
+Platform, Products, and Solutions use the same compact navigator window.  The
+window is a discovery and routing surface; it must not duplicate the destination
+page or behave as a second full navigation page.
+
+** Platform
+
+- Knowledge & Evidence :: =/platform#knowledge-evidence=
+- Data Plane :: =/platform#data-plane=
+- Control Plane :: =/platform#control-plane=
+- Delivery Plane :: =/platform#delivery-plane=
+- Deployments :: =/platform#deployments=
+
+** Products
+
+- [[https://github.com/tao3k/xiuxian-artisan-workshop][xiuxian-artisan-workshop]] :: the current deployable Product system.
+- System :: =/products#xiuxian-artisan-workshop=, knowledge, retrieval,
+  workflow/BPMN control, context, and native routing.
+- Evidence :: =/products#xiuxian-artisan-workshop=, quality gates and selected
+  benchmark receipts.
+- Open foundations :: =/products#open-foundations=, the correctly classified
+  repositories behind the Product boundary.
+
+** Solutions
+
+- Knowledge and retrieval operations :: =/solutions#knowledge-operations=
+- Workflow and decision control :: =/solutions#workflow-decision=
+- Qualified AI operations :: =/solutions#qualified-ai=
+- Deployment across real operating scopes :: =/solutions#deployment-scope=
+
+Desktop pointer interaction uses hover intent and a no-gap safe corridor so the
+window does not flicker when the pointer travels from the top-level item into
+its contents.  Keyboard activation uses an explicit control with =aria-expanded=;
+mobile uses an explicit accordion action.  The window closes only after focus or
+pointer leaves the complete interaction boundary.
+
+* POO Flow, Lean, and Cedar terminology
+
+The public dual-engine architecture is *POO Flow + Cedar*, but the two engines
+must not be presented as duplicate policy evaluators.
+
+- Gerbil/POO is the higher-order control plane. It constructs and evolves the
+  Agent system, composes roles and profiles, coordinates delegation, and derives
+  constraints for different execution paths from one policy source.
+- Cedar is the deterministic authorization microkernel at the effect boundary.
+  It decides whether one concrete principal may perform one action on one
+  resource in the supplied context.
+- Lean is an independent proof direction for cross-step, cross-Agent, and
+  lifecycle invariants, including declared workflow structure, traces, and
+  receipts.
+- The Agent runtime owns execution and persistence.
+
+The main site may call POO Flow and Cedar the dual engine. It must describe Lean
+as formal assurance over the composed system, not as a second Cedar engine or as
+an interchangeable authorization implementation.

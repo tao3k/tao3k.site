@@ -20,7 +20,11 @@ assert.deepEqual(
 );
 assert.deepEqual(
   platformNavigation.map(({ href }) => href),
-  ["/platform", ...platformDeploymentRouteIds.map((id) => `/${id}`)],
+  [
+    "/platform",
+    "/platform/graph-search-reasoning",
+    ...platformDeploymentRouteIds.map((id) => `/${id}`),
+  ],
 );
 
 for (const route of siteRoutes) {
