@@ -1,4 +1,5 @@
 import "./platform-page.css";
+import { AgentControlArchitecture } from "./agent-control-architecture";
 
 const platformPlanes = [
   [
@@ -55,6 +56,8 @@ export function PlatformPage() {
           ))}
         </ol>
       </section>
+
+      <AgentControlArchitecture />
 
       <section aria-labelledby="platform-boundary-title" className="tao3k-platform__boundary">
         <p>HOW IT RELATES TO PRODUCTS</p>
